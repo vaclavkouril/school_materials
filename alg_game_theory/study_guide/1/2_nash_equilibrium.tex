@@ -1,0 +1,15 @@
+\subsection{Nashovo ekvilibrium}
+V teorii her se snažíme za předpokladu, že se každý hráč snaží o maximalizaci střední hodnoty užitkové funkce \ref{def:expected_payoff}, o "předvídání" jak bude každá hra hrána. 
+Formálně se snažíme o nalezení konceptu řešení, tedy zobrazení z množiny her v normální formě \ref{def:normal_form_game}, takové aby se hra $G$ zobrazila na množinu profilů strategií $G$. Takové koncepty řešení mohou být různá optima, třeba Nashovo, či Pareto. 
+\begin{definition}
+\label{def:best_response}
+Nejlepší odpovédí hráče $i$ na profil strategií $s_{-i}$ je smíšená strategie \ref{def:mixed_strategy} $s^*_i$, taková že $\forall s_i' \in S_i: u(s_i'; s_{-i}) \leq u(s^*_i;s_{-i})$
+\end{definition}
+\begin{definition}
+\label{def:nash_equilibrium}
+Nashovo ekvilibrium u hry v normálním tvaru \ref{def:normal_form_game} $G = (P, A, u)$ je profil strategií $(s_1, s_2, \dots, s_3)$, takové že $s_i$ je nejlepší odpovědí hráče $i$ na $s_{-i}$ pro všechny hráče $i \in P$
+\end{definition}
+Tedy ve zkratce Nashovo ekvilibrium je stav hry, kdy pokud odhalíme postupně každému $i$-tému hráči akce ostatních $a_{-i}$ tak by neměl motivaci měnit svojí akci $a_i$, tedy už neexistuje akce která by zvětšovala jeho radost z výsledku hry. 
+Ekvilibria přejímají jako přídavky jejich typy podle profilů strategií a tedy čistá \ref{def:pure_strategy}, smíšená \ref{def:mixed_strategy}, či plně smíšená. 
+
+
