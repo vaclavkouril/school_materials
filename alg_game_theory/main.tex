@@ -1,0 +1,39 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\usepackage{graphicx}
+\usepackage{tocloft}
+\usepackage[czech]{babel} % Český jazyk
+\usepackage[utf8]{inputenc} % UTF-8 encoding
+\usepackage[T1]{fontenc} % Zlepšené kódování fontů
+
+% Definitions for theorem-like environments
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\newcommand{\refdef}[1]{Definition~\ref{#1}}
+\newcommand{\reftheorem}[1]{Theorem~\ref{#1}}
+\newcommand{\refprop}[1]{Proposition~\ref{#1}}
+
+% Hyperlink formatting
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+  pdftitle={Sumarization of Algorithmic Game Theory},
+  bookmarks=true,
+  pdfpagemode=FullScreen,
+}
+
+% Import macros
+\input{macros.tex}
+
+% Document setup
+\begin{document}
+
+\tableofcontents
+
+% Input chapters in order
+\input{study_guide/1/1_nash_equilibria.tex}
+\end{document}
