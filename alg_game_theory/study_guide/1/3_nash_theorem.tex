@@ -1,0 +1,63 @@
+\subsection{Nashova věta}
+\begin{theorem}[Nashova věta]
+\label{thm:nash_theorem}
+Každá hra v normální formě \ref{def:normal_form_game} má Nashovo ekvilibrium \ref{def:nash_equilibrium}.
+\end{theorem}
+Pro větu si půjčujeme poměrně dost z oblasti matematické analýzy a celý důkaz je jen topologicky a ne konstruktivní, tedy dokázáním věty stále nemáme tušení jak taková ekvilibria vypadají ani jak či zda vůbec se jich dopočítáme, jen víme že nějaká jsou. 
+Takový fakt nám pak posouvá problém hledání (nejen) Nashových ekvilibrií mimo třídy $P$, či $NP$, které jsou z definice rozhodovací a odpověď na otázku zda existuje Nashovo ekvilibrium je velmi nudná a díky Nashově větě je vždy ANO. 
+
+Pro důkaz je důležitá vlastnost \textit{kompaktnosti}, tedy bavíme-li se o $X \subseteq \R^d$ je $X$ \textit{kompaktní} je-li uzavřená a omezená, tedy máme nějaké konstanty které ji omezují a uzavřená je pokud limity jejích posloupností jsou vždy uvnitř takové množiny. 
+\textit{Konvexita} podmnožiny $Y \subseteq \R^d$ je $Y$, kde $\forall x,y \in Y$ platí $tx + (1-t)y \in Y, t \in [0,1]$. 
+Také se hodí definice simplexu, tedy pro $n$ affině nezávislých bodů $x_1, x_2, \dots, x_n$ je $(n-1)$-simplex množina $\Delta_n = \Delta_n (x_1, x_2, \dots, x_n)$ množiny bodů $\{x_1, x_2, \dots, x_n\}$ je konvexní kombinace těchto bodů, tedy
+\[
+    \Delta_n = \left\{ y | y = \sum_{i = 1}^n t_ix_i, \forall i\in {1,2,\dots,n} t_i \in [0,1], \sum^n_{i=0} t_i = 1\right\}
+\]
+
+\begin{theorem}[Brouwerova věta o pevném bodu]
+\label{thm:brouwer_theorem}
+Pro $d \in \N$, mějme $K$ je \textit{neprázdná kompaktní konvexní} množina v $\R^d$. Nechť $f: K \rightarrow K$ je spojité zobrazení. Pak $\exists x_0 \in K: f(x_0) = x_0$, tedy $f$ má pevný bod $x_0$. 
+\end{theorem}
+
+\begin{theorem}[Lemma o kompaktnosti kartézského součinu kompaktních množin]
+\label{thm:compact_lemma}
+Pro $n \in N$ a $d_1,d_2,\dots,d_n$, nechť $\forall i \in \{1,2,\dots,n\} K_i \in \R^{d_i}$ jsou $kompaktní$. 
+Pak $K_1 \times K_2 \times \cdots \times K_n$ je kompaktní v $\R^{d_1 + d_2 + \dots + d_n}$. 
+\end{theorem}
+\begin{proof}[Náznak důkazu lemma \ref{thm:compact_lemma}]
+Stačí to ukázat pro případ kdy $n =2$, zbytek se induktivně naskládá. 
+Omezenost je jednoduchá a tedy katézským součinem nemáme jak uniknou nějaké konstantě která omezovala $K_1$, či $K_2$, nazveme je $C_1, C_2$ a ty pak zase po složkách omezují nové prvky. 
+
+Uzavřenost je zase v tom, že nemáme jak po dvojicích vytvořit zase nějaké divoké posloupnosti, protože jestli po složkách limity patřily do původních množin tak ty další složky nás nomohou nijak ovlivnit. 
+\end{proof}
+Hlavní idea důkazu je, že si pro každého hráče definijeme jeho množinu smíšených strategií jako simplex v reálném prostoru, pak na základě lemmatu \ref{thm:compact_lemma} je množina smíšených strategií kompaktní a konvexní. 
+Dodefinujeme si zobrazení $f$, které hráče přesměruje z jeho aktuální strategie na nějakou strategii $s'$, která zohledňuje odpovědi na strategie ostatních. 
+Ukáže se že $f$ je spojitá a z Brouwerovy věty o pevném bodu \ref{thm:brouwer_theorem} najdeme pevný bod který má tedy charakteristiku, že jestli se zobrazuje na sebe tak nemáme motivaci nic zlepšit a tedy jsme narazili vlastně na ekvilibrium $s*$. 
+\begin{proof}[Důkaz Nashovy věty \ref{thm:nash_theorem}]
+Mějme hru v normální tvaru $\ref{def:normal_form_game}$ $G = (P, A, u)$. 
+Pro každého hráče $i$ zavedem simplex $S_i$ na množině jeho čistých strategií $A_i$. 
+\[
+    S_i = \left\{ s_i \R^{\abs{A_i}}: \forall a \in A_i s_i(a) \geq 0, \sum_{a \in A_i} s_i(a) \right\}
+\],
+kde $s_i(a)$, značí pravděpodobnost výběru akce $a$ při smíšené strategii $s_i$. 
+
+Dle lemma \ref{thm:compact_lemma} je i $S = S_1 \times S_2 \times \cdots \times S_n$ kompaktní a konvexita je jednoduchá, protože pro $\forall s =(s_1, s_2, \dots, s_n), s' =(s_1', s_2', \dots, s_n') \in S$ a $t \in [0,1]$ máme jistě $ts + (1-t)s' \in S$, kde to se jen po složkách nasčítá a z konvexity původních $S_i$, tedy jednotlivých složek máme konvexitu $S$. 
+Zaveďme si vhodné spojité zobrazení $f: S \rightarrow S$. 
+Pro to mějme aktuální profil strategií $s =(s_1, s_2, \dots, s_n)$, a pro každého hráče $i$ a každou akci $a_i \in A_i$ definijeme funkci pro měření zlepšení užitku hráče $i$ a tedy 
+\[
+    \varphi_{i,a_i}(s_i) = \max\{0,u_i(a_i; s_{-i}) - u_i(s) \}.
+\]
+Funkce $\varphi_{i,a_i}$ jsou spojité, protože jsou složené ze spojité konstantní $0$ a $u_i(a_i;s_{-i}) - u_i(s)$, která je taky spojitá, protože spojitost plyne z linearity $u_i(s) = \sum_{a \in A_i} s(a) u_i(a)$
+
+S použitím $\varphi_{i,a_i}$ můžeme definovat nový profil strategií $s'$, jen je potřeba myslet na normalizování pravděpodobností aby nová $s_i'(a_i) \in [0,1]$ a $\sum_{a_i \in A_i} s_i'(a_i) = 1$
+\[
+    s_i'(a_i) = \frac{s_i(a_i) + \varphi_{i,a_i}(s_i)}{\sum{b_i \in A_i} s_i(b_i) + \varphi_{i,b_i}(s)} = \frac{s_i(a_i) + \varphi_{i,a_i}(s_i)}{1 + \sum{b_i \in A_i} \varphi_{i,b_i}(s)}
+\]
+pro všechna $i \in P, a_i \in A_i$. Nakonec nastavíme $f(s) = s'$. 
+
+Taková $f$ je spojitá, protože jen sčítáme spojité funkce. Tedy díky Brouwerově věte of pevném bodu \ref{thm:brouwer_theorem} získáváme, že $f$ má nějaký pevný bod. 
+
+Teď zbývá ukázat, že $s*$ je pevným bodem $f$, právě tehdy když s* je Nashovým ekvilibriem. 
+
+Pokud je $s*$ pevným bodem, pak pro každého hráče $i \in P$ a akci $a_i \in A_i$ platí $\varphi_{i,a_i}(s*) = 0$. Tedy žadný z hráčů nemá jak si zvýšit svůj užitek přechodem na jinou strategii. 
+Proto $s_i*$ je nejlepší odpovědí na $s_{-i}*$ pro všechna $i$, tedy je to z definice nutně Nashovo ekvilibrium \ref{def:nash_equilibrium}.
+\end{proof}
