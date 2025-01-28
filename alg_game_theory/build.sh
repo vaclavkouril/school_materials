@@ -12,7 +12,6 @@ build_all() {
   pdflatex -output-directory="$BUILD_DIR" "$MAIN_FILE" || exit 1
   bibtex "$BUILD_DIR/main.aux" || true
   pdflatex -output-directory="$BUILD_DIR" "$MAIN_FILE" || exit 1
-  pdflatex -output-directory="$BUILD_DIR" "$MAIN_FILE" || exit 1
 }
 
 build_overview() {
@@ -23,11 +22,12 @@ build_overview() {
 \usepackage[a4paper, total={7in, 10in}]{geometry}
 \usepackage{graphicx}
 \usepackage{tocloft}
-\usepackage[czech]{babel} % Český jazyk
-\usepackage[utf8]{inputenc} % UTF-8 encoding
-\usepackage[T1]{fontenc} % Zlepšené kódování fontů
-
-% Import macros
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}% Import macros
 \input{macros.tex}
 
 % Definitions for theorem-like environments
@@ -54,6 +54,7 @@ END
         /\\begin\{theorem\}/, /\\end\{theorem\}/ { print; next }
         /\\begin\{proposition\}/, /\\end\{proposition\}/ { print; next }
         /\\begin\{proof\}/, /\\end\{proof\}/ { print; next }
+        /\\begin\{algorithm\}/, /\\end\{algorithm\}/ { print; next }
       ' "$dir/$file" >> temp_overview.tex
     done
   done
@@ -61,7 +62,6 @@ END
   echo "\end{document}" >> temp_overview.tex
 
   pdflatex -output-directory="$BUILD_DIR" temp_overview.tex || exit 1
-  pdflatex -output-directory="$BUILD_DIR" temp_overview.tex || exit 1  # Ensure references work
   rm temp_overview.tex
 }
 
