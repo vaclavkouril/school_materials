@@ -1,0 +1,43 @@
+\section{Hledání Nashových ekvilibrií}
+\subsection{Hry v normální formě}
+\begin{definition}
+\label{def:normal_form_game}
+(Konečná, $n$-hráčská) hra v normální formě je trojice $G = (P, A, u)$, kde 
+\begin{itemize}
+    \item $P$ je množina hráčů, kde standartně $\abs{P} = n$ a zpravidla je to množina indexů není-li definováno jinak,
+    \item $A = A_1 \times A_2 \times \dots \times A_n$, kde $A_i$ je množina dostupných akcí pro hráče $i$,\item $u = (u_1, u_2, \dots, u_3)$ je $n$-tice, kde každé $u_i: A \rightarrow \R$ se nazývá užitková, nebo také výplatní funkce pro hráče $i$.
+\end{itemize}
+Každá taková hra $G = (P,A,u)$ je reprezentovatelná také jako matice $M \in \R^{n \times n}$, že $M = (M_a)_{a\in A}$, kde $M_a = u(a)$.
+\end{definition}
+Hra probíhá tak, že každý hráč zná užitkovou funkci a každý zvolí svou akci naráz, tedy hráč $i$ zvolí právě jednu $a_i \in A_i$. 
+Tím se vytvoří profil akcí $a = (a_1, a_2, \dots, a_n)$ ten se vyhodnotí každou $u_i$ z $u$ a hráč $i$ získá výsledek v podobě $u_i(a)$. 
+Tedy když vyhodnocujeme profil akcí $a$ tak máme přepisem $u(a) = (u_1(a), u_2(a), \dots, u_n(a))$
+Taková $u_i(a)$ hodnota ukazuje na hráčovu úroveň radosti z jeho rozhodnutí (akce $a_i$) v kontextu rozhodnutí ostatních $a_{-i}$. 
+
+Každý hráč se může chovat podle nějaké strategie. To jest nějakého předpisu jak zvolit $a_i$ z $A_i$, kterou zahrát. Nejjednodušší taková je čistá, nebo také ryzí, strategie.
+\begin{definition}
+\label{def:pure_strategy}
+Čistá strategie je strategie, kde hráč vybere vždy jen jednu zafixovanou akci z odpovídající $A_i$. Množina možných čistých strategií je právě $A_i$. Profil čisté strategie je $n$-tice $(s_1, s_2, \dots, s_n)$, kde každé $s_i \in A_i$ odpovídající každému hráči $i$.
+\end{definition}
+Další možná strategie je smíšená strategie. 
+\begin{definition}
+\label{def:mixed_strategy}
+Smíšená strategie je taková, že hráč $i$ zvolí akci z $A_i$ nazákladě nějake pravděpodobnostní distribuce na $A_i$. Množina smíšených strategií $S_i$ pro hráče $i$ je množina $\prod (A_i)$, kde $\prod(X)$ je množina všech pravděpodobnostních distribucí nad množinou $X$. Profil smíšené strategie je tedy $n$-tice $(s_1, s_2, \dots, s_n)$, kde $s_i \in S_i$. 
+\end{definition}
+U smíšené strategie $s_i$ hráče $i$ akce $a_i \in A_i$ používáme $s_i(a_i) \in [0,1]$ jako pravděpodobnost výběru akce $a_i$ při smíšené strategii $s_i$. 
+
+Množina ${a_i \in A_i : s_i(a_i) > 0}$ je doména smíšené strategie $s_i$. Pokud doména $s_i$ je rovna $A_i$ pak je $s_i$ úplně smíšená strategie. A mají-li takovou všichni hráči tak pak i profil je profil plně smíšené strategie. 
+
+Pro každého hráče platí, že se snaží maximalizovat svůj očekávaný výdělek, tedy střední hodnota $u_i$ s $\prod^n_{j=1} s_j$. 
+\begin{definition}
+\label{def:expected_payoff}
+Střední hodnota užitkové funkce smíšené strategie $s = (s_1, s_2, \dots, s_n)$ pro hru v normálním tvaru \ref{def:normal_form_game} $G= (P, A, u)$ hráče $i$ je 
+\[
+    u_i(s) = \sum_{a = (a_1, a_2, \dots, a_n) \in A} u_i(a) \prod_{j=1}^n s_j(a_j) = \sum_{a_i\in A_i} s_i(a_i) \cdot u_i(a_i; s_{-i})
+\]
+\end{definition}
+
+\begin{definition}
+\label{def:zero_sum}
+Zero-sum hra je bimaticová hra $G = ({1,2}, A, u)$, taková že $\forall a \in A: u_1(a) + u_2(a) = 0$
+\end{definition}
