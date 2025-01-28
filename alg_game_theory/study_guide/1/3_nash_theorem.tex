@@ -20,7 +20,7 @@ Pro $d \in \N$, mějme $K$ je \textit{neprázdná kompaktní konvexní} množina
 
 \begin{theorem}[Lemma o kompaktnosti kartézského součinu kompaktních množin]
 \label{thm:compact_lemma}
-Pro $n \in N$ a $d_1,d_2,\dots,d_n$, nechť $\forall i \in \{1,2,\dots,n\} K_i \in \R^{d_i}$ jsou $kompaktní$. 
+Pro $n \in \N$ a $d_1,d_2,\dots,d_n \in \N$, nechť $\forall i \in \{1,2,\dots,n\} K_i \in \R^{d_i}$ jsou $kompaktní$. 
 Pak $K_1 \times K_2 \times \cdots \times K_n$ je kompaktní v $\R^{d_1 + d_2 + \dots + d_n}$. 
 \end{theorem}
 \begin{proof}[Náznak důkazu lemma \ref{thm:compact_lemma}]
@@ -31,7 +31,7 @@ Uzavřenost je zase v tom, že nemáme jak po dvojicích vytvořit zase nějaké
 \end{proof}
 Hlavní idea důkazu je, že si pro každého hráče definijeme jeho množinu smíšených strategií jako simplex v reálném prostoru, pak na základě lemmatu \ref{thm:compact_lemma} je množina smíšených strategií kompaktní a konvexní. 
 Dodefinujeme si zobrazení $f$, které hráče přesměruje z jeho aktuální strategie na nějakou strategii $s'$, která zohledňuje odpovědi na strategie ostatních. 
-Ukáže se že $f$ je spojitá a z Brouwerovy věty o pevném bodu \ref{thm:brouwer_theorem} najdeme pevný bod který má tedy charakteristiku, že jestli se zobrazuje na sebe tak nemáme motivaci nic zlepšit a tedy jsme narazili vlastně na ekvilibrium $s*$. 
+Ukáže se že $f$ je spojitá a z Brouwerovy věty o pevném bodu \ref{thm:brouwer_theorem} najdeme pevný bod který má tedy charakteristiku, že jestli se zobrazuje na sebe tak nemáme motivaci nic zlepšit a tedy jsme narazili vlastně na ekvilibrium $s^*$. 
 \begin{proof}[Důkaz Nashovy věty \ref{thm:nash_theorem}]
 Mějme hru v normální tvaru $\ref{def:normal_form_game}$ $G = (P, A, u)$. 
 Pro každého hráče $i$ zavedem simplex $S_i$ na množině jeho čistých strategií $A_i$. 
@@ -56,8 +56,8 @@ pro všechna $i \in P, a_i \in A_i$. Nakonec nastavíme $f(s) = s'$.
 
 Taková $f$ je spojitá, protože jen sčítáme spojité funkce. Tedy díky Brouwerově věte of pevném bodu \ref{thm:brouwer_theorem} získáváme, že $f$ má nějaký pevný bod. 
 
-Teď zbývá ukázat, že $s*$ je pevným bodem $f$, právě tehdy když s* je Nashovým ekvilibriem. 
+Teď zbývá ukázat, že $s^*$ je pevným bodem $f$, právě tehdy když $s^*$ je Nashovým ekvilibriem. 
 
-Pokud je $s*$ pevným bodem, pak pro každého hráče $i \in P$ a akci $a_i \in A_i$ platí $\varphi_{i,a_i}(s*) = 0$. Tedy žadný z hráčů nemá jak si zvýšit svůj užitek přechodem na jinou strategii. 
-Proto $s_i*$ je nejlepší odpovědí na $s_{-i}*$ pro všechna $i$, tedy je to z definice nutně Nashovo ekvilibrium \ref{def:nash_equilibrium}.
+Pokud je $s^*$ pevným bodem, pak pro každého hráče $i \in P$ a akci $a_i \in A_i$ platí $\varphi_{i,a_i}(s^*) = 0$. Tedy žadný z hráčů nemá jak si zvýšit svůj užitek přechodem na jinou strategii. 
+Proto $s_i^{*}$ je nejlepší odpovědí na $s_{-i}^{*}$ pro všechna $i$, tedy je to z definice nutně Nashovo ekvilibrium \ref{def:nash_equilibrium}.
 \end{proof}
