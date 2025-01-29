@@ -1,0 +1,32 @@
+\subsection{Hledání Nashových ekvilibrií pomocí výčtu domén smíšených strategií}
+\begin{definition}
+\label{def:nondegen_bimatrix}
+Bimaticová hra není degenerovaná, když existuje nejvýšše $k$ čistých \ref{def:pure_strategy} nejlepších odpovědí \ref{thm:best_response} pro každou smíšenou strategii s velikostí její domény $k$ \ref{def:support_strategy}.
+\end{definition}
+\begin{algorithm}
+    \floatname{algorithm}{Algoritmus}
+    \algrenewcommand\algorithmicrequire{\textbf{Vstup: }}
+    \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
+    \caption{Výčet domén strategií}
+    \label{alg:support_enum}
+    \begin{algorithmic}[1]
+        \Require  nedegenerovaná bimaticová hra $G$ \ref{def:nondegen_bimatrix}
+        \Ensure  všechna Nashova ekvilibria $G$
+        
+        \For{každé $k \in \{1, 2, \dots, \min\{m,n\}\}$ a páru domén $(I,J)$, každá velikosti $k$}
+            \State Vyřešíme systém rovnic $\sum_{i\in I} (N^T)_{j,i} x_i = v$, $\sum_{j\in J} (M^T)_{j,i} y_j = u$ pro všechna $i\in I, j\in J$ a $\sum_{i \in I} x_i = 1$, $\sum_{j \in J} y_j = 1$.
+            \State Když $x,y\geq 0$ a $u = \max\{(M)_{i}y: i \in A_1\}$ a $v = \max\{(N^T)_{j}x: j \in A_2\}$ pak vrať $(x,y)$ jako Nashovo ekvilibrium \ref{def:nash_equilibrium}
+        \EndFor
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{proof}[Vysvětlení algoritmu \ref{alg:support_enum}]
+    Je to algoritmus který hrubou silou pomocí podmínky nejlepší odpovědi \ref{thm:best_response} najde Nashova ekvilibria. 
+Když $(s_1,s_2)$ je Nashovým ekvilibriem v nedegenerované bimaticové hře \ref{def:nondegen_bimatrix}, tak strategie $s_1$ a $s_2$ mají stejně velké domény. 
+Tedy stačí jen projet všechny $I\subseteq A_1$, $J \subseteq A_2$, pro velikosti $k$, kde $k \in \{1,2,\dots, \min\{m,n\}\}$. 
+Pak překontrolujeme zda $I,J$ nám dají nějaká ekvilibria a popřípadě oznámíme nález. 
+Tento přístup pro $m = n$ trvá $\approx 4^n$ kroků. 
+Navíc pro více hráčů nemáme ani lineární systémy rovnic. 
+\end{proof}
+
+
