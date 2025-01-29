@@ -1,0 +1,24 @@
+\subsection{Podmínka nejlepší odpovědi}
+\begin{theorem}[Podmínka nejlepší odpovědi]
+\label{thm:best_response}
+Ve hře v normálním tvaru \ref{def:normal_form_game} $G = (P, A, u)$, pro každého hráče $i \in P$, smíšená strategie $s_i$ \ref{def:mixed_strategy} je \textit{nejlepší odpovědí} na $s_{-i}$, právě tehdy když všechny čisté strategie \ref{def:pure_strategy} v doméně smíšené strategie $s_i$ \ref{def:support_strategy} jsou nejlepší odpovědi na $s_{-i}$ 
+\end{theorem}
+\begin{proof}[Důkaz podmínky nejlepší odpovědi]
+    Mějme nejdříve jako předpoklad, že každá čistá strategie $a_i$ v doméně smíšené strategie $Supp(s_i)$ je nejlepší odpovědí $i$-tého hráče na $a_{-i}$. 
+    Tedy $\forall s_i' \in S_i: u(s_i'; s_{-i}) \leq u_i(a_i;s_{-i})$. 
+    Pak z linearity střední hodnoty užitkové funkce smíšené strategie \ref{def:expected_payoff} $u_i$ máme 
+    $$
+    u_i(s) = \sum_{a_i \in Supp(s_i)} s_i(a_i) u_i(a_i; s_{-i}) \geq  \sum_{a_i \in Supp(s_i)} s_i(a_i) u_i(s_i'; s_{-i}) = u_i(s_i'; s_{-i})\text{,}
+    $$
+    kde máme $\sum_{a_i \in Supp(s_i)} s_i(a_i) = 1$. Tedy pak $s_i$ je nejlepší odpovědí na $s_{-i}$. 
+
+    Pro spor mějme $s_i$ jako nejlepší odpověď na $s_{-i}$ a předpokládejme, že existuje $\bar{a_i} \in Supp(s_i)$, která ale není nejlepší odpovědí na $s_{-i}$. 
+    Pak je $s_i(\bar{a_i})$ nenulové a $\exists s_i' \in S_i: u(\bar{a_i}; s_{-i}) < u_i(s_i';s_{-i})$. 
+    Protože $s_i$ je nejlepší odpověď tak máme $s_i(\bar{a_i}) < 1$ a dle linearity $u_i$ existuje $\hat{a_i} \in Supp(s_i): u(\bar{a_i}; s_{-i}) < u_i(\hat{a_i};s_{-i})$. 
+    Zavedeme si novou smíšenou strategii $s^*_i$, kterou uděláme tak, že nastavíme $s_i^*(\bar{a_i} = 0)$, $s_i^*(\hat{a_i}) = s_i(\hat{a_i}) + s_i(\bar{a_i})$ a zbytek necháme jako v $s_i$. 
+    Očividně je to smíšená strategie a tím, že $s_i(\hat{a_i}) \geq 0$ máme 
+    $$
+    u_i(s^*_i; s_{-i}) = \sum_{a_i \in A_i} s^*_i(a_i) u_i(a_i; s_{-i}) > \sum_{a_i \in A_i} s_i(a_i) u_i(a_i; s_{-i}) = u_i(s)\text{.} 
+    $$
+    To je ale spor s výběrem $s_i$ jako nejlepší strategie, protože jsme našli lepší. 
+\end{proof}

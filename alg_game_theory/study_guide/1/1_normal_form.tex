@@ -26,8 +26,10 @@ Smíšená strategie je taková, že hráč $i$ zvolí akci z $A_i$ nazákladě 
 \end{definition}
 U smíšené strategie $s_i$ hráče $i$ akce $a_i \in A_i$ používáme $s_i(a_i) \in [0,1]$ jako pravděpodobnost výběru akce $a_i$ při smíšené strategii $s_i$. 
 
+\begin{definition}
+\label{def:support_strategy}
 Množina $\{a_i \in A_i : s_i(a_i) > 0\}$ je doména smíšené strategie $s_i$. Pokud doména $s_i$ je rovna $A_i$ pak je $s_i$ úplně smíšená strategie. A mají-li takovou všichni hráči tak pak i profil je profil plně smíšené strategie. 
-
+\end{definition}
 Pro každého hráče platí, že se snaží maximalizovat svůj očekávaný výdělek, tedy střední hodnota $u_i$ s $\prod^n_{j=1} s_j$. 
 \begin{definition}
 \label{def:expected_payoff}
