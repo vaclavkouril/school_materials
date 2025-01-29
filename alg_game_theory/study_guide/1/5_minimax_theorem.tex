@@ -1,0 +1,43 @@
+\subsection{Minimax věta}
+\begin{definition}
+\label{def:zero_sum_matrix}
+Pro zero-sum hru \ref{def:zero_sum} $G = (P, A, u)$ mějme $A_1 = \{1,2,\dots,m\}$ a $A_2 = \{1,2,\dots,n\}$, pak můžeme zavést $m \times n$ výplatní matici $M = (m_{i,j})$, takovou že $m_{i,j} = u_1(i,j) = -u_2(i,j)$
+\end{definition}
+\begin{definition}
+\label{def:mixed_strategy_vector}
+Vektory smíšených strategií $s =(s_1, s_2)$ jsou $x = (x_1, x_2, \dots, x_m), y = (y_1, y_2, \dots, y_n)$, které reprezentují $s_1$ a $s_2$. 
+$x_i$ pak značí pravděpodobnost $s_1{i}$ pro $i \in {1,2,\dots,m}$, obdobně pro $y_j$. 
+Takové vektory splňují $\sum_{i=1}^m  x_i = \sum_{j=1}^n  y_j = 1$
+
+$S_1$ a $S_2$ jsou simplexy $\Delta(e_1, e_2, \dots, e_m)$ a $\Delta(f_1, f_2, \dots, f_n)$, kde $e_i, f_i$ značí příslušný vektor s $1$ na pozici $i$ a $0$ jinde.
+\end{definition}
+\begin{definition}
+\label{def:beta_alpha}
+S definicemi \ref{def:zero_sum_matrix} a \ref{def:mixed_strategy_vector} máme výplatní funkci pro hráče $1$
+\[
+    u_1(s) = \sum_{a = (i,j) \in A} u_i(a) \cdot s_1(i)s_2(j) = \sum^m_{i = 1} \sum^n_{j=1} m_{i,j} x_i y_i = x^T M y.
+\]
+Pak zavádíme funkce $\beta(x) = \min_{y \in S_2} x^T M y$ a $\alpha(y) = \min_{x\in S_1} = x^T M y$. 
+Kde $\beta(x)$ je vlastně nejvyšší užitek hráče $2$ proti strategii hráče $1$ ($x$), protože $u_1(s) = -u_2(i,j)$ \ref{def:zero_sum}. 
+$\alpha(y)$ je naopak nejvyšší možný užitek hráče $1$ proti akci $y$ hráče $2$. 
+
+Zjevně je-li $(x,y)$ Nashovo ekvilibrium \ref{def:nash_equilibrium}, pak $\beta(x) = x^T M Y = \alpha(y)$
+\end{definition}
+
+Za předpokladu že $2$ zvolí pro něj nejvýhodnější akci vůči každé akci hráče $1$, pak $1$ zvolí smíšenou strategii $\bar{x} \in S_1$ \ref{def:mixed_strategy}, která maximalizuje jeho střední hodnotu užitkové funkce \ref{def:expected_payoff}. $\beta(\bar{x}) = \max_{x\in S_1}$ platí a je optimální v nejhorším případě. To samé platí pro hráče $2$ a $\alpha$. 
+
+\begin{theorem}[Lemma o vlastnostech funkcí $\alpha$ a $\beta$]
+\label{thm:lemma_alpha_beta}
+\begin{enumerate}
+    \item Pro všechny smíšené strategie \ref{def:mixed_strategy} $x \in S_1$ a $y \in S_2$ máme $\beta(x) \leq x^T M y\leq \alpha(y)$ 
+    \item Pokud je $(x^*, y^*)$ Nashovo ekvilibrium \ref{def:nash_equilibrium}, pak obě $x^*$ i $y^*$ jsou optimální v nejhorším případě pro hráče $1$ i $2$. 
+    \item Pro smíšené strategie \ref{def:mixed_strategy} $x^* \S_1$ a $y^* \in S_2$ splňující $\beta(x^*) = \alpha(y^*)$ pak $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium}.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Důkaz lemma o vlastnostech funkcí $\alpha$ a $\beta$]
+\begin{enumerate}
+    \item Toto plyne z definice funkcí $\alpha$ a $\beta$. 
+    \item \textit{(a)} implikuje, že $\forall x \in S_1: \beta(x) \leq \alpha(y^*)$. Když $\beta(x^*) = \alpha(y^*)$ je Nashovo ekvilibrium, tak $\beta(x^*) = \alpha(y^*)$, máme $\forall x \in S_1: \beta(x) \leq \beta(x^*)$, tedy je to optimální v nejhorším případě, stejně jako $y^*$ s $\alpha$ pro hráče $2$.
+    \item Pokud $\beta(x^*) = \alpha(y^*)$ pak \textit{(a)} implikuje, že $\beta(x^*) = (x^*)^T M y^* = \alpha(y^*)$. tedy je to Nashovo ekvilibrium. 
+\end{enumerate}
+\end{proof}
