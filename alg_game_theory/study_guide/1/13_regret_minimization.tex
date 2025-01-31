@@ -1,0 +1,35 @@
+\subsection{Minimalizace lítosti}
+\begin{definition} 
+\label{def:online_alg}
+Mnějme $N$ akcí $X =\{1,2,\dots,N\}$ v každém kroku online algoritmus $A$ vybere pravděpodobnostní distribuci $p^t=(p_1^t, p_2^t, \dots, p_N^t)$ nad $X$. 
+Tedy takové $p_i^t$ pro všechna $i \in X$ a $\sum^N_{i=1} p_i^t = 1$. 
+Po zvolení distribuce nám protivník vybere vektor ztráty $l^t =(l^t_1, l^t_2, \dots, l^t_N) \in [-1,1]^N$, kde jednotlivé prvky reprezentují hodnotu ztráty při výběru akce $i$ v kroku $t$. 
+Algoritmus dostane vektor ztráty a utrpí ztrátu $l^t_A = \sum^N_{i=1} p_i^t l_i^t$. 
+To je střední hodnota ztráty $A$ v $t$-tém kroce. 
+Po $T$ krocích máme ztrátu akce $i$ jako $L_i^T = \sum^T_{t=1} l_i^t$, ztráta $A$ je $L_A^T = \sum^T_{t=1} l^t_A$
+\end{definition}
+
+\begin{definition}
+\label{def:external_regret}
+Mějme porovnávací třídu algoritmů $\mathcal{A}$ a nechť $T$ je dané kladné celé číslo. 
+Při minimalizaci lítosti (regret) se snažíme udělat algoritmus $A$, takový aby je $L^T_A$ bylo co nejblíže $L_{\mathcal{A},min}^T = \min{B \in \mathcal{A}} L^T_B$. 
+Tedy minimalizujeme vnější lítost (external regret) $R^T_{A,\mathcal{A}} = L^T_A - L^T_{\mathcal{A},min}$
+
+Mějme $\mathcal{A}_X = {A_i: i\in X}$, tedy třída kde vybíráme vždy jen jednu akci. 
+Zjednodušujeme notaci na $L^T_{\mathcal{A}_X,min} = L^T_\min$ a $R^T_{A,\mathcal{A}_X} = R^T_A$.
+
+Nechť $\mathcal{A}_{all}$ je třída všech online algoritmů přiřazujících pravděpodobnost $1$ nějaké akci z $X$. 
+\end{definition}
+
+\begin{theorem}
+\label{thm:external_regret_bound}
+Pro libovoný online algoritmus \ref{def:online_alg} $A$ a každé $T \in \N$, tak existuje posloupnost ztrátových vektorů délky $T$, taková že $R^T_{A,\mathcal{A}_all}$ algortimu A je alespoň $T(1 - \frac{1}{N})$. 
+\end{theorem}
+\begin{proof}[Důkaz věty \ref{thm:external_regret_bound}]
+Pro všechna $t\in\{1,2,\dots,T\} vybereme vektor ztráty $l^t$, tak že zvolíme $i_t \in X$ s nejmenší $p_i^t$. 
+Nastavíme $l^t_{i_t} = 0$ a pro $i_t \neq i$ nastavíme $l_i^t = 1$. 
+Protože $p^t_{i_t} \leq 1/N$ máme $l^t_A \geq (1 - 1/N)$ pro všechna $t$ a tedy máme $L_A^T = T(1-1/N)$. 
+
+Majíc algoritmus $B\in \mathcal{A}_all$ který má pravděpodobnost $p_{i_t}^t = 1$ má $L_A^T = 0$ a tedy $R^T_{A,\mathcal{A}_all} = L^T_A - L^T_B = T(1-1/N)$.
+\end{proof}
+

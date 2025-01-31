@@ -1,0 +1,55 @@
+\subsection{Korelováná ekvilibria}
+\begin{definition}[Korelované ekvilibrium]
+\label{def:correlated}
+Pro hru v normální formě \ref{def:normal_form_game} $G=(P,A,u)$ mějme pravděpodobnostní distribuci $p$ na $A$. 
+Tedy $p(a) \geq 0$ pro každé $a \in A$ a $\sum_{a\in A} p(a) = 1$. 
+Distribude $p$ je \textit{korelované ekvilibrium} v $G$, když 
+$$ 
+\sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i}) p(a_i; a_{a_{-i}}) \leq \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i}) p(a_i; a_{a_{-i}})  
+$$
+pro všechny hráče $i$ a všechny čisté strategie \ref{def:pure_strategy} $a_i, a_i' \in A_i$.
+\end{definition}
+Korelované ekvilibrium je náhodné přiřazení doporučení akcí hráčů takové, že se nikomu nevyplatí nejednat podle doporučení. 
+
+\begin{theorem}
+\label{thm:nash_correl}
+    V každé hře $G$ v normální formě \ref{def:normal_form_game} máme pro každé Nashovo ekvilibrium \ref{def:nash_equilibrium} odpovídající korelované ekvilibrium \ref{def:correlated}. 
+\end{theorem}
+\begin{proof}[Důkaz věty \ref{thm:nash_correl}]
+    Nechť $s* = (s*_1, s*_2, \dots, s*_n)$ je profil strategií, mějme funkci $p_{s^*} = \prod^n_{j=1} s_j^* (a_j)$ pro všechny strategie $a = (a_1, a_2, \dots, a_n) \in A$. 
+    Jasně je $p_{s^*} \geq 0$ a indukcí dle $n$ se dá i ukázat, že $\sum_{a\in A} p_{s^*}(a) =1$ a je to tedy pravděpodobnostní distribuce. 
+
+    Teď už je zbývá ukázat, že pro Nashovo ekvilibrium $s^*$ je $p_{s^*}$ korelované ekvilibrium. 
+    Zafixujeme si $i \in P$ a $a_i, a_i' \in A_i$. Předpokládejme $s^*(a_i) > 0$ a tedy že čistá strategie $a_i$ je v doméně strategie $s^*$ \ref{def:support_strategy}. 
+    Z definice $u_i$ a $p_{s^*}$ máme 
+    $$ 
+    u_i(a_i'; s^*_{-i}) = \sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i}) \prod_{j=1, j\neq i}^n s^*_j(a_j) = \frac{1}{s^*_i(a_i)} \sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i}) p_{s^*} (a_i; a_{-i})
+    $$
+    analogicky máme to samé pro $a_i$
+    $$ 
+    u_i(a_i; s^*_{-i}) = \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i}) \prod_{j=1, j\neq i}^n s^*_j(a_j) = \frac{1}{s^*_i(a_i)} \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i}) p_{s^*} (a_i; a_{-i})
+    $$
+    Dle podmínky nejlepší odpovědi \ref{thm:best_response} a toho, že $s^*$ je Nashovo ekvilibrium, tak máme že $a_i$ v doméně $s^*$ je také nejlepší odpovědí na $s_{-i}$ a tedy $u_i(a_i'; s^*_{-i}) \leq u_i(a_i; s^*_{-i})$ a tedy 
+    $$ 
+    \frac{1}{s^*_i(a_i)} \sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i}) p_{s^*} (a_i; a_{-i}) \leq \frac{1}{s^*_i(a_i)} \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i}) p_{s^*} (a_i; a_{-i})
+    $$ 
+    a stačí nám obě strany přenásobit $s^*_i(a_i)$ má hledanou rovnici. 
+    Navíc když $s^*_i(a_i) = 0$ tak $p_{s^*}(a_i; a_{-i}) = 0$ pro všechna $a_{-i} \in A_{-i}$ a tedy máme korelované ekvilibrium.
+\end{proof}
+
+\begin{theorem}
+\label{thm:convex_correlated}
+V každé hře v normální formě \ref{def:normal_form_game} $G= (P,A,u)$, je konvexní kombinace korelovaných ekvilibrií \ref{def:correlated} opět korelované ekvilibrium. 
+\end{theorem}
+
+\begin{proof}[Důkaz \ref{thm:convex_correlated}]
+   Mějme $p,p'$ korelovaná ekvilibria a ukážeme, že $p'' = tp + (1-t) p'$ je také korelované ekvilibrium. 
+   $$ 
+   \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i})p''(a_i; a_{-i}) = \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i})( tp(a_i; a_{-i}) + (1-t)p'(a_i; a_{-i})) \geq 
+   $$
+
+   $$ 
+   \sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i})( tp(a_i; a_{-i}) + (1-t)p'(a_i; a_{-i})) = \sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i})p''(a_i; a_{-i}) 
+   $$
+   pro všechny hráče a čisté strategie \ref{def:pure_strategy} $a_i, a_i' \in A_i$
+\end{proof}
