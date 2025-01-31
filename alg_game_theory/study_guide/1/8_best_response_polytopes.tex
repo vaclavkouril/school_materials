@@ -47,7 +47,7 @@ $$
 \begin{theorem}
 \label{thm:corollary_normalized_complete_label}
 Nechť $s = (s_1, s_2)$ je profilem strategie ve hře $G$ a buď $x$ a  $y$ vektory smíšených strategií \ref{def:mixed_strategy} $s_1$ a $s_2$.
-Pak $s$ je Nashovým ekvilibriem hry $G$, právě tehdy když bod $(x/u_2(s), y/u_1(s)) \in P \times Q \setmins \{(0,0)\}$ je kompletně označen \ref{def:label}.
+Pak $s$ je Nashovým ekvilibriem hry $G$, právě tehdy když bod $(x/u_2(s), y/u_1(s)) \in P \times Q \setminus \{(0,0)\}$ je kompletně označen \ref{def:label}.
 \end{theorem}
 \begin{proof}[Komentář k \ref{thm:corollary_normalized_complete_label}]
     Zavedeme-li si transformaci $\bar{P}$ na $P \setminus \{0\}$, pomocí $(x,v)\rightarrow x/v$ tak pak je toto jen přeformulovaná \ref{thm:complete_label_nash}. 
@@ -59,11 +59,11 @@ Pak $s$ je Nashovým ekvilibriem hry $G$, právě tehdy když bod $(x/u_2(s), y/
     \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
     \caption{Výčet domén strategií}
     \label{alg:vertex_enum}
-    \begin{algorithmic}[1]
+    \begin{algorithmic}
         \Require  nedegenerovaná bimaticová hra $G$ \ref{def:nondegen_bimatrix}
         \Ensure  všechna Nashova ekvilibria $G$
         
-        \For{každý pár (x,y) bodů z $(P \setmins \{0\}) \times (Q \setmins \{0\})$}
+        \For{každý pár (x,y) bodů z $(P \setminus \{0\}) \times (Q \setminus \{0\})$}
             \State když (x,y) je plně označen tak ho vrátíme jako $((x/(1^Tx),(y/(1^Ty))$ Nashovo ekvilibrium
         \EndFor
     \end{algorithmic}

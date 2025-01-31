@@ -1,0 +1,88 @@
+\subsection{Lemke-Howson algoritmus}
+\begin{definition}
+\label{def:drop_label}
+Odhozením značky \ref{def:label} $l \in A_1 \cup A_2$ v bodě $x \in P$ \ref{def:norm_best_response_poly} znamená že vezmeme unikátní hranu incidentní s $x$ a má značky všechny až na $l$. 
+Na druhé straně takové hrany máme bod $y$, který má značky stejné jako $x$ až na $l$, která je nahraze značkou jinou o které říkáme, že ji sebereme. 
+\end{definition}
+
+\begin{algorithm}
+    \floatname{algorithm}{Algoritmus}
+    \algrenewcommand\algorithmicrequire{\textbf{Vstup: }}
+    \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
+    \caption{Lemke-Howson}
+    \label{alg:lemke_howson}
+    \begin{algorithmic}[1]
+        \Require  nedegenerovaná bimaticová hra $G$ \ref{def:nondegen_bimatrix}
+        \Ensure  Nashovo ekvilibriuim $G$
+        \State $(x,y) \leftarrow (0,0) \in \R^m \times \R^n$
+        \State $k \leftarrow i \in A_1 \cup A_2$, kde $i$ je libovolná
+        \State $l \leftarrow k$
+        
+        \While{(True)}
+        \State V $P$ \textit{odhodíme} \ref{def:drop_label} $l$ v bodě $x$ a $x$ předefinujeme na nový bod který získáme, a $l$ předefinujeme na naši novou \textit{sebranou} značku. 
+        Přehodíme se do $Q$
+        \State Když $l = k$ tak vyskočíme z cyklu
+        \State V $Q$ \textit{odhodíme} $l$ v bodě $y$ a $y$ předefinujeme na nový bod který získáme, a $l$ předefinujeme na naši novou \textit{sebranou} značku. 
+        Přehodíme se do $P$
+        \State Když $l = k$ tak vyskočíme z cyklu
+        \EndWhile
+        \State Vrátíme $(x/(1^Tx), (y/(1^Ty))$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}
+\label{thm:lemke_howson_works}
+Lemke-Howson algoritmus \ref{alg:lemke_howson} skončí po konečném počtu kroků a vrátí dvojici vektorů smíšených strategií \ref{def:mixed_strategy}, které jsou Nashova ekvilibria \ref{def:nash_equilibrium} $G$. 
+\end{theorem}
+\begin{proof}[Důkaz věty \ref{thm:lemke_howson_works}]
+Nechť $k$ je první značka vybraná v prvním kroku algorimu. 
+Definujeme si \textit{graf konfigurací} $K$, kde množina vrcholů jsou $(x,y) \in P \times Q$, takové že jsou $k$-skoro plně značené, tedy takové, kde značky $A_1 \cup A_2 \setminus \{k\}$ jsou každá alespoň značkou alespoň $x$ nebo $y$. 
+Protože $P$ a $Q$ mají konečně mnoho bodů (nebereme jako body ty na hranách a stěnách atd.), tak i množina vrcholů je konečná. 
+Body $(x,y)$ a $(x',y')$ mají mezi sebou hranu v $K$, když je buď $x = x'$ v $P$ a $yy'$ hrana v $Q$, nebo $y = y'$ v $Q$ a $xx'$ hrana v $P$. 
+
+Ukážeme, že $K$ má body se stupni jen $1$ či $2$, tedy je to disjunktní sjednocení cyklů a cest. 
+V $K$ máme jen dva druhy vrcholů a sice takové že mají všechny značky, takový vrchol pak má jen jednoho souseda, protože jen jeden z $x,y$ má značku $k$, kterou můžeme odhodit a přejít tedy jen na jednoho souseda. 
+Jinak $(x,y)$ mají značky $A_1 \cup A_2 \setminus \{k\}$ a máme jednoznačnou značku sdílenou mezi $x$ a $y$. 
+Pak můžeme jak z $x$, tak $y$ odhodit tuto duplicitní značku tak aby vedla hrana zase do jiného vrcholu grafu. 
+Tedy stupeň je 2. 
+
+Lemkde-Howson pak prochází unikátní hrany v $K$, začínajíc v listu $(0,0)$. 
+Hrany jsou unikátní díky tomu jak vybíráme další hranu a sice jak odhazujeme značky, tak máme-li hranu, kterou jsme přišli do vrcholu, tak tu máme jako tu odhozenou a sebrat můžeme jen další unikátní hranu pomocí přesunu v druhém poletopu. 
+Tedy díky výběru víme, že každý vrchol navštívíme jen a pouze jednou. 
+Algoritmus tedy končí po konečně mnoha krocích v jakémsi listu $(x^*,y^*)$. 
+Tento list aby byl listem musí být úplně označen a tedy dle důsledku \ref{thm:corollary_normalized_complete_label} máme, že je pak $(x/(1^Tx), (y/(1^Ty))$ Nashovým ekvilibriem.
+\end{proof}
+
+\begin{theorem}
+\label{thm:corollary_nash_odd}
+V nedegenrované bimaticové hře \ref{def:nondegen_bimatrix} $G$ má lichý počet Nashových ekvilibrií \ref{def:nash_equilibrium}.
+\end{theorem}
+
+\begin{definition}[Efektivní implementace Lemke-Howson algortimu \ref{alg:lemke_howson}]
+\label{def:complementary_pivot}
+Doplňkové pivotování je metoda podobná simplexové metodě. 
+
+
+\begin{algorithm}
+    \floatname{algorithm}{Algoritmus}
+    \algrenewcommand\algorithmicrequire{\textbf{Vstup: }}
+    \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
+    \caption{Doplňkové pivotování}
+    \begin{algorithmic}
+        \Require  nedegenerovaná bimaticová hra $G$ 
+        \Ensure  Nashovo ekvilibrium hry $G$
+        \State Přidáme pomocné proměnné $s \in \mathbb{R}^n$ a $r \in \mathbb{R}^m$
+        \State Zapíšeme polytopy jako soustavu rovnic:
+        \State \hspace{1cm} $N^\top x + s = 1$ a $r + M y = 1$
+        \State \hspace{1cm} $x, y, s, r \geq 0$
+        \State Vybereme libovolnou značku $k \in A_1 \cup A_2$
+        \State Nastavíme $x_k$ (pokud $k \in A_1$) nebo $y_k$ (pokud $k \in A_2$) jako vstupní proměnnou
+        \While{(neexistuje úplně označený vrchol)}
+        \State Pomocí \textit{testu minimálního poměru}, tedy $\frac{q_i}{c_{i,j}}$, kde $q_i$ jsou hodnoty pravé strany a $c_{i,j}$ jsou koeficienty a určíme odcházející proměnnou
+        \State Provedeme pivotovací operaci: vyměňte vstupní a odcházející proměnnou
+        \State Ujistíme se, že proveditelnost řešení je zachována
+        \EndWhile
+        \State \Return $(x/(1^T x), y/(1^T y))$
+    \end{algorithmic}
+\end{algorithm}
+\end{definition}

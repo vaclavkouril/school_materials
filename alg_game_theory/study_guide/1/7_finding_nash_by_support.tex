@@ -13,11 +13,11 @@ Pro takové zavádíme značení pomocí matic $N,M \in \R^{m\times n}$, že $u_
     \label{alg:support_enum}
     \begin{algorithmic}[1]
         \Require  nedegenerovaná bimaticová hra $G$ \ref{def:nondegen_bimatrix}
-        \Ensure  všechna Nashova ekvilibria $G$
+        \Ensure  všechna Nashova ekvilibria \ref{def:nash_equilibrium} $G$
         
         \For{každé $k \in \{1, 2, \dots, \min\{m,n\}\}$ a páru domén $(I,J)$, každá velikosti $k$}
             \State Vyřešíme systém rovnic $\sum_{i\in I} (N^T)_{j,i} x_i = v$, $\sum_{j\in J} (M^T)_{j,i} y_j = u$ pro všechna $i\in I, j\in J$ a $\sum_{i \in I} x_i = 1$, $\sum_{j \in J} y_j = 1$.
-            \State Když $x,y\geq 0$ a $u = \max\{(M)_{i}y: i \in A_1\}$ a $v = \max\{(N^T)_{j}x: j \in A_2\}$ pak vrať $(x,y)$ jako Nashovo ekvilibrium \ref{def:nash_equilibrium}
+            \State Když $x,y\geq 0$ a $u = \max\{(M)_{i}y: i \in A_1\}$ a $v = \max\{(N^T)_{j}x: j \in A_2\}$ pak vrať $(x,y)$ jako Nashovo ekvilibrium
         \EndFor
     \end{algorithmic}
 \end{algorithm}
