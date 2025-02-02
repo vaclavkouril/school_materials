@@ -15,3 +15,36 @@ Když hráč $i\in \{1,2\}$ hraje $G$ pomocí online algoritmu $ON_i$ s vnějš�
     A vzhledem k předpokladu o vnější lítosti $R$ algoritmu $ON_i$, tak máme $L^T_{ON_i} \leq L^T_{ON_i,\min} + R \leq  vT +R$
 \end{proof}
 
+\begin{proof}[Nový důkaz minimax věty \ref{thm:minimax}]
+    Rozdělíme důkaz na dvě nerovnosti a začneme s $\max_x \min_y x^T My \leq \min_y \max_x x^T M y$, protože je jednodušší. 
+    Protože $x^*$ je optimální strategií prvního hráče hraje-li první a může si vybrat $x^*$ i když hraje druhý. 
+    Je jen horší jít první ale stále platí nerovnost. 
+
+    Všechny $m_{i,j} \in [-1,1]$, jinak je přeškálujeme. 
+    Vybereme $\epsilon \in (0,1]$ a spustíme bezlístostnou dynamiku \ref{alg:no_regrets} $T$ dostkrát aby oba hráči měli očekávanou vnější lítost (regret) $\epsilon$. 
+    Využijeme-li třeba algoritmu polynomiálních vah \ref{alg:poly_weights} tak stačí $T \geq 4\ln \max\{m,n\}/\epsilon^2$, kde $m = \abs{A_1}, n = \abs{A_2}$, díky tomu že ztráta při kroku je $2\sqrt{\ln \max\{m,n\}/T}$. 
+    
+    Nechť $p_1,p_2,\dots,p_T$, $q_1,q_2,\dots,q_T$ jsou smíšené strategie hráče 1 a 2, která jsou doporučena algoritmem. 
+    Máme výplatní vektory $Mq^t$ a $-(p^t)^T M$ pro oba hráče. 
+    Mějme $\bar{x} = \frac{1}{T} \sum^T_{t=1} p^t$ průměrnou smíšenou strategií hráče 1 a pro hráče 2 $\bar{y} = \frac{1}{T} \sum_{t=1}^T p^t$. 
+    Průměrná očekávaná výplata je $\frac{1}{T} \sum_{t=1}^T (p^t)^T M q^t$. 
+
+    Pro čistou strategii \ref{def:pure_strategy} $a_i$ zavedeme smíšenou strategii $e_i$, která má všude $0$, kromě $i$-tého indexu, kde je jedna. 
+    Protože vnější lítost je maximálně $\epsilon$ u hráče jedna tak máme 
+    \[
+        e_i^T M \bar{y} = \frac{1}{T} \sum^T_{t=1} e_i^T M q^t \leq \frac{1}{T} \sum_{t=1}^T (p^t)^T M q^t + \epsilon = v +\epsilon 
+    \]
+    pro všechna $i\in \{1,\dots,m\}$. 
+    Vzhledem k tomu, že každá smíšená strategie je lineární kombinací $e_i$ tak linearitou střední hodnoty máme $\forall x \in S_i: \sum_{t=1}^T x^T M \bar{y} \leq v+\epsilon$. 
+    Pro hráče dva máme symetrický argument tak máme $\forall y \in S_2: \sum_{t=1}^T \bar{x}^T M y \geq v-\epsilon$. 
+
+    Dáme-li vše dohromady tak máme 
+    \[
+        \max_{x\in S_1} \min_{y\in S_2} x^T M y \geq \min_{y\in S_2} (\bar{x})^T M y \geq v-\epsilon 
+    \]
+    \[
+        \geq max_{x\in S_1} x^T M \bar{y} -2\epsilon \geq  \min_{y\in S_2} \max_{x\in S_1} x^T M y -2\epsilon.
+    \]
+    Pro $T\rightarrow \infty$ máme $\epsilon \rightarrow 0$ a tedy nerovnost platí. 
+\end{proof}
+

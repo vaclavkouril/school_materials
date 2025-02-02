@@ -1,0 +1,52 @@
+\subsection{Hrubá korelovaná ekvilibria}
+\begin{definition}[Hrubé korelované ekvilibrium]
+\label{def:cce}
+Pro hru v normální formě \ref{def:normal_form_loss} $G= (P,A,C)$, pravděpodobnostní distribuce $p$ na $A$ je \textit{hrubé korelované ekvilibrium} v $G$ 
+\[
+    \sum_{a \in A} C_i(a)p(a) \leq \sum_{a \in A} C_i(a_i';a_{-i}) p(a)
+\]
+pro všechna $i \in P$ a $a'\in A_i$. 
+
+To samé pomocí střední hodnoty zavedeme jako 
+\[
+    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})}
+\]
+\end{definition}
+Rozdíl oproti korelovanému ekvilibrium je v tom, že korelované ekvilibrium nám poradí akci a hráč vybírá zda rady využít či ne, při hrubém je to tak že otázka není tady je doporučená akce ano/ne, ale je to otázka ano/ne zda dát na doporučení aniž bychom ho znali. 
+
+\begin{definition}
+\label{def:e_cce}
+$\epsilon$-hrubé korelované ekvilibrium v $G$ je $p$ na $A$, takové že 
+\[
+    \sum_{a \in A} C_i(a)p(a) \leq \left( \sum_{a \in A} C_i(a_i';a_{-i}) p(a) \right) + \epsilon 
+\]
+pro všechna $i$ a $a' \in A$. 
+\[
+    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})}
+\]
+\end{definition}
+
+\begin{theorem}\label{thm:avg_ecce}
+Mějeme hru $G=(P,A,C)$, daný parametr $\epsilon > 0$ a $T = T(\epsilon) \in \N$. Předpokládejme že po $T$ krocích bezlítostné dynamiky \ref{alg:no_regrets} tak každý hráč má časově-průměrnou ztrátu maximálně $\epsilon$. 
+Nechť $p^t =\sum_i^n p^t_i$ a $p = \frac{1}{T} \sum^T_{i=1} p^t$ je pruměrem z pravděpodobnostní distribuce výsledků. Pak $p$ je $\epsilon$-hrubé korelované ekvilibrium. Tedy je  
+\[
+    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})}
+\]
+pro každého hráče a jeho příslušnou $a_i' \in A_i$.
+\end{theorem}
+\begin{proof}[Důkaz věty \ref{thm:avg_ecce}]
+    Z definice $p$ máme 
+    \[
+        \E[a \sim p]{C_i(a)} = \frac{1}{T} \sum^T_{t=1} \E[a\sim p^t]{C_i(a)}
+    \]
+    a také
+    \[
+        \E[a \sim p]{C_i(a_i':a_{-i})} = \frac{1}{T} \sum^T_{t=1} \E[a\sim p^t]{C_i(a_i':a_{-i}}.
+    \]
+
+    Vzhledem k tomu, že každý hráč má průměrně v čase ztrátu maximálně $\epsilon$ a pravé strany znamenají průměr v čase očekávaných ztrát, když každý hraje podle svého algoritmu a druhá znamená že hraje zafixovanou $a_i'$, tak máme 
+    \[
+         \frac{1}{T} \sum^T_{t=1} \E[a\sim p^t]{C_i(a)} \leq \frac{1}{T} \sum^T_{t=1} \E[a\sim p^t]{C_i(a_i':a_{-i}} + \epsilon  
+    \]
+    což je definice $\epsilon$-hrubého korelovaného ekvilibria. 
+\end{proof}
