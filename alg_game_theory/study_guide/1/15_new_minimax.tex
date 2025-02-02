@@ -1,0 +1,17 @@
+\subsection{Nový důkaz Minimax věty}
+\begin{theorem}
+\label{thm:minimax_new}
+Mějme zero-sum ($C_1(a) - C_2(a) = 0$ pro všechna $a \n A$) hru $G = \{\{1,2\}, A, C\}$, kde hodnota hry je $v$, ostatní definice z \ref{thm:minimax}. 
+Když hráč $i\in \{1,2\}$ hraje $G$ pomocí online algoritmu $ON_i$ s vnější lítostí \ref{def:external_regret} $R$, pak jeho kumulovaná ztráta je $L_{ON_i}^T$ splňuje 
+\[
+    L_{ON_i}^T \leq Tv + R
+\]
+\end{theorem}
+
+\begin{proof}[Důkaz věty \ref{thm:minimax_new}]
+    Symetrií to stačí ukázat pro hráče $1$. 
+    Nechť $p^t_{2,j}$ je pravděpodobnost toho, že druhý hráč vybere $j$-tou akci z $A_2$ v kroce $t$. 
+    Zadefinijeme si vypozorovaný vektor smíšené strategie \ref{def:mixed_strategy} dle frekvence daných akcí hraných hráčem $2$ jako $q = (q_1,q_2,\dots,q_{\abs{A_2}})$, kde $q_j = \sum^T_{t=1} p^t_{2,j}/T$. Víme že pro libovolný vektor smíšené strategie $q$ druhého hráče má hráč $1$ akci $a_i$, že $\E[b_2\sim q]{C(a_i, b_2)} \leq v$, tedy mpoužijeme-li je pokaždé, tak máme $L^T_{ON_i,\min} \leq L^T_{ON_i,i} \leq vT$. 
+    A vzhledem k předpokladu o vnější lítosti $R$ algoritmu $ON_i$, tak máme $L^T_{ON_i} \leq L^T_{ON_i,\min} + R \leq  vT +R$
+\end{proof}
+

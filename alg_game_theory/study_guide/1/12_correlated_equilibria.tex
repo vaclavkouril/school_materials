@@ -1,6 +1,6 @@
 \subsection{Korelováná ekvilibria}
 \begin{definition}[Korelované ekvilibrium]
-\label{def:correlated}
+\label{def:correlated_equiv}
 Pro hru v normální formě \ref{def:normal_form_game} $G=(P,A,u)$ mějme pravděpodobnostní distribuci $p$ na $A$. 
 Tedy $p(a) \geq 0$ pro každé $a \in A$ a $\sum_{a\in A} p(a) = 1$. 
 Distribude $p$ je \textit{korelované ekvilibrium} v $G$, když 
@@ -13,7 +13,7 @@ Korelované ekvilibrium je náhodné přiřazení doporučení akcí hráčů ta
 
 \begin{theorem}
 \label{thm:nash_correl}
-    V každé hře $G$ v normální formě \ref{def:normal_form_game} máme pro každé Nashovo ekvilibrium \ref{def:nash_equilibrium} odpovídající korelované ekvilibrium \ref{def:correlated}. 
+    V každé hře $G$ v normální formě \ref{def:normal_form_game} máme pro každé Nashovo ekvilibrium \ref{def:nash_equilibrium} odpovídající korelované ekvilibrium \ref{def:correlated_equiv}. 
 \end{theorem}
 \begin{proof}[Důkaz věty \ref{thm:nash_correl}]
     Nechť $s* = (s*_1, s*_2, \dots, s*_n)$ je profil strategií, mějme funkci $p_{s^*} = \prod^n_{j=1} s_j^* (a_j)$ pro všechny strategie $a = (a_1, a_2, \dots, a_n) \in A$. 
@@ -39,7 +39,7 @@ Korelované ekvilibrium je náhodné přiřazení doporučení akcí hráčů ta
 
 \begin{theorem}
 \label{thm:convex_correlated}
-V každé hře v normální formě \ref{def:normal_form_game} $G= (P,A,u)$, je konvexní kombinace korelovaných ekvilibrií \ref{def:correlated} opět korelované ekvilibrium. 
+V každé hře v normální formě \ref{def:normal_form_game} $G= (P,A,u)$, je konvexní kombinace korelovaných ekvilibrií \ref{def:correlated_equiv} opět korelované ekvilibrium. 
 \end{theorem}
 
 \begin{proof}[Důkaz \ref{thm:convex_correlated}]

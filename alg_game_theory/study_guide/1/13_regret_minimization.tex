@@ -16,7 +16,7 @@ Při minimalizaci lítosti (regret) se snažíme udělat algoritmus $A$, takový
 Tedy minimalizujeme vnější lítost (external regret) $R^T_{A,\mathcal{A}} = L^T_A - L^T_{\mathcal{A},min}$
 
 Mějme $\mathcal{A}_X = {A_i: i\in X}$, tedy třída kde vybíráme vždy jen jednu akci. 
-Zjednodušujeme notaci na $L^T_{\mathcal{A}_X,min} = L^T_\min$ a $R^T_{A,\mathcal{A}_X} = R^T_A$.
+Zjednodušujeme notaci na $L^T_{\mathcal{A}_X,min} = L^T_{\min}$ a $R^T_{A,\mathcal{A}_X} = R^T_A$.
 
 Nechť $\mathcal{A}_{all}$ je třída všech online algoritmů přiřazujících pravděpodobnost $1$ nějaké akci z $X$. 
 \end{definition}
@@ -26,10 +26,134 @@ Nechť $\mathcal{A}_{all}$ je třída všech online algoritmů přiřazujících
 Pro libovoný online algoritmus \ref{def:online_alg} $A$ a každé $T \in \N$, tak existuje posloupnost ztrátových vektorů délky $T$, taková že $R^T_{A,\mathcal{A}_all}$ algortimu A je alespoň $T(1 - \frac{1}{N})$. 
 \end{theorem}
 \begin{proof}[Důkaz věty \ref{thm:external_regret_bound}]
-Pro všechna $t\in\{1,2,\dots,T\} vybereme vektor ztráty $l^t$, tak že zvolíme $i_t \in X$ s nejmenší $p_i^t$. 
+Pro všechna $t\in\{1,2,\dots,T\}$ vybereme vektor ztráty $l^t$, tak že zvolíme $i_t \in X$ s nejmenší $p_i^t$. 
 Nastavíme $l^t_{i_t} = 0$ a pro $i_t \neq i$ nastavíme $l_i^t = 1$. 
 Protože $p^t_{i_t} \leq 1/N$ máme $l^t_A \geq (1 - 1/N)$ pro všechna $t$ a tedy máme $L_A^T = T(1-1/N)$. 
 
 Majíc algoritmus $B\in \mathcal{A}_all$ který má pravděpodobnost $p_{i_t}^t = 1$ má $L_A^T = 0$ a tedy $R^T_{A,\mathcal{A}_all} = L^T_A - L^T_B = T(1-1/N)$.
 \end{proof}
 
+\begin{algorithm}
+    \floatname{algorithm}{Algoritmus}
+    \algrenewcommand\algorithmicrequire{\textbf{Vstup: }}
+    \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
+    \caption{Hladový algoritmus}
+    \label{alg:greedy}
+    \begin{algorithmic}[1]
+        \Require  Množina akcí $X =(1,2,\dots,N)$ a číslo $T \in \N$
+        \Ensure Pravděpodobnostní distribuce $p^t$ pro každé $t \in \{1,2,\dots, T\}$
+        \State $p^1 \leftarrow (1,0,0,\dots,0)$
+        \For{$t \in 2,\dots, T$}
+        \State $L^{t-1}_{\min} \leftarrow \min_{j \in X} \{L^{t-1}_j\}$ 
+        \State $S^{t-1} \leftarrow \{i\in X: L^{t-1}_j = L^{t-1}_{\min}\}$
+        \State $k \leftarrow \min_{j \in S^{t-1} j}$
+        \State $p_k^t \leftarrow 1$
+        \State $p^t_i \leftarrow 0$ pro $i \neq k$
+        \EndFor
+        \State vrátíme $\{p^t: t\in \{1,2,\dots,T\}\}$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}
+\label{thm:greedy_comment}
+Nakumulovaná ztráta hladového algoritmu \ref{alg:greedy} je
+$$ 
+L^T_{HLAD} \leq N \cdot L^T_{\min} + N - \abs{S^T} \leq N \cdot L^T_{\min} + N - 1
+$$
+\end{theorem}
+\begin{proof}[Důkaz ztráty hladového algoritmu \ref{greedy:comment}]
+Na každou ztrátu 1 v $L^T_{\min}$ ztratíme nejvíce $N$-krát jedničku při našem algoritmu, protože vždy alespoň jeden index zmizí z $S^t$ v dalším kroku. 
+A z toho máme 
+$$ 
+L^T_{HLAD} \leq N \cdot L^T_{\min} + N - \abs{S^T} \leq N \cdot L^T_{\min} + N - 1
+$$
+\end{proof}
+\begin{theorem}\label{thm:online_bound}
+Pro každý deterministický algoritmus $D$ a $T\in \N$, tak existuje posloupnost ztrátových vektorů, kde $L^T_D = T$ a $L^T_{\min} \leq \lfloor T/N \rfloor$. 
+Tedy $L_D^T \geq N \cdot T + L^T_{\min} + (T \text{ mod } N)$
+\end{theorem}
+\begin{proof}[Důkaz omezení na online algority \ref{thm:online_bound}]
+    Nechť je $i_t$ akce zvolená algoritmem $D$ v kroce $t$, tedy je to akce s $p^t_{i_t} =1$. 
+    Vybereme vektor ztráty $l^t$, že jeho prvek na místě $i_t$ je 1. 
+    Pak po $T$ krocích máme ztrátu $T$. 
+
+    Máme $N$ akcí a tedy principem holubníku máme akci zvolenou $D$, nechť je to $i$, takovou že byla $D$ zvolena maximálně $\lfloor T/N \rfloor$-krát, tedy konstrukcí vektorů $l^t$ bude-li minimální algoritmus v porovnání vybírat akci $i$, tak jeho ztráta bude $L^T_{\min} \leq \lfloor T/N \rfloor$.
+\end{proof}
+
+% TODO: random alg 
+
+\begin{algorithm}
+    \floatname{algorithm}{Algoritmus}
+    \algrenewcommand\algorithmicrequire{\textbf{Vstup: }}
+    \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
+    \caption{Polynomiální váhy}
+    \label{alg:poly_weights}
+    \begin{algorithmic}[1]
+        \Require  Množina akcí $X =(1,2,\dots,N)$, číslo $T \in \N$, $\eta \in (0,1/2]$.  
+        \Ensure Pravděpodobnostní distribuce $p^t$ pro každé $t \in \{1,2,\dots, T\}$
+        \State $w^1_i \leftarrow 1$ pro $i \in X$
+        \State $p^1 \leftarrow (1/N,1/N,\dots,1/N)$
+        \For{$t \in 2,\dots, T$}
+            \State $w^t_i \leftarrow w^{t-1}_i (1-\eta l^{t-1}_i)$
+            \State $W^t \leftarrow \sum^N_{i=1} w^t_i$
+            \State $p^t_i \leftarrow w^t/W^t$ pro všechna $i \in X$ 
+        \EndFor
+        \State vrátíme $\{p^t: t\in \{1,2,\dots,T\}\}$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}
+\label{thm:poly_weights}
+Pro $\eta \in (0,1/2]$, každou posloupnost $[-1,1]$-ztrátových vektorů a každé $k \in X$ máme celkovou ztrátu $L^T_{PV}$ v kroku $T \in \N$ 
+\[
+    \L^T_{PV} \leq L^T_{k} + \eta Q^T_k + \ln N / \eta
+\]
+kde $Q^T_k = \sum^T_{t =1 } (l^t_k)^2$. 
+Navíc když $T \geq 4\ln N$, tak nastavení $\eta = \sqrt{\ln N/T}$ s tím že očividně $Q^T_k \leq T$ máme 
+\[
+    L^T_{PV} \leq L^t_{\min} + 2\sqrt{T \ln N}. 
+\]
+\end{theorem}
+
+\begin{proof}[Důkaz \ref{thm:poly_weights}]
+   Vše dokážeme pomocí odhadů na $W$, a sice utrží-li algoritmus velkou ztrátu, tak se $W$ velmi zmenší. 
+    Pro krok $k$ máme $l^t_{PV} = \sum^N_{i=1} w^t_i l^t_i /W^t$ a každá váha $w^t_i$ je přenásobena $(1-\eta l^{t-1}_i)$. 
+    Tedy máme $W^{t+1} = W^t - \sum_{i=1}^N \eta w^t_i l^t_i = W^t(1-\eta l^t_{PV})$. 
+    Jinými slovy váha odebrána z $W^t$ v kroku $t$ je $\eta$-zlomek ztráty v daném kroku. 
+    Vzhledem k tomu, že $W^1 = N$ máme 
+    $$ 
+    W^{T+1} = W^1 \prod^T_{i=1}(1- \eta l^t_{PV}) = N \prod^T_{t=1}(1- \eta l^t_{PV})
+    $$
+    z odhadu $\forall z \in \R: 1-z \leq e^{-z}$
+    \[
+        W^{T+1} \leq N \prod e^{-\eta l^t_{PV}} = Ne^{-\eta \sum^T_{t=1} l^t_{PV}}
+    \]
+    logaritmuje obě strany a máme 
+    \[
+        \ln W^{T+1} \leq \ln N - \eta \sum^T_{t=1} l^t_{PV} = \ln N - \eta L^T_{PV} 
+    \]
+    tedy horní odhad pro $W^{T+1}$.
+
+    Pro spodní odhad $W^{T+1}$ máme $W^{T+1} \geq w_k^{T+1}$ a máme pomocí definice 
+    \[
+        \ln W^{T+1} \geq \ln w^{T+1} = \sum^{T}_{t=1} \ln(1-\eta l_k^t). 
+    \]
+    Odhadneme $\ln (1-z) \geq -z-z^2$ pro $z \leq 1/2$ a tedy dostaneme
+    \[
+        \sum^{T}_{t=1} \eta l^t_k - \eta^2 (l^t_k)^2 = \eta L^T_K - \eta^2 Q_k^T. 
+    \]
+    A máme tedy hledané
+    $$
+    \eta L^T_K - \eta^2 Q_k^T \leq \ln N - \eta L^T_{PV}. 
+    $$
+\end{proof}
+
+\begin{theorem}
+\label{thm:prop1} 
+Pro celá čísla $N$ a $T < \lfloor \log_2 N\rfloor$, tak existuje stochastické generování ztrát, takové že pro každý online algortimus \ref{def:online_alg} $A$, máme $\E{L_A^T} \geq T/2$ a $L_{\min}^T = 0$.
+\end{theorem}
+\begin{theorem}
+\label{thm:prop2}
+Máme-li $N=2$ akce, tak existuje stochastické generování ztrát, takové že pro každý online algoritmus \ref{def:online_alg} máĺe $\E{L_A^T - L^T_{\min}} \geq \Omega (\sqrt{T})$.
+\end{theorem}
+% TODO důkazy
