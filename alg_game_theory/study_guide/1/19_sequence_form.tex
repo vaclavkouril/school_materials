@@ -1,0 +1,22 @@
+\subsection{Sekvenční tvar}
+\begin{definition}\label{def:sequence_form}
+  Reperezentace posloupností hry s nedokonalou informací $G$ \ref{def:imperfect_info} je čtveřice $(P,S,u,C)$, kde $P$ je množina hráčů, $S=(S_1,S_2, \dots,S_n)$, kde $S_i$ je množina posloupností tahů \ref{def:sequence} hráče $i$, $u= (u_1,\dots,u_n)$, kde $u_i : S \rightarrow \R$ je výplatní funkce a $C = (C_1,\dots,C_n)$ je množina lineárních omezení na realizační pravděpodobnosti hráče $i$. 
+
+  $\sigma \in S_i$ je buď $\emptyset$ nebo jednoznačně určitelná pomocí posledního kroku $c$ při množině informací $h$, tedy $\sigma = \sigma_h c$, máme $S_i = \{\emptyset\} \cup \{\sigma_hc:h \in H_i, c\in C_h\}$, $\abs{S_i} = 1+ \sum_{h \in H_i} \abs{C_h}$. 
+
+  Hráči $i$ a posloupnosti $\sigma = (\sigma_1, \dots, \sigma_n) \in S$ je $u_i(\sigma) = u_i(l)$m kde $l$ je list do kterého se dostaneme hrál by hráč $j$ posloupnost $\sigma_j$ a jinak 0. 
+    Definice $C_i$ je v \ref{def:realization_plan}. 
+\end{definition}
+\begin{definition}\label{def:realization_plan} 
+    Realizační plán behaviorální strategie \ref{def:behavioral_strategy} $\beta_i$ hráče $i$ je $x: S_i \rightarrow [0,1]$ definovaná jako $x(\sigma_i)= \prod_{c\in \sigma_i} \beta(c)$. 
+    Hodnota $x(\sigma_i)$ je realizační pravděpodobnost. 
+
+    Totožně je to také zadefinovatelné 
+    \[
+        x(\emptyset) = 1 
+    \]
+    \[
+        \sum_{c\in C_h} x(\sigma_hc) = x(\sigma_h) \text{ pro každé } h\in H. 
+    \]
+    kde $C_i$ je množina omezení druhého typu. 
+\end{definition}

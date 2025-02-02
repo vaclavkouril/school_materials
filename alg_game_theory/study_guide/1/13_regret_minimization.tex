@@ -61,7 +61,7 @@ $$
 L^T_{HLAD} \leq N \cdot L^T_{\min} + N - \abs{S^T} \leq N \cdot L^T_{\min} + N - 1
 $$
 \end{theorem}
-\begin{proof}[Důkaz ztráty hladového algoritmu \ref{greedy:comment}]
+\begin{proof}[Důkaz ztráty hladového algoritmu \ref{thm:greedy_comment}]
 Na každou ztrátu 1 v $L^T_{\min}$ ztratíme nejvíce $N$-krát jedničku při našem algoritmu, protože vždy alespoň jeden index zmizí z $S^t$ v dalším kroku. 
 A z toho máme 
 $$ 
@@ -106,7 +106,7 @@ Tedy $L_D^T \geq N \cdot T + L^T_{\min} + (T \text{ mod } N)$
 \label{thm:poly_weights}
 Pro $\eta \in (0,1/2]$, každou posloupnost $[-1,1]$-ztrátových vektorů a každé $k \in X$ máme celkovou ztrátu $L^T_{PV}$ v kroku $T \in \N$ 
 \[
-    \L^T_{PV} \leq L^T_{k} + \eta Q^T_k + \ln N / \eta
+    L^T_{PV} \leq L^T_{k} + \eta Q^T_k + \ln N / \eta
 \]
 kde $Q^T_k = \sum^T_{t =1 } (l^t_k)^2$. 
 Navíc když $T \geq 4\ln N$, tak nastavení $\eta = \sqrt{\ln N/T}$ s tím že očividně $Q^T_k \leq T$ máme 

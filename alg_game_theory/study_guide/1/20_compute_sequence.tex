@@ -1,0 +1,33 @@
+\subsection{Počítání ekvilibrií ve hrách reprezentovaných posloupnostmi}
+\begin{theorem}\label{thm:linear_solution}
+    Mějme realizační plán \ref{def:realization_plan} jako vektor $x = (x_\sigma)_{\sigma \in S_1} \in \R^{\abs{S_1}}$ a $y = (y_\sigma)_{\sigma \in S_2} \in \R^{\abs{S_2}}$. 
+    Pak lineární omezení z definice reprezentace posloupností můžeme přepsat 
+    \[
+        Ex = e, x\geq 0, \text{ a } Fy = f, y\geq 0,
+    \]
+    kde $E,F$ mahí $1 + \abs{H_1}$ a $1 + \abs{H_2}$ řádků, kde první řádka $Ex = e$ je $x(\emptyset) = 1$ pro e a obdobně pro $F$. 
+    Zbytek řádek $Ex = e$ je $-x(\sigma_h) + \sum_{c \in C_h} x(\sigma_hc) = 0$ pro $h \in H_1$. 
+    Obdobně je to u $Fy = f$
+
+    Ekvilibrium zero-sum hry dvou hráčů v rozšířeném tvaru \ref{def:extensive_form} s dokonalou pamětí jsou řešením lineárního programu 
+    \[
+        \min_{u,y} e^T u \text{ s omezeními } Fy = f, E^Tu - Ay \geq 0, y \geq 0. 
+    \]
+    Či jeho dualu 
+    \[
+        \min_{v,x} f^T v \text{ s omezeními } Ex = e, F^Tv - A^Tx \geq 0, x \geq 0. 
+    \]
+    Kde $A = -B$ je výplatní matice pro tuto hru. 
+\end{theorem}
+\begin{theorem}\label{thm:linear_extended}
+    $(x,y)$ realizační plány \ref{def:realization_plan} ve hře dvou hráčů v rozšířeném tvaru s dokonalou pamětí je ekvilibrium, právě tehdy když existují vektory $u$ a $v$, takové že splňují 
+    \[
+        x^T(E^Tu-Ay) = 0, y^T(F^Tv - B^Tx) = 0,
+    \]
+    \[
+        Ex = e, x\geq 0, Fy = f, y \geq 0,
+    \]
+    \[
+        E^Tu -Ay \geq 0, F^Tv -B^Tx \geq 0.
+    \]
+\end{theorem}

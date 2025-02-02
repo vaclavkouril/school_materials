@@ -1,0 +1,37 @@
+\subsection{Hry v rozšířeném tvaru}
+
+\begin{definition}\label{def:extensive_form}
+Hra v rozšířeném tvaru je orientovaný strom, kde vrcholy reprezentují stavy hry. 
+Hra začíná v kořenu stromu a končí v listech, kde každý hráč získá výplatu. 
+Každý vrchol jenž není stromem je rozhodovacím uzlem a hrany mezi vrcholy odpovídají hrané akci v daném stavu hry, ze kterého hrana vede, do stavu hry, který máme, když hráč zahraje danou akci. 
+
+Hratelné akce jsou tedy takové, které vycházejí z rozhodovacího uzlu.
+\end{definition}
+
+\begin{definition}\label{def:perfect_info}
+    Hrají-li hráči hru v rozšířeném tvaru \ref{def:extensive_form} a vždy znají rozhodovací uzel ve kterém zrovna jsou (tedy znají i historii jak jsme se k němu dobrali), tak pak máme \textit{hru s dokonalou informací}. 
+\end{definition}
+\begin{definition}\label{def:imperfect_info}
+    Rozdělíme-li rozhodovací uzly na množiny informací, kde množina informací vždy patří jednomu hráči a mají stejné hratelné akce, a každý hráč zná jen v jaké množině informací je a ne nutně jak se tam dostal a kde konkrétně, pak se jedná o \textit{hru s nedokonalou informací}. 
+
+    Pro hráče $i$ definujeme $H_i$ jako množinu informačních množin daného hráče, a pro množinu informací $h \in H_i$máme $C_h$ jako množinu akcí v $h$.
+\end{definition}
+\begin{definition}\label{def:behavioral_strategy}
+Behaviorální strategie hráče $i$ je ditribuce pravděpodobností na $C_h$ pro každé $h \in H_i$. 
+Tedy je to strategie, kde výběr akce u dané informace je nezávislá na ostatních. 
+\end{definition}
+\begin{definition}\label{def:sequence}
+    Posoupnost tahů hráče $i$ až do uzlu $t$ je $\sigma_i(t)$ je jednoznačná cesta z kořene do $t$. 
+    Prázdnou značíme $\emptyset$.
+\end{definition}
+\begin{definition}\label{def:perfect_recall}
+Hra s dokonalou pamětí, je taková že žádný z hráčů nezapomene žádnou informaci o tazích které zatím zahrál. 
+
+Hráč $i$ má dokonalou paměť, právě tehdy když pro každé $h \in H_i$ a libovolné uzly $t,t' \in h$ máme $\sigma_i(t) = \sigma_i(t')$, pak $\sigma_h$ značí jednoznačnou posloupnost vedoucí ke každé $t \in h$. 
+
+Mají-li dokonalou paměť všichni hráči, pak i hra je s dokonalou pamětí. 
+\end{definition}
+
+\begin{theorem}[Khunova věta]\label{thm:khun}
+    Ve hře s dokonalou pamětí \ref{def:perfect_recall}, každá smíšená strategie \ref{def:mixed_strategy} daného hráče a ekvivalentní behaviorální strategie \ref{def:behavioral_strategy} jsou vzájemně nahraditelné. 
+\end{theorem}
