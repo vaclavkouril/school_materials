@@ -1,0 +1,15 @@
+\subsection{Maximalizace virutálního sociálního užitku}
+\begin{theorem}\label{thm:max_virtual}
+  Nechť $F$ je normální distribuce pravděpodobností s hustotou $f$, a vituálním užitkem $\varphi$, $F_1, \dots,F_n$ jsou vzájemně nezávislé distribuce pravděpodobností $n$ hráčů, takové že se rovnají. 
+  Pak Vickreyho aukce\ref{def:vickrey} s rezervou $\varphi^{-1} (0)$ maximalizuje zisk \ref{def:revenue}. 
+\end{theorem}
+\begin{proof}[Důkaz věty \ref{thm:max_virtual}]
+    Dle věty \ref{thm:virtual} je maximalizace zisku stejná jako maximalize virtuálního sociálního užitku.
+    Abychom ho maximalizovali tak vybíráme $x(b)$ pro každý vstup $b$, ale ne pravděpodobnostní distribuce. 
+    Mějme virtuální sociální užitek maximalizující mechanismus, který má omezení $\sum^n_{i=1}x_i(b) \leq 1$ pro každé $b$, tedy chceme dát výhru hráči $i$ s nejvyšší $\varphi(b_i)$. 
+    Virtuální užitek ale může býti negativní a pak je nejlepší nikomu nic neprodávat. 
+
+    Máme tedy alokační pravidlo maximalizující virtuální užitek. 
+    Ted stačí ukázat, že je monotóní protože pak aplikujeme myersonovo lemma \ref{thm:myerson} a máme DSIC $(x,p)$ mechanismus. 
+    Díky tomu, že $F$ je normální (regular) tak $\varphi$ sdílená všemi je čistě rostoucí a náš mechanismus je ekvivalentní Vickreyho aukci s rezervou $\varphi^{-1}(0)$. 
+\end{proof}

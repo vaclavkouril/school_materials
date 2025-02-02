@@ -1,0 +1,34 @@
+\subsection{Několika parametrové prostředí}
+\begin{definition}
+    \label{def:multi_param}
+    Několika parametrové navrhování mechanismů je kde každý $i$ má různé ohodnocení pro různé předměty. 
+    Tedy 
+    \begin{itemize}
+        \item n účastníků
+        \item konečná množina $\Omega$ výsledků
+        \item pro každého $i$ ohodnocení $v_i(\omega) \geq 0$ pro $\forall \omega \in \Omega$
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}[Vickrey-Clarke-Groves věta]
+    \label{thm:vickrey_clarke_groves}
+    V každém několika parametrovém prostředí návrhu mechanismů \ref{def:multi_param} je DSIC \ref{def:awesome} mechanismus na maximalizaci socialního užitku. 
+\end{theorem} 
+\begin{proof}[Důkaz věty \ref{thm:vickrey_clarke_groves}]
+   Předpokládáme, že se každý odhalí a vybere se výsledek $\Omega$. 
+   Chceme maximalizovat sociální užitek, tedy jsme svázáni vybráním alokačního pravidla, které ho maximalizuje. 
+   Dány $b = ((b_1(\omega))_{\omega \in \Omega},\dots,(b_n(\omega))_{\omega \in \Omega})$ máme 
+   \[
+       x(b) = argmax_{\omega in \Omega}\sum^n_{i=1} b_i(\omega). 
+   \]
+
+   Definujeme pravidlo platby tak aby nikomu nebylo jedno jak na tom jsou ostatní tedy 
+   \[
+   p_i(b) = \max_{\omega \in \Omega} \left\{ \sum^n_{j=1, j\neq i} b_j(\omega) \right\} - \sum^n_{j=1, j\neq i} b_j(\omega^*)
+   \]
+   pro každého $i$, kde $\omega^* = x(b)$, je výsledkem našeho alokačního pravidla $x$ pro daná $b$. 
+   První člen je vlastně sociální užitek ostatních když vynecháme $i$. 
+   Druhý člen je s $i$-tým účastníkem. 
+   Z definice tedy $(x,p)$ maximalizuje sociální užitek. 
+
+\end{proof}
