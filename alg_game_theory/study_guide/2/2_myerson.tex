@@ -1,0 +1,92 @@
+\subsection{Myersonovo lemma}
+\begin{definition}\label{def:single_param}
+  Jednoparametrové prostředí je že máme $n$ nabízejících a každy má soukromou $v_i$. 
+  Máme možnou množinu $X \subseteq \R^n$ odpovídající možným výsledkům. 
+  Každý prvek $X$ je vektor $x = (x_1,\dots,x_n) \in \R^n$, kde $x_i$ je část výsledku o který se zajímá $i$-tý nabízející. 
+
+  Uzamčené-nabídky znamenají
+  \begin{itemize}
+    \item Sesbíráme nabídky $b = (b_1,\dots,b_n)$
+    \item Alokační pravidlo: vybereme možný výsledek (alokaci) $x =x(b)$ z $X$. 
+    \item Pravidlo platby: vybereme $p(b)= (p_1(b), \dots,p_n(b)) \in \R^n$. 
+  \end{itemize}
+
+  Dvojice $(x,p)$ značí mechanismus, kde 
+  \[
+    u_i(b) = v_i \cdot x_i(b) - p_i(b), 
+  \]
+  kde platby jsou jen v rozmezí $[0,b_i \cdot x_i(b)]$.
+
+  Sociální užitek se rozumí $\sum^n_{i=1} v_i \cdot x_i(b)$.
+\end{definition}
+
+\begin{definition}\label{def:implementable}
+    Implementovatelné alokační pravidlo $x$ pro jednoparametrové prostředí \ref{def:single_param} je takové když existuje pravidlo platby $p$ pro machanismus $(x,p)$, že je DSIC \ref{def:awesome}.
+\end{definition}
+
+\begin{definition}\label{def:monotone}
+    Alokační pravidlo pro jednoparametrové prostředí \ref{def:single_param} je monotónní, když $\forall i$ nabízející a všechna $b_{-i}$ ostatních je alokační pravidlo $x_i(z;b_{-i})$ pro $i$ neklesající v nabídce $z$. 
+\end{definition}
+Tedy zvýšením nabídky neklesne počet toho co získáme. 
+
+\begin{theorem}[Myersonovo lemma]\label{thm:myerson}
+    Pro jednoparametrové prostředí \ref{def:single_param} následující tvrzení platí 
+    \begin{enumerate}
+        \item Alokační pravidlo je implementovatelné \ref{def:implementable} právě tehdy když je monotónní \ref{def:monotone}. 
+        \item Je-li alokační pravidlo $x$ monotóní tak existuje jednoznačné pravidlo platby $p$, takové že mechanismus $(x,p)$ je DSIC \ref{def:awesome}. (předpokládejme $b_i = 0 \Rightarrow p_i(b)=0$)
+        \item Pravidlo platby je jednoznačně dáno 
+            \[
+                p_i(b) = \int_0^{b_i} z\cdot \frac{\text{d}}{\text{d}z} x_i(z;b_{-i}) \text{ d}z
+            \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}[Náznak důkazu Myesonova lemmatu \ref{thm:myerson}]
+    Začnu tím, že pokud je DSIC pak musí být $x$ monotónní. 
+    Máme $u_i(z;b_{-i}) = v_i x_i(z;b_{-i}) - p_i{z;b_{-i}}$ a pro DSIC platí, že $b_i = v_i$. 
+    Nabídneme-li $y \neq z$, tak se užitek nesmí zvýšit, musí tedy platit, že dodáme-li nepravdivou nabídku $y$ a nechť máme $v_i = z$
+    \[
+        u(y;b_{-i}) = z\cdot x_i(y;b_{-i}) -p_i(y;b_{-i}) \leq z\cdot x_i(z;b_{-i}) -p_i(z;b_{-i}) = u(z;b_{-i})
+    \]
+    pro ale nepravdivou nabídku $z$ pro $v_i =y$ máme 
+    \[
+        u(z;b_{-i}) = y\cdot x_i(z;b_{-i}) -p_i(z;b_{-i}) \leq y\cdot x_i(y;b_{-i}) -p_i(y;b_{-i}) = u(y;b_{-i})
+    \]
+    kde pak máme \textit{payment difference sandwich}: 
+    \[
+        z(x_i(y;b_{-i}) -x_i(z;b_{-i})) \leq p_i(y;b_{-i}) - p_i(z;b_{-i}) \leq y\cdot (x_i(y;b_{-i}) - x_i(z;b_{-i}))
+    \]
+    protože $0\leq y < z$ máme $x_i(y;b_{-i}) \leq x_i(z;b_{-i})$, tedy mechanismus $(x,p)$ je DSIC pak $x$ je monotóní. 
+
+    Pokud je $x$ monotónní tak existuje jedinečné $p$, které dělá mechanismus DSIC. 
+    Mějeme $x$ monotónní a zafixujme si $i$ a $b_{-i}$ a $x_i, p_i$ jako funkce $z$.
+    Předpokládejme, že $x_i$ je piecewise konstantní, tedy graf funkce je složený z intervalů a skoků mezi nimi. 
+    
+    Použijeme $jump(f,t)$ pro piecewise konstantní funkci $f$, abychom určili výšku skoku na bodu $t$. 
+    Zafixujme si $z$ z payment difference sandwich a nechť se $y$ k němu blíží, pak obě strany se stanou 0 pokud není žádný skok v $x_i$ na bodu $z$ (tedy $jump(x_i, z) = 0$). 
+    Pokud ale skok je nenulový v  bodě $z$, tak obě strany nerovnice jdou k $z\cdot h$. 
+    Tedy je-li mechanismus $(x,p)$ DSIC, tak omezení pro $p$ musí platit pro všechna $z$
+    \[
+        jump(p_i, z) = z\cdot jump(x_i,z). 
+    \]
+    Zkombinujeme toto omezení s podmínkou $p_i(0;b_{-i} = 0)$ tak máme vzorec pro $p$ 
+    \[
+        p_i(b) =\sum^l_{j=1} z_j \cdot jump(x_i(\cdot;b_{-i}), z_j), 
+    \]
+    kde $z_1,\dots,z_l$ jsou zlomové body v alokačním pravidle $x_i(\cdot; b_{-i})$ na intervalu $[0,b_i]$. 
+
+    Generalizujeme toto pomocí matematické analýza na obecné monotónní funkce $x_i$. 
+    Jde se na to pomocí vydělení payment difference sandwich pomocí $z-y$ a limity kdy se $z \rightarrow y$ tak máme omezení 
+    \[
+        p_i'(y;b_{-i}) = y \cdot x_i'(y;b_{-i})
+    \]
+    a kombinací s $p_i(0; b_{-i}) =0$ máme pro každé $z$ 
+    \[
+        p_i(b) = \int^{b^i}_0 z \cdot \frac{\text{d}}{\text{d}z} x_i(z;b_{-i}) \text{ d}z 
+    \]
+    A tedy máme jednoznačně určenou $p$ pro mechanismus $(x,p)$ aby byl DSIC. 
+
+    Zbývá už jen ukázat monotónost $x$, pak i $(x,p)$ je DSIC. 
+    Vzhledem k tomu, že pro nabízejícího $i$ máme užitek $u_i(b) = v_i \cdot x_i(b) - p_i(b)$. 
+    Využijeme-li $p_i(b) =\sum^l_{j=1} z_j \cdot jump(x_i(\cdot;b_{-i}), z_j)$ odpovídá časti $[0,b_i] \times [0,x_i(b)]$ nalevo od $x_i(\cdot; b_{-i})$, pak je vidět že se vyplatí $b_i = v_i$ jinak nabídne moc, či málo.
+\end{proof}

@@ -1,0 +1,67 @@
+\subsection{Maximalizace zisku v aukcích}
+\begin{definition}\label{def:revenue}
+    Ziskem se rozumí $\sum^n_{i=1} p_i(b)$. 
+\end{definition}
+\begin{definition}\label{def:bayes}
+  Bayesovský model se skládá z částí 
+  \begin{itemize}
+    \item jednoparametrové prostředí $(x,p)$
+    \item pro $i$ je $v_i$ z pravděpodobnostní distribuce $F_i$ s hustotou $f_i$ a doménou $[0,v_{max}]$. 
+        Tedy $F_i(z)$ je pravděpodobnost, že $v_i$ za $F_i$ má hodnotu maximálně $z$. 
+    \item $F_1,\dots,F_n$ jsou známé návrháři mechanismu, ale vzhledem k tomu, že nás zajímají DSIC aukce tak hráčí nepotřebují je znát. 
+  \end{itemize} 
+  A snažíme se maximalizovat 
+  \[
+      \E[v=(v_1,\dots,v_n) \sim (F_1\times \cdots \times F_n)]{\sum^n_{i=1} p_i(v)}. 
+  \]
+\end{definition}
+
+\begin{theorem}\label{thm:virutal}
+    Nechť $(x,y)$ je DSIC mechanismus v jednoparametrovém prostředí tvořící Bayesový mode \ref{def:bayes}, pravděpodobnostními distribucemi $F = F_1\times \cdot \times F_n$ a jejich hustotami $f_1, \dots,f_n$. 
+    Pak 
+    \[
+        \E[v\sim F]{\sum^n_{i=1} p_i(v)} = \E[v\sim F]{\sum^n_{i=1} \varphi_i(v_i) \cdot x_i(v)},  
+    \]
+    kde  
+    \[
+        \varphi_i(v_i) = v_i - \frac{1-F_i(v_i)}{f_i(v_i)}
+    \]
+    je virtuální hodnota nabízejícího $i$ s hodnotou $v_i$ ze $F_i$
+\end{theorem}
+\begin{proof}[Důkaz věty \ref{thm:virtual}]
+    Z Myesonova lemmatu \ref{thm:myerson} pro DSIC $(x,p)$ a $b_i = v_i$ máme 
+    \[
+        p_i(b) = \int^{b_i}_0 z \cdot \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z. 
+    \]
+    Zafixujeme si $i$ a máme 
+    \[
+        \E[v_i\sim F_i]{p_i(v)} = \int^{v_{max}}_0 p_i(v)f_i(v_i) \text{ d}v_i = \int^{v_{max}}_0 \left( \int_0^{v_i} z \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z \right)f_i(v_i) \text{ d}v_i
+    \]
+    prohozením máme 
+    \[
+    \int^{v_{max}}_0 \left( \int_0^{v_i} z \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z \right)f_i(v_i) \text{ d}v_i = \int^{v_{max}}_0 \left( \int_z^{v_{max}} f_i(v_i) \text{ d}v_i \right) z \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z
+    \]
+    kde víme $z \leq v_i$. 
+
+    Protože $f_i$ je hustota funkce tak máme 
+    \[
+         \int^{v_{max}}_0 \left( 1- F_i(z) \right) \cdot z \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z
+    \]
+    per partes zintegrujeme a vujde nám pak 
+    \[
+        \int_0^{v_{max}} \left( v_i - \frac{1-F_i(v_i)}{f_i(v_i)} \right) x_i(z;v_{-i})f_i(z) \text{ d}z = \int_0^{v_{max}} \varphi_i(z) x_i(z;v_{-i})f_i(z) \text{ d}z
+    \]
+    což je vlastně 
+    \[
+        \E[v_i \sim F_i]{p_i(v_i;v_{-i})} = \E[v_i \sim F_i]{\varphi_i(v_i) \cdot x_i(v_i;v_{-i})}
+    \] 
+    vezmeme-li očekávanou hodnotu pak přes $v_{-i}$, tak 
+    \[
+        \E[v \sim F]{p_i(v)} = \E[v \sim F]{ \varphi_i(v_i) \cdot x_i(v)}
+    \]
+    pak počítáme-li s linearitou střední hodnoty tak nám vypadne 
+    \[
+        \E[v \sim F]{\sum^n_{i=1}p_i(v)} = \sum^n_{i=1} \E[v \sim F]{p_i(v)} = \sum^n_{i=1} \E[v \sim F]{\varphi_i(v_i) \cdot x_i(v)} = \E[v \sim F]{\sum^n_{i=1} \varphi_i(v_i) \cdot x_i(v)}
+    \]
+\end{proof}
+
