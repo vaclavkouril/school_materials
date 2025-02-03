@@ -29,7 +29,7 @@
     je virtuální hodnota nabízejícího $i$ s hodnotou $v_i$ ze $F_i$
 \end{theorem}
 \begin{proof}[Důkaz věty \ref{thm:virtual}]
-    Z Myesonova lemmatu \ref{thm:myerson} pro DSIC $(x,p)$ a $b_i = v_i$ máme 
+    Z Myersonova lemmatu \ref{thm:myerson} pro DSIC $(x,p)$ a $b_i = v_i$ máme 
     \[
         p_i(b) = \int^{b_i}_0 z \cdot \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z. 
     \]
@@ -47,7 +47,7 @@
     \[
          \int^{v_{max}}_0 \left( 1- F_i(z) \right) \cdot z \frac{d}{dz} x_i(z;b_{-i}) \text{ d}z
     \]
-    per partes zintegrujeme a vujde nám pak 
+    per partes zintegrujeme a vyjde nám pak 
     \[
         \int_0^{v_{max}} \left( v_i - \frac{1-F_i(v_i)}{f_i(v_i)} \right) x_i(z;v_{-i})f_i(z) \text{ d}z = \int_0^{v_{max}} \varphi_i(z) x_i(z;v_{-i})f_i(z) \text{ d}z
     \]

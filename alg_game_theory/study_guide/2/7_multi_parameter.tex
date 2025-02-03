@@ -30,5 +30,22 @@
    První člen je vlastně sociální užitek ostatních když vynecháme $i$. 
    Druhý člen je s $i$-tým účastníkem. 
    Z definice tedy $(x,p)$ maximalizuje sociální užitek. 
+    
+   Zbývá už jen to zda je to DSIC, snažíme se tedy ukázat, že každý maximalizuje svůj užitek $v_i(x(b)) - p_i(b)$ nastavením $b_i(\omega) = v_i(\omega)$ pro všechny $\omega$. 
+   Dá se ukázat nezápornost $p_i(b)$ a je $\leq b_i(\omega^*)$. 
+   Tedy pravdomluvní mají nezáporný užitek. 
 
+   Zafixujeme si $i$ a ostatní $b_{-i}$. 
+   Když $x(b)= \omega^*$ pak užitek je 
+   \[
+    v_i(\omega^*) - p_i(b) = \left( v_i(\omega^*) + \sum^n_{j=1, j\neq i} b_j(\omega^*) \right) - \max_{\omega \in \Omega} \left\{ \sum^n_{j=1, j\neq i} b_j(\omega) \right\} 
+   \]
+   a vzhledem k tomu, že druhý člen je na $b_i$ nezávislý tak je nutné maximalizovat ten první, navíc nemá ani jak ovlivnit $\omega^*$, protože přímo mechanismus $(x,y)$ vybítá $\omega^*$. 
+   VCG mechanismus vybere $\omega^*$ podle  $x(b) = argmax_{\omega in \Omega}\sum^n_{i=1} b_i(\omega)$, tak aby součet nabídek byl maximalizován. 
+   $i$ je na tom tak že chce vybrat 
+   \[
+   argmax_{\omega in \Omega} \left\{ v_i(\omega) + \sum^n_{j=1, j\neq i} b_j(\omega) \right\}
+   \]
+   když nabídky jsou pravdivé tak máme $argmax_{\omega in \Omega}\sum^n_{i=1} b_i(\omega)$. 
+   Tedy máme $(x,p)$ DSIC porotože jiná strategie než býti pravdomluvným se nevyplácí tolik. 
 \end{proof}
