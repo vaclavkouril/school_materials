@@ -4,8 +4,8 @@
 Mějme hru v normální formě \ref{def:normal_form_game} $G=(P,A,u)$ a nechť $\epsilon > 0$. 
 Profil strategií $s = (s_1,s_2, \dots, s_n)$ je $\epsilon$-Nashovo ekvilibrium, když $\forall i \in P$ a pro každou strategií $s_i' \in S_i$ máme $u_i(s_i) \geq u_i(s_i' ; s_{-i}) - \epsilon$.
 \end{definition}
-Vzhledem k tomu, že se jedná o přímé rozvolnění Nashova ekvilibira \ref{def:nash_equilibrium} tak z Nashovy věty \ref{thm:nash_theorem} plyne, že každá hra $G$ má $\epsilon$-Nashovo ekvilibrium.
-také platí, že každé Nashovo ekvilibrium má kolem sebe $\epsilon$-Nashova ekvilibira, avšak opačná implikace neplatí. 
+Vzhledem k tomu, že se jedná o přímé rozvolnění Nashova ekvilibria \ref{def:nash_equilibrium} tak z Nashovy věty \ref{thm:nash_theorem} plyne, že každá hra $G$ má $\epsilon$-Nashovo ekvilibrium.
+Také platí, že každé Nashovo ekvilibrium má kolem sebe $\epsilon$-Nashova ekvilibria, avšak opačná implikace neplatí. 
 
 \begin{theorem}
 \label{thm:e_nash_in_time}
@@ -14,7 +14,7 @@ Pro každé $\epsilon >0$ existuje algoritmus, který spočte $\epsilon$-Nashovo
 \end{theorem}
 \begin{theorem}[Hoeffding bound]
 \label{thm:hoeffding_bound}
-Nechť $Z = \frac{1}{s} \sum^s_{i = 1} Z_i$, je náhodná veličina, kde $Z_1, Z_2, \dots, Z_n$ jsou vzájemně nezávislé náhodné veličiny s $0 \leq Z_i \leq 1$.
+Nechť $Z = \frac{1}{s} \sum^s_{i = 1} Z_i$ je náhodná veličina, kde $Z_1, Z_2, \dots, Z_n$ jsou vzájemně nezávislé náhodné veličiny s $0 \leq Z_i \leq 1$.
 Nechť $\mu = \E{Z}$, pak $\forall t: 0<t<1 - \mu$ máme 
 \[
     \Pravdep{Z - \mu \geq t} \leq e^{-2st^2}
@@ -26,23 +26,23 @@ Nechť $\mu = \E{Z}$, pak $\forall t: 0<t<1 - \mu$ máme
 Pro každé Nashovo ekvilibrium \ref{def:nash_equilibrium} hry $G$ s vektory smíšených strategií \ref{def:mixed_strategy} $(x^*, y^*)$ a $\forall \epsilon > 0$ existuje pro každé celé číslo $k \geq 48 \ln m/e^2$, pár $(x,y)$ $k$-unifomních strategií, takový že $(x,y)$ je $\epsilon$-Nash ekvilibrium \ref{def:epsilon_nash}, tedy $|x^T M y - (x^*)^T M y^*| < \epsilon$ a $|x^T N y - (x^*)^T N y^*| < \epsilon$
 \end{theorem}
 \begin{proof}[Důkaz pomocné věty \ref{thm:claim_k_uniform_strategies}]
-    Pro dané $\epsilon$ si zafixujeme $k \geq k \ln m / \epsilon^2$.
+    Pro dané $\epsilon$ si zafixujeme $k \geq 48 \ln m / \epsilon^2$.
     Náhodně vybereme $k$ akcí podle pravděpodobnostních rozdělení $x^*$ a $y^*$ a získané multimnožiny nechť jsou po řadě $X$ a $Y$. 
-    Vybereme si $x$, tak aby to byl vektor smíšených strategií, který přiřadí pravděpodobnost $\mu (a_i)/k$každé akci $a_i \in A_i$, kde $\mu(a_i)$ je počet $a_i$ v $X$. 
+    Vybereme si $x$, tak aby to byl vektor smíšených strategií, který přiřadí pravděpodobnost $\mu (a_i)/k$ každé akci $a_i \in A_i$, kde $\mu(a_i)$ je počet $a_i$ v $X$. 
     Analogicky zavedeme i $y$. 
 
-    Mějme označení $A_1 = \{a_1, a_2, \dots, a_m\}$, $A_1 = \{b_1, b_2, \dots, b_m\}$. 
-    Nechť $x^i$ je vektor smíšené strategie pro každou čistou strategii \ref{def:pure_strategy} $a_i \in A-1$ a $y^j$ pro $b_j \in A_2$. 
+    Mějme označení $A_1 = \{a_1, a_2, \dots, a_m\}$, $A_2 = \{b_1, b_2, \dots, b_m\}$. 
+    Nechť $x^i$ je vektor smíšené strategie pro každou čistou strategii \ref{def:pure_strategy} $a_i \in A_1$ a $y^j$ pro $b_j \in A_2$. 
     Na kontrolu zda $(x,y)$ je $\epsilon$-Nashovo ekvilibrium musíme zajistit dvě věci:
 \begin{itemize}
-    \item Výplatní hodnota se moc neliší od hodnoty v Nashovo ekvilibriu
+    \item Výplatní hodnota se moc neliší od hodnoty v Nashově ekvilibriu
         $$
             \phi_1 = \left\{ (x,y) | \abs{x^T M y - (x^*)^T M y^*} < \epsilon /2 \right\} 
         $$ 
         $$ 
             \phi_2 = \left\{ (x,y) | \abs{x^T N y - (x^*)^T N y^*} < \epsilon /2 \right\}
         $$ 
-    \item Žádný hráč nemá jak zlepšit svou výplata o více než $\epsilon$
+    \item Žádný hráč nemá jak zlepšit svou výplatu o více než $\epsilon$
         $$ 
         \pi_{1,i} = \left\{ (x^i)^T M y < x^T M y + \epsilon\right\} \text{ pro všechna } i \in \{1,2, \dots, m\}
         $$ 
@@ -52,7 +52,7 @@ Pro každé Nashovo ekvilibrium \ref{def:nash_equilibrium} hry $G$ s vektory sm�
 \end{itemize}
 Stanou-li se všechny najednou 
 $$ 
-\Pravdep{GOOD} = \phi_i \cap \phi_2 \cap \Cap^m_{i=1} \pi_{1,i} \cap \Cap^m_{j=1} \pi_{2,j} 
+\Pravdep{GOOD} = \phi_i \cap \phi_2 \cap \bigcap^m_{i=1} \pi_{1,i} \cap \bigcap^m_{j=1} \pi_{2,j} 
 $$ 
 tedy když $\Pravdep{GOOD} > 0$ pak věta platí. 
 
@@ -64,10 +64,10 @@ $$
 \phi_{1,b} = \{(x,y) | \abs{x^T M y - x^T M y^*} < \epsilon/4 \}
 $$ 
 $$ 
-\phi_{2,a} = \{(x,y) | \abs{(x^*)^T M y - (x^*)^T M y^*} < \epsilon/4 \}
+\phi_{2,a} = \{(x,y) | \abs{(x^*)^T M y - (x^*)^T N y^*} < \epsilon/4 \}
 $$ 
 $$ 
-\phi_{2,b} = \{(x,y) | \abs{x^T N y -  (x^T)^T N y} < \epsilon/4 \}
+\phi_{2,b} = \{(x,y) | \abs{x^T N y -  (x^*)^T N y} < \epsilon/4 \}
 $$ 
 pro které platí $\phi_{1,a} \cap \phi_{1,b} \subseteq \phi_1$ 
 $$ 
@@ -75,10 +75,11 @@ $$
 $$
 
 Výběr $x$ odpovídá výběru prvku z $X$ s pravděpodobností $1/k$. 
-Tedy $x^T M y^*$ je vlastně suma $k$ vzájemně nezávislých prvků, kde každý má střední hodnotu $(x^*)^T M y^*$. tedu dle Hoeffding bound \ref{thm:hoeffding_bound} máme $\Pravdep{\overline{\phi_{1,a}}} \leq  2e^{-k\epsilon^2 /8}$ a to samé dostaneme pro $\phi_{1,b}$, tedy máme $\Pravdep{\overline{\phi_1}} \leq 4e^{-k \epsilon^2 /8}$. 
+Tedy $x^T M y^*$ je vlastně suma $k$ vzájemně nezávislých prvků, kde každý má střední hodnotu $(x^*)^T M y^*$. 
+Dle Hoeffding bound \ref{thm:hoeffding_bound} máme $\Pravdep{\overline{\phi_{1,a}}} \leq  2e^{-k\epsilon^2 /8}$ a to samé dostaneme pro $\phi_{1,b}$, tedy máme $\Pravdep{\overline{\phi_1}} \leq 4e^{-k \epsilon^2 /8}$. 
 To samé analogicky máme pro $\overline{\phi_2}$
 
-Teď už musíme prověřit jen pravděpodobnosti $\pi_{1,i}, \pi_{2,j}$. Zavedeme si opět pomocne množiny 
+Teď už musíme prověřit jen pravděpodobnosti $\pi_{1,i}, \pi_{2,j}$. Zavedeme si opět pomocné množiny 
 $$ 
 \psi_{1,i} = \{ (x,y) | (x^i)^T M y < (x^i)^T M y^* + \epsilon/2 \} \text{ pro všechna } i \in \{1,2, \dots, m\}
 $$ 
@@ -90,7 +91,7 @@ Nashovo ekvilibrium $(x^*,y^*)$ nám dává $(x^i)^T M y^* \leq (x^*)^T M y^*$ z
 $$ 
 (x^i)^T M y < (x^i)^T M y^* + \epsilon/2 \leq (x^*)^T M y^* + \epsilon /2 < x^T M y + \epsilon 
 $$
-opět dle Hoeffling bound \ref{thm:hoeffding_bound}, protože $(x^i)^T M y$ jsou vlastně součtem $k$ nezávislých proměnných s očekávanou hodnotou $(x^i)^T M y^*$, máme $\Pravdep{\overline{\psi_1,i}} \leq e^{-k \epsilon^2 /2}$ . 
+opět dle Hoeffding bound \ref{thm:hoeffding_bound}, protože $(x^i)^T M y$ jsou vlastně součtem $k$ nezávislých proměnných s očekávanou hodnotou $(x^i)^T M y^*$, máme $\Pravdep{\overline{\psi_1,i}} \leq e^{-k \epsilon^2 /2}$. 
 Obdobně postupujeme pro $\psi_{2,j}$ a $\pi_{2,j}$
 $$
 \Pravdep{\overline{GOOD}} \leq \Pravdep{\overline{\phi_1}} + \Pravdep{\overline{\phi_2}} + \sum^m_{i=1} \Pravdep{\overline{\pi_1,i}}  + \sum^m_{j=1} \Pravdep{\overline{\pi_2,j}} \leq 8e^{-k \epsilon^2 /8} + 2m( e^{-k \epsilon^2 /2} +  4e^{-k \epsilon^2 /8})<1
@@ -105,6 +106,6 @@ a tedy $\Pravdep{GOOD}>0$ a tedy máme chtěné $(x,y)$ jako $\epsilon$-Nashovo 
    Věta \ref{thm:claim_k_uniform_strategies} implikuje větu kterou se snažíme dokázat. 
    Pro to aby to bylo vidět stačí zafixovat $k = 48 \ln m/\epsilon^2$ a prohledáme všechna $k$-uniformní $\epsilon$-Nashova ekvilibria. 
    Existuje maximálně $(m^k)^2$ multimnožin $X$ a $Y$ které je potřeba překontrolovat. 
-   A překontrolovat podmínku $\epsilon$-Nashových ekvilibrií je jednoduché protože stačí zkoumat odchylky k čistým strategiím. 
-   tedy díky volbě $k$ máme $m^{O(\log m/\epsilon^2)}$
+   A překontrolovat podmínku $\epsilon$-Nashových ekvilibrií je jednoduché, protože stačí zkoumat odchylky k čistým strategiím. 
+   Díky volbě $k$ máme $m^{O(\log m/\epsilon^2)}$
 \end{proof}

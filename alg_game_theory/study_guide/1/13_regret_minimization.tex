@@ -1,7 +1,7 @@
 \subsection{Minimalizace lítosti}
 \begin{definition} 
 \label{def:online_alg}
-Mnějme $N$ akcí $X =\{1,2,\dots,N\}$ v každém kroku online algoritmus $A$ vybere pravděpodobnostní distribuci $p^t=(p_1^t, p_2^t, \dots, p_N^t)$ nad $X$. 
+Mějme $N$ akcí $X =\{1,2,\dots,N\}$ v každém kroku online algoritmus $A$ vybere pravděpodobnostní distribuci $p^t=(p_1^t, p_2^t, \dots, p_N^t)$ nad $X$. 
 Tedy takové $p_i^t$ pro všechna $i \in X$ a $\sum^N_{i=1} p_i^t = 1$. 
 Po zvolení distribuce nám protivník vybere vektor ztráty $l^t =(l^t_1, l^t_2, \dots, l^t_N) \in [-1,1]^N$, kde jednotlivé prvky reprezentují hodnotu ztráty při výběru akce $i$ v kroku $t$. 
 Algoritmus dostane vektor ztráty a utrpí ztrátu $l^t_A = \sum^N_{i=1} p_i^t l_i^t$. 
@@ -12,10 +12,10 @@ Po $T$ krocích máme ztrátu akce $i$ jako $L_i^T = \sum^T_{t=1} l_i^t$, ztrát
 \begin{definition}
 \label{def:external_regret}
 Mějme porovnávací třídu algoritmů $\mathcal{A}$ a nechť $T$ je dané kladné celé číslo. 
-Při minimalizaci lítosti (regret) se snažíme udělat algoritmus $A$, takový aby je $L^T_A$ bylo co nejblíže $L_{\mathcal{A},min}^T = \min{B \in \mathcal{A}} L^T_B$. 
+Při minimalizaci lítosti (regret) se snažíme udělat algoritmus $A$, takový aby $L^T_A$ bylo co nejblíže $L_{\mathcal{A},min}^T = \min{B \in \mathcal{A}} L^T_B$. 
 Tedy minimalizujeme vnější lítost (external regret) $R^T_{A,\mathcal{A}} = L^T_A - L^T_{\mathcal{A},min}$
 
-Mějme $\mathcal{A}_X = {A_i: i\in X}$, tedy třída kde vybíráme vždy jen jednu akci. 
+Mějme $\mathcal{A}_X = {A_i: i\in X}$, tedy třída, kde vybíráme vždy jen jednu akci. 
 Zjednodušujeme notaci na $L^T_{\mathcal{A}_X,min} = L^T_{\min}$ a $R^T_{A,\mathcal{A}_X} = R^T_A$.
 
 Nechť $\mathcal{A}_{all}$ je třída všech online algoritmů přiřazujících pravděpodobnost $1$ nějaké akci z $X$. 
@@ -96,7 +96,7 @@ Tedy $L_D^T \geq N \cdot T + L^T_{\min} + (T \text{ mod } N)$
         \For{$t \in 2,\dots, T$}
             \State $w^t_i \leftarrow w^{t-1}_i (1-\eta l^{t-1}_i)$
             \State $W^t \leftarrow \sum^N_{i=1} w^t_i$
-            \State $p^t_i \leftarrow w^t/W^t$ pro všechna $i \in X$ 
+            \State $p^t_i \leftarrow w^t_i/W^t$ pro všechna $i \in X$ 
         \EndFor
         \State vrátíme $\{p^t: t\in \{1,2,\dots,T\}\}$
     \end{algorithmic}
@@ -126,9 +126,9 @@ Navíc když $T \geq 4\ln N$, tak nastavení $\eta = \sqrt{\ln N/T}$ s tím že 
     $$
     z odhadu $\forall z \in \R: 1-z \leq e^{-z}$
     \[
-        W^{T+1} \leq N \prod e^{-\eta l^t_{PV}} = Ne^{-\eta \sum^T_{t=1} l^t_{PV}}
+        W^{T+1} \leq N \prod^T_{t=1} e^{-\eta l^t_{PV}} = Ne^{-\eta \sum^T_{t=1} l^t_{PV}}
     \]
-    logaritmuje obě strany a máme 
+    logaritmujeme obě strany a máme 
     \[
         \ln W^{T+1} \leq \ln N - \eta \sum^T_{t=1} l^t_{PV} = \ln N - \eta L^T_{PV} 
     \]
@@ -154,6 +154,6 @@ Pro celá čísla $N$ a $T < \lfloor \log_2 N\rfloor$, tak existuje stochastick�
 \end{theorem}
 \begin{theorem}
 \label{thm:prop2}
-Máme-li $N=2$ akce, tak existuje stochastické generování ztrát, takové že pro každý online algoritmus \ref{def:online_alg} máĺe $\E{L_A^T - L^T_{\min}} \geq \Omega (\sqrt{T})$.
+Máme-li $N=2$ akce, tak existuje stochastické generování ztrát, takové že pro každý online algoritmus \ref{def:online_alg} máme $\E{L_A^T - L^T_{\min}} \geq \Omega (\sqrt{T})$.
 \end{theorem}
 % TODO důkazy

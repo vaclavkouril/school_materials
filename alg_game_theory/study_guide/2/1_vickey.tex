@@ -4,8 +4,8 @@
 \label{def:awesome}
   Awesome aukce je aukce splňující následující podmínky 
   \begin{itemize}
-        \item Garance silné incentivy: aukce je DSIC (dominant strategy incentive compatible) když má každý hráč dominantní strategií (tedy maximalizuje jeho užitek) a to pravdivě nabízet $b_i = v_i$. 
-        Navíc užitek pravdomluvného hráče je nezáporná
+        \item Garance silné incentivy: aukce je DSIC (dominant strategy incentive compatible) když má každý hráč dominantní strategii (tedy maximalizuje jeho užitek) a to pravdivě nabízet $b_i = v_i$. 
+        Navíc užitek pravdomluvného hráče je nezáporný.
         \item Garance vysokého výkonu, a sice pokud všichni nabízejí pravdivě tak aukce maximalizuje sociální užitek $\sum^n_{i=1} v_ix_i$. 
         \item Aukce je implementovatelná v polynomiálním čase. 
   \end{itemize}
@@ -21,9 +21,9 @@
 \begin{proof}[Důkaz \ref{thm:vickrey_awesome}]
     \begin{itemize} 
         \item Je jasně lineárně implementovatelná 
-        \item Zafixjme si $i$ a mějme $B = max_{j \in \{1,\dots,n\} \setminus \{i\}} b_j$, pak když $b_i < B$ tak $i$ prohraje a utilita je $0$. 
+        \item Zafixujme si $i$ a mějme $B = max_{j \in \{1,\dots,n\} \setminus \{i\}} b_j$, pak když $b_i < B$ tak $i$ prohraje a utilita je $0$. 
             Jinak $b_i \geq B$ pak $i$ vyhraje a má užitek $v_i -B$. 
             Užitek je nezáporný u všech a nejvyšší možný užitek je $v_i -B$ a tedy i ten máme. 
-        \item Je-li $v_i$ výherce tak $v_i \geq v_j$ a protože všichni nabízejí pravdivě tak $x_i = 1$ a ostaní jsou $0$, tedy sociální užitek je 1, které je zjevně maximem. 
+        \item Je-li $v_i$ výherce tak $v_i \geq v_j$, a protože všichni nabízejí pravdivě, tak $x_i = 1$ a ostaní jsou $0$, tedy sociální užitek je 1, který je zjevně maximem. 
     \end{itemize}
 \end{proof}

@@ -1,9 +1,9 @@
 \subsection{Bezlítostná dynamika}
 \begin{definition}[Hra v normální formě]
 \label{def:normal_form_loss}
-Mějme hru v normální formě \ref{def:normal_form_game} $G = (P,A,C)$, kde máme užitkovou funkci vymněněnou za $C = (C_1,C_2,\dots,C_n)$, kde $C_i: A \rightarrow [-1,1]$, říkáme jí nákladová funkce a snažíme se ji minimalizovat. 
+Mějme hru v normální formě \ref{def:normal_form_game} $G = (P,A,C)$, kde máme užitkovou funkci vyměněnou za $C = (C_1,C_2,\dots,C_n)$, kde $C_i: A \rightarrow [-1,1]$, říkáme jí nákladová funkce a snažíme se ji minimalizovat. 
 \end{definition}
-Standartní model je pak že každý hráč hraje $G$ $T$-krát použitím online algoritmu \ref{def:online_alg} $ON_i$, který má distribuci pravděpodobností $p^t_i$ na $A_i$. 
+Standartní model je pak, že každý hráč hraje $G$ $T$-krát použitím online algoritmu \ref{def:online_alg} $ON_i$, který má distribuci pravděpodobností $p^t_i$ na $A_i$. 
 $p^t_i$ je vektor smíšené strategie \ref{def:mixed_strategy} hráče $i$ v kroku $t$. 
 $l^t_{ON_i} = \E[a^t \sim p^t]{C_i(a^t)}$ je ztráta hráče $i$ v kroku $t$. 
 
@@ -17,7 +17,7 @@ $l^t_{ON_i} = \E[a^t \sim p^t]{C_i(a^t)}$ je ztráta hráče $i$ v kroku $t$.
         \Require Hra v normální formě \ref{def:normal_form_loss} $G= (P,A,C)$, $T\in \N$ a $\epsilon >0$
         \Ensure Pravděpodobnostní distribuce $p^t_i$ na $A_i$ pro každé $t \in \{1,2,\dots, T\}$ a $i \in P$ 
         \For{$t \in 1,2,\dots, T$}
-            \State Každy hráč si zvolí nezávisle smíšenou strategii $p^t_i$ pomocí algoritmu který má očekávanou ztrátu maximálně $\epsilon$ s akcemi odpovídajícím čistým strategiím \ref{def:pure_strategy}
+            \State Každý hráč si zvolí nezávisle smíšenou strategii $p^t_i$ pomocí algoritmu, který má očekávanou ztrátu maximálně $\epsilon$ s akcemi odpovídajícím čistým strategiím \ref{def:pure_strategy}
             \State Každý hráč dostane vektor ztráty $l^t_i = (l_i^t(a_i))_{a_i \in A_i}$, kde $l^t_i(a_i) \leftarrow \E[a_{-i}^t \sim p_{-i}^t]{C_i(a_i;a^t_{-i})}$
             \State $p^t_{-i} = \prod_{j \neq i} p_j^t$
         \EndFor

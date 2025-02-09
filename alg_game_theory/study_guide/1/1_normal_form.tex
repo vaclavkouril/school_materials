@@ -22,13 +22,13 @@ Každý hráč se může chovat podle nějaké strategie. To jest nějakého př
 Další možná strategie je smíšená strategie. 
 \begin{definition}
 \label{def:mixed_strategy}
-Smíšená strategie je taková, že hráč $i$ zvolí akci z $A_i$ nazákladě nějake pravděpodobnostní distribuce na $A_i$. Množina smíšených strategií $S_i$ pro hráče $i$ je množina $\prod (A_i)$, kde $\prod(X)$ je množina všech pravděpodobnostních distribucí nad množinou $X$. Profil smíšené strategie je tedy $n$-tice $(s_1, s_2, \dots, s_n)$, kde $s_i \in S_i$. 
+Smíšená strategie je taková, že hráč $i$ zvolí akci z $A_i$ na základě nějaké pravděpodobnostní distribuce na $A_i$. Množina smíšených strategií $S_i$ pro hráče $i$ je množina $\prod (A_i)$, kde $\prod(X)$ je množina všech pravděpodobnostních distribucí nad množinou $X$. Profil smíšené strategie je tedy $n$-tice $(s_1, s_2, \dots, s_n)$, kde $s_i \in S_i$. 
 \end{definition}
 U smíšené strategie $s_i$ hráče $i$ akce $a_i \in A_i$ používáme $s_i(a_i) \in [0,1]$ jako pravděpodobnost výběru akce $a_i$ při smíšené strategii $s_i$. 
 
 \begin{definition}
 \label{def:support_strategy}
-Množina $\{a_i \in A_i : s_i(a_i) > 0\}$ je doména smíšené strategie $s_i$. Pokud doména $s_i$ je rovna $A_i$ pak je $s_i$ úplně smíšená strategie. A mají-li takovou všichni hráči tak pak i profil je profil plně smíšené strategie. 
+Množina $Supp(s_i) = \{a_i \in A_i : s_i(a_i) > 0\}$ je doména smíšené strategie $s_i$. Pokud doména $s_i$ je rovna $A_i$ pak je $s_i$ úplně smíšená strategie. A mají-li takovou všichni hráči tak pak i profil je profil plně smíšené strategie. 
 \end{definition}
 Pro každého hráče platí, že se snaží maximalizovat svůj očekávaný výdělek, tedy střední hodnota $u_i$ s $\prod^n_{j=1} s_j$. 
 \begin{definition}

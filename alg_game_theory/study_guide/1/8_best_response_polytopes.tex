@@ -1,7 +1,7 @@
 \subsection{Polytopy nejlepších odpovědí}
 \begin{definition} 
 \label{def:best_response_polyhedrom}
-Poledr nejlepších odpovědí hráče $1$ v hře $G$ je polyedr 
+Polyedr nejlepších odpovědí hráče $1$ ve hře $G$ je polyedr 
 $$
 \bar{P} = \{(x,v)\in \R^m \times \R: x \geq 0, 1^Tx = 1, N^Tx \leq 1v\}
 $$ 
@@ -10,9 +10,9 @@ $$
 \bar{Q} = \{(y,u)\in \R^n \times \R: y \geq 0, 1^Ty = 1, Mx \leq 1u\}
 $$
 \end{definition}
-Tedy pro body $(x,v)$ a $(y,u)$ platí 
+Tedy pro body $(x,v)$ a $(y,u)$ máme výplatní funkci pro hráče 1., kde pro libovolnou smíšenou strategii máme 
 $$ 
-u_1(s) = x^T M y \leq x^T1u = u \sum_{i \in A_1} x_1 = u 
+u_1(s) = x^T M y \leq x^T1u = u \sum_{i \in A_1} x_1 = u. 
 $$ 
 \begin{definition}[Značka]
 \label{def:label}
@@ -28,7 +28,7 @@ Profil strategie $s$ je Nashovým ekvilibriem hry $G$, právě tehdy když $((x,
     Dle věty o podmínce nejlepší odpovědi \ref{thm:best_response}, máme že pro každého hráče $i \in P$, se smíšenou strategií \ref{def:mixed_strategy} $s_i$ je nejlepší odpovědí na $s_{-i}$, právě tehdy když všechny čisté strategie \ref{def:pure_strategy} v doméně smíšené strategie $s_i$ \ref{def:support_strategy} jsou nejlepšími odpověďmi na $s_{-i}$. 
     Chybějící značka $i$ by přesně znamenala, že čistá strategie u hráče $1$ ($x_i >0$) by nebyla nejlepší odpovědí ($(M)_i y < u$), to samé pro hráče $2$. 
 
-    Pokud máme každou značku u nějakých $s_1, s_2$, tak jsou to vzájemně nejlepší odpovědi, protože, každá čistá strategie buď je nejlepší odpovědí nebo není v příslušné doméně strategie.
+    Pokud máme každou značku u nějakých $s_1, s_2$, tak jsou to vzájemně nejlepší odpovědi, protože každá čistá strategie buď je nejlepší odpovědí nebo není v příslušné doméně strategie.
 \end{proof}
 
 \begin{definition}[Normalizovaný polytop nejlepších odpovědí]
@@ -57,7 +57,7 @@ Pak $s$ je Nashovým ekvilibriem hry $G$, právě tehdy když bod $(x/u_2(s), y/
     \floatname{algorithm}{Algoritmus}
     \algrenewcommand\algorithmicrequire{\textbf{Vstup: }}
     \algrenewcommand\algorithmicensure{\textbf{Výstup: }}
-    \caption{Výčet domén strategií}
+    \caption{Výčet bodů}
     \label{alg:vertex_enum}
     \begin{algorithmic}
         \Require  nedegenerovaná bimaticová hra $G$ \ref{def:nondegen_bimatrix}
@@ -71,5 +71,5 @@ Pak $s$ je Nashovým ekvilibriem hry $G$, právě tehdy když bod $(x/u_2(s), y/
 
 \begin{proof}[Vysvětlení algoritmu \ref{alg:vertex_enum}]
     Pomocí předešlého faktu \ref{thm:corollary_normalized_complete_label} máme jednoduchý algoritmus, kde je na konci jen nutná normalizace abychom dostaly vektory smíšené strategie.
-    Problém je množství bodů a jejich kombinace takže je to zase exponenciální algoritmus. 
+    Problém je množství bodů a jejich kombinace takže je to zase exponenciální algoritmus v $O(dNv)$, kde máme-li $m = n$, tak vrcholů je $c^n$ s konstantou $c > 1$, kde $c$ je omezeno z geometrie a celkem bodů bude maximálně $2.9^n$. 
 \end{proof}

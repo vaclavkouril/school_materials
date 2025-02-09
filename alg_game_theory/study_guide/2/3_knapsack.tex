@@ -3,12 +3,12 @@
 \label{def:knapsack}
   Batohová aukce hráčů $1,\dots,n$ má každý dva parametry: veřejnou $w_i \geq 0$ a soukromé ohodnocení $v_i$. 
   Máme jednoho prodejce, který má kapacitu $W \geq 0$. 
-  Možná množina $X$ jsou vektory $(x_1,\dots,x_n) \in \{0,1\}^n$, takové že $\sum_{i=1}^n x_iw_i \leq W$, kde $x_i = 1$ indikující že hráč $i$ je výhercem. 
+  Možná množina $X$ jsou vektory $(x_1,\dots,x_n) \in \{0,1\}^n$ takové, že $\sum_{i=1}^n x_iw_i \leq W$, kde $x_i = 1$ indikující, že hráč $i$ je výhercem. 
 \end{definition}
 \begin{definition}
 \label{def:greedy_alloc}
     Hladové alokační pravidlo $x^G = (x_1^G, \dots, x_n^G) \in X$ pro dané $b = (b_1,\dots,b_n)$ vybere podmožinu hráčů, že $\sum_{i=1}^n x^G_i w_i \leq W$. 
-    Výběr je takovy, že přidáváme seřazené dle $<$ hráče dokud se vejdou a následně buď vrátíme vybrané hráče nebo nejvyššího $b_i$ podle toho co vytváří větší sociální užitek. 
+    Výběr je takový, že přidáváme seřazené dle $<$ hráče dokud se vejdou a následně buď vrátíme vybrané hráče nebo nejvyššího $b_i$ podle toho co vytváří větší sociální užitek. 
 \end{definition}
 
 \begin{theorem}
@@ -16,18 +16,18 @@
     Za předpokladu pravdivých nabídek, tak sociální užitek hladového pravidla \ref{def:greedy_alloc} $x^G$ je alespoň polovina maximálního možného sociálního užitku. 
 \end{theorem}
 \begin{proof}[Důkaz věty \ref{thm:knapsack}]
-   Mějeme $w_1,\dots, w_n$, $v_1,\dots,v_n$, které jsou zároveň nabídku kvůli pravdivosti, $W$ je kapacita. 
-   Problém zrelaxujeme tak, že pro každého $i$ máme zlome $\alpha_i \in [0,1]$, že $i$ přidává $\alpha_iv_i$ do řešení. 
-   Teď vybereme vítěze hladově a posledního je li to nutné přidáme zlomkově. 
+   Mějme $w_1,\dots, w_n$, $v_1,\dots,v_n$, které jsou zároveň nabídkou ($v_i = b_i$) kvůli pravdivosti, $W$ je kapacita. 
+   Problém zrelaxujeme tak, že pro každého $i$ máme zlomek $\alpha_i \in [0,1]$, že $i$ přidává $\alpha_iv_i$ do řešení. 
+   Teď vybereme vítěze hladově a posledního je-li to nutné přidáme zlomkově. 
 
-   Mějme $1,\dots,k$ výherce vybrané $x^G$ a pro spor mějme nějaké lepší řešení, tedy že má vyšší sociální užitek. 
-   Pak naše řešení zlepšíme změnou $\alpha_i$ za větší $\beta_i$ a protože $a_1=\dots=a_{k-1} = 1$ máme $i \geq k$. 
-   Protože $\sum^k_{l=1} \alpha_i w_i = W$ tak je $j\in \{1,\dots,k\}$, že $j<i$ a $\beta_j < \alpha_j$. 
-   Předpokládejme změnu tedy jen v těchto dvou keoficientech. 
-   Pak $(\beta_i-\alpha_i)w_i \leq (\alpha_j-\beta_j)w_j$, máme $\sum^k_{l=1} \alpha_i w_i = W$ a přidáním $(\beta_i-\alpha_i)w_i$, když odebereme $(\alpha_j-\beta_j)w_j$ je sociální užitek větší, máme $(\beta_i-\alpha_i)v_i > (\alpha_j-\beta_j)v_j$. 
+   Mějme $1,\dots,k$ výherce vybrané $x^G$ a pro spor mějme nějaké lepší řešení, že má vyšší sociální užitek. 
+   Pak naše řešení zlepšíme změnou $\alpha_i$ za větší $\beta_i$, a protože $a_1=\dots=a_{k-1} = 1$ máme $i \geq k$. 
+   Protože $\sum^k_{l=1} \alpha_i w_i = W$, tak je $j\in \{1,\dots,k\}$, že $j<i$ a $\beta_j < \alpha_j$. 
+   Předpokládejme změnu jen v těchto dvou indexech. 
+   Pak $(\beta_i-\alpha_i)w_i \leq (\alpha_j-\beta_j)w_j$, máme $\sum^k_{l=1} \alpha_i w_i = W$ a přidáním $(\beta_i-\alpha_i)w_i$, když odebereme $(\alpha_j-\beta_j)w_j$, je sociální užitek větší, máme $(\beta_i-\alpha_i)v_i > (\alpha_j-\beta_j)v_j$. 
    Dělením máme $v_i/w_i > v_j/w_j$, ale protože $j<i$ tak máme spor se seřazením $<$. 
 
-   Nyní předpokládejme že ve zlomkovém prostředí má $k-j$ výherců zlomek $1$ a $k$-tý vyhrál zlomkově. 
+   Nyní předpokládejme, že ve zlomkovém prostředí má $k-j$ výherců zlomek $1$ a $k$-tý vyhrál zlomkově. 
    Tak sociální užitek prvník krokem je $\sum^{k-1}_{i=1} v_i$ a sociální užitek druhým krokem je alespoň $v_k$. 
    Tedy oba kroky mají sociální užitek alespoň $\max\{v_k, \sum^{k-1}_{i=1} v_i\}$. 
    Tedy alespoň polovina užitku optimálního řešení zlomkové úlohy, a tedy alespoň užitek optimálního řešení v původní úloze. 
