@@ -22,7 +22,7 @@ $\epsilon$-hrubé korelované ekvilibrium v $G$ je $p$ na $A$, takové že
 \]
 pro všechna $i$ a $a' \in A$. 
 \[
-    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})}
+    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})} + \epsilon
 \]
 \end{definition}
 
@@ -30,7 +30,7 @@ pro všechna $i$ a $a' \in A$.
 Mějeme hru $G=(P,A,C)$, daný parametr $\epsilon > 0$ a $T = T(\epsilon) \in \N$. Předpokládejme že po $T$ krocích bezlítostné dynamiky \ref{alg:no_regrets} tak každý hráč má časově-průměrnou ztrátu maximálně $\epsilon$. 
 Nechť $p^t =\sum_i^n p^t_i$ a $p = \frac{1}{T} \sum^T_{i=1} p^t$ je pruměrem z pravděpodobnostní distribuce výsledků. Pak $p$ je $\epsilon$-hrubé korelované ekvilibrium. Tedy je  
 \[
-    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})}
+    \E[a \sim p]{C_i(a)} \leq \E[a\sim p]{C_i(a_i';a_{-i})} + \epsilon
 \]
 pro každého hráče a jeho příslušnou $a_i' \in A_i$.
 \end{theorem}
