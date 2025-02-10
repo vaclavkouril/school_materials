@@ -6,7 +6,7 @@ Pro zero-sum hru \ref{def:zero_sum} $G = (P, A, u)$ mějme $A_1 = \{1,2,\dots,m\
 \begin{definition}
 \label{def:mixed_strategy_vector}
 Vektory smíšených strategií $s =(s_1, s_2)$ jsou $x = (x_1, x_2, \dots, x_m), y = (y_1, y_2, \dots, y_n)$, které reprezentují $s_1$ a $s_2$. 
-$x_i$ pak značí pravděpodobnost $s_1{i}$ pro $i \in {1,2,\dots,m}$, obdobně pro $y_j$. 
+$x_i$ pak značí pravděpodobnost $s_1(i)$ pro $i \in \{1,2,\dots,m\}$, obdobně pro $y_j$. 
 Takové vektory splňují $\sum_{i=1}^m  x_i = \sum_{j=1}^n  y_j = 1$
 
 $S_1$ a $S_2$ jsou simplexy $\Delta(e_1, e_2, \dots, e_m)$ a $\Delta(f_1, f_2, \dots, f_n)$, kde $e_i, f_i$ značí příslušný vektor s $1$ na pozici $i$ a $0$ jinde.
@@ -17,35 +17,35 @@ S definicemi \ref{def:zero_sum_matrix} a \ref{def:mixed_strategy_vector} máme v
 \[
     u_1(s) = \sum_{a = (i,j) \in A} u_i(a) \cdot s_1(i)s_2(j) = \sum^m_{i = 1} \sum^n_{j=1} m_{i,j} x_i y_i = x^T M y.
 \]
-Pak zavádíme funkce $\beta(x) = \min_{y \in S_2} x^T M y$ a $\alpha(y) = \min_{x\in S_1} = x^T M y$. 
+Pak zavádíme funkce $\beta(x) = \min_{y \in S_2} x^T M y$ a $\alpha(y) = \max_{x\in S_1} x^T M y$. 
 Kde $\beta(x)$ je vlastně nejvyšší užitek hráče $2$ proti strategii hráče $1$ ($x$), protože $u_1(s) = -u_2(i,j)$ \ref{def:zero_sum}. 
 $\alpha(y)$ je naopak nejvyšší možný užitek hráče $1$ proti akci $y$ hráče $2$. 
 
 Zjevně je-li $(x,y)$ Nashovo ekvilibrium \ref{def:nash_equilibrium}, pak $\beta(x) = x^T M y = \alpha(y)$
 \end{definition}
 
-Za předpokladu že $2$ zvolí pro něj nejvýhodnější akci vůči každé akci hráče $1$, pak $1$ zvolí smíšenou strategii $\bar{x} \in S_1$ \ref{def:mixed_strategy}, která maximalizuje jeho střední hodnotu užitkové funkce \ref{def:expected_payoff}. $\beta(\bar{x}) = \max_{x\in S_1}$ platí a je optimální v nejhorším případě. To samé platí pro hráče $2$ a $\alpha$. 
+Za předpokladu že $2$ zvolí pro něj nejvýhodnější akci vůči každé akci hráče $1$, pak $1$ zvolí smíšenou strategii $\bar{x} \in S_1$ \ref{def:mixed_strategy}, která maximalizuje jeho střední hodnotu užitkové funkce \ref{def:expected_payoff}. $\beta(\bar{x}) = \max_{x\in S_1} \beta(x)$ platí a je optimální v nejhorším případě. To samé platí pro hráče $2$ a $\alpha$. 
 
 \begin{theorem}[Lemma o vlastnostech funkcí $\alpha$ a $\beta$]
 \label{thm:lemma_alpha_beta}
 \begin{enumerate}
     \item Pro všechny smíšené strategie \ref{def:mixed_strategy} $x \in S_1$ a $y \in S_2$ máme $\beta(x) \leq x^T M y\leq \alpha(y)$ 
     \item Pokud je $(x^*, y^*)$ Nashovo ekvilibrium \ref{def:nash_equilibrium}, pak obě $x^*$ i $y^*$ jsou optimální v nejhorším případě pro hráče $1$ i $2$. 
-    \item Pro smíšené strategie \ref{def:mixed_strategy} $x^* \S_1$ a $y^* \in S_2$ splňující $\beta(x^*) = \alpha(y^*)$ pak $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium}.
+    \item Pro smíšené strategie \ref{def:mixed_strategy} $x^* \in S_1$ a $y^* \in S_2$ splňující $\beta(x^*) = \alpha(y^*)$ pak $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium}.
 \end{enumerate}
 \end{theorem}
 \begin{proof}[Důkaz lemma o vlastnostech funkcí $\alpha$ a $\beta$]
 \begin{enumerate}
     \item Toto plyne z definice funkcí $\alpha$ a $\beta$. 
-    \item \textit{(a)} implikuje, že $\forall x \in S_1: \beta(x) \leq \alpha(y^*)$. Když $\beta(x^*) = \alpha(y^*)$ je Nashovo ekvilibrium, tak $\beta(x^*) = \alpha(y^*)$, máme $\forall x \in S_1: \beta(x) \leq \beta(x^*)$, tedy je to optimální v nejhorším případě, stejně jako $y^*$ s $\alpha$ pro hráče $2$.
-    \item Pokud $\beta(x^*) = \alpha(y^*)$ pak \textit{(a)} implikuje, že $\beta(x^*) = (x^*)^T M y^* = \alpha(y^*)$. tedy je to Nashovo ekvilibrium. 
+    \item \textit{1.} implikuje, že $\forall x \in S_1: \beta(x) \leq \alpha(y^*)$. Když $(x^*, y^*)$ je Nashovo ekvilibrium, tak $\beta(x^*) = \alpha(y^*)$, máme $\forall x \in S_1: \beta(x) \leq \beta(x^*)$, tedy je to optimální v nejhorším případě, stejně jako $y^*$ s $\alpha$ pro hráče $2$.
+    \item Pokud $\beta(x^*) = \alpha(y^*)$ pak \textit{1.} implikuje, že $\beta(x^*) = (x^*)^T M y^* = \alpha(y^*)$. tedy je to Nashovo ekvilibrium. 
 \end{enumerate}
 \end{proof}
 
 \begin{theorem}[Minimax věta]
 \label{thm:minimax}
 Pro každou zero-sum hru \ref{def:zero_sum}, existují optima v nejhorším případě pro oba hráče a dají se efektivně spočítat lineárním programováním. 
-Navíc existuje číslo $v$, takové že optima v nejhorším případě $x^*, y^*$ obou hráčů tak profil strategií $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium} a $\beta(x^*) = (x^*)^T M y = \alpha(y^*) = v$ 
+Navíc existuje číslo $v$, takové že optima v nejhorším případě $x^*, y^*$ obou hráčů tak profil strategií $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium} a $\beta(x^*) = (x^*)^T M y^* = \alpha(y^*) = v$ 
 \end{theorem}
 
 \begin{definition}[Lineární programování]
@@ -53,7 +53,7 @@ Navíc existuje číslo $v$, takové že optima v nejhorším případě $x^*, y
 Lineární program je optimalizační problém a v kanonické formě $P$ má tvar: $c \in \R^m$, $b \in \R^n$ a $n \times m$ matici reálných čísel $A$. Maximalizujeme $c^T x$ s omezeními $Ax \leq b$ a $x \geq 0$. 
 Lineární programy se dají efektivně řešit \textit{simplexovou metodou} a dalšími.
 
-$P$ nazveme primární lineární program je definován stejně jako ten výšše, $D$ je duální program kde chceme minimalizovat $b^T y$ s omezeními $A^T y \geq c$, kde $y \geq 0$. 
+$P$ nazveme primární lineární program je definován stejně jako ten výše, $D$ je duální program, kde chceme minimalizovat $b^T y$ s omezeními $A^T y \geq c$, kde $y \geq 0$. 
 \end{definition} 
 \begin{theorem}[Věta o dualitě]
 \label{thm:dual}
@@ -62,8 +62,8 @@ Navíc jsou-li $x^*, y^*$ optima $P,D$, tak $c^T x^* = b^T y^*$.
 Tedy v optimu mají výsledky stejné. 
 \end{theorem}
 \begin{proof}[Důkaz minimax věty \ref{thm:minimax}]
-Hráč $2$ chcem minimalizovat zisk pro hráče $1$, tedy pro zafixovanou smíšenou strategii $x=(x_1,x_2, \dots, x_m)$ hráče $1$. 
-Vyrobíme si lineární program $P$ který najde optimum pro minimalizaci výdělku hráče $1$: $\min x^T M y$ s omezeními $\sum^n_{j=1} y_j = 1$ a $y_1, y_2, \dots, y_n \geq 0$. 
+Hráč $2$ chceme minimalizovat zisk pro hráče $1$, tedy pro zafixovanou smíšenou strategii $x=(x_1,x_2, \dots, x_m)$ hráče $1$. 
+Vyrobíme si lineární program $P$, který najde optimum pro minimalizaci výdělku hráče $1$: $\min x^T M y$ s omezeními $\sum^n_{j=1} y_j = 1$ a $y_1, y_2, \dots, y_n \geq 0$. 
 Tedy umíme spočíst $\beta(x)$ pro zafixované $x$. 
 
 Získáme duál $D$ programu $P$, který vypadá $\max x_0$ s omezeními $1x_0 \leq M^T x$. 
@@ -74,12 +74,12 @@ Upravíme-li si $D$ na $D'$, s proměnnými $x_0, x_1, \dots, x_m$, $\max x_0$ s
 Tak máme lineární program, protože všechny omezení jsou lineární. 
 Takový $D'$ má optimum $(x_0^*, x_1^*, \dots, x_m^*)$, a nechť $x^* = (x_1^*, x_2^*, \dots, x_m^*)$. 
 Pak máme $x_0^* = \beta(x^*) = \max{x\in S_1} \beta(x)$. 
-Tedy máme optimim v nejhorším případě pro hráče $1$.
+Tedy máme optimum v nejhorším případě pro hráče $1$.
 
 Symetricky uděláme to samé pro hráče $2$. A máme $P'$, kde jsou proměnné $y_0, y_1, \dots, y_n$, $\min y_0$, s omezeními $1y_0 - My \leq 0, \sum^n_{j=1} y_j = 1, y \geq 0$. 
 S obdobným optimem a výsledkem $y_0^* = \alpha(y^*) = \min_{y \in S_2} \alpha(y)$. 
 
 $P'$ a $D'$ jsou podle standartního převodu mezi primárním a duálním programem vzájemně duální. 
-Navíc mají stejnou optmiální hodnotu $\beta(x^*) = \alpha(y^*)$ a podle lemma o vlastnostech funkcí $\alpha$ a $\beta$ \ref{thm:lemma_alpha_beta} specificky \textit{(c)} víme, že $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium}.  
+Navíc mají stejnou optimální hodnotu $\beta(x^*) = \alpha(y^*)$ a podle lemma o vlastnostech funkcí $\alpha$ a $\beta$ \ref{thm:lemma_alpha_beta} specificky \textit{3.} víme, že $(x^*, y^*)$ je Nashovo ekvilibrium \ref{def:nash_equilibrium}.  
 
 \end{proof}

@@ -8,7 +8,7 @@
     \item jednoparametrové prostředí $(x,p)$
     \item pro $i$ je $v_i$ z pravděpodobnostní distribuce $F_i$ s hustotou $f_i$ a doménou $[0,v_{max}]$. 
         Tedy $F_i(z)$ je pravděpodobnost, že $v_i$ za $F_i$ má hodnotu maximálně $z$. 
-    \item $F_1,\dots,F_n$ jsou známé návrháři mechanismu, ale vzhledem k tomu, že nás zajímají DSIC aukce tak hráčí nepotřebují je znát. 
+    \item $F_1,\dots,F_n$ jsou známé návrháři mechanismu, ale vzhledem k tomu, že nás zajímají DSIC aukce tak hráči je nepotřebují znát. 
   \end{itemize} 
   A snažíme se maximalizovat 
   \[
@@ -17,7 +17,7 @@
 \end{definition}
 
 \begin{theorem}\label{thm:virtual}
-    Nechť $(x,y)$ je DSIC mechanismus v jednoparametrovém prostředí tvořící Bayesový mode \ref{def:bayes}, pravděpodobnostními distribucemi $F = F_1\times \cdot \times F_n$ a jejich hustotami $f_1, \dots,f_n$. 
+    Nechť $(x,y)$ je DSIC mechanismus v jednoparametrovém prostředí tvořící Bayesový model \ref{def:bayes}, pravděpodobnostními distribucemi $F = F_1\times \cdot \times F_n$ a jejich hustotami $f_1, \dots,f_n$. 
     Pak 
     \[
         \E[v\sim F]{\sum^n_{i=1} p_i(v)} = \E[v\sim F]{\sum^n_{i=1} \varphi_i(v_i) \cdot x_i(v)},  
@@ -26,7 +26,7 @@
     \[
         \varphi_i(v_i) = v_i - \frac{1-F_i(v_i)}{f_i(v_i)}
     \]
-    je virtuální hodnota nabízejícího $i$ s hodnotou $v_i$ ze $F_i$
+    je virtuální hodnota nabízejícího $i$ s hodnotou $v_i$ z $F_i$
 \end{theorem}
 \begin{proof}[Důkaz věty \ref{thm:virtual}]
     Z Myersonova lemmatu \ref{thm:myerson} pro DSIC $(x,p)$ a $b_i = v_i$ máme 
@@ -55,7 +55,7 @@
     \[
         \E[v_i \sim F_i]{p_i(v_i;v_{-i})} = \E[v_i \sim F_i]{\varphi_i(v_i) \cdot x_i(v_i;v_{-i})}
     \] 
-    vezmeme-li očekávanou hodnotu pak přes $v_{-i}$, tak 
+    vezmeme-li očekávanou hodnotu, pak přes $v_{-i}$, tak 
     \[
         \E[v \sim F]{p_i(v)} = \E[v \sim F]{ \varphi_i(v_i) \cdot x_i(v)}
     \]

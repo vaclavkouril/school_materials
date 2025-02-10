@@ -1,9 +1,9 @@
-\subsection{Korelováná ekvilibria}
+\subsection{Korelovaná ekvilibria}
 \begin{definition}[Korelované ekvilibrium]
 \label{def:correlated_equiv}
 Pro hru v normální formě \ref{def:normal_form_game} $G=(P,A,u)$ mějme pravděpodobnostní distribuci $p$ na $A$. 
 Tedy $p(a) \geq 0$ pro každé $a \in A$ a $\sum_{a\in A} p(a) = 1$. 
-Distribude $p$ je \textit{korelované ekvilibrium} v $G$, když 
+Distribuce $p$ je \textit{korelované ekvilibrium} v $G$, když 
 $$ 
 \sum_{a_{-i} \in A_{-i}} u_i(a_i'; a_{-i}) p(a_i; a_{a_{-i}}) \leq \sum_{a_{-i} \in A_{-i}} u_i(a_i; a_{-i}) p(a_i; a_{a_{-i}})  
 $$
@@ -16,7 +16,7 @@ Korelované ekvilibrium je náhodné přiřazení doporučení akcí hráčů ta
     V každé hře $G$ v normální formě \ref{def:normal_form_game} máme pro každé Nashovo ekvilibrium \ref{def:nash_equilibrium} odpovídající korelované ekvilibrium \ref{def:correlated_equiv}. 
 \end{theorem}
 \begin{proof}[Důkaz věty \ref{thm:nash_correl}]
-    Nechť $s* = (s*_1, s*_2, \dots, s*_n)$ je profil strategií, mějme funkci $p_{s^*} = \prod^n_{j=1} s_j^* (a_j)$ pro všechny strategie $a = (a_1, a_2, \dots, a_n) \in A$. 
+    Nechť $s^* = (s^*_1, s^*_2, \dots, s^*_n)$ je profil strategií, mějme funkci $p_{s^*}(a) = \prod^n_{j=1} s_j^* (a_j)$ pro všechny strategie $a = (a_1, a_2, \dots, a_n) \in A$. 
     Jasně je $p_{s^*} \geq 0$ a indukcí dle $n$ se dá i ukázat, že $\sum_{a\in A} p_{s^*}(a) =1$ a je to tedy pravděpodobnostní distribuce. 
 
     Teď už je zbývá ukázat, že pro Nashovo ekvilibrium $s^*$ je $p_{s^*}$ korelované ekvilibrium. 

@@ -2,25 +2,25 @@
 
 \begin{theorem}[Bulow-Klempererova věta]
 \label{thm:bulow_klemperer}
-Nechť $F = F_1 = \cdots = F_n$ je normální (regular) distribuce pravděpodobností a nechť $n \in \N$. 
+Nechť $F = F_1 = \cdots = F_n$ je regulární distribuce pravděpodobností a nechť $n \in \N$. 
 Pak platí 
 \[
     \E[v_1,\dots,v_{n+1}\sim F]{Rev(VA_{n+1})} \geq \E[v_1,\dots,v_{n+1}\sim F]{Rev(OPT_{F,n})} 
 \]
-kde $Rev(VA_{n+1})$ je zisk vickreyho aukce $VA_{n+1}$ s n+1 účastníky bez rezervy a $Rev(OPT_{F,n})$ je zist optimální aukce pro $F$ s n účastníky. 
+kde $Rev(VA_{n+1})$ je zisk Vickreyho aukce $VA_{n+1}$ s n+1 účastníky bez rezervy a $Rev(OPT_{F,n})$ je zisk optimální aukce pro $F$ s n účastníky. 
 \end{theorem}
 \begin{proof}[Důkaz Bulow-Klempererovy věty \ref{thm:bulow_klemperer}]
-    Definujme si pomocnou aukci $\mathcal{A}$ s $n+1$ účastníky, tak že simuluje optimální aukci na n účastnících, kde pokud nebyl předmět dán v předešlém kroku tak se dá n+1-mu zdarma. 
+    Definujme si pomocnou aukci $\mathcal{A}$ s $n+1$ účastníky, tak že simuluje optimální aukci na n účastnících, kde pokud nebyl předmět dán v předešlém kroku, tak se dá n+1-mu zdarma. 
     Máme 
     \[
         \E[v_1,\dots,v_{n+1}\sim F]{Rev(\mathcal{A})} = \E[v_1,\dots,v_{n+1}\sim F]{Rev(OPT_{F,n})}
     \]
     taková aukce vše alokuje
 
-    Je-li $F=\cdots=F_n$ regular tak Vickreyho aukce maximalizuje očekávaný zisk přes všechny aukce které vždy alokují předmět. 
-    Z věty o vztahu mezi ziskem a virtuální sociálním užitkem \ref{thm:virtual} tak máme, že optimální aukce, která alokuje předměty předá předmět hráči s nejvyšším virtuálním ohodonocením (i když potencielně negativním). 
-    Vzhledem k regularitě $F$ tak $\varphi$ stoupá a tedy ten který má nejvyšší vituální ohodnocení má i nejvyšší $v_i$. 
-    Takže vickreyho aukce $VA_{n+1}$ má střední hodnotu zisku alespoň tak vysokou jako  aukce která alokuje všechny předměty, tedy 
+    Je-li $F=\cdots=F_n$ regulární, tak Vickreyho aukce maximalizuje očekávaný zisk přes všechny aukce, které vždy alokují předmět. 
+    Z věty o vztahu mezi ziskem a virtuálním sociálním užitkem \ref{thm:virtual} tak máme, že optimální aukce, která alokuje předměty, předá předmět hráči s nejvyšším virtuálním ohodonocením (i když potencielně negativním). 
+    Vzhledem k regularitě $F$ tak $\varphi$ stoupá a tedy ten, který má nejvyšší vituální ohodnocení, má i nejvyšší $v_i$. 
+    Takže Vickreyho aukce $VA_{n+1}$ má střední hodnotu zisku alespoň tak vysokou jako aukce, která alokuje všechny předměty, tedy 
     \[
         \E[v_1,\dots,v_{n+1}\sim F]{Rev(VA_{n+1})} \geq \E[v_1,\dots,v_{n+1}\sim F]{Rev(\mathcal{A})} = \E[v_1,\dots,v_{n+1}\sim F]{Rev(OPT_{F,n})}
     \]

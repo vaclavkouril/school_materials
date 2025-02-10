@@ -6,13 +6,14 @@
 
 \begin{theorem}[Princip odhalení]
     \label{thm:revelation}
-    Pro každý multiparametrový mechanismus $M$, kde má každý dominantní strategii, tak nezávisle na soukromém ohodnocení tak máme ekvivalentní mechanismus $M'$, kde každý má dominantní strategii a to přímé odhalení \ref{def:revel}. 
+    Pro každý několika parametrový mechanismus \ref{def:multi_param} $M$, kde má každý dominantní strategii, tak nezávisle na soukromém ohodnocení máme ekvivalentní mechanismus $M'$, kde každý má dominantní strategii, a to přímé odhalení \ref{def:revel}. 
 \end{theorem}
 \begin{proof}[Důkaz principu odhalení]
     Pro každého $i$ a jeho $(v_i(\omega))_{\omega \in \Omega}$, nechť $s_i((v_i(\omega))_{\omega \in \Omega})$ je dominantní strategie $i$ v $M$. 
 
     Zkonstruujeme $M'$, přijmeme uzavřené nabídky $b_1(\omega)_{\omega \in \Omega}, \dots, b_n(\omega)_{\omega \in \Omega}$. 
+    
     Pak $M'$ předá $s_1(b_1(\omega)_{\omega \in \Omega}), \dots, s_n(b_n(\omega)_{\omega \in \Omega})$ mechanismu $M$, tedy výsledky jsou pak stejné. 
 
-    Dle přímého odhalení tak pokud $i$ má $v_i(\omega)$ pak nabídnutí něčeho jiného než $v_i(\omega)$ může znamenat jen hraní jiné strategie než $s_i(v_i(\omega)_{\omega \in \Omega})$, což ale znamená jen snížení užitku. 
+    Dle přímého odhalení, pokud $i$ má $v_i(\omega)$, pak nabídnutí něčeho jiného než $v_i(\omega)$ může znamenat jen hraní jiné strategie než $s_i(v_i(\omega)_{\omega \in \Omega})$, což ale znamená jen snížení užitku. 
 \end{proof}

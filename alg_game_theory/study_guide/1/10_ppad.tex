@@ -1,7 +1,7 @@
 \subsection{Třída PPAD}
 \begin{definition}
 \label{def:FNP}
-Třída FNP je třída problémů, kde problém dostane jako vstup instanci problému z NP a výstupem je buď NE, nebo existuje-li řešení tak vrátí řešení instance tohoto problému. 
+Třída FNP je třída problémů, kde problém dostane jako vstup instanci problému z NP a výstupem je buď NE, nebo existuje-li řešení, tak vrátí řešení instance tohoto problému. 
 
 Funkcionální SAT je FNP-complete problém. 
 \end{definition}
@@ -14,25 +14,25 @@ Nechť NASH je problémem hledání Nashova ekvilibria \ref{def:nash_equilibrium
 Je-li NASH \ref{def:NASH} problém FNP-complete \ref{def:FNP} tak NP = coNP
 \end{theorem}
 \begin{proof}[Důkaz \ref{thm:np_conp}]
-    Existuje-li redukce v polynomiálním čase mezi funkcionálním SAT a NASH, tak máme algoritmu $A$ zobrazující každou SAT formuli $\varphi$ na bimaticovou hru $A(\varphi)$ a algoritmus $B$ převádějící každé Nashovo ekvilibrium \ref{def:nash_equilibrium} $s = (s_1, s_2)$ hry $A(\varphi)$ na validní řešení $B(s_1,s_2)$ SATu $\varphi$, a odpoví NE pro vše ostatní.
+    Existuje-li redukce v polynomiálním čase mezi funkcionálním SAT a NASH, tak máme algoritmus $A$ zobrazující každou SAT formuli $\varphi$ na bimaticovou hru $A(\varphi)$ a algoritmus $B$ převádějící každé Nashovo ekvilibrium \ref{def:nash_equilibrium} $s = (s_1, s_2)$ hry $A(\varphi)$ na validní řešení $B(s_1,s_2)$ SATu $\varphi$, a odpoví NE pro vše ostatní.
 
 
     Stačí nám ukázat, že SAT patří do coNP, protože pak NP $\subseteq$ coNP a máme $X \in NP \iff \bar{X} \in coNP$ z definice coNP. 
     Tedy máme-li NP $\subseteq$ coNP, pak $X \in coNP \iff \bar{X} \in NP \Rightarrow \bar{X} \in coNP \iff X \in NP$ a tedy máme i $coNP \subseteq NP$ a tedy $NP = coNP$. 
 
     Pokud v polynomiálním čase umíme ověřit nesplnitelnost $\varphi$ pomocí obrazu $A(\varphi)$, pak SAT je v coNP. 
-    Díky Nashově větě \ref{thm:nash_theorem} víme, žé $A(\varphi)$ má Nashovo ekvilibrium $s = (s_1, s_2)$, pro důkaz nesplnitelnosti $\varphi$ jsou nutné dvě podmínky.
-    Nejdřive Zda řešení $A(\varphi)$ je Nashova rovnováha umíme ověřit díky polynomiálnosti algoritmu $A$ a podmínce nejlepší odpovědi \ref{thm:best_response}.
-    Dále přékontrolujeme, že $B(s_1, s_2)$ vrací NE. 
+    Díky Nashově větě \ref{thm:nash_theorem} víme, že $A(\varphi)$ má Nashovo ekvilibrium $s = (s_1, s_2)$, pro důkaz nesplnitelnosti $\varphi$ jsou nutné dvě podmínky.
+    Nejdřive zda řešení $A(\varphi)$ je Nashova rovnováha, umíme ověřit díky polynomiálnosti algoritmu $A$ a podmínce nejlepší odpovědi \ref{thm:best_response}.
+    Dále překontrolujeme, že $B(s_1, s_2)$ vrací NE. 
     Splňuje-li $(s_1,s_2)$ obě podmínky, tak jsme dokázali nesplnitelnost SAT a tedy jsme v polynomiálním čase dokázali SAT $\in$ coNP
 \end{proof}
 
 \begin{definition}
 \label{def:eof}
 END-OF-LINE problém je následující: Pro orientovaný graf $G$, kde každý bod má maximálně jednoho předka a jednoho následníka. 
-My ale takový graf nemáme na vstupu (třeba se nevejde do paměti atd.) ale máme jen bod a funkci která v polynomiálním čase spočte předka, či následníka (existují-li). 
+My ale takový graf nemáme na vstupu (třeba se nevejde do paměti atd.), ale máme jen bod a funkci, která v polynomiálním čase spočte předka, či následníka (existují-li). 
 
-O tomto problému se dá také přemýšlet tak, že máme bod který je řešení a máme funkci $f$, která umí řešení vylepšit, tedy určuje následníka jako další řešeni a my chceme to nejlepší řešení. 
+O tomto problému se dá také přemýšlet tak, že máme bod, který je řešení, a máme funkci $f$, která umí řešení vylepšit, tedy určuje následníka jako další řešení a my chceme to nejlepší řešení. 
 \end{definition}
 \begin{definition}
 \label{def:PPAD}

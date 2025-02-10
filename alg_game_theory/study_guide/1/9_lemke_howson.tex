@@ -2,7 +2,7 @@
 \begin{definition}
 \label{def:drop_label}
 Odhozením značky \ref{def:label} $l \in A_1 \cup A_2$ v bodě $x \in P$ \ref{def:norm_best_response_poly} znamená že vezmeme unikátní hranu incidentní s $x$ a má značky všechny až na $l$. 
-Na druhé straně takové hrany máme bod $y$, který má značky stejné jako $x$ až na $l$, která je nahraze značkou jinou o které říkáme, že ji sebereme. 
+Na druhé straně takové hrany máme bod $y$, který má značky stejné jako $x$ až na $l$, která je nahrazena značkou jinou, o které říkáme, že ji sebereme. 
 \end{definition}
 
 \begin{algorithm}
@@ -19,10 +19,10 @@ Na druhé straně takové hrany máme bod $y$, který má značky stejné jako $
         \State $l \leftarrow k$
         
         \While{(True)}
-        \State V $P$ \textit{odhodíme} \ref{def:drop_label} $l$ v bodě $x$ a $x$ předefinujeme na nový bod který získáme, a $l$ předefinujeme na naši novou \textit{sebranou} značku. 
+        \State V $P$ \textit{odhodíme} \ref{def:drop_label} $l$ v bodě $x$ a $x$ předefinujeme na nový bod, který získáme, a $l$ předefinujeme na naši novou \textit{sebranou} značku. 
         Přehodíme se do $Q$
         \State Když $l = k$ tak vyskočíme z cyklu
-        \State V $Q$ \textit{odhodíme} $l$ v bodě $y$ a $y$ předefinujeme na nový bod který získáme, a $l$ předefinujeme na naši novou \textit{sebranou} značku. 
+        \State V $Q$ \textit{odhodíme} $l$ v bodě $y$ a $y$ předefinujeme na nový bod, který získáme, a $l$ předefinujeme na naši novou \textit{sebranou} značku. 
         Přehodíme se do $P$
         \State Když $l = k$ tak vyskočíme z cyklu
         \EndWhile
@@ -41,21 +41,21 @@ Protože $P$ a $Q$ mají konečně mnoho bodů (nebereme jako body ty na hranác
 Body $(x,y)$ a $(x',y')$ mají mezi sebou hranu v $K$, když je buď $x = x'$ v $P$ a $yy'$ hrana v $Q$, nebo $y = y'$ v $Q$ a $xx'$ hrana v $P$. 
 
 Ukážeme, že $K$ má body se stupni jen $1$ či $2$, tedy je to disjunktní sjednocení cyklů a cest. 
-V $K$ máme jen dva druhy vrcholů a sice takové že mají všechny značky, takový vrchol pak má jen jednoho souseda, protože jen jeden z $x,y$ má značku $k$, kterou můžeme odhodit a přejít tedy jen na jednoho souseda. 
+V $K$ máme jen dva druhy vrcholů a sice takové, že mají všechny značky, takový vrchol pak má jen jednoho souseda, protože jen jeden z $x,y$ má značku $k$, kterou můžeme odhodit a přejít tedy jen na jednoho souseda. 
 Jinak $(x,y)$ mají značky $A_1 \cup A_2 \setminus \{k\}$ a máme jednoznačnou značku sdílenou mezi $x$ a $y$. 
-Pak můžeme jak z $x$, tak $y$ odhodit tuto duplicitní značku tak aby vedla hrana zase do jiného vrcholu grafu. 
+Pak můžeme jak z $x$, tak $y$ odhodit tuto duplicitní značku tak, aby vedla hrana zase do jiného vrcholu grafu. 
 Tedy stupeň je 2. 
 
-Lemkde-Howson pak prochází unikátní hrany v $K$, začínajíc v listu $(0,0)$. 
-Hrany jsou unikátní díky tomu jak vybíráme další hranu a sice jak odhazujeme značky, tak máme-li hranu, kterou jsme přišli do vrcholu, tak tu máme jako tu odhozenou a sebrat můžeme jen další unikátní hranu pomocí přesunu v druhém poletopu. 
+Lemke-Howson pak prochází unikátní hrany v $K$ začínajíc v listu $(0,0)$. 
+Hrany jsou unikátní díky tomu, jak vybíráme další hranu a sice jak odhazujeme značky, tak máme-li hranu, kterou jsme přišli do vrcholu, tak tu máme jako tu odhozenou a sebrat můžeme jen další unikátní hranu pomocí přesunu v druhém polytopu. 
 Tedy díky výběru víme, že každý vrchol navštívíme jen a pouze jednou. 
 Algoritmus tedy končí po konečně mnoha krocích v jakémsi listu $(x^*,y^*)$. 
-Tento list aby byl listem musí být úplně označen a tedy dle důsledku \ref{thm:corollary_normalized_complete_label} máme, že je pak $(x/(1^Tx), (y/(1^Ty))$ Nashovým ekvilibriem.
+Tento list, aby byl listem, musí být úplně označen a tedy dle důsledku \ref{thm:corollary_normalized_complete_label} máme, že je pak $(x/(1^Tx), (y/(1^Ty))$ Nashovým ekvilibriem.
 \end{proof}
 
 \begin{theorem}
 \label{thm:corollary_nash_odd}
-V nedegenrované bimaticové hře \ref{def:nondegen_bimatrix} $G$ má lichý počet Nashových ekvilibrií \ref{def:nash_equilibrium}.
+V nedegenerované bimaticové hře \ref{def:nondegen_bimatrix} $G$ má lichý počet Nashových ekvilibrií \ref{def:nash_equilibrium}.
 \end{theorem}
 
 \begin{definition}[Efektivní implementace Lemke-Howson algortimu \ref{alg:lemke_howson}]

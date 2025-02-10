@@ -11,17 +11,17 @@ Když hráč $i\in \{1,2\}$ hraje $G$ pomocí online algoritmu $ON_i$ s vnějš�
 \begin{proof}[Důkaz věty \ref{thm:minimax_new}]
     Symetrií to stačí ukázat pro hráče $1$. 
     Nechť $p^t_{2,j}$ je pravděpodobnost toho, že druhý hráč vybere $j$-tou akci z $A_2$ v kroce $t$. 
-    Zadefinijeme si vypozorovaný vektor smíšené strategie \ref{def:mixed_strategy} dle frekvence daných akcí hraných hráčem $2$ jako $q = (q_1,q_2,\dots,q_{\abs{A_2}})$, kde $q_j = \sum^T_{t=1} p^t_{2,j}/T$. Víme že pro libovolný vektor smíšené strategie $q$ druhého hráče má hráč $1$ akci $a_i$, že $\E[b_2\sim q]{C(a_i, b_2)} \leq v$, tedy mpoužijeme-li je pokaždé, tak máme $L^T_{ON_i,\min} \leq L^T_{ON_i,i} \leq vT$. 
+    Zadefinujeme si vypozorovaný vektor smíšené strategie \ref{def:mixed_strategy} dle frekvence daných akcí hraných hráčem $2$ jako $q = (q_1,q_2,\dots,q_{\abs{A_2}})$, kde $q_j = \sum^T_{t=1} p^t_{2,j}/T$. Víme že pro libovolný vektor smíšené strategie $q$ druhého hráče má hráč $1$ akci $a_i$, že $\E[b_2\sim q]{C(a_i, b_2)} \leq v$, tedy použijeme-li je pokaždé, tak máme $L^T_{ON_i,\min} \leq L^T_{ON_i,i} \leq vT$. 
     A vzhledem k předpokladu o vnější lítosti $R$ algoritmu $ON_i$, tak máme $L^T_{ON_i} \leq L^T_{ON_i,\min} + R \leq  vT +R$
 \end{proof}
 
 \begin{proof}[Nový důkaz minimax věty \ref{thm:minimax}]
-    Rozdělíme důkaz na dvě nerovnosti a začneme s $\max_x \min_y x^T My \leq \min_y \max_x x^T M y$, protože je jednodušší. 
-    Protože $x^*$ je optimální strategií prvního hráče hraje-li první a může si vybrat $x^*$ i když hraje druhý. 
-    Je jen horší jít první ale stále platí nerovnost. 
+    Rozdělíme důkaz na dvě nerovnosti a začneme s $\max_x \min_y x^T My \leq \min_y \max_x x^T M y$(toto jou vlastně jen přepsané podmínky věty o optimální odpovědi za předpokladu že druhá strana hraje tak abychom vydělali minimálně), protože je jednodušší. 
+    Protože $x^*$ je optimální strategii prvního hráče hraje-li první a může si vybrat $x^*$ i když hraje druhý. 
+    Je jen horší jít první, ale stále platí nerovnost. 
 
     Všechny $m_{i,j} \in [-1,1]$, jinak je přeškálujeme. 
-    Vybereme $\epsilon \in (0,1]$ a spustíme bezlístostnou dynamiku \ref{alg:no_regrets} $T$ dostkrát aby oba hráči měli očekávanou vnější lítost (regret) $\epsilon$. 
+    Vybereme $\epsilon \in (0,1]$ a spustíme bezlístostnou dynamiku \ref{alg:no_regrets} $T$ dostkrát, aby oba hráči měli očekávanou vnější lítost (regret) $\epsilon$. 
     Využijeme-li třeba algoritmu polynomiálních vah \ref{alg:poly_weights} tak stačí $T \geq 4\ln \max\{m,n\}/\epsilon^2$, kde $m = \abs{A_1}, n = \abs{A_2}$, díky tomu že ztráta při kroku je $2\sqrt{\ln \max\{m,n\}/T}$. 
     
     Nechť $p_1,p_2,\dots,p_T$, $q_1,q_2,\dots,q_T$ jsou smíšené strategie hráče 1 a 2, která jsou doporučena algoritmem. 
@@ -30,7 +30,7 @@ Když hráč $i\in \{1,2\}$ hraje $G$ pomocí online algoritmu $ON_i$ s vnějš�
     Průměrná očekávaná výplata je $\frac{1}{T} \sum_{t=1}^T (p^t)^T M q^t$. 
 
     Pro čistou strategii \ref{def:pure_strategy} $a_i$ zavedeme smíšenou strategii $e_i$, která má všude $0$, kromě $i$-tého indexu, kde je jedna. 
-    Protože vnější lítost je maximálně $\epsilon$ u hráče jedna tak máme 
+    Protože vnější lítost je maximálně $\epsilon$ u hráče jedna, tak máme 
     \[
         e_i^T M \bar{y} = \frac{1}{T} \sum^T_{t=1} e_i^T M q^t \leq \frac{1}{T} \sum_{t=1}^T (p^t)^T M q^t + \epsilon = v +\epsilon 
     \]
