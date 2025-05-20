@@ -1,9 +1,9 @@
 # Obecná informatika
 1. Kombinatorika
-	Vytvořující funkce
+	[[Vytvořující funkce]]
 		použití vytvořujících funkcí k řešení lineárních rekurencí
-		zobecněná binomická věta (formulace)
-		Catalanova čísla (příklad kombinatorické interpretace, odvození vzorce v uzavřeněm tvaru)
+		[[Zobecněná binomická věta]] (formulace)
+		[[Catalanova čísla]] (příklad kombinatorické interpretace, odvození vzorce v uzavřeném tvaru)
 	Odhady faktoriálu a kombinačních čísel
 		formulace základních odhadů
 			$(𝑛/𝑒)^𝑛 \leq 𝑛! \leq 𝑒𝑛(𝑛/𝑒)^𝑛$
