@@ -4,14 +4,14 @@
 		použití vytvořujících funkcí k řešení lineárních rekurencí
 		[[Zobecněná binomická věta]] (formulace)
 		[[Catalanova čísla]] (příklad kombinatorické interpretace, odvození vzorce v uzavřeném tvaru)
-	Odhady faktoriálu a kombinačních čísel
+	[[Odhady faktoriálu a kombinačních čísel]]
 		formulace základních odhadů
 			$(𝑛/𝑒)^𝑛 \leq 𝑛! \leq 𝑒𝑛(𝑛/𝑒)^𝑛$
 			$(𝑛/𝑘)^𝑘 \leq \binom{n}{𝑘} \leq (𝑒𝑛/𝑘)^𝑘$
 			$2^{2𝑚}/(2\sqrt{m}) \leq \binom{2m}{m} \leq 2^{2m}/\sqrt{2m}$
-	Ramseyovy věty
-		Ramseyova věta (formulace konečné a nekonečné verze pro p-tice, důkaz verze p=2 pro 2 barvy)
-		Ramseyova čísla (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodobnostní konstrukcí)
+	[[Ramseyovy věty]]
+		Ramseyova věta (formulace [konečné](mff_statnice/combinatorics/Ramseyovy věty#Konečná Ramseyova věta) a [nekonečné](mff_statnice/combinatorics/Ramseyovy věty#Nekonečná Ramseyova věta) verze pro p-tice, důkaz verze p=2 pro 2 barvy)
+		[[Ramseyova čísla]] (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodobnostní konstrukcí)
 	Extremální kombinatorika
 		obecné povědomí co extremální kombinatorika studuje
 		Turánova věta (formulace, Turánovy grafy)
