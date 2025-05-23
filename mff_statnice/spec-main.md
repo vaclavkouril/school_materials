@@ -12,7 +12,7 @@
 	[[Ramseyovy věty]]
 		Ramseyova věta (formulace [konečné](mff_statnice/combinatorics/Ramseyovy věty#Konečná Ramseyova věta) a [nekonečné](mff_statnice/combinatorics/Ramseyovy věty#Nekonečná Ramseyova věta) verze pro p-tice, důkaz verze p=2 pro 2 barvy)
 		[[Ramseyova čísla]] (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodobnostní konstrukcí)
-	Extremální kombinatorika
+	[[Extremální kombinatorika]]
 		obecné povědomí co extremální kombinatorika studuje
 		Turánova věta (formulace, Turánovy grafy)
 		Erdös-Ko-Radoova věta (formulace)
@@ -20,7 +20,7 @@
 		přehled o používané terminologii
 		vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
 		Hammingův odhad (formulace a důkaz)
-		perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukce)
+		perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukc0e)
 Předměty
 	NDMI011 Kombinatorika a grafy 1 (5 kr)
 	NDMI012 Kombinatorika a grafy 2 (5 kr)
@@ -29,7 +29,7 @@ Předměty
 	Riemannův integrál jedno- i vícerozměrný
 	Funkce více proměnných
 		parciální derivace: definice a výpočet
-		výpočet extrémů pomocí paricálních derivací
+		výpočet extrémů pomocí parciálních derivací
 		existence extrémů pro funkce několika reálných proměnných
 		vázané extrémy: výpočet pomocí Lagrangeových multiplikátorů
 	Metrický prostor
