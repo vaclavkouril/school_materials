@@ -16,11 +16,11 @@
 		obecné povědomí co extremální kombinatorika studuje
 		Turánova věta (formulace, Turánovy grafy)
 		Erdös-Ko-Radoova věta (formulace)
-	Samoopravné kódy
+	[[Samoopravné kódy]]
 		přehled o používané terminologii
 		vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
-		Hammingův odhad (formulace a důkaz)
-		perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukc0e)
+		[Hammingův odhad](mff_statnice/combinatorics/Samoopravné kódy#Hammingův odhad) (formulace a důkaz)
+		perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukce)
 Předměty
 	NDMI011 Kombinatorika a grafy 1 (5 kr)
 	NDMI012 Kombinatorika a grafy 2 (5 kr)
