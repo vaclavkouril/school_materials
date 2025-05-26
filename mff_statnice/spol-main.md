@@ -70,21 +70,21 @@ Předměty
 	NMAI058 Lineární algebra 2 (5 kr)
 	
 3. Diskrétní matematika
-	Relace
-		binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
-	Ekvivalence a rozkladové třídy
-	Částečná uspořádání
+	[[Relace]]
+		vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
+	[Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Relace#Ekvivalence)
+	[Částečná uspořádání](mff_statnice/discrete_math/Relace#Částečná uspořádání)
 		pojmy (minimální a maximální prvky, nejmenší a největší prvky, řetězec, antiřetězec)
 		a šířka částečně uspořádané množiny a věta o jejich vztahu (o dlouhém a širokém)
-	Funkce
+	[[Funkce]]
 		typy funkcí (prostá, na, bijekce)
 		počty různých typů funkcí mezi dvěma konečnými množinami
-	Permutace a jejich základní vlastnosti (počet a pevný bod)
-	Kombinační čísla a vztahy mezi nimi, binomická věta a její aplikace
-	Princip inkluze a exkluze
+	[[Permutace]] a jejich základní vlastnosti (počet a pevný bod)
+	[[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace
+	[[Princip inkluze a exkluze]]
 		obecná formulace (a důkaz)
 		použití (problém šatnářky, Eulerova funkce pro počet dělitelů, počet surjekcí)
-	Hallova věta o systému různých reprezentantů a její vztah k párování v bipartitním grafu
+	[[Hallova věta]] o systému různých reprezentantů a její vztah k párování v bipartitním grafu
 		princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
 Předměty
 	NDMI002 Diskrétní matematika (5 kr)
