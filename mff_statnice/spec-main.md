@@ -1,22 +1,22 @@
 # Obecná informatika
-1. Kombinatorika
-	[[Vytvořující funkce]]
+1. Kombinatorika ✓
+	[[Vytvořující funkce]] ✓
 		použití vytvořujících funkcí k řešení lineárních rekurencí
 		[[Zobecněná binomická věta]] (formulace)
-		[[Catalanova čísla]] (příklad kombinatorické interpretace, odvození vzorce v uzavřeném tvaru)
-	[[Odhady faktoriálu a kombinačních čísel]]
+		[[Catalanova čísla]] (příklad kombinatorické interpretace, odvození vzorce v uzavřeném tvaru) 
+	[[Odhady faktoriálu a kombinačních čísel]] ✓
 		formulace základních odhadů
 			$(𝑛/𝑒)^𝑛 \leq 𝑛! \leq 𝑒𝑛(𝑛/𝑒)^𝑛$
 			$(𝑛/𝑘)^𝑘 \leq \binom{n}{𝑘} \leq (𝑒𝑛/𝑘)^𝑘$
 			$2^{2𝑚}/(2\sqrt{m}) \leq \binom{2m}{m} \leq 2^{2m}/\sqrt{2m}$
-	[[Ramseyovy věty]]
+	[[Ramseyovy věty]] ✓
 		Ramseyova věta (formulace [konečné](mff_statnice/combinatorics/Ramseyovy věty#Konečná Ramseyova věta) a [nekonečné](mff_statnice/combinatorics/Ramseyovy věty#Nekonečná Ramseyova věta) verze pro p-tice, důkaz verze p=2 pro 2 barvy)
 		[[Ramseyova čísla]] (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodobnostní konstrukcí)
-	[[Extremální kombinatorika]]
+	[[Extremální kombinatorika]] ✓
 		obecné povědomí co extremální kombinatorika studuje
 		Turánova věta (formulace, Turánovy grafy)
 		Erdös-Ko-Radoova věta (formulace)
-	[[Samoopravné kódy]]
+	[[Samoopravné kódy]] ✓
 		přehled o používané terminologii
 		vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
 		[Hammingův odhad](mff_statnice/combinatorics/Samoopravné kódy#Hammingův odhad) (formulace a důkaz)
@@ -86,7 +86,7 @@ Předměty
 	[[Grafové minory]]
 		definice a základní vlastnosti
 		zachovávání nakreslení při minorových operacích
-	[Množiny a zobrazení](mff_statnice/adv_discrete_math/Množiny a zobrazení)
+	[Množiny a zobrazení](mff_statnice/adv_discrete_math/Množiny a zobrazení) ✓
 		přehled o používané terminologii (třídy a vlastní třídy, kartézský součin, relace, zobrazení, suma, potenční množina, …)
 	[[Subvalence a ekvivalence množin]]
 		definice

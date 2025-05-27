@@ -1,3 +1,38 @@
+# Množiny
+*Definice:* Množina nechť je základním objektem teorie množin (uvažujme Zermleovu a Fraenkenovu teorii).
+Jazykem dané teorie množin rozumíme symboly:
+1. proměnné pro množiny
+2. binární predikátový symbol rovnosti $=$
+3. binární predikátový symbol náležení $\in$
+4. symboly logiky jako $\neg$ negace, $\land$ konjunkce, $\lor$ disjunkce, $\to$ implikace, $\leftrightarrow$ ekvivalence
+5. kvantifikátory $\forall$ obecný a $\exists$ existenční
+6. pomocné další symboly jako třeba závorky
+
+Základní jazyk také rozšíříme o symboly $\subseteq, \subset$. Říkáme, že množina $x$ je *podmnožinou* $y$ a píšeme $x \subseteq y$, platí-li $(\forall a)(a \in x \to a \in y)$. Říkáme o $x$, že je *vlastní podmnožinou* y a píšeme $x \subset y$, je-li $x\subseteq y$ a $x \neq y$. Symboly zveme inkluzemi.
+
+**Potenční množinu**, jenž jest složena ze všech podmnožin dané množiny $a$, zavádíme jako
+$$
+\mathscr{P}(a) = 2^a = \{ x: x \subseteq a \}.
+$$
+
+**Suma** na množině $a$ je definovaná výrazem
+$$
+\bigcup a = \{ x: (\exists y)(x\in y \land y \in a) \}.
+$$
+# Třídy
+Každá formule $\varphi(x)$ určuje soubor všech množin $x$, pro které platí, značme ho výrazem
+$$
+\{ x : \varphi(x) \}.
+$$
+Takovému zápisu za předpokladu, že $\varphi(x)$ je formule jazyka teorie množin, říkáme ***třídový term***.
+Tento soubor zveme **třídou**, určenou formulí $\varphi(x)$.
+Máme navíc dva typy tříd:
+1. množina, tedy platí-li formule
+$$
+(\forall x)(x\in z \leftrightarrow \varphi(x)) 
+$$
+	pro nějakou formuli $z$
+2. jinak ji říkáme **vlastní třídou**
 # Relace
 *Definice:* binární relace mezi množinami $X,Y$ je  množina $R \subseteq X\times Y$.
 *Příklady relací:* 
