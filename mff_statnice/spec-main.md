@@ -86,7 +86,7 @@ Předměty
 	[[Grafové minory]]
 		definice a základní vlastnosti
 		zachovávání nakreslení při minorových operacích
-	[[Množiny a zobrazení]]
+	[Množiny a zobrazení](mff_statnice/adv_discrete_math/Množiny a zobrazení)
 		přehled o používané terminologii (třídy a vlastní třídy, kartézský součin, relace, zobrazení, suma, potenční množina, …)
 	[[Subvalence a ekvivalence množin]]
 		definice

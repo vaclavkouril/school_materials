@@ -1,3 +1,4 @@
+# Relace
 *Definice:* binární relace mezi množinami $X,Y$ je  množina $R \subseteq X\times Y$.
 *Příklady relací:* 
 -  $\emptyset\dots$ prázdná
@@ -28,4 +29,6 @@ Máme několik poddruhů:
 1. lineární $\leq$: $\forall x,y\in A: x\leq y \lor y \leq x$ 
 2. částečné uspořádání je uspořádání nelineární![[Excalidraw/hasseuv_diagram.excalidraw|250|right]]
 3. ostré: mějme $\le$ uspořádání, platí-li $\forall x,y \in A: x < y \equiv x \le y \land x \neq y$
-*Definice:* 
+
+*Definice:* Mějme třídu $A$, uspořádání $\le$ na této třídě a mějme $X\subseteq A$. O prvku $a \in A$ říkáme, že je
+1. *majoranta* nebo *horní mez* třídy $X$. 
