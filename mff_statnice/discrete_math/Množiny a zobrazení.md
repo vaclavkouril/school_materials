@@ -33,7 +33,34 @@ $$
 $$
 	pro nějakou formuli $z$
 2. jinak ji říkáme **vlastní třídou**
+
+**Univerzální třídu** značíme $V$.
+
+*Definice:* Kartézský součin tříd $A,B$ je třída
+$$
+A \times B = \{ \langle a,b\rangle: a\in A \land b \in B \} = \{ x: (\exists a)(\exists b)(x = \langle a,b \rangle \land a \in A \land b \in B ) \}.
+$$
+
+*Lemma:* Pro libovolné množiny $x,y$ je $x \times y$ také množina.
+*Důkaz:* Vzhledem k tomu, že se dá jednoduše ověřit platnost
+$$
+(A \subseteq A_{1} \land B \subseteq B_{1}) \to (A\times B \subseteq A_{1}\times B_{1}),
+$$
+tak berouc $z = x \cup y$ je pravdou $x \times y \subseteq z \times z$. Dle schématu vydělení stačí dokázat $z \times z$ je množinou. A tedy vezměme libovolný prvek $\langle u,v \rangle z \times z$, tedy $u,v \in z$. Potom
+$$
+\{ u \} \subseteq z, \quad \{ u,v \} \subseteq z,
+$$
+a proto máme $\{ u \} \subseteq \mathscr{P}(z)$, $\{ u,v \} \subseteq \mathscr{P}(z)$. 
+Opakováním naší úvahy dostáváme $\{ \{ u \}, \{ u,v \}\} = \langle u,v \rangle \subseteq \mathscr{P}(z)$, odkud nám z definice potenční množiny plyne $\langle u,v \rangle \in \mathscr{P}(\mathscr{P}(z))$. A máme tedy, že 
+$$
+z \times z \subseteq \mathscr{P}(\mathscr{P}(z)),
+$$
+a dle axiomu potence víme o pravé straně inkluze množina. Proto $z \times z$ a tedy i $x \times y$ je také množina.
+
 # Relace
+*Definice:* Třída $R$ je relace, je-li $R \subseteq V \times V$. Píšeme $\langle x,y \rangle \in R$ jako $xRy$. 
+	Navíc je-li $R \subseteq V^n$ pro $n \ge 2$, říkáme, že $R$ je $n$-ární relace.
+
 *Definice:* binární relace mezi množinami $X,Y$ je  množina $R \subseteq X\times Y$.
 *Příklady relací:* 
 -  $\emptyset\dots$ prázdná
@@ -66,4 +93,6 @@ Máme několik poddruhů:
 3. ostré: mějme $\le$ uspořádání, platí-li $\forall x,y \in A: x < y \equiv x \le y \land x \neq y$
 
 *Definice:* Mějme třídu $A$, uspořádání $\le$ na této třídě a mějme $X\subseteq A$. O prvku $a \in A$ říkáme, že je
-1. *majoranta* nebo *horní mez* třídy $X$. 
+1. *majoranta* nebo *horní mez* třídy $X$, jestliže $(\forall x\in X)(x\le a)$,
+2. *maximální prvek* třídy $X$, je-li $a\in X$ a $(\forall x\in X)(\neg a<x)$,
+3. *největší prvek* třídy $X$, je-li $a$ *majoranta* $X$ a $a \in X$.

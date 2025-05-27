@@ -73,7 +73,7 @@ Předměty
 	[Množiny a zobrazení](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Relace) ✓
 		vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
 	[Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Ekvivalence) ✓
-	[Částečná uspořádání](mff_statnice/discrete_math/Relace#Částečná uspořádání) ✓
+	[Částečná uspořádání](mff_statnice/discrete_math/Relace#Částečná uspořádání) 
 		pojmy (minimální a maximální prvky, nejmenší a největší prvky, řetězec, antiřetězec)
 		a šířka částečně uspořádané množiny a věta o jejich vztahu (o dlouhém a širokém)
 	[[Funkce]]
