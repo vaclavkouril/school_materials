@@ -24,8 +24,8 @@ theme:
 
 plugins:
   - search
-  - obsidian:
-      use_directory_urls: true
+  - wikilinks:
+      build_docs_dir: true
 
 markdown_extensions:
   - admonition
