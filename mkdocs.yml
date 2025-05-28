@@ -1,7 +1,60 @@
 site_name: School Materials
 docs_dir: docs
 site_dir: site
+site_url: kouril.dev
+theme:
+  name: material
+  language: cs
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - content.code.annotate
+    - content.action.edit  # můžeš vypnout
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: indigo
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: indigo
 
+markdown_extensions:
+  - admonition            # info/warning/note bloky
+  - codehilite            # syntax highlighting
+  - footnotes             # poznámky pod čarou
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:  # KaTeX/LaTeX
+      generic: true
+  - pymdownx.superfences  # vícero typů bloků
+  - pymdownx.highlight
+  - pymdownx.details      # rozbalovací sekce
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: starvex
+      repo: school_materials
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
+  - js/math-render.js  # vytvoříme v dalším kroku
+
+extra_css:
+  - css/custom.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 
 nav:
   - Úvod: index.md
