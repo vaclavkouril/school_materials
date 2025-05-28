@@ -1,0 +1,7 @@
+site_name: School Materials
+nav:
+  - Úvod: index.md
+  - MFF Státnice:
+      - Rozcestník: mff_statnice/spec-main.md
+theme:
+  name: material

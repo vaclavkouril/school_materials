@@ -306,3 +306,5 @@ TSWLatexianTemp*
 #*Notes.bib
 
 build
+site/
+__pycache__/
