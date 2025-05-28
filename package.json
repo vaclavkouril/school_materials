@@ -9,11 +9,18 @@
     "preview": "quartz preview"
   },
   "dependencies": {
+    "@jackyzha0/quartz": "^4.5.0",
+    "gray-matter": "^4.0.3",
     "rehype-katex": "^7.0.1",
+    "rehype-mathjax": "^7.1.0",
+    "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
-    "remark-gfm": "^4.0.1"
+    "remark-frontmatter": "^5.0.0",
+    "yargs": "^18.0.0",
+    "katex": "^0.16.8"
   },
   "engines": {
     "node": ">=20.0.0"
   }
 }
+
