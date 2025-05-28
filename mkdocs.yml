@@ -1,7 +1,12 @@
 site_name: School Materials
+docs_dir: .
+
 nav:
   - Úvod: index.md
   - MFF Státnice:
       - Rozcestník: mff_statnice/spec-main.md
+  - Teorie her:
+      - Výpisky (PDF): alg_game_theory/build/main.pdf
+
 theme:
   name: material
