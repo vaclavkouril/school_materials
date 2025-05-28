@@ -1,0 +1,44 @@
+/* základní layout */
+.md-typeset {
+  line-height: 1.6;
+  font-size: 17px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* seznamy s ✓ */
+.md-typeset li:has(input[type=checkbox]:checked)::before {
+  content: "✓ ";
+  color: green;
+}
+
+/* wikilinky */
+a.wikilink {
+  color: #3c99dc;
+  text-decoration: underline dashed;
+}
+
+.md-typeset p {
+  margin: 1em 0;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 2em;
+}
+
+.md-typeset li {
+  margin-bottom: 0.4em;
+}
+
+.md-typeset blockquote {
+  border-left: 3px solid #ccc;
+  padding-left: 1em;
+  color: #666;
+}
+
+.md-typeset .task-list-item input[type=checkbox] {
+  transform: scale(1.2);
+  margin-right: 0.6em;
+}

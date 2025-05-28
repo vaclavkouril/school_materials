@@ -46,20 +46,25 @@ markdown_extensions:
       repo_url_shorthand: true
       user: starvex
       repo: school_materials
+  - pymdownx.wikilinks:
+      base_url: ''
+      end_url: ''
+      html_class: wikilink
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
-  - js/math-render.js  # vytvoříme v dalším kroku
+  - js/math-render.js
 
 extra_css:
-  - css/custom.css
+  - css/obsidian-like.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 
 nav:
   - Úvod: index.md
   - MFF Státnice:
-      - Rozcestník: mff_statnice/spec-main.md
+      - Společná část: mff_statnice/spec-main.md
+      - Specializace: mff_statnice/spec-main.md
   - Teorie her:
       - Výpisky (PDF): alg_game_theory/build/main.pdf
 
