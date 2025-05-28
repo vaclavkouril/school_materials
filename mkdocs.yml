@@ -1,6 +1,6 @@
 site_name: School Materials
-docs_dir: .
-site_dir: _site
+docs_dir: docs
+site_dir: site
 
 
 nav:
