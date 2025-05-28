@@ -1,5 +1,7 @@
 site_name: School Materials
 docs_dir: .
+site_dir: _site
+
 
 nav:
   - Úvod: index.md
