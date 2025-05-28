@@ -1,7 +1,7 @@
 site_name: School Materials
 docs_dir: docs
 site_dir: site
-site_url: kouril.dev
+site_url: https://kouril.dev
 theme:
   name: material
   language: cs
