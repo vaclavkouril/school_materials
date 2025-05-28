@@ -9,7 +9,6 @@
     "preview": "quartz preview"
   },
   "dependencies": {
-    "@jackyzha0/quartz": "^4.5.0",
     "gray-matter": "^4.0.3",
     "rehype-katex": "^7.0.1",
     "rehype-mathjax": "^7.1.0",
