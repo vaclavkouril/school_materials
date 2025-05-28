@@ -1,7 +1,7 @@
 site_name: School Materials
-site_url: https://kouril.dev
 docs_dir: docs
 site_dir: site
+site_url: https://kouril.dev
 
 theme:
   name: material
@@ -11,7 +11,6 @@ theme:
     - navigation.top
     - search.highlight
     - content.code.annotate
-    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -21,11 +20,6 @@ theme:
       scheme: default
       primary: blue
       accent: indigo
-
-plugins:
-  - search
-  - wikilinks:
-      build_docs_dir: true
 
 markdown_extensions:
   - admonition
@@ -53,14 +47,14 @@ markdown_extensions:
       user: starvex
       repo: school_materials
 
+extra_css:
+  - css/obsidian-like.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
   - js/math-render.js
-
-extra_css:
-  - css/obsidian-like.css
-  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 
 nav:
   - Úvod: index.md
