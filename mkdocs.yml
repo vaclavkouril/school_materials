@@ -1,7 +1,8 @@
 site_name: School Materials
+site_url: https://kouril.dev
 docs_dir: docs
 site_dir: site
-site_url: https://kouril.dev
+
 theme:
   name: material
   language: cs
@@ -10,7 +11,7 @@ theme:
     - navigation.top
     - search.highlight
     - content.code.annotate
-    - content.action.edit  # můžeš vypnout
+    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -21,17 +22,22 @@ theme:
       primary: blue
       accent: indigo
 
+plugins:
+  - search
+  - obsidian:
+      use_directory_urls: true
+
 markdown_extensions:
-  - admonition            # info/warning/note bloky
-  - codehilite            # syntax highlighting
-  - footnotes             # poznámky pod čarou
+  - admonition
+  - codehilite
+  - footnotes
   - toc:
       permalink: true
-  - pymdownx.arithmatex:  # KaTeX/LaTeX
+  - pymdownx.arithmatex:
       generic: true
-  - pymdownx.superfences  # vícero typů bloků
+  - pymdownx.superfences
   - pymdownx.highlight
-  - pymdownx.details      # rozbalovací sekce
+  - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.emoji
   - pymdownx.snippets
@@ -46,10 +52,6 @@ markdown_extensions:
       repo_url_shorthand: true
       user: starvex
       repo: school_materials
-  - pymdownx.wikilinks:
-      base_url: ''
-      end_url: ''
-      html_class: wikilink
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
@@ -67,6 +69,3 @@ nav:
       - Specializace: mff_statnice/spec-main.md
   - Teorie her:
       - Výpisky (PDF): alg_game_theory/build/main.pdf
-
-theme:
-  name: material
