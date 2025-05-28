@@ -1,4 +1,9 @@
 {
   "tabSize": 4,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "strictLineBreaks": true,
+  "showLineNumber": false,
+  "smartIndentList": true,
+  "newFileLocation": "current",
+  "useMarkdownLinks": false
 }

@@ -1,317 +1,315 @@
 # Společná matematika
 1. Základy diferenciálního a integrálního počtu
-	 Posloupnosti reálných čísel a jejich limity
-		definice, aritmetika limit
-		věta o dvou policajtech, limity a uspořádání
-	 Řady
-		definice částečného součtu a součtu
-		geometrická řada, harmonická řada
-	Reálné funkce jedné reálné proměnné
-		limita funkce v bodě
-		definice, aritmetika limit
-		vztah s uspořádáním
-		limita složené funkce
-		funkce spojité na intervalu
-		nabývání mezihodnot
-		nabývání maxima
-	Derivace a její aplikace
-		definice a základní pravidla pro výpočet
-		l’Hospitalovo pravidlo
-		vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
-		Taylorův polynom (limitní forma)
-	Integrály a jejich aplikace
-		primitivní funkce: definice a metody výpočtu (substituce, per-partes)
-		Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
-		aplikace
-		odhady součtu řad (konečných i nekonečných)
-		obsahy rovinných útvarů
-		objemy a povrchy rotačních útvarů v prostoru
-		délka křivky
-Předměty
-	NMAI054 Matematická analýza 1 (5 kr)
+	-  Posloupnosti reálných čísel a jejich limity
+		- definice, aritmetika limit
+		- věta o dvou policajtech, limity a uspořádání
+	-  Řady
+		- definice částečného součtu a součtu
+		- geometrická řada, harmonická řada
+	- Reálné funkce jedné reálné proměnné
+		- limita funkce v bodě
+		- definice, aritmetika limit
+		- vztah s uspořádáním
+		- limita složené funkce
+		- funkce spojité na intervalu
+		- nabývání mezihodnot
+		- nabývání maxima
+	- Derivace a její aplikace
+		- definice a základní pravidla pro výpočet
+		- l’Hospitalovo pravidlo
+		- vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
+		- Taylorův polynom (limitní forma)
+	- Integrály a jejich aplikace
+		- primitivní funkce: definice a metody výpočtu (substituce, per-partes)
+		- Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
+		- aplikace
+		- odhady součtu řad (konečných i nekonečných)
+		- obsahy rovinných útvarů
+		- objemy a povrchy rotačních útvarů v prostoru
+		- délka křivky
+- Předměty
+	- NMAI054 Matematická analýza 1 (5 kr)
 	
 2. Algebra a lineární algebra
-	Algebraické struktury:
-		grupy a podgrupy, permutace
-		tělesa a speciálně konečná tělesa
-	Soustavy lineárních rovnic:
-		maticový zápis, elementární řádkové úpravy, odstupňovaný tvar matice
-		Gaussova a Gaussova-Jordanova eliminace, popis množiny řešení
-	 Matice:
-		operace s maticemi a základní typy matic, hodnost matice
-		regulární a inverzní matice
-	Vektorové prostory:
-		vektorový prostor, lineární kombinace, lineární závislost a nezávislost, lineární obal, systém generátorů
-		Steinitzova věta o výměně, báze, dimenze, souřadnice
-		vektorové podprostory, zejména maticové (řádkový, sloupcový, jádro) a jejich dimenze
-	Lineární zobrazení:
-		definice, maticová reprezentace lineárního zobrazení, matice složeného zobrazení
-		obraz a jádro lineárních zobrazení
-		isomorfismus prostorů
-	Skalární součin:
-		skalární součin, norma indukovaná skalárním součinem
-		Pythagorova věta, Cauchyho-Schwarzova nerovnost, trojúhelníková nerovnost
-		ortonormální systémy vektorů, Fourierovy koeficienty, Gramova-Schmidtova ortogonalizace
-		ortogonální doplněk, ortogonální projekce, projekce jako lineární zobrazení
-		ortogonální matice a jejich vlastnosti
-	Determinanty:
-		definice a základní vlastnosti determinantu (multiplikativnost, determinant transponované matice, vztah s regularitou a vlastními čísly)
-		Laplaceův rozvoj determinantu
-		geometrická interpretace determinantu
-	Vlastní čísla a vlastní vektory:
-		definice, geometrický význam a základní vlastnosti vlastních čísel, charakteristický polynom, násobnost vlastních čísel
-		podobnost a diagonalizovatelnost matic, spektrální rozklad
-		symetrické matice, jejich vlastní čísla a spektrální rozklad
-	Positivně semidefinitní a positivně definitní matice:
-		charakterizace a vlastnosti, vztah se skalárním součinem, vlastními čísly
-		Choleského rozklad (znění věty a praktické použití)
-Předměty
-	NMAI057 Lineární algebra 1 (5 kr)
-	NMAI058 Lineární algebra 2 (5 kr)
+	- Algebraické struktury:
+		- grupy a podgrupy, permutace
+		- tělesa a speciálně konečná tělesa
+	- Soustavy lineárních rovnic:
+		- maticový zápis, elementární řádkové úpravy, odstupňovaný tvar matice
+		- Gaussova a Gaussova-Jordanova eliminace, popis množiny řešení
+	-  Matice:
+		- operace s maticemi a základní typy matic, hodnost matice
+		- regulární a inverzní matice
+	- Vektorové prostory:
+		- vektorový prostor, lineární kombinace, lineární závislost a nezávislost, lineární obal, systém generátorů
+		- Steinitzova věta o výměně, báze, dimenze, souřadnice
+		- vektorové podprostory, zejména maticové (řádkový, sloupcový, jádro) a jejich dimenze
+	- Lineární zobrazení:
+		- definice, maticová reprezentace lineárního zobrazení, matice složeného zobrazení
+		- obraz a jádro lineárních zobrazení
+		- isomorfismus prostorů
+	- Skalární součin:
+		- skalární součin, norma indukovaná skalárním součinem
+		- Pythagorova věta, Cauchyho-Schwarzova nerovnost, trojúhelníková nerovnost
+		- ortonormální systémy vektorů, Fourierovy koeficienty, Gramova-Schmidtova ortogonalizace
+		- ortogonální doplněk, ortogonální projekce, projekce jako lineární zobrazení
+		- ortogonální matice a jejich vlastnosti
+	- Determinanty:
+		- definice a základní vlastnosti determinantu (multiplikativnost, determinant transponované matice, vztah s regularitou a vlastními čísly)
+		- Laplaceův rozvoj determinantu
+		- geometrická interpretace determinantu
+	- Vlastní čísla a vlastní vektory:
+		- definice, geometrický význam a základní vlastnosti vlastních čísel, charakteristický polynom, násobnost vlastních čísel
+		- podobnost a diagonalizovatelnost matic, spektrální rozklad
+		- symetrické matice, jejich vlastní čísla a spektrální rozklad
+	- Positivně semidefinitní a positivně definitní matice:
+		- charakterizace a vlastnosti, vztah se skalárním součinem, vlastními čísly
+		- Choleského rozklad (znění věty a praktické použití)
+- Předměty
+	- NMAI057 Lineární algebra 1 (5 kr)
+	- NMAI058 Lineární algebra 2 (5 kr)
 	
 3. Diskrétní matematika
-	[Množiny a zobrazení](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Relace) ✓
-		vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
-	[Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Ekvivalence) ✓
-	[Částečná uspořádání](mff_statnice/discrete_math/Relace#Částečná uspořádání) 
-		pojmy (minimální a maximální prvky, nejmenší a největší prvky, řetězec, antiřetězec)
-		a šířka částečně uspořádané množiny a věta o jejich vztahu (o dlouhém a širokém)
-	[[Funkce]]
-		typy funkcí (prostá, na, bijekce)
-		počty různých typů funkcí mezi dvěma konečnými množinami
-	[[Permutace]] a jejich základní vlastnosti (počet a pevný bod)
-	[[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace
-	[[Princip inkluze a exkluze]]
-		obecná formulace (a důkaz)
-		použití (problém šatnářky, Eulerova funkce pro počet dělitelů, počet surjekcí)
-	[[Hallova věta]] o systému různých reprezentantů a její vztah k párování v bipartitním grafu
-		princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
-Předměty
-	NDMI002 Diskrétní matematika (5 kr)
-	NDMI011 Kombinatorika a grafy 1 (5 kr)
-	
+	- [Množiny a zobrazení](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Relace) ✓
+		- vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
+	- [Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Ekvivalence) ✓
+	- [Částečná uspořádání](mff_statnice/discrete_math/Relace#Částečná uspořádání) 
+		- pojmy (minimální a maximální prvky, nejmenší a největší prvky, řetězec, antiřetězec)
+		- a šířka částečně uspořádané množiny a věta o jejich vztahu (o dlouhém a širokém)
+	- [[Funkce]]
+		- typy funkcí (prostá, na, bijekce)
+		- počty různých typů funkcí mezi dvěma konečnými množinami
+	- [[Permutace]] a jejich základní vlastnosti (počet a pevný bod)
+	- [[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace
+	- [[Princip inkluze a exkluze]]
+		- obecná formulace (a důkaz)
+		- použití (problém šatnářky, Eulerova funkce pro počet dělitelů, počet surjekcí)
+	- [[Hallova věta]] o systému různých reprezentantů a její vztah k párování v bipartitním grafu
+		- princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
+- Předměty
+	- NDMI002 Diskrétní matematika (5 kr)
+	- NDMI011 Kombinatorika a grafy 1 (5 kr)
+	 
 4. Teorie grafů
-	Základní pojmy teorie grafů
-		graf, vrcholy a hrany, izomorfismus grafů, podgraf, okolí vrcholu a stupeň vrcholu, doplněk grafu, bipartitní graf
-	Základní příklady grafů
-		úplný graf a úplný bipartitní graf, cesty a kružnice
-	Souvislost grafů, komponenty souvislosti, vzdálenost v grafu
-	Stromy
-		definice a základní vlastnosti (existence listů, počet hran stromu)
-		ekvivalentní charakteristiky stromů
-	Rovinné grafy
-		definice a základní pojmy (rovinný graf a rovinné nakreslení grafu, stěny)
-		Eulerova formule a maximální počet hran rovinného grafu (důkaz a použití)
-	Barevnost grafů
-		definice dobrého obarvení
-		vztah barevnosti a klikovosti grafu
-	Hranová a vrcholová souvislost grafů
-		hranová a vrcholová verze Mengerovy věty
-	Orientované grafy, silná a slabá souvislost
-	Toky v sítích
-		definice sítě a toku v ní
-		existence maximálního toku (bez důkazu)
-		princip hledání maximálního toku v síti s celočíselnými kapacitami (například pomocí Ford-Fulkersonova algoritmu)
-Předměty
-	NDMI002 Diskrétní matematika (5 kr)
-	NDMI011 Kombinatorika a grafy 1 (5 kr)
+	- Základní pojmy teorie grafů
+		- graf, vrcholy a hrany, izomorfismus grafů, podgraf, okolí vrcholu a stupeň vrcholu, doplněk grafu, bipartitní graf
+	- Základní příklady grafů
+		- úplný graf a úplný bipartitní graf, cesty a kružnice
+	- Souvislost grafů, komponenty souvislosti, vzdálenost v grafu
+	- Stromy
+		- definice a základní vlastnosti (existence listů, počet hran stromu)
+		- ekvivalentní charakteristiky stromů
+	- Rovinné grafy
+		- definice a základní pojmy (rovinný graf a rovinné nakreslení grafu, stěny)
+		- Eulerova formule a maximální počet hran rovinného grafu (důkaz a použití)
+	- Barevnost grafů
+		- definice dobrého obarvení
+		- vztah barevnosti a klikovosti grafu
+	- Hranová a vrcholová souvislost grafů
+		- hranová a vrcholová verze Mengerovy věty
+	- Orientované grafy, silná a slabá souvislost
+	- Toky v sítích
+		- definice sítě a toku v ní
+		- existence maximálního toku (bez důkazu)
+		- princip hledání maximálního toku v síti s celočíselnými kapacitami (například pomocí Ford-Fulkersonova algoritmu)
+- Předměty
+	- NDMI002 Diskrétní matematika (5 kr)
+	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	
 5. Pravděpodobnost a statistika
-	Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost
-		definice těchto pojmů, příklady
-		základní pravidla pro počítání s pravděpodobností
-		nezávislost náhodných jevů, podmíněná pravděpodobnost
-		Bayesův vzorec
-	Náhodné veličiny a jejich rozdělení
-		diskrétní i spojitý případ
-		popis pomocí distribuční funkce a pomocí pravděpodobnostní funkce/hustoty
-		střední hodnota
-			linearita střední hodnoty
-			střední hodnota součinu nezávislých veličin
-			Markovova nerovnost
-		rozptyl
-			definice
-			vzorec pro rozptyl součtu (závislých či nezávislých veličin)
-		práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
-	Limitní věty
-		zákon velkých čísel
-		centrální limitní věta
-	Bodové odhady
-		alespoň jedna metoda pro jejich tvorbu
-		vlastnosti
-	Intervalové odhady: metoda založená na aproximaci normálním rozdělením
-		Testování hypotéz
-		základní přístup
-		chyby 1. a 2. druhu
-		hladina významnosti
-Předměty
-	NDMI002 Diskrétní matematika (5 kr)
-	NMAI059 Pravděpodobnost a statistika 1 (5 kr)
+	- Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost
+		- definice těchto pojmů, příklady
+		- základní pravidla pro počítání s pravděpodobností
+		- nezávislost náhodných jevů, podmíněná pravděpodobnost
+		- Bayesův vzorec
+	- Náhodné veličiny a jejich rozdělení
+		- diskrétní i spojitý případ
+		- popis pomocí distribuční funkce a pomocí pravděpodobnostní funkce/hustoty
+		- střední hodnota
+			- linearita střední hodnoty
+			- střední hodnota součinu nezávislých veličin
+			- Markovova nerovnost
+		- rozptyl
+			- definice
+			- vzorec pro rozptyl součtu (závislých či nezávislých veličin)
+		- práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
+	- Limitní věty
+		- zákon velkých čísel
+		- centrální limitní věta
+	- Bodové odhady
+		- alespoň jedna metoda pro jejich tvorbu
+		- vlastnosti
+	- Intervalové odhady: metoda založená na aproximaci normálním rozdělením
+		- Testování hypotéz
+		- základní přístup
+		- chyby 1. a 2. druhu
+		- hladina významnosti
+- Předměty
+	- NDMI002 Diskrétní matematika (5 kr)
+	- NMAI059 Pravděpodobnost a statistika 1 (5 kr)
 	
 6. Logika
-	Syntaxe
-		znalost a práce se základními pojmy syntaxe výrokové a predikátové logiky (jazyk, otevřená a uzavřená formule, instance formule, apod.)
-		normální tvary výrokových formulí
-			prenexní tvary formulí predikátové logiky
-			znalost základních normálních tvarů (CNF, DNF, PNF)
-			převody na normální tvary
-			použití pro algoritmy (SAT, rezoluce)
-	Sémantika
-		pojem modelu teorie
-		pravdivost, lživost, nezávislost formule vzhledem k teorii
-		splnitelnost, tautologie, důsledek
-		analýza výrokových teorií nad konečně mnoha prvovýroky
-	Extenze teorií
-		schopnost porovnat sílu teorií
-		konzervativnost, skolemizace
-	Dokazatelnost:
-		pojem formálního důkazu, zamítnutí
-		schopnost práce v některém z formálních dokazovacích systémů (např. tablo metoda, rezoluce, Hilbertovský kalkul)
-	Věty o kompaktnosti a úplnosti výrokové a predikátové logiky
-		znění a porozumění významu
-		použití na příkladech, důsledky
-	Rozhodnutelnost
-		pojem kompletnosti a její kritéria, význam pro rozhodnutelnost
-		příklady rozhodnutelných a nerozhodnutelných teorií
-Předměty
-	NAIL062 Výroková a predikátová logika (5 kr)
-
+	- Syntaxe
+		- znalost a práce se základními pojmy syntaxe výrokové a predikátové logiky (jazyk, otevřená a uzavřená formule, instance formule, apod.)
+		- normální tvary výrokových formulí
+			- prenexní tvary formulí predikátové logiky
+			- znalost základních normálních tvarů (CNF, DNF, PNF)
+			- převody na normální tvary
+			- použití pro algoritmy (SAT, rezoluce)
+	- Sémantika
+		- pojem modelu teorie
+		- pravdivost, lživost, nezávislost formule vzhledem k teorii
+		- splnitelnost, tautologie, důsledek
+		- analýza výrokových teorií nad konečně mnoha prvovýroky
+	- Extenze teorií
+		- schopnost porovnat sílu teorií
+		- konzervativnost, skolemizace
+	- Dokazatelnost:
+		- pojem formálního důkazu, zamítnutí
+		- schopnost práce v některém z formálních dokazovacích systémů (např. tablo metoda, rezoluce, Hilbertovský kalkul)
+	- Věty o kompaktnosti a úplnosti výrokové a predikátové logiky
+		- znění a porozumění významu
+		- použití na příkladech, důsledky
+	- Rozhodnutelnost
+		- pojem kompletnosti a její kritéria, význam pro rozhodnutelnost
+		- příklady rozhodnutelných a nerozhodnutelných teorií
+- Předměty
+	- NAIL062 Výroková a predikátová logika (5 kr)
 # Společná informatika
 1. Automaty a jazyky
-	Regulární jazyky
-		regulární gramatiky
-		deterministický a nedeterministický konečný automat
-		regulární výrazy
-	Bezkontextové jazyky
-		bezkontextové gramatiky, jazyk generovaný gramatikou
-		zásobníkový automat, třída jazyků přijímaných zásobníkovými automaty
-	Rekurzivně spočetné jazyky
-		gramatika typu 0
-	Turingův stroj
-		algoritmicky nerozhodnutelné problémy
-	Chomského hierarchie
-		schopnost zařazení konkrétního jazyka do Chomského hierarchie (zpravidla sestrojení odpovídajícího automatu či gramatiky)
-Předměty
-	NTIN071 Automaty a gramatiky (2/5 z 5 kr)
+	- Regulární jazyky
+		- regulární gramatiky
+		- deterministický a nedeterministický konečný automat
+		- regulární výrazy
+	- Bezkontextové jazyky
+		- bezkontextové gramatiky, jazyk generovaný gramatikou
+		- zásobníkový automat, třída jazyků přijímaných zásobníkovými automaty
+	- Rekurzivně spočetné jazyky
+		- gramatika typu 0
+	- Turingův stroj
+		- algoritmicky nerozhodnutelné problémy
+	- Chomského hierarchie
+		- schopnost zařazení konkrétního jazyka do Chomského hierarchie (zpravidla sestrojení odpovídajícího automatu či gramatiky)
+- Předměty
+	- NTIN071 Automaty a gramatiky (2/5 z 5 kr)
 	
 2. Algoritmy a datové stuktury
-	Časová složitost algoritmů
-		časová a prostorová složitost algoritmu
-		měření velikosti dat
-		složitost v nejlepším, nejhorším a průměrném případě
-		asymptotická notace
-	Třídy složitosti
-		třídy P a NP
-		převoditelnost problémů, NP-těžkost a NP-úplnost
-		příklady NP-úplných problémů a převodů mezi nimi
-	Metoda rozděl a panuj
-		princip rekurzivního dělení problému na podproblémy
-		výpočet složitosti pomocí rekurentních rovnic
-		Master theorem (kuchařková věta) (bez důkazu)
-		aplikace
-			Mergesort
-			násobení dlouhých čísel
-	Binarní vyhledávací stromy
-		definice vyhledávacího stromu
-		operace s nevyvažovanými stromy
-		AVL stromy (definice)
-	Třídění
-		primitivní třídicí algoritmy (Bubblesort, Insertsort)
-		Quicksort
-		dolní odhad složitosti porovnávacích třídicích algoritmů
-	Grafové algoritmy
-		prohledávání do šířky a do hloubky
-		topologické třídění orientovaných grafů
-		nejkratší cesty v ohodnocených grafech (Dijkstrův a Bellmanův-Fordův algoritmus)
-		minimální kostra grafu (Jarníkův a Borůvkův algoritmus)
-		toky v sítích (Ford-Fulkerson algoritmus)
-Předměty
-	NTIN060 Algoritmy a datové struktury 1 (3/5 z 5 kr)
-	NTIN061 Algoritmy a datové struktury 2 (1/5 z 5 kr)
+	- Časová složitost algoritmů
+		- časová a prostorová složitost algoritmu
+		- měření velikosti dat
+		- složitost v nejlepším, nejhorším a průměrném případě
+		- asymptotická notace
+	- Třídy složitosti
+		- třídy P a NP
+		- převoditelnost problémů, NP-těžkost a NP-úplnost
+		- příklady NP-úplných problémů a převodů mezi nimi
+	- Metoda rozděl a panuj
+		- princip rekurzivního dělení problému na podproblémy
+		- výpočet složitosti pomocí rekurentních rovnic
+		- Master theorem (kuchařková věta) (bez důkazu)
+		- aplikace
+			- Mergesort
+			- násobení dlouhých čísel
+	- Binarní vyhledávací stromy
+		- definice vyhledávacího stromu
+		- operace s nevyvažovanými stromy
+		- AVL stromy (definice)
+	- Třídění
+		- primitivní třídicí algoritmy (Bubblesort, Insertsort)
+		- Quicksort
+		- dolní odhad složitosti porovnávacích třídicích algoritmů
+	- Grafové algoritmy
+		- prohledávání do šířky a do hloubky
+		- topologické třídění orientovaných grafů
+		- nejkratší cesty v ohodnocených grafech (Dijkstrův a Bellmanův-Fordův algoritmus)
+		- minimální kostra grafu (Jarníkův a Borůvkův algoritmus)
+		- toky v sítích (Ford-Fulkerson algoritmus)
+- Předměty
+	- NTIN060 Algoritmy a datové struktury 1 (3/5 z 5 kr)
+	- NTIN061 Algoritmy a datové struktury 2 (1/5 z 5 kr) 
 	
 3. Programovací jazyky (C#)
-	Koncepty pro abstrakci, zapouzdření a polymorfismus.
-		související konstrukty programovacích jazyků
-			třídy, rozhraní, metody, datové položky, dědičnost, viditelnost
-		(dynamický) polymorfismus, statické a dynamické typování
-		jednoduchá dědičnost
-			Ⓥ virtuální a nevirtuální metody v C#
-		vícenásobná dědičnost a její problémy
-			Ⓥ interfaces v C#
-		implementace rozhraní (interface)
-		vhodné použití uvedených konceptů
-	Primitivní a objektové typy a jejich reprezentace.
-		číselné a výčtové typy
-		Ⓥ hodnotové a referenční typy v C#
-		Ⓥ reference, imutabilní typy a boxing v C#
-	Generické typy a funkcionální prvky (procedurálních programovacích jazyků).
-		Ⓥ generické typy C# (bez omezení typových parametrů)
-		Ⓥ typy reprezentující funkce v C++, C#, nebo Javě
-		lambda funkce a funkcionální rozhraní
-	Manipulace se zdroji a mechanizmy pro ošetření chyb.
-		správa životního cyklu zdrojů v případě výskytu chyb
-			Ⓥ using v C#
-		konstrukce pro obsluhu a propagaci výjimek
-	Životní cyklus objektů a správa paměti.
-		alokace (alokace statická, na zásobníku, na haldě)
-		inicializace (konstruktory, volání zděděných konstruktorů)
-		destrukce (destruktory, finalizátory)
-		explicitní uvolňování objektů, reference counting, garbage collector
-	Vlákna a podpora synchronizace.
-		reprezentace vláken v programovacích jazycích
-		specifikace funkce vykonávané vláknem a základní operace na vlákny
-		časově závislé chyby a mechanizmy pro synchronizaci vláken
-	Implementace základních prvků objektových jazyků.
-		základní objektové koncepty v konkrétním jazyce
-		implementace a interní reprezentace primitivních typů
-		implementace a interní reprezentace složených typů a objektů
-		implementace dynamického polymorfismu (tabulka virtuálních metod)
-	Nativní a interpretovaný běh, řízení překladu a sestavení programu.
-		reprezentace programu, bytecode, interpret jazyka
-		just-in-time (JIT) a ahead-of-time (AOT) překlad
-		proces sestavení programu, oddělený překlad, linkování
-		staticky a dynamicky linkované knihovny
-		běhové prostředí procesu a vazba na operační systém
-Předměty
-	NPRG035 Programování v jazyce C# (5 kr)
-		
-4. Architektura počítačů a operačních systémů
-	Základní architektura počítače, reprezentace čísel, dat a programů.
-		reprezentace a přístup k datům v paměti, adresa, adresový prostor
-		ukládání jednoduchých a složených datových typů
-		základní aritmetické a logické operace
-	Instrukční sada, vazba na prvky vyšších programovacích jazyků.
-		Implementovat běžné programové konstrukce vyšších jazyků (přiřazení, podmínka, cyklus, volání funkce) pomocí instrukcí procesoru
-		Zapsat běžnou konstrukci vyššího jazyka (přiřazení, podmínka, cyklus, volání funkce), která odpovídá zadané sekvenci (vysvětlených) instrukcí procesoru
-	Podpora pro běh operačního systému.
-		privilegovaný a neprivilegovaný režim procesoru
-		jádro operačního systému
-	Rozhraní periferních zařízení a jejich obsluha.
-		Popsat roli řadiče zařízení při programem řízené obsluze zařízení (PIO), pro zadané adresy a funkce vstupních a výstupních portů implementovat programem řízenou obsluhu zadaného zařízení (myš, disk)
-		Popsat roli přerušení při programem řízené obsluze zařízení (PIO), na úrovni vykonávání instrukcí popsat reakci procesoru (hardware) a operačního systému (software) na žádost o přerušení
-	Základní abstrakce, rozhraní a mechanizmy OS pro běh programů, sdílení prostředků a vstup/výstup.
-		neprivilegované (uživatelské) procesy
-		sdílení procesoru
-			procesy, vlákna, kontext procesu a vlákna
-			přepínání kontextu, kooperativní a preemptivní multitasking
-			plánování běhu procesů a vláken, stavy vlákna
-		sdílení paměti
-			Vysvětlit rozdíl mezi virtuální a fyzickou adresou a identifikovat, zda se v zadaném kontextu či fragmentu kódu používá virtuální nebo fyzická adresa
-			Na zadaném příkladu identifikovat a vysvětlit význam komponent virtuální a fyzické adresy (číslo stránky, číslo rámce, offset)
-			Pro konkrétní adresy a obsah jednoúrovňové stránkovací tabulky řešit úlohy překladu adres
-			Vysvětlit roli virtuálních adresových prostorů v ochraně paměti procesů a vláken
-		sdílení úložného prostoru
-			soubory, analogie s adresovým prostorem
-			abstrakce a rozhraní pro práci se soubory
-	Paralelismus, vlákna a rozhraní pro jejich správu, synchronizace vláken.
-		časově závislé chyby (race conditions)
-		kritická sekce, vzájemné vyloučení
-		základní sychronizační primitiva, jejich rozhraní a použití
-			zámky
-			aktivní a pasivní čekání
-Předměty
-	NSWI120 Principy počítačů (3 kr)
-	NSWI170 Počítačové systémy (5 kr)
-Podle volby programovacího jazyka
-	NPRG035 Programování v jazyce C# (1/5 z 5 kr)
+	- Koncepty pro abstrakci, zapouzdření a polymorfismus.
+		- související konstrukty programovacích jazyků
+			- třídy, rozhraní, metody, datové položky, dědičnost, viditelnost
+		- (dynamický) polymorfismus, statické a dynamické typování
+		- jednoduchá dědičnost
+			- Ⓥ virtuální a nevirtuální metody v C#
+		- vícenásobná dědičnost a její problémy
+			- Ⓥ interfaces v C#
+		- implementace rozhraní (interface)
+		- vhodné použití uvedených konceptů
+	- Primitivní a objektové typy a jejich reprezentace.
+		- číselné a výčtové typy
+		- Ⓥ hodnotové a referenční typy v C#
+		- Ⓥ reference, imutabilní typy a boxing v C#
+	- Generické typy a funkcionální prvky (procedurálních programovacích jazyků).
+		- Ⓥ generické typy C# (bez omezení typových parametrů)
+		- Ⓥ typy reprezentující funkce v C++, C#, nebo Javě
+		- lambda funkce a funkcionální rozhraní
+	- Manipulace se zdroji a mechanizmy pro ošetření chyb.
+		- správa životního cyklu zdrojů v případě výskytu chyb
+			- Ⓥ using v C#
+		- konstrukce pro obsluhu a propagaci výjimek
+	- Životní cyklus objektů a správa paměti.
+		- alokace (alokace statická, na zásobníku, na haldě)
+		- inicializace (konstruktory, volání zděděných konstruktorů)
+		- destrukce (destruktory, finalizátory)
+		- explicitní uvolňování objektů, reference counting, garbage collector
+	- Vlákna a podpora synchronizace.
+		- reprezentace vláken v programovacích jazycích
+		- specifikace funkce vykonávané vláknem a základní operace na vlákny
+		- časově závislé chyby a mechanizmy pro synchronizaci vláken
+	- Implementace základních prvků objektových jazyků.
+		- základní objektové koncepty v konkrétním jazyce
+		- implementace a interní reprezentace primitivních typů
+		- implementace a interní reprezentace složených typů a objektů
+		- implementace dynamického polymorfismu (tabulka virtuálních metod)
+	- Nativní a interpretovaný běh, řízení překladu a sestavení programu.
+		- reprezentace programu, bytecode, interpret jazyka
+		- just-in-time (JIT) a ahead-of-time (AOT) překlad
+		- proces sestavení programu, oddělený překlad, linkování
+		- staticky a dynamicky linkované knihovny
+		- běhové prostředí procesu a vazba na operační systém
+- Předměty
+	- NPRG035 Programování v jazyce C# (5 kr)
 	
+4. Architektura počítačů a operačních systémů
+	- Základní architektura počítače, reprezentace čísel, dat a programů.
+		- reprezentace a přístup k datům v paměti, adresa, adresový prostor
+		- ukládání jednoduchých a složených datových typů
+		- základní aritmetické a logické operace
+	- Instrukční sada, vazba na prvky vyšších programovacích jazyků.
+		- Implementovat běžné programové konstrukce vyšších jazyků (přiřazení, podmínka, cyklus, volání funkce) pomocí instrukcí procesoru
+		- Zapsat běžnou konstrukci vyššího jazyka (přiřazení, podmínka, cyklus, volání funkce), která odpovídá zadané sekvenci (vysvětlených) instrukcí procesoru
+	- Podpora pro běh operačního systému.
+		- privilegovaný a neprivilegovaný režim procesoru
+		- jádro operačního systému
+	- Rozhraní periferních zařízení a jejich obsluha.
+		- Popsat roli řadiče zařízení při programem řízené obsluze zařízení (PIO), pro zadané adresy a funkce vstupních a výstupních portů implementovat programem řízenou obsluhu zadaného zařízení (myš, disk)
+		- Popsat roli přerušení při programem řízené obsluze zařízení (PIO), na úrovni vykonávání instrukcí popsat reakci procesoru (hardware) a operačního systému (software) na žádost o přerušení
+	- Základní abstrakce, rozhraní a mechanizmy OS pro běh programů, sdílení prostředků a vstup/výstup.
+		- neprivilegované (uživatelské) procesy
+		- sdílení procesoru
+			- procesy, vlákna, kontext procesu a vlákna
+			- přepínání kontextu, kooperativní a preemptivní multitasking
+			- plánování běhu procesů a vláken, stavy vlákna
+		- sdílení paměti
+			- Vysvětlit rozdíl mezi virtuální a fyzickou adresou a identifikovat, zda se v zadaném kontextu či fragmentu kódu používá virtuální nebo fyzická adresa
+			- Na zadaném příkladu identifikovat a vysvětlit význam komponent virtuální a fyzické adresy (číslo stránky, číslo rámce, offset)
+			- Pro konkrétní adresy a obsah jednoúrovňové stránkovací tabulky řešit úlohy překladu adres
+			- Vysvětlit roli virtuálních adresových prostorů v ochraně paměti procesů a vláken
+		- sdílení úložného prostoru
+			- soubory, analogie s adresovým prostorem
+			- abstrakce a rozhraní pro práci se soubory
+	- Paralelismus, vlákna a rozhraní pro jejich správu, synchronizace vláken.
+		- časově závislé chyby (race conditions)
+		- kritická sekce, vzájemné vyloučení
+		- základní sychronizační primitiva, jejich rozhraní a použití
+			- zámky
+			- aktivní a pasivní čekání
+- Předměty
+	- NSWI120 Principy počítačů (3 kr)
+	- NSWI170 Počítačové systémy (5 kr)
+- Podle volby programovacího jazyka
+	- NPRG035 Programování v jazyce C# (1/5 z 5 kr)
