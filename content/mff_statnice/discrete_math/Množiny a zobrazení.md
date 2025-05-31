@@ -96,3 +96,29 @@ Máme několik poddruhů:
 1. *majoranta* nebo *horní mez* třídy $X$, jestliže $(\forall x\in X)(x\le a)$,
 2. *maximální prvek* třídy $X$, je-li $a\in X$ a $(\forall x\in X)(\neg a<x)$,
 3. *největší prvek* třídy $X$, je-li $a$ *majoranta* $X$ a $a \in X$.
+4. *supremum* třídy $X$, je-li $a$ nejmenší prvek třídy všech majorant třídy $X$.
+5. *minoranta* nebo *dolní mez* třídy $X$, jestliže $(\forall x\in X)(x\ge a)$,
+6. *minimální prvek* třídy $X$, je-li $a\in X$ a $(\forall x\in X)(\neg a>x)$,
+7. *nejmenší prvek* třídy $X$, je-li $a$ *minoranta* $X$ a $a \in X$.
+8. *infimum* třídy $X$, je-li $a$ největší prvek třídy všech minorant třídy $X$.
+
+*Definice:* Mějme částečně uspořádanou množinu $(X, \le)$, pro ni definujeme
+- Řetězec $A \subseteq X$ platí-li $\forall a,b \in A: (a \le b) \lor (b\le a)$, tedy jsou porovnatelné
+	- značíme $\omega(X,\le)$ jako délku nejdelšího řetězce
+- Antiřetězec $A \subseteq X$ je množina, kde žádné dva prvky nejsou porovnatelné (nezávislá množina)
+	- $\alpha(X,\le)$ je délka největšího antiřetězce
+
+*Věta:* (O dlouhém a širokém) Pro každou (konečnou) částečně uspořádanou množinu $(X,\le)$ platí 
+$$
+|X| \le \alpha(X,\le)\cdot\omega(X,\le).
+$$
+*Důkaz:* Iterativně prozkoumáme celou množinu $X$ a sice tak, že v prvním kroku vezmeme minimální prvky do množiny $M_{1} = \{ x \in X \ |\ x \text{ je minimální v} \le \}$. Zavedeme si $X_{1} = X \setminus M_{1}$.
+
+Pokračujeme až máme posloupnost $M_{1}, M_{2}, \dots, M_{k}$, kde $k \le \omega(X,\le)$, protože výběrem vždy minimálních prvků v $X_{i-1}$, existuje posloupnost výběrů, že $\forall a_{i} \in M_{i}, \exists a_{i+1} \in M_{i-1}: a_{i-1} \le a_{i}$. Kdyby takový prvek neměl existovat tak nalezneme spor s volbou minimálního prvku při konstrukci. 
+
+Zároveň platí $\forall i\in \{ 1,2,\dots,k \}:|M_{i}| \leq \alpha(X,\le)$, protože každá $M_{i}$ je nezávislá množina, tedy její prvky mezi sebou nejsou porovnatelné, jinak bychom našli spor s minimalitou volby. 
+
+Kombinací odhadů nám vychází
+$$
+|X| = \sum_{i=1}^k |M_{i}| \le \alpha(X,\le)\cdot\omega(X,\le).
+$$
