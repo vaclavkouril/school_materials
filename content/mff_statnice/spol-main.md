@@ -76,10 +76,10 @@
 	- [Částečná uspořádání](mff_statnice/discrete_math/Množiny a zobrazení#Částečná uspořádání) ✓
 		- pojmy (minimální a maximální prvky, nejmenší a největší prvky, řetězec, antiřetězec)
 		- a šířka částečně uspořádané množiny a věta o jejich vztahu (o dlouhém a širokém)
-	- [[Funkce]]
+	- [[Funkce]] ✓
 		- typy funkcí (prostá, na, bijekce)
 		- počty různých typů funkcí mezi dvěma konečnými množinami
-	- [[Permutace]] a jejich základní vlastnosti (počet a pevný bod)
+	- [Permutace](mff_statnice/discrete_math/Funkce#Permutace) a jejich základní vlastnosti (počet a pevný bod) ✓
 	- [[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace
 	- [[Princip inkluze a exkluze]]
 		- obecná formulace (a důkaz)

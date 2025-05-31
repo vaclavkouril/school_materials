@@ -69,6 +69,21 @@ a dle axiomu potence víme o pravé straně inkluze množina. Proto $z \times z
 - $R^{-1}: \{ (y,x)\ | \  (x,y)\in R \}\dots$ inverzní
 - $x(R  \circ S)z \equiv \exists y\in Y: xRy \land ySz$
 
+*Definice:* Třída 
+$$
+\text{Dom}(X) = \{ u: (\exists v)(\langle u,v \rangle) \in X \}
+$$
+se nazývá **definiční obor** třídy $X$. Třída 
+$$
+\text{Rng}(X) = \{ v: (\exists u)(\langle u,v \rangle) \in X \}
+$$
+se nazývá **obor hodnot** třídy $X$.
+
+Zjevně pro libovolnou relaci $X$ platí
+$$
+X \subseteq \text{Dom}(X) \times \text{Rng}(X).
+$$
+
 ### Elementární vlastnosti relací:
 Říkáme, že relace $R$ je na třídě $A$
 1. *reflexivní*, jestliže pro libovolný prvek $x\in A$ platí $\langle x,x \rangle \in R$

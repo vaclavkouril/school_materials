@@ -49,7 +49,8 @@
               "title": "Množiny a zobrazení"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/mff_statnice/spec-main.md",
+                "file": "content/mff_statnice/spol-main.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of spec-main"
+              "title": "Outline of spol-main"
             }
           }
         ],
@@ -197,17 +198,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6b54df40312f22d2",
+  "active": "b9c8c5c567c33e72",
   "lastOpenFiles": [
+    "content/mff_statnice/spec-main.md",
+    "content/mff_statnice/spol-main.md",
+    "content/mff_statnice/combinatorics/Zobecněná binomická věta.md",
+    "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
+    "content/mff_statnice/combinatorics/Samoopravné kódy.md",
+    "content/mff_statnice/discrete_math/Funkce.md",
+    "content/mff_statnice/discrete_math/Permutace.md",
     "content/mff_statnice/discrete_math/Barvení grafů.md",
     "content/mff_statnice/discrete_math/Subvalence a ekvivalence množin.md",
     "content/mff_statnice/discrete_math/Párování v grafech.md",
     "content/mff_statnice/discrete_math/Kreslení grafů na plochách.md",
     "content/mff_statnice/discrete_math/Grafové minory.md",
     "content/mff_statnice/discrete_math/Dobré uspořádání.md",
-    "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
-    "content/mff_statnice/spec-main.md",
-    "content/mff_statnice/spol-main.md",
     "content/mff_statnice/combinatorics/Ramseyovy věty.md",
     "content/mff_statnice/combinatorics/Odhady faktoriálu a kombinačních čísel.md",
     "tsconfig.json",
@@ -224,13 +229,9 @@
     "quartz/static/icon.png",
     "content/mff_statnice/discrete_math/Částečná uspořádání.md",
     "content/mff_statnice/discrete_math/Princip inkluze a exkluze.md",
-    "content/mff_statnice/discrete_math/Permutace.md",
     "content/mff_statnice/discrete_math/Kombinační čísla.md",
     "content/mff_statnice/discrete_math/Hallova věta.md",
-    "content/mff_statnice/discrete_math/Funkce.md",
-    "content/mff_statnice/combinatorics/Zobecněná binomická věta.md",
     "content/mff_statnice/combinatorics/Vytvořující funkce.md",
-    "content/mff_statnice/combinatorics/Samoopravné kódy.md",
     "content/mff_statnice/combinatorics/Ramseyova čísla.md",
     "content/mff_statnice/combinatorics/Extremální kombinatorika.md",
     "content/mff_statnice/combinatorics/Catalanova čísla.md",
