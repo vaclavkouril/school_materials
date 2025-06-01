@@ -88,7 +88,7 @@
 		- zachovávání nakreslení při minorových operacích
 	- [[Množiny a zobrazení]] ✓
 		- přehled o používané terminologii (třídy a vlastní třídy, kartézský součin, relace, zobrazení, suma, potenční množina, …)
-	- [[Subvalence a ekvivalence množin]]
+	- [[Subvalence a ekvivalence množin]] ✓
 		- definice
 		- Cantorova-Bernsteinova věta (bez důkazu)
 		- spočetné množiny
