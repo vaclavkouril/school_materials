@@ -80,7 +80,7 @@
 		- typy funkcí (prostá, na, bijekce)
 		- počty různých typů funkcí mezi dvěma konečnými množinami
 	- [Permutace](mff_statnice/discrete_math/Funkce#Permutace) a jejich základní vlastnosti (počet a pevný bod) ✓
-	- [[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace
+	- [[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace ✓
 	- [[Princip inkluze a exkluze]]
 		- obecná formulace (a důkaz)
 		- použití (problém šatnářky, Eulerova funkce pro počet dělitelů, počet surjekcí)
