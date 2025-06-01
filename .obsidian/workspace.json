@@ -39,7 +39,8 @@
                   "title": "Dobré uspořádání"
                 }
               }
-            ]
+            ],
+            "currentTab": 1
           },
           {
             "id": "10acb034f0a55b53",
@@ -225,12 +226,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "e7b84b693390527c",
+  "active": "845eaa1f1087cbf9",
   "lastOpenFiles": [
-    "content/mff_statnice/discrete_math/Subvalence a ekvivalence množin.md",
     "content/mff_statnice/spec-main.md",
-    "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
     "content/mff_statnice/discrete_math/Dobré uspořádání.md",
+    "content/mff_statnice/discrete_math/Subvalence a ekvivalence množin.md",
+    "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
     "content/mff_statnice/spol-main.md",
     "content/mff_statnice/discrete_math/Párování v grafech.md",
     "content/mff_statnice/discrete_math/Kreslení grafů na plochách.md",

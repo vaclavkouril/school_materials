@@ -95,7 +95,7 @@
 			- definice
 			- zachovávání spočetnosti při množinových operacích
 		- mohutnost množin racionálních a reálných čísel, důkaz ne-ekvivalence diagonální metodou
-	- [[Dobré uspořádání]]
+	- [[Dobré uspořádání]] ✓
 		- definice
 		- ordinální a kardinální čísla (definice)
 - Předměty
