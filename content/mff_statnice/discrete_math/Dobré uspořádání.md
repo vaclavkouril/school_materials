@@ -1,0 +1,1 @@
+$\omega$ je dobře uspořádaná
