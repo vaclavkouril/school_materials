@@ -226,10 +226,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "431ce706c9b39fa4",
+  "active": "00b1b58fcb3e6fa6",
   "lastOpenFiles": [
-    "content/mff_statnice/spol-main.md",
     "content/mff_statnice/discrete_math/Princip inkluze a exkluze.md",
+    "content/mff_statnice/discrete_math/Funkce.md",
+    "content/mff_statnice/spol-main.md",
+    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/Kombinační čísla.md",
     "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
     "content/mff_statnice/discrete_math/Subvalence a ekvivalence množin.md",
@@ -238,7 +240,6 @@
     "mff_statnice/combinatorics",
     "mff_statnice",
     "content/mff_statnice/discrete_math/Dobré uspořádání.md",
-    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/Párování v grafech.md",
     "content/mff_statnice/discrete_math/Kreslení grafů na plochách.md",
     "content/mff_statnice/discrete_math/Grafové minory.md",
@@ -257,7 +258,6 @@
     "mff_statnice/combinatorics/Extremální kombinatorika.md",
     "mff_statnice/combinatorics/Ramseyova čísla.md",
     "mff_statnice/combinatorics/Ramseyovy věty.md",
-    "mff_statnice/spol-main.md",
     "Excalidraw",
     "Pasted image 20250519200238.png",
     "Pasted image 20250519200540.png",

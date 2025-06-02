@@ -81,9 +81,9 @@
 		- počty různých typů funkcí mezi dvěma konečnými množinami
 	- [Permutace](mff_statnice/discrete_math/Funkce#Permutace) a jejich základní vlastnosti (počet a pevný bod) ✓
 	- [[Kombinační čísla]] a vztahy mezi nimi, binomická věta a její aplikace ✓
-	- [[Princip inkluze a exkluze]]
+	- [[Princip inkluze a exkluze]] ✓
 		- obecná formulace (a důkaz)
-		- použití (problém šatnářky, Eulerova funkce pro počet dělitelů, počet surjekcí)
+		- použití (problém šatnářky, ¿Eulerova funkce pro počet dělitelů?, počet surjekcí)
 	- [[Hallova věta]] o systému různých reprezentantů a její vztah k párování v bipartitním grafu
 		- princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
 - Předměty
