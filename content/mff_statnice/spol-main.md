@@ -102,12 +102,12 @@
 	- [[Rovinné grafy]] ✓
 		- definice a základní pojmy (rovinný graf a rovinné nakreslení grafu, stěny)
 		- Eulerova formule a maximální počet hran rovinného grafu (důkaz a použití)
-	- Barevnost grafů
+	- [[Barevnost grafů]] ✓
 		- definice dobrého obarvení
 		- vztah barevnosti a klikovosti grafu
-	- Hranová a vrcholová souvislost grafů
+	- [[Hranová a vrcholová souvislost grafů]]
 		- hranová a vrcholová verze Mengerovy věty
-	- Orientované grafy, silná a slabá souvislost
+	- [Orientované grafy, silná a slabá](content/mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
 	- Toky v sítích
 		- definice sítě a toku v ní
 		- existence maximálního toku (bez důkazu)
