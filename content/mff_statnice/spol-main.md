@@ -93,7 +93,7 @@
 4. Teorie grafů
 	- [[Základní pojmy teorie grafů]] ✓
 		- graf, vrcholy a hrany, izomorfismus grafů, podgraf, okolí vrcholu a stupeň vrcholu, doplněk grafu, bipartitní graf
-	- [Základní příklady grafů](mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
+	- [Základní příklady grafů](content/mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
 		- úplný graf a úplný bipartitní graf, cesty a kružnice
 	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní typy grafů#Souvislost grafů) ✓
 	- [[Stromy]] ✓
