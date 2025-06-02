@@ -96,7 +96,7 @@
 	- [Základní příklady grafů](mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
 		- úplný graf a úplný bipartitní graf, cesty a kružnice
 	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní typy grafů#Souvislost grafů) ✓
-	- Stromy
+	- [[Stromy]] ✓
 		- definice a základní vlastnosti (existence listů, počet hran stromu)
 		- ekvivalentní charakteristiky stromů
 	- Rovinné grafy

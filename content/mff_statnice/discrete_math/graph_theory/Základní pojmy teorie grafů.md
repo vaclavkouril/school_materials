@@ -17,7 +17,7 @@ Zajímavé typy grafů:
 *Definice:* Graf $H$ je **indukovaným** podgrafem grafu $G$ platí-li $V(H) \subseteq V(G) \land E(H) = E(G) \cap\binom{V(H)}{2}$.
 
 *Definice:* Okolí vrcholu $v \in V(G)$ v grafu $G$ značíme $N(v) = \{ u \ | \ \{ u,v \} \in E(G) \}$.
-*Definice:* Stupeň vrcholu $v$ v grafu $G$ se rozumí přirozené číslo $k = |N(v)|$.
+*Definice:* Stupeň vrcholu $v$ v grafu $G$ se rozumí přirozené číslo $k = \deg(v) = |N(v)|$.
 
 *Definice:* Doplněk grafu $G$ je graf $\overline{G}$, pro který platí $V(G) = V(\overline{G})$ a $(\forall u,v\in V(\overline{G}), u \neq v) (\{ u,v \} \in E(\overline{G}) \iff\{ u,v \} \not\in E(G) )$.
 
