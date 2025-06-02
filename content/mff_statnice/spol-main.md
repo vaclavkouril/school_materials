@@ -99,7 +99,7 @@
 	- [[Stromy]] ✓
 		- definice a základní vlastnosti (existence listů, počet hran stromu)
 		- ekvivalentní charakteristiky stromů
-	- Rovinné grafy
+	- [[Rovinné grafy]] ✓
 		- definice a základní pojmy (rovinný graf a rovinné nakreslení grafu, stěny)
 		- Eulerova formule a maximální počet hran rovinného grafu (důkaz a použití)
 	- Barevnost grafů

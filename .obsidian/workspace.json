@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "content/mff_statnice/discrete_math/graph_theory/Stromy.md",
+                    "file": "content/mff_statnice/discrete_math/graph_theory/Rovinné grafy.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Stromy"
+                  "title": "Rovinné grafy"
                 }
               }
             ],
@@ -243,12 +243,13 @@
   },
   "active": "00b1b58fcb3e6fa6",
   "lastOpenFiles": [
-    "content/mff_statnice/discrete_math/graph_theory/Stromy.md",
+    "content/mff_statnice/discrete_math/graph_theory/Rovinné grafy.md",
+    "content/mff_statnice/spol-main.md",
+    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů.md",
     "content/mff_statnice/discrete_math/Hallova věta.md",
-    "content/mff_statnice/spol-main.md",
+    "content/mff_statnice/discrete_math/graph_theory/Stromy.md",
     "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
-    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/graph_theory/Párování v grafech.md",
     "content/mff_statnice/discrete_math/graph_theory/Barvení grafů.md",
     "content/index.md",
@@ -273,7 +274,6 @@
     "docs/mff_statnice/combinatorics/Vytvořující funkce.md",
     "docs/mff_statnice/adv_discrete_math/Barvení grafů.md",
     "mff_statnice/spec-main.md",
-    "mff_statnice/combinatorics/Samoopravné kódy.md",
     "mff_statnice/sources/skripta-kombinatorika.pdf",
     "Excalidraw",
     "Pasted image 20250519200238.png",

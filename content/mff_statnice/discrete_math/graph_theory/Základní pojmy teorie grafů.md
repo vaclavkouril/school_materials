@@ -22,6 +22,11 @@ Zajímavé typy grafů:
 *Definice:* Doplněk grafu $G$ je graf $\overline{G}$, pro který platí $V(G) = V(\overline{G})$ a $(\forall u,v\in V(\overline{G}), u \neq v) (\{ u,v \} \in E(\overline{G}) \iff\{ u,v \} \not\in E(G) )$.
 
 *Definice:* **Orientovaný graf** $G$ je dvojice $(V(G),E(G))$, kde $V(G)$ je množina vrcholů a $E(G)$ je množina uspořádaných dvojic vrcholů a pro $(u,v)\in E(G)$ říkáme, že hrana vede z $u$ do $v$.
+
+*Definice*: **Multigraf** je uspořádaná trojice $(V,E,K)$, kde:
+- $V$ jsou neprázdné vrcholy
+- $E$ jsou hrany
+- $K$ je zobrazení $E\to\binom V2\cup V$ (sjednocení kvůli existenci smyček)
 # Souvislost grafů
 *Definice:* Graf $G$ je **souvislý**, právě tehdy když $\forall u,v \in V(G)$ existuje cesta z $u$ do $v$.
 Můžeme takto definovat relaci $\sim$ dosažitelnosti na vrcholech grafu $G$, která je ekvivalencí pro neorientované grafy. Tranzitivita se jen musí ošetřit, abychom měli jen cesty a ne sledy.
