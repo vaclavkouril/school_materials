@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "content/mff_statnice/discrete_math/Princip inkluze a exkluze.md",
+                    "file": "content/mff_statnice/discrete_math/Hallova věta.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Princip inkluze a exkluze"
+                  "title": "Hallova věta"
                 }
               }
             ]
@@ -228,9 +228,10 @@
   },
   "active": "00b1b58fcb3e6fa6",
   "lastOpenFiles": [
+    "content/mff_statnice/discrete_math/Hallova věta.md",
+    "content/mff_statnice/spol-main.md",
     "content/mff_statnice/discrete_math/Princip inkluze a exkluze.md",
     "content/mff_statnice/discrete_math/Funkce.md",
-    "content/mff_statnice/spol-main.md",
     "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/Kombinační čísla.md",
     "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
@@ -257,7 +258,6 @@
     "mff_statnice/sources/skripta-kombinatorika.pdf",
     "mff_statnice/combinatorics/Extremální kombinatorika.md",
     "mff_statnice/combinatorics/Ramseyova čísla.md",
-    "mff_statnice/combinatorics/Ramseyovy věty.md",
     "Excalidraw",
     "Pasted image 20250519200238.png",
     "Pasted image 20250519200540.png",

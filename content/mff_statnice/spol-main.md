@@ -84,7 +84,7 @@
 	- [[Princip inkluze a exkluze]] ✓
 		- obecná formulace (a důkaz)
 		- použití (problém šatnářky, ¿Eulerova funkce pro počet dělitelů?, počet surjekcí)
-	- [[Hallova věta]] o systému různých reprezentantů a její vztah k párování v bipartitním grafu
+	- [[Hallova věta]] o systému různých reprezentantů a její vztah k párování v bipartitním grafu ✓
 		- princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
 - Předměty
 	- NDMI002 Diskrétní matematika (5 kr)
