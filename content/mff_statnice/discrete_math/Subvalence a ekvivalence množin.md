@@ -37,12 +37,12 @@ potom $\omega = X$.
 - **nespočetná** není-li nejvýše spočetná.
 
 *Věta:* Jsou-li $A,B$ spočetné množiny, potom $A \cup B$ i $A \times B$ jsou spočetné množiny.
-*Důkaz:* Nechť $f$ je prosté zobrazení $A$ na $\omega$ a $g$ je prosté zobrazení $b$ na $\omega$. Položíme
+	*Důkaz:* Nechť $f$ je prosté zobrazení $A$ na $\omega$ a $g$ je prosté zobrazení $b$ na $\omega$. Položíme
 $$
 h(x) = \left\{ \begin{array}{rcl}
-\langle f(x), 0 \rangle & \mbox{pro}
+\langle f(x), 0 \rangle & \text{pro}
 & x \in A  \\
-\langle g(x), 1 \rangle & \mbox{pro} & x \in B \setminus A 
+\langle g(x), 1 \rangle & \text{pro} & x \in B \setminus A 
 \end{array}\right.
 $$
 a máme $h$ jako prosté zobrazení $h:A \cup B \to \omega \times \{ 0,1 \}$. Ta je tedy spočetná díky existenci prostého zobrazení $\omega \times \{ 0,1 \} \to \omega$. 
@@ -77,7 +77,8 @@ $$
 \mathscr{P}(\omega) \approx \mathbb{I} \approx \mathbb{R},
 $$
 to znamená nespočetnost množin $\mathbb{I}, \mathbb{R}$.
-*Důkaz:* Začneme $\mathbb{I} \approx \mathscr{P}(x)$ a sice tak, že každé nenulové číslo $a$ z $\mathbb{I}$ se dá zapsat ve dvojkové soustavě jediným způsobem ve tvaru $$
+*Důkaz:* Začneme $\mathbb{I} \approx \mathscr{P}(x)$ a sice tak, že každé nenulové číslo $a$ z $\mathbb{I}$ se dá zapsat ve dvojkové soustavě jediným způsobem ve tvaru 
+$$
 a = 0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots
 $$
 kde $0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots$ je posloupnost jedniček a nul, kde $0$ je posloupnost nul a $1$ je posloupností jedniček, pak máme $\mathbb{I} \to \prescript{\omega}{}{2}$. Množina $\prescript{\omega}{}{2}$ znamená všechna zobrazení $\omega$ na $2 = \{ 0,1 \}$.

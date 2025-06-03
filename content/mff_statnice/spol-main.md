@@ -105,7 +105,7 @@
 	- [[Barevnost grafů]] ✓
 		- definice dobrého obarvení
 		- vztah barevnosti a klikovosti grafu
-	- [[Hranová a vrcholová souvislost grafů]]
+	- [[Hranová a vrcholová souvislost grafů]] ✓
 		- hranová a vrcholová verze Mengerovy věty
 	- [Orientované grafy, silná a slabá](content/mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
 	- Toky v sítích
