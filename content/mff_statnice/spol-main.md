@@ -90,12 +90,12 @@
 	- NDMI002 Diskrétní matematika (5 kr)
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	 
-4. Teorie grafů
+1. Teorie grafů ✓
 	- [[Základní pojmy teorie grafů]] ✓
 		- graf, vrcholy a hrany, izomorfismus grafů, podgraf, okolí vrcholu a stupeň vrcholu, doplněk grafu, bipartitní graf
-	- [Základní příklady grafů](content/mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
+	- [Základní příklady grafů](content/mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů) ✓
 		- úplný graf a úplný bipartitní graf, cesty a kružnice
-	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní typy grafů#Souvislost grafů) ✓
+	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů#Souvislost grafů) ✓
 	- [[Stromy]] ✓
 		- definice a základní vlastnosti (existence listů, počet hran stromu)
 		- ekvivalentní charakteristiky stromů
@@ -108,7 +108,7 @@
 	- [[Hranová a vrcholová souvislost grafů]] ✓
 		- hranová a vrcholová verze Mengerovy věty
 	- [Orientované grafy, silná a slabá](content/mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
-	- Toky v sítích
+	- [[Toky v sítích]] ✓
 		- definice sítě a toku v ní
 		- existence maximálního toku (bez důkazu)
 		- princip hledání maximálního toku v síti s celočíselnými kapacitami (například pomocí Ford-Fulkersonova algoritmu)
