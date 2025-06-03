@@ -1,7 +1,7 @@
 *Definice:* [Relace](Množiny a zobrazení#Relace) $F$ je zobrazení (funkce), jestliže pro libovolná $u,v,w$ platí
 $$
-(\langle u,v \rangle \in F \land \langle u,w\rangle \in F) \to v = w
-.$$
+(\langle u,v \rangle \in F \land \langle u,w\rangle \in F) \to v = w.
+$$
 O $F$ řekneme, že je zobrazením třídy $X$ do třídy $Y$, a píšeme $F: X \to Y$, jestliže $\text{Dom}(F) = X$ a $\text{Rng}(F) \subseteq Y$.
 
 # Typy funkcí

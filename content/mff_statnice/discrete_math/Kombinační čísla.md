@@ -18,7 +18,8 @@ $$
 \binom n k = \binom{n-1}{k} + \binom{n-1}{k-1}.
 $$
 # Binomická věta
-*Věta:* $$
+*Věta:* 
+$$
 \forall n \in N, \forall a,b \in R: (a+b)^r = \sum^n_{k=0} \binom{n}{k} a^{n-k}b^k
 $$
 *Důkaz:* Jedná se jen o součty součinů, kde se ze závorek vybírá $a$ nebo $b$. $a^{n-k}b^k$ nám určuje to že máme $n$ závorek a musíme vybrat z každé jedno či druhé a binomický člen nám udává kolika způsoby to tak jde.
