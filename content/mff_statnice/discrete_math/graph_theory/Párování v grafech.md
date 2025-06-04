@@ -29,6 +29,7 @@ Kombinací obou bodů tedy zjišťujeme, že každá lichá komponenta $G-S$ je 
 a platí tedy $odd(G-S) \leq S$ a tedy i Tutteova podmínka a máme existenci perfektního párování zaručenu.
 ---
 # Edmonsův algoritmus
+*Základní myšlenka*: v průběhu hledání augmentující cesty může vzniknout **smyčka liché délky** (tzv. „květina“). Tu je třeba **zavřít** (contract), zpracovat zjednodušený graf, poté „rozevřít“ a rozšířit párování zpět.
 Vstupem je graf $G$ a jeho libovolné párování $M$, třeba prázdné pro inicializaci. Výstupem je párování $M′$, které je alespoň o $1$ větší, než $M$, případně $M$ pokud bylo maximální.
 - zkonstruujeme maximální možný **Edmondsův les** vzhledem k aktuálnímu $M$ tím, že z volných vrcholů pustíme _BFS_ a střídavě přidáváme vrcholy
     - hranám, které se v lese neobjeví, se říká kompost a nebudou pro nás důležité
