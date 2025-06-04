@@ -68,7 +68,7 @@
 	- NTIN061 Algoritmy a datové struktury 2 (5 kr)
 
 4. Pokročilá diskrétní matematika
-	- [[Barevnost grafů]]
+	- [[Barevnost grafů]] ✓
 		- definice a základní vlastnosti
 		- hranová barevnost (definice, formulace Vizingovy věty, souvislost s párováními v grafech)
 		- Brooksova věta (formulace)

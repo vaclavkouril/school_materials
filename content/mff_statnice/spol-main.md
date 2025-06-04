@@ -73,7 +73,7 @@
 	- [[Množiny a zobrazení]] ✓
 		- vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
 	- [Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Ekvivalence) ✓
-	- [Částečná uspořádání](mff_statnice/discrete_math/Množiny a zobrazení#Částečná uspořádání) ✓
+	- [Částečná uspořádání](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Částečná uspořádání) ✓
 		- pojmy (minimální a maximální prvky, nejmenší a největší prvky, řetězec, antiřetězec)
 		- a šířka částečně uspořádané množiny a věta o jejich vztahu (o dlouhém a širokém)
 	- [[Funkce]] ✓
@@ -93,9 +93,9 @@
 4. Teorie grafů ✓
 	- [[Základní pojmy teorie grafů]] ✓
 		- graf, vrcholy a hrany, izomorfismus grafů, podgraf, okolí vrcholu a stupeň vrcholu, doplněk grafu, bipartitní graf
-	- [Základní příklady grafů](mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů) ✓
+	- [Základní příklady grafů](mff_statnice/discrete_math/graph_theory/Základní%20pojmy%20teorie%20grafů) ✓
 		- úplný graf a úplný bipartitní graf, cesty a kružnice
-	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů#Souvislost grafů) ✓
+	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní%20pojmy%20teorie%20grafů#Souvislost%20grafů) ✓
 	- [[Stromy]] ✓
 		- definice a základní vlastnosti (existence listů, počet hran stromu)
 		- ekvivalentní charakteristiky stromů
@@ -107,7 +107,7 @@
 		- vztah barevnosti a klikovosti grafu
 	- [[Hranová a vrcholová souvislost grafů]] ✓
 		- hranová a vrcholová verze Mengerovy věty
-	- [Orientované grafy, silná a slabá](mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
+	- [Orientované grafy, silná a slabá souvislost](mff_statnice/discrete_math/graph_theory/Základní%20pojmy%20teorie%20grafů#Souvislost%20grafů) ✓
 	- [[Toky v sítích]] ✓
 		- definice sítě a toku v ní
 		- existence maximálního toku (bez důkazu)

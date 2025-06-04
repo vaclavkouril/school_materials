@@ -59,8 +59,7 @@
                   "title": "spol-main"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           }
         ],
         "direction": "horizontal"
@@ -212,17 +211,23 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "00b1b58fcb3e6fa6",
+  "active": "48b8ff4ecb22d158",
   "lastOpenFiles": [
-    "content/mff_statnice/discrete_math/Částečná uspořádání.md",
-    "content/mff_statnice/spol-main.md",
-    "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
+    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/graph_theory/Barevnost grafů.md",
+    "content/mff_statnice/spol-main.md",
+    "content/mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů.md",
+    "mff_statnice/discrete_math/graph_theory/Základní.md",
+    "mff_statnice/discrete_math/graph_theory/Základní typy grafů.md",
+    "mff_statnice/discrete_math/graph_theory",
+    "mff_statnice/discrete_math",
+    "mff_statnice",
+    "content/mff_statnice/discrete_math/Částečná uspořádání.md",
+    "content/mff_statnice/discrete_math/Množiny a zobrazení.md",
     "content/Excalidraw/Drawing 2025-05-22 18.02.27.excalidraw.md",
     "content/Excalidraw/ekvival_tridy.md",
     "content/Excalidraw/hasseuv_diagram.excalidraw.md",
     "content/Excalidraw/hasseuv_diagram.svg",
-    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/combinatorics/Ramseyova čísla.md",
     "content/Excalidraw/Drawing 2025-05-22 18.02.27.svg",
     "content/mff_statnice/combinatorics/Samoopravné kódy.md",
@@ -238,14 +243,11 @@
     "content/mff_statnice/discrete_math/graph_theory/Toky v sítích.md",
     "content/mff_statnice/discrete_math/graph_theory/Hranová a vrcholová souvislost grafů.md",
     "content/mff_statnice/discrete_math/graph_theory/Barvení grafů.md",
-    "content/mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů.md",
     "content/mff_statnice/discrete_math/graph_theory/Rovinné grafy.md",
     "content/mff_statnice/discrete_math/graph_theory/Stromy.md",
-    "content/mff_statnice/discrete_math/graph_theory/Párování v grafech.md",
     "content/mff_statnice/discrete_math/graph_theory",
     "content/mff_statnice/Untitled",
     "mff_statnice/combinatorics",
-    "mff_statnice",
     "docs/alg_game_theory/build/main.pdf",
     "mff_statnice/sources/skripta-kombinatorika.pdf",
     "Excalidraw",
@@ -256,8 +258,6 @@
     "mff_statnice/sources",
     "Pasted image 20250519200905.png",
     "Pasted image 20250519200846.png",
-    "Pasted image 20250519200800.png",
-    "mff_statnice/combinatorics/Příklady",
-    "mff_statnice/special"
+    "Pasted image 20250519200800.png"
   ]
 }

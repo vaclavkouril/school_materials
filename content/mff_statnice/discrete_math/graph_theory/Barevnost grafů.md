@@ -28,5 +28,64 @@ Přidáme-li hranu do $H$, abychom se přiblížili konstruktivně $G$ tak máme
 	Nechť $\alpha$ je volná u $y_{k}$, může se stát:
 	1. $\alpha$ je volná u vrcholu $x$, pak hranu $e_{k}$ změníme za $\alpha$ a proházíme barvy u předešlých vrcholů a po-přeházíme se až k uvolnění barvy $b_{1}$ u $x$.
 	2. $\alpha$ je použita na hraně $e$ incidentní s $x$, navíc $e \not\in \{ e_{1},e_{2},\dots,e_{k} \}$, to je spor s maximalitou posloupnosti.
-	3. $\alpha$ použitá na hraně $e_{j}$ jenž je někde v posloupnosti. Pak označme $\beta$ volnou barvu u $x$
+	3. $\alpha$ použitá na hraně $e_j$, jež je někde v posloupnosti.  
+		Pak označme $\beta$ volnou barvu u $x$ (existuje, protože stupeň $x$ je nejvýše $\Delta(G)$ a máme $\Delta(G)+1$ barev).
+		Nyní vytvoříme **$\beta$-$\alpha$-řetězec** z vrcholu $x$ podle barev hran incidentních s $x$ a okolních vrcholů.  
+		To je posloupnost střídajících se hran obarvených barvami $\beta$ a $\alpha$.
+		
+		Pokud tento řetězec **neobsahuje** žádný vrchol z již popsané posloupnosti ${ y_1, y_2, \dots, y_k }$, pak v něm můžeme **prohodit barvy $\beta \leftrightarrow \alpha$**.  
+		Tím uvolníme barvu $\alpha$ u $x$ a jsme zpět v případě 1.
+		Pokud tento řetězec **zasáhne** některý z $y_j$, zkrátíme původní posloupnost k tomuto místu a proces zopakujeme.
+Celý postup má konečný počet možných barevných přiřazení, a proto proces je **vždy úspěšný**.  
+Tedy každou nově přidanou hranu lze obarvit bez překročení $\Delta(G)+1$ barev.
 
+**Souvislost s párováními:**  
+  Každá barva tvoří párování hran.  
+  Obarvení hran je tedy rozklad množiny hran na $\chi'(G)$ párování.
+
+---
+
+## Brooksova věta
+*Věta:* Nechť $G$ je souvislý jednoduchý graf, který **není úplný graf** $K_n$ a **není lichý cyklus**. Pak platí:  
+$$
+  \chi(G) \leq \Delta(G)
+  $$
+  To znamená, že jen úplné grafy a liché cykly mohou vyžadovat $\Delta(G)+1$ barev.
+  
+# Základní metody z důkazů
+
+### Kempeho řetězce
+
+- Cesta nebo komponenta, kde se střídají dvě barvy (např. $a$, $b$).
+- Využívá se k přepínání barev bez porušení platnosti obarvení.
+- Umožňuje „uvolnit“ určitou barvu pro obarvení jiného prvku.
+
+### Hladový algoritmus (greedy coloring)
+
+- Procházíme vrcholy v daném pořadí a každému přiřadíme nejmenší možnou barvu.
+- Zaručuje:  
+  $$
+  \chi(G) \leq \Delta(G) + 1
+  $$
+- Neposkytuje nutně optimální obarvení, ale často slouží jako výchozí metoda.
+
+# Perfektní grafy
+*Definice:* $\alpha(G)$ značí velikost největší nezávislé množiny z $G$ a $\omega(G)$ značí velikost největší kliky a $H \le G$ znamená indukovaný podgraf $H$ grafu $G$, pak **perfektní graf** je definován následovně:
+### Silná věta o perfektních grafech
+*Věta:* Graf $G$ je perfektní právě tehdy, když každý jeho indukovaný podgraf $H$ splňuje:  
+$$
+  \chi(H) = \omega(H)
+  $$kde $\omega(H)$ je velikost největší kliky v $H$.
+
+### Slabá věta o perfektních grafech
+*Věta:* Pokud je $G$ perfektní, pak pro každý $H \subseteq G$ platí $\chi(H) = \omega(H)$.
+
+## Příklady tříd perfektních grafů
+
+- **Chordální grafy** — každý cyklus délky $\geq 4$ má **chordu** (hranu spojující dva nesousední vrcholy cyklu).  
+  Všechny chordální grafy jsou perfektní.
+
+- **Další perfektní grafy:**
+- $K_{n}$
+- Bipartitní grafy
+- $P_{n}$
