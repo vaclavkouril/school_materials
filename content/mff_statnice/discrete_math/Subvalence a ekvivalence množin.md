@@ -81,12 +81,12 @@ to znamená nespočetnost množin $\mathbb{I}, \mathbb{R}$.
 $$
 a = 0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots
 $$
-kde $0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots$ je posloupnost jedniček a nul, kde $0$ je posloupnost nul a $1$ je posloupností jedniček, pak máme $\mathbb{I} \to \prescript{\omega}{}{2}$. Množina $\prescript{\omega}{}{2}$ znamená všechna zobrazení $\omega$ na $2 = \{ 0,1 \}$.
-Použijeme trojkovou soustavu k sestrojení prostého zobrazení $\prescript{\omega}{}{2} \to \mathbb{I}$. Každé posloupnosti $0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots$  přiřadíme reálné číslo
+kde $0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots$ je posloupnost jedniček a nul, kde $0$ je posloupnost nul a $1$ je posloupností jedniček, pak máme $\mathbb{I} \to\ ^\omega2$. Množina $^\omega{2}$ znamená všechna zobrazení $\omega$ na $2 = \{ 0,1 \}$.
+Použijeme trojkovou soustavu k sestrojení prostého zobrazení $^{\omega}{}{2} \to \mathbb{I}$. Každé posloupnosti $0,a_{0}a_{1}a_{2}\dots a_{n}a_{n+1}\dots$  přiřadíme reálné číslo
 $$
 a = \sum^\infty_{n=0} 2a_{n} \frac{1}{3^{n+1}}.
 $$
-z $p$-adických rozvojů nám vyplývá, že dvě různá posloupnosti se zobrazí na dvě různá čísla. Z Cantorovy-Bernsteinovy věty tedy máme $\mathscr{P}(\omega) \approx \mathbb{I}$, díky tomu, že $\mathscr{P}(\omega) \approx \prescript{\omega}{}{2}$.
+z $p$-adických rozvojů nám vyplývá, že dvě různá posloupnosti se zobrazí na dvě různá čísla. Z Cantorovy-Bernsteinovy věty tedy máme $\mathscr{P}(\omega) \approx \mathbb{I}$, díky tomu, že $\mathscr{P}(\omega) \approx\ ^{\omega}{}{2}$.
 Protože $\mathbb{I} \subseteq \mathbb{R}$ a není komplikované sestrojit prostou funkci zobrazující reálnou přímku na $\mathbb{I}$ máme
 $$
 \mathbb{R} \preccurlyeq \mathbb{I} \preccurlyeq \mathbb{R}

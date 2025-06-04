@@ -15,6 +15,18 @@ $$
 $$
 *Definice:* **Hranová barevnost** grafu $G$ je $\chi'(G) =$ nejmenší takové $k$, aby pro něj existovalo barevné obarvení.
 
+*Pozorováni:* Každá barva odpovídá nezávislému párování hran. Obarvit graf $\chi'(G)$ barvami znamená rozdělit hrany do $\chi'(G)$ párování.
+
 Nechť $\Delta (G)$ je označení nejvyššího ze stupňů grafu $G$.
 
-*Věta:* (Vizing) Pro každý graf $G$ platí, že $\Delta(G) \leq \chi'(G) \leq \Delta(G) +1$
+*Věta:* (Vizing) Pro každý graf $G$ platí, že $\Delta(G) \leq \chi'(G) \leq \Delta(G) +1$.
+*Intuice za důkazem:* Dolní odhad je triviální. Zvolíme co největší podgraf $H$ na stejných vrcholech grafu $G$, jenž jde obarvit pomocí barev $B = \{ 1,2,\dots,\Delta(G)+1 \}$. Přidáme hranu do takového $H$ a můžeme konstruktivně pozorovat, že každá hrana má barvu a každý vrchol je v obležení maximálně $\Delta(G)$ barev a tedy mu alespoň jedna zůstává, tomuto vrcholu tuto _volnou_ přiřadíme, takovou barvu má tedy každý. 
+Přidáme-li hranu do $H$, abychom se přiblížili konstruktivně $G$ tak máme dvě možnosti:
+1. Dva nově propojené vrcholy mají nějakou volnou barvu shodnou a nové hraně ji přidáme a zase stačí $\Delta(G)+1$ barev.
+2. Nemají shodu ve volných barvách. 
+	Tedy máme $e_{0}$ jenž jsme přidali a jen bod má volnou barvu  a to $x$ a druhý $y_{1}$ má barvu $b_{1}$. Teď najdeme co nejdelší posloupnost různých hran z $x$, takovou že barva hrany $e_{j}$ je volná u $y_{j-1}$ vrcholu.
+	Nechť $\alpha$ je volná u $y_{k}$, může se stát:
+	1. $\alpha$ je volná u vrcholu $x$, pak hranu $e_{k}$ změníme za $\alpha$ a proházíme barvy u předešlých vrcholů a po-přeházíme se až k uvolnění barvy $b_{1}$ u $x$.
+	2. $\alpha$ je použita na hraně $e$ incidentní s $x$, navíc $e \not\in \{ e_{1},e_{2},\dots,e_{k} \}$, to je spor s maximalitou posloupnosti.
+	3. $\alpha$ použitá na hraně $e_{j}$ jenž je někde v posloupnosti. Pak označme $\beta$ volnou barvu u $x$
+

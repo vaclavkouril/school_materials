@@ -69,7 +69,7 @@
 	- NMAI057 Lineární algebra 1 (5 kr)
 	- NMAI058 Lineární algebra 2 (5 kr)
 	
-1. Diskrétní matematika 
+3. Diskrétní matematika 
 	- [[Množiny a zobrazení]] ✓
 		- vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
 	- [Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Ekvivalence) ✓
@@ -90,10 +90,10 @@
 	- NDMI002 Diskrétní matematika (5 kr)
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	 
-1. Teorie grafů ✓
+4. Teorie grafů ✓
 	- [[Základní pojmy teorie grafů]] ✓
 		- graf, vrcholy a hrany, izomorfismus grafů, podgraf, okolí vrcholu a stupeň vrcholu, doplněk grafu, bipartitní graf
-	- [Základní příklady grafů](content/mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů) ✓
+	- [Základní příklady grafů](mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů) ✓
 		- úplný graf a úplný bipartitní graf, cesty a kružnice
 	- [Souvislost grafů, komponenty souvislosti, vzdálenost v grafu](mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů#Souvislost grafů) ✓
 	- [[Stromy]] ✓
@@ -107,7 +107,7 @@
 		- vztah barevnosti a klikovosti grafu
 	- [[Hranová a vrcholová souvislost grafů]] ✓
 		- hranová a vrcholová verze Mengerovy věty
-	- [Orientované grafy, silná a slabá](content/mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
+	- [Orientované grafy, silná a slabá](mff_statnice/discrete_math/graph_theory/Základní typy grafů) ✓
 	- [[Toky v sítích]] ✓
 		- definice sítě a toku v ní
 		- existence maximálního toku (bez důkazu)
