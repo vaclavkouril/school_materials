@@ -78,7 +78,7 @@ $$
   $$kde $\omega(H)$ je velikost největší kliky v $H$.
 
 ### Slabá věta o perfektních grafech
-*Věta:* Pokud je $G$ perfektní, pak pro každý $H \subseteq G$ platí $\chi(H) = \omega(H)$.
+*Věta:* Pro každý graf $G$ platí, že je perfektní $\iff$ $\overline{G}$ (doplněk) je perfektní.
 
 ## Příklady tříd perfektních grafů
 
