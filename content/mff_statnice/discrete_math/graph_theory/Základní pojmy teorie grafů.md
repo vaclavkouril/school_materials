@@ -19,6 +19,8 @@ Zajímavé typy grafů:
 *Definice:* Okolí vrcholu $v \in V(G)$ v grafu $G$ značíme $N(v) = \{ u \ | \ \{ u,v \} \in E(G) \}$.
 *Definice:* Stupeň vrcholu $v$ v grafu $G$ se rozumí přirozené číslo $k = \deg(v) = |N(v)|$.
 
+*Definice:* Graf $G$ je $k$-regulární pro nějaké $k \in \mathbb{N}$, když stupeň všech vrcholů je alespoň $k$.
+
 *Definice:* Doplněk grafu $G$ je graf $\overline{G}$, pro který platí $V(G) = V(\overline{G})$ a $(\forall u,v\in V(\overline{G}), u \neq v) (\{ u,v \} \in E(\overline{G}) \iff\{ u,v \} \not\in E(G) )$.
 
 *Definice:* **Orientovaný graf** $G$ je dvojice $(V(G),E(G))$, kde $V(G)$ je množina vrcholů a $E(G)$ je množina uspořádaných dvojic vrcholů a pro $(u,v)\in E(G)$ říkáme, že hrana vede z $u$ do $v$.
