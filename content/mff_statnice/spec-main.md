@@ -74,7 +74,7 @@
 		- Brooksova věta (formulace)
 		- základní metody z důkazů Vizingovy a Brooksovy věty (Kempeho řetězce, hladový algoritmus)
 		- silná a slabá věta o perfektních grafech (formulace), chordální grafy a další příklady tříd perfektních grafů
-	- [[Párování v grafech]]
+	- [[Párování v grafech]] ✓
 		- definice párování a perfektního párování
 		- párování v obecných grafech (formulace Tutteovy věty včetně důkazu jednodušší implikace, Petersenova věta a její důkaz použitím Tutteovy věty)
 		- Edmondsův algoritmus (pouze vědět o jeho existenci)

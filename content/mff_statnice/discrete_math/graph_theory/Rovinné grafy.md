@@ -18,7 +18,7 @@ Definice: (jednoduchá křivka = oblouk) je $f:[0,1]↦\mathbb{R}^2$ spojitá a 
 Definice: Topologická kružnice dělí (Jordanova věta) rovinu na 2 části, tyto části jsou **stěny nakreslení**. 
 
 # Eulerova formule pro rovinné grafy
-*Věta:* (Eulerova formule) V souvislém topologickém rovinném grafu platí
+*Věta:* (Eulerova formule, [zobecněná](mff_statnice/discrete_math/graph_theory/Kreslení%20grafů%20na%20plochách#Eulerova%20formule)) V souvislém topologickém rovinném grafu platí
 $$
 |V| + |S| = |E| + 2,
 $$

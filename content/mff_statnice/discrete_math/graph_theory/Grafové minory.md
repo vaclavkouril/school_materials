@@ -1,0 +1,1 @@
+*Definice:* Nechť $H,G$ jsou grafy. $H$ je **minor** $G$, značme $H \preceq G$, pokud lze $H$ získat pomocí posloupnosti mazání vrcholů, hran nebo kontrakcí hran z grafu $G$.
