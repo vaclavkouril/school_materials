@@ -67,7 +67,7 @@
 	- NTIN060 Algoritmy a datové struktury 1 (5 kr)
 	- NTIN061 Algoritmy a datové struktury 2 (5 kr)
 
-4. Pokročilá diskrétní matematika
+4. Pokročilá diskrétní matematika ✓
 	- [[Barevnost grafů]] ✓
 		- definice a základní vlastnosti
 		- hranová barevnost (definice, formulace Vizingovy věty, souvislost s párováními v grafech)
@@ -78,12 +78,12 @@
 		- definice párování a perfektního párování
 		- párování v obecných grafech (formulace Tutteovy věty včetně důkazu jednodušší implikace, Petersenova věta a její důkaz použitím Tutteovy věty)
 		- Edmondsův algoritmus (pouze vědět o jeho existenci)
-	- [[Kreslení grafů na plochách]]
+	- [[Kreslení grafů na plochách]] ✓
 		- základní topologické pojmy (homeomorfismus, křivka, plocha)
 		- konstrukce ploch pomocí přidávání uší a křížítek (formulace), orientovatelné a neorientovatelné plochy, Eulerova charakteristika
 		- pojem buňkového (2-cell) nakreslení
 		- zobecněná Eulerova formule, její použití pro horní odhad počtu hran a minimálního stupně v grafu nakresleném na dané ploše
-	- [[Grafové minory]]
+	- [[Grafové minory]] ✓
 		- definice a základní vlastnosti
 		- zachovávání nakreslení při minorových operacích
 	- [[Množiny a zobrazení]] ✓

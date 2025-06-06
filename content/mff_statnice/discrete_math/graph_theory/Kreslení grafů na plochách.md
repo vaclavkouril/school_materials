@@ -82,5 +82,18 @@ v(G''') - e(G''') + s(G''') &= v(G) - e(G) + s(G) +1 \\
 $$
 a to sedí s definicí.
 
-Důsledek: Každý graf $G$ nakreslitelný na plochu $\Gamma$ splní $|E|\leq3\cdot|V|-3\text{X}(\Gamma)$, pokud $|V|\geq 4$.
+*Důsledek*: Každý graf $G$ nakreslitelný na plochu $\Gamma$ splní $|E|\leq3\cdot|V|-3\text{X}(\Gamma)$, pokud $|V|\geq 4$.
 *Důkaz:* Předpokládejme, že každá stěna je trojúhelník a dosadíme $|S| = \frac 2 3 |E|$.
+
+*Věta:* Nechť $\Gamma$ je plocha $\Gamma \not\cong \Sigma_{0}$, nechť je $G$ nakreslený na $\Gamma$. Potom existuje vrchol v $G$, který má stupeň ($\delta(G)$ - nejmenší stupeň v $G$) 
+$$
+\delta(G) \leq \left\lfloor  \frac{5+\sqrt{ 49 +24 \text{X}(\Gamma) }}{2}  \right\rfloor 
+$$
+*Důkaz:* Mějme průměrný stupeň jako v *Důsledku* Eulerovi formule. Sice $\frac{2e(G)}{v(G)}$ a máme
+$$
+\begin{align}
+e(G) &\leq 3v(G) - 3 \text{X}(\Gamma) \\
+\frac{2e(G)}{v(G)} \leq 6 - \frac{6\text{X}(\Gamma)}{v(G)}  \\
+
+\end{align}
+$$a vzhledem k tomu, že to je průměr. tak jistě existuje jeden menší.
