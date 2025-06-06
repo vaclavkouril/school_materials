@@ -31,7 +31,7 @@
 	- NMAI054 Matematická analýza 1 (5 kr)
 	
 2. Algebra a lineární algebra
-	- Algebraické struktury:
+	- [[Algebraické struktury]]
 		- grupy a podgrupy, permutace
 		- tělesa a speciálně konečná tělesa
 	- Soustavy lineárních rovnic:
@@ -149,7 +149,7 @@
 	- NMAI059 Pravděpodobnost a statistika 1 (5 kr)
 	
 6. Logika
-	- Syntaxe
+	- [[Syntaxe]]
 		- znalost a práce se základními pojmy syntaxe výrokové a predikátové logiky (jazyk, otevřená a uzavřená formule, instance formule, apod.)
 		- normální tvary výrokových formulí
 			- prenexní tvary formulí predikátové logiky
@@ -177,7 +177,7 @@
 	- NAIL062 Výroková a predikátová logika (5 kr)
 # Společná informatika
 1. Automaty a jazyky
-	- Regulární jazyky
+	- [[Regulární jazyky]]
 		- regulární gramatiky
 		- deterministický a nedeterministický konečný automat
 		- regulární výrazy
@@ -194,7 +194,7 @@
 	- NTIN071 Automaty a gramatiky (2/5 z 5 kr)
 	
 2. Algoritmy a datové stuktury
-	- Časová složitost algoritmů
+	- [[Časová složitost algoritmů]]
 		- časová a prostorová složitost algoritmu
 		- měření velikosti dat
 		- složitost v nejlepším, nejhorším a průměrném případě
