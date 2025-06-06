@@ -52,12 +52,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "content/mff_statnice/spec-main.md",
+                    "file": "content/mff_statnice/combinatorics/Odhady faktoriálu a kombinačních čísel.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "spec-main"
+                  "title": "Odhady faktoriálu a kombinačních čísel"
                 }
               },
               {
@@ -226,10 +226,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "b5ff4bb15d9e6607",
+  "active": "e7b84b693390527c",
   "lastOpenFiles": [
-    "content/mff_statnice/discrete_math/graph_theory/Rovinné grafy.md",
+    "content/mff_statnice/spec-main.md",
+    "content/mff_statnice/spol-main.md",
     "content/mff_statnice/discrete_math/graph_theory/Kreslení grafů na plochách.md",
+    "content/mff_statnice/discrete_math/graph_theory/Rovinné grafy.md",
     "mff_statnice/discrete_math/graph_theory/Kreslení grafů na plochy.md",
     "mff_statnice/discrete_math/graph_theory",
     "mff_statnice/discrete_math",
@@ -250,11 +252,9 @@
     "content/mff_statnice/combinatorics/Ramseyovy věty.md",
     "content/mff_statnice/combinatorics/Ramseyova čísla.md",
     "content/mff_statnice/discrete_math/graph_theory/Grafové minory.md",
-    "content/mff_statnice/spec-main.md",
     "content/mff_statnice/discrete_math/graph_theory/Toky v sítích.md",
     "content/mff_statnice/discrete_math/graph_theory/Barevnost grafů.md",
     "content/mff_statnice/discrete_math/graph_theory/Párování v grafech.md",
-    "content/mff_statnice/spol-main.md",
     "content/mff_statnice/discrete_math/graph_theory/Základní pojmy teorie grafů.md",
     "content/mff_statnice/discrete_math/graph_theory/Stromy.md",
     "content/Excalidraw/hasseuv_diagram.svg",

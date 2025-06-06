@@ -2,7 +2,8 @@
 $e\left( \frac{n}{e} \right)^n \leq n! \leq en\left( \frac{n}{e} \right)^n$
 Pro důkaz odhadu užijeme indukce a odhad rozdělíme na dva případy:
 1. $n! \leq en\left( \frac{n}{e} \right)^n$
-	- $n=1$:	$$
+	- $n=1$:
+$$
 		\begin{align}
 		1! &\leq e \cdot {1} \cdot \left( \frac{1}{e} \right)^1 = 1
  \end{align}
@@ -23,7 +24,7 @@ n! = n(n-1)! &\leq^{\text{IP}} en(n-1)\left( \frac{n-1}{e} \right)^{n-1} \\
 2. $e\left( \frac{n}{e} \right)^n \leq n!$
 	- $e\left( \frac{n}{e} \right)^n \leq n!$
 		- n = 1:
-			$$
+$$
 e \cdot \left( \frac{1}{e} \right)^1 = 1 \leq 1!
 $$
 		- $n-1 \rightarrow n$:
