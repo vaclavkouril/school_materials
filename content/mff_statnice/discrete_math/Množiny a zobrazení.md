@@ -99,12 +99,12 @@ $$
 *Definice:* Třída ekvivalence $R$ prvku $x$ je $\{ y\in X  \ | \ \langle x,y \rangle \in R \}$, třídu značíme $R[x]$.
 
 Rozkladové třídy jsou právě třídy ekvivalence na ekvivalenci $R$.
-![[Excalidraw/ekvival_tridy|right|200]]
+![[Excalidraw/ekvival_tridy.svg|right|200]]
 # Částečná uspořádání
 *Definice:* Uspořádání je relací $R$ na třídě $A$, je-li $R$ reflexivní, antisymetrické a tranzitivní.
 Máme několik poddruhů:
 1. lineární $\leq$: $\forall x,y\in A: x\leq y \lor y \leq x$ 
-2. částečné uspořádání je uspořádání nelineární![[Excalidraw/hasseuv_diagram.excalidraw|250|right]]
+2. částečné uspořádání je uspořádání nelineární![[Excalidraw/hasseuv_diagram.svg|100|right]]
 3. ostré: mějme $\le$ uspořádání, platí-li $\forall x,y \in A: x < y \equiv x \le y \land x \neq y$
 
 *Definice:* Mějme třídu $A$, uspořádání $\le$ na této třídě a mějme $X\subseteq A$. O prvku $a \in A$ říkáme, že je

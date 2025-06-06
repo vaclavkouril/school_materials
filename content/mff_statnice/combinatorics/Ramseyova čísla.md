@@ -12,7 +12,7 @@ Ekvivalentně mohu vzít $n$ vrcholů a kreslit hrany 2 barvami a ptát se zda o
 *Důkaz:* Mějme  $G$ ma $r(k-1,l) +r(k,l-1)$  vrcholech. Zvolme libovolné $u$ a označme:
 1. $A:=$ ne-sousedé $u$
  2. $B:=$ sousedé $u$ 
-![[Excalidraw/Drawing 2025-05-22 18.02.27.excalidraw|right|200]]
+![[Excalidraw/Drawing 2025-05-22 18.02.27.svg|right|200]]
 Platí tedy nutně $|A| \geq  r(k-1,l)$ nebo $|B| \geq  r(k,l-1)$, protože jinak bychom se přidáním $u$ nedostali k potřebnému počtu vrcholů. 
 Pro $|A| \geq  r(k-1,l)$ máme jen dvě možnosti:
 	1. $G|_{A}$ platí $\omega(G|_{A}) \geq l \implies \omega(G) \geq l$.
