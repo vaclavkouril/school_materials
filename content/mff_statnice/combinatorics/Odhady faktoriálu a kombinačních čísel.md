@@ -6,7 +6,7 @@ Pro důkaz odhadu užijeme indukce a odhad rozdělíme na dva případy:
 $$
 1! \leq e \cdot {1} \cdot \left( \frac{1}{e} \right)^1 = 1
 $$
-	- Z indukčního předpokladu platí odhad pro $n-1$ a musíme dokázat platnost odhadu u $n$:
+	Z indukčního předpokladu platí odhad pro $n-1$ a musíme dokázat platnost odhadu u $n$:
 $$
 \begin{align}
 n! = n(n-1)! &\leq^{\text{IP}} en(n-1)\left( \frac{n-1}{e} \right)^{n-1} \\
@@ -14,18 +14,17 @@ n! = n(n-1)! &\leq^{\text{IP}} en(n-1)\left( \frac{n-1}{e} \right)^{n-1} \\
 &= en\left( \frac{n}{e} \right)^n \left( \frac{n-1}{n} \right)^n e
 \end{align}
 $$
-		výraz $\left( \frac{n-1}{n} \right)^n e$ je menší než jedna:
+	výraz $\left( \frac{n-1}{n} \right)^n e$ je menší než jedna:
 $$
 \left( \frac{n-1}{n} \right)^n e = \left( 1 - \frac{1}{n} \right)^n e \leq \left( e^{-1/n} \right)^n e = e^{-1}e = 1
 $$
-		a tedy máme $n! \leq en\left( \frac{n}{e} \right)^n \left( \frac{n-1}{n} \right)^n e \leq en\left( \frac{n}{e} \right)^n$.
+	a tedy máme $n! \leq en\left( \frac{n}{e} \right)^n \left( \frac{n-1}{n} \right)^n e \leq en\left( \frac{n}{e} \right)^n$.
 2. $e\left( \frac{n}{e} \right)^n \leq n!$
-	- $e\left( \frac{n}{e} \right)^n \leq n!$
-		- n = 1:
+	- n = 1:
 $$
 e \cdot \left( \frac{1}{e} \right)^1 = 1 \leq 1!
 $$
-		- $n-1 \rightarrow n$:
+	- $n-1 \rightarrow n$:
 $$
 \begin{align}
 e n \left( \frac{n-1}{e} \right)^{n-1}  &\leq n(n-1)! \\
@@ -33,27 +32,27 @@ e n\left( \frac{n}{e} \right)^n \left( \frac{e}{n} \right)^n  \left( \frac{n-1}{
 e \left( \frac{n}{e} \right)^n  \left( \frac{n-1}{n} \right)^{n-1} e &=
 \end{align}
 $$
-			kde $\left( \frac{n-1}{n} \right)^{n-1} e \geq 1$:
-			1. Nechť $m=n-1$. Potřebujeme:
+		kde $\left( \frac{n-1}{n} \right)^{n-1} e \geq 1$:
+		1. Nechť $m=n-1$. Potřebujeme:
 $$
    \Bigl(\tfrac{n-1}{n}\Bigr)^{n-1}e \ge1
    \;\iff\;
    \Bigl(1+\tfrac1m\Bigr)^m \le e.
 $$
 
-			2. Binomická věta:
+		2. Binomická věta:
 $$
-   \Bigl(1+\tfrac1m\Bigr)^m
+\Bigl(1+\tfrac1m\Bigr)^m
    =\sum_{k=0}^m \binom m k \,\tfrac1{m^k}
    \le\sum_{k=0}^m \tfrac1{k!}
    \le\sum_{k=0}^\infty \tfrac1{k!}
    = e.
-$$  $$
+$$$$
    \Bigl(1+\tfrac1m\Bigr)^m \le e
    \;\Longrightarrow\;
    \Bigl(\tfrac m{m+1}\Bigr)^m e \ge1,
-$$
-			   tedy pro $m=n-1$
+$$   
+		tedy pro $m=n-1$
 $$
    \Bigl(\tfrac{n-1}{n}\Bigr)^{n-1}e \ge1.
 $$
@@ -98,6 +97,7 @@ $$
    =\Bigl(\tfrac{e\,n}{k}\Bigr)^k,
 $$
    kde jsme použili odhad $k!\ge (k/e)^k$: 
+
 	1. **Logaritmický přechod**  
 $$
    \ln(k!) \;=\;\sum_{i=1}^k\ln i
@@ -106,7 +106,7 @@ $$
    \;=\;k\ln k - k + 1.
 $$
 
-	2. **Jednodušší odhad**  
+	2. **Jednodušší odhad**
    Protože pro $k\ge1$ platí
 $$
    k\ln k - k + 1 \;\ge\; k\ln k - k,
@@ -142,8 +142,7 @@ $$to rozdělíme na horní a dolní odhad.
 $$
 \begin{align}
 	1 &> \left( 1-\frac{1}{2^2} \right) \cdot \left( 1-\frac{1}{4^2} \right) \cdot \ldots \cdot \left( 1-\frac{1}{(2m)^2} \right) \\
-& = \frac{1\cdot 3}{2 \cdot 2} \cdot \frac{3\cdot 5}{4 \cdot 4} \cdot \ldots \cdot \frac{(2m-1)(2m+1)}{2m \cdot 2m} = P^2 \cdot (2m+1)
- 
+& = \frac{1\cdot 3}{2 \cdot 2} \cdot \frac{3\cdot 5}{4 \cdot 4} \cdot \ldots \cdot \frac{(2m-1)(2m+1)}{2m \cdot 2m} = P^2 \cdot (2m+1) 
 \end{align}
 $$
 	ze kterého nám vlastně přirozeně vypadlo, že $P < \frac{1}{\sqrt{ 2m+1}} <  \frac{1}{\sqrt{ 2m+1}}$
@@ -154,6 +153,7 @@ $$
 & = \frac{2\cdot 4}{3 \cdot 3} \cdot \frac{4\cdot 6}{5 \cdot 5} \cdot \ldots \cdot \frac{(2m-2)(2m)}{(2m-1) \cdot (2m-1)} = \frac{1}{P^2 \cdot 2 \cdot 2m}
 \end{align}
 $$
-	z čehož plyne $P > \frac{1}{2\sqrt{m}}$
+
+	z čehož plyne $P > \frac{1}{2\sqrt{m}}$.
 
 Oba triky nejsou kouzla z ničeho nic, oba staví na konstruování čísel podobných $P$, kde je vždy jen malý rozdíl v chybějících/přebývajících číslech.
