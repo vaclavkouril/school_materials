@@ -1,0 +1,1 @@
+*Definice:* Jazyk je neprázdná množina _výrokových proměnných_ $\mathbb{P}$, prvkům říkáme _prvovýroky_ nebo _atomické výroky_. Kromě těchto proměnných máme také logické symboly $\neg, \land, \lor, \to, \leftrightarrow$ a závorky.

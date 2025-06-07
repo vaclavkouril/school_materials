@@ -69,7 +69,7 @@
 	- NMAI057 Lineární algebra 1 (5 kr)
 	- NMAI058 Lineární algebra 2 (5 kr)
 	
-3. Diskrétní matematika 
+3. Diskrétní matematika ✓
 	- [[Množiny a zobrazení]] ✓
 		- vlastnosti binárních relací (reflexivita, symetrie, antisymetrie, tranzitivita)
 	- [Ekvivalence a rozkladové třídy](mff_statnice/discrete_math/Množiny%20a%20zobrazení.md#Ekvivalence) ✓

@@ -14,7 +14,7 @@ Věta je velmi podobná principu holubníku. V něm ovšem nebarvíme hrany, ný
 *Věta: (princip holubníku)* Pro každé $t$ a $k$ existuje $N$ takové, že pro každou funkci $c : [n] → [t], n \geq N$ existuje množina $A \in \binom{[n]}{k}$, na níž je funkce c konstantní. 
 *Důkaz:* Stačí zvolit $N = t(k − 1) + 1$. 
 # Nekonečná Ramseyova věta
-$\forall p, t \in \mathbb{N}$ a $\forall c:\binom{\mathbb{N}}{2}\mapsto [t]$, tak $\exists A \subseteq \mathbb{N}$ nekonečná že $c$ je na $\binom{A}{2}$ konstantní.
+$\forall p, t \in \mathbb{N}$ a $\forall c:\binom{\mathbb{N}}{p}\mapsto [t]$, tak $\exists A \subseteq \mathbb{N}$ nekonečná že $c$ je na $\binom{A}{p}$ konstantní.
 *Důkaz*: 
 Sestrojme posloupnost nekonečných množin $A_{1},A_{2},A_{3}, \dots$ . Položme $A_{1} = \mathbb{N}$ a opakujme následný krok pro $i=1,2,3,4,\dots$:
 	Zvolíme $v_{i} \in A_{i}$ libovolně. Rozdělíme do ekvivalenčních tříd ostatní vrcholy, tedy $A'_{i} = A_{i} \setminus \{v_{i}\}$, dle toho jakou barvu mají hrany z $v_{i}$ do daného vrcholu a třídy označíme $B^1_{i}, B^2_{i}, B^3_{i},\dots, , B^t_{i}$. $A'_{i}$ je nekonečná a tedy alespoň jedna z tříd musí být taky, nechť je to $B^j_{i}$. Položme nyní $b_{i} = j$ a $A_{i+1} = B_{j}^i$ a znovu iterujme.
@@ -22,8 +22,7 @@ Sestrojme posloupnost nekonečných množin $A_{1},A_{2},A_{3}, \dots$ . Položm
 V nekonečné posloupnosti vybraných barev $b_{1},b_{2},\dots$ je ale jen konečně mnoho hodnot. Takže některá se musí nekonečněkrát opakovat. Označme ji $b_{i}$ a její výskyty $b_{i_{1}}, b_{i_{2}}, \dots$ Z *pozorování* tedy plyne, že vrcholy $v_{i_{1}},v_{i_{2}},v_{i_{3}},\dots$ indukují námi hledanou nekonečnou jednobarevnou kliku $A$. 
 
 *Důkaz konečné verze:*
-Potřebujeme zajistit, aby vybraná podposloupnost obsahovala $k$ vrcholů. Z principu holubníku ví-
-me, že k tomu stačí zaručit, aby posloupnost, ze které vybíráme, obsahovala alespoň
+Potřebujeme zajistit, aby vybraná podposloupnost obsahovala $k$ vrcholů. Z principu holubníku víme, že k tomu stačí zaručit, aby posloupnost, ze které vybíráme, obsahovala alespoň
 $tk$ prvků (neboť v ní je nejvýše $t$ různých hodnot).
 
 Musíme tedy upravit výběr $A_{i+1}$ z $A_{i}$ a sice za $A_{i+1}$ zvolíme největší ze tříd $A_{i}$. Tedy $|A_{i+1}| \geq |A_{i}|-1/t$.
