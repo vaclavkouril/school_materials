@@ -77,8 +77,8 @@ $$
 1. Nahrazení podformulí ekvivalentními dle *Lemma* o bublání kvatifikátorů
 2. Přejmenování vázaných proměnných (α-konverze)  
 3. Opakování dokud všechny kvantifikátory neprojdou na začátek
-4. 
+
 Výsledkem je ekvivalentní formule v PNF.
 
-Navíc z *PNF* můžeme udělat skolemizací *Skolemovu variantu*, kde máme jen všeobecné kvatifikátory. Process skolemizace je vlastně postaven na myšlence, že existence proměnné, aby něco splnila je podmíněna všeobecnými proměnnými před ní a tedy nahrazujeme proměnné s existenčními kvantifikátory iterativně zprava doleva za funkce které mají jako vstup proměnné nalevo od nich.
+Navíc z *PNF* můžeme udělat [skolemizací](Extenze%20teorií#Skolemizace) *Skolemovu variantu*, kde máme jen všeobecné kvatifikátory. Process skolemizace je vlastně postaven na myšlence, že existence proměnné, aby něco splnila je podmíněna všeobecnými proměnnými před ní a tedy nahrazujeme proměnné s existenčními kvantifikátory iterativně zprava doleva za funkce které mají jako vstup proměnné nalevo od nich.
 Tedy začíná-li formule $(\exists x) (\forall y)(\exists z) \psi$, tak všechny výskyty $z$ se nahradí za $f(x,y)$ a poté se všechny výskyty $x$ nahradí $g$, tedy konstantou.

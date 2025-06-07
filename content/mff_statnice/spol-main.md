@@ -156,12 +156,12 @@
 			- znalost základních normálních tvarů (CNF, DNF, PNF)
 			- převody na normální tvary
 			- použití pro algoritmy (SAT, rezoluce)
-	- Sémantika
+	- [[Sémantika]] ✓
 		- pojem modelu teorie
 		- pravdivost, lživost, nezávislost formule vzhledem k teorii
 		- splnitelnost, tautologie, důsledek
 		- analýza výrokových teorií nad konečně mnoha prvovýroky
-	- Extenze teorií
+	- [[Extenze teorií]] ✓
 		- schopnost porovnat sílu teorií
 		- konzervativnost, skolemizace
 	- Dokazatelnost:
