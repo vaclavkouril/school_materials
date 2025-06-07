@@ -149,7 +149,7 @@
 	- NMAI059 Pravděpodobnost a statistika 1 (5 kr)
 	
 6. Logika
-	- [[Syntaxe]]
+	- [[Syntaxe]] ✓
 		- znalost a práce se základními pojmy syntaxe výrokové a predikátové logiky (jazyk, otevřená a uzavřená formule, instance formule, apod.)
 		- normální tvary výrokových formulí
 			- prenexní tvary formulí predikátové logiky
