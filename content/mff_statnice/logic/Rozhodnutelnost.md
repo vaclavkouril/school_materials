@@ -38,7 +38,7 @@ $$
    $$
    \forall x\,\exists y\,\bigl(\text{Succ}(x,y)\bigr)\quad\text{(diskrétnost)},
    $$
-   kde $\text{Succ}(x,y)$ vyjadřuje, že $y$ je bezprostřední následník $x$. Tato teorie je úplná a umožňuje kvantorové eliminace do kombinací atomických formulí, takže existuje algoritmus na rozhodnutí každé formule v tomto jazyce :contentReference[oaicite:8]{index=8}.
+   kde $\text{Succ}(x,y)$ vyjadřuje, že $y$ je bezprostřední následník $x$. Tato teorie je úplná a umožňuje kvantorové eliminace do kombinací atomických formulí, takže existuje algoritmus na rozhodnutí každé formule v tomto jazyce.
 
 2. **Husté lineární uspořádání bez konců** $\langle\mathbb{Q},\le\rangle$  
    Axiomy zahrnují lineární uspořádání, hustotu:

@@ -47,9 +47,10 @@ $$
 2. Posunutí negací na literály (De Morgan), odstranění dvojitých negací.  
 3. Distributivita: 
 $$
-\phi\land(\psi\lor\chi)\sim(\phi\land\psi)\lor(\phi\land\chi)\quad\text{(pro DNF)},
-$$ $$
-\phi\lor(\psi\land\chi)\sim(\phi\lor\psi)\land(\phi\lor\chi)\quad\text{(pro CNF)}.
+\begin{align}
+\phi\land(\psi\lor\chi)&\sim(\phi\land\psi)\lor(\phi\land\chi)\quad\text{(pro DNF)}, \\
+\phi\lor(\psi\land\chi)&\sim(\phi\lor\psi)\land(\phi\lor\chi)\quad\text{(pro CNF)}.
+\end{align}
 $$
 *Použití:* SAT solvery běžně vyžadují CNF; rezoluční metoda pracuje na množinové reprezentaci klauzulí v CNF.
 

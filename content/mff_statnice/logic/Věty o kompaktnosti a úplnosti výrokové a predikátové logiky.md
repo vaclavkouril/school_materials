@@ -27,16 +27,3 @@ v jazyce $\{p_v : v\in V(G)\}$. Každá konečná podteorie $T'$ odpovídá kone
 Důsledky kompaktnosti:  
 1. Existence *nestandardních modelů* aritmetiky, tj. modelů obsahujících "nekonečné" elementy.  
 2. Löwenheim–Skolemova věta: každá spočetně axiomatizovatelná teorie s nekonečným modelem má model libovolné spočetné kardinály.
-
-
-*Definice:* Věta o korektnosti říká, že pokud existuje formální důkaz formule $φ$ z teorie $T$, pak $φ$ platí ve všech modelech $T$, tj.
-$$
-T⊢φ \;\Rightarrow\; T\models φ
-$$ :contentReference[oaicite:7]{index=7}
-
-*Definice:* Věta o úplnosti ve výrokové logice tvrdí, že každá tautologie je formálně dokazatelná, tj.
-$$
-⊨φ \;\Rightarrow\; ⊢φ
-$$ :contentReference[oaicite:8]{index=8}
-
-*Definice:* 
