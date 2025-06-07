@@ -148,7 +148,7 @@
 	- NDMI002 Diskrétní matematika (5 kr)
 	- NMAI059 Pravděpodobnost a statistika 1 (5 kr)
 	
-6. Logika
+6. Logika ✓
 	- [[Syntaxe]] ✓
 		- znalost a práce se základními pojmy syntaxe výrokové a predikátové logiky (jazyk, otevřená a uzavřená formule, instance formule, apod.)
 		- normální tvary výrokových formulí
@@ -164,13 +164,13 @@
 	- [[Extenze teorií]] ✓
 		- schopnost porovnat sílu teorií
 		- konzervativnost, skolemizace
-	- Dokazatelnost:
+	- [[Dokazatelnost]] ✓
 		- pojem formálního důkazu, zamítnutí
 		- schopnost práce v některém z formálních dokazovacích systémů (např. tablo metoda, rezoluce, Hilbertovský kalkul)
-	- Věty o kompaktnosti a úplnosti výrokové a predikátové logiky
+	- [[Věty o kompaktnosti a úplnosti výrokové a predikátové logiky]] ✓
 		- znění a porozumění významu
 		- použití na příkladech, důsledky
-	- Rozhodnutelnost
+	- [[Rozhodnutelnost]] ✓
 		- pojem kompletnosti a její kritéria, význam pro rozhodnutelnost
 		- příklady rozhodnutelných a nerozhodnutelných teorií
 - Předměty
