@@ -14,12 +14,12 @@
 		- funkce spojité na intervalu
 		- nabývání mezihodnot
 		- nabývání maxima
-	- [[Derivace]] a její aplikace
+	- [[Derivace]] a její [aplikace](mff_statnice/sources/ma-derivate.pdf)
 		- definice a základní pravidla pro výpočet
 		- l’Hospitalovo pravidlo
 		- vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
 		- Taylorův polynom (limitní forma)
-	- [[Integrály]] a jejich aplikace
+	- [[Integrály]] a jejich [aplikace](mff_statnice/sources/ma-integrate.pdf)
 		- primitivní funkce: definice a metody výpočtu (substituce, per-partes)
 		- Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
 		- aplikace
