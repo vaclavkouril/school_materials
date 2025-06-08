@@ -1,12 +1,12 @@
 # Společná matematika
 1. Základy diferenciálního a integrálního počtu
-	-  Posloupnosti reálných čísel a jejich limity
+	-  [[Posloupnosti reálných čísel a jejich limity]] ✓
 		- definice, aritmetika limit
 		- věta o dvou policajtech, limity a uspořádání
-	-  Řady
+	-  [[Řady]] ✓
 		- definice částečného součtu a součtu
 		- geometrická řada, harmonická řada
-	- Reálné funkce jedné reálné proměnné
+	- [[Reálné funkce jedné reálné proměnné]] ✓
 		- limita funkce v bodě
 		- definice, aritmetika limit
 		- vztah s uspořádáním
@@ -14,12 +14,12 @@
 		- funkce spojité na intervalu
 		- nabývání mezihodnot
 		- nabývání maxima
-	- Derivace a její aplikace
+	- [[Derivace]] a její aplikace
 		- definice a základní pravidla pro výpočet
 		- l’Hospitalovo pravidlo
 		- vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
 		- Taylorův polynom (limitní forma)
-	- Integrály a jejich aplikace
+	- [[Integrály]] a jejich aplikace
 		- primitivní funkce: definice a metody výpočtu (substituce, per-partes)
 		- Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
 		- aplikace
@@ -34,35 +34,35 @@
 	- [[Algebraické struktury]]
 		- grupy a podgrupy, permutace
 		- tělesa a speciálně konečná tělesa
-	- Soustavy lineárních rovnic:
+	- [[Soustavy lineárních rovnic]]
 		- maticový zápis, elementární řádkové úpravy, odstupňovaný tvar matice
 		- Gaussova a Gaussova-Jordanova eliminace, popis množiny řešení
-	-  Matice:
+	-  [[Matice]]
 		- operace s maticemi a základní typy matic, hodnost matice
 		- regulární a inverzní matice
-	- Vektorové prostory:
+	- [[Vektorové prostory]]
 		- vektorový prostor, lineární kombinace, lineární závislost a nezávislost, lineární obal, systém generátorů
 		- Steinitzova věta o výměně, báze, dimenze, souřadnice
 		- vektorové podprostory, zejména maticové (řádkový, sloupcový, jádro) a jejich dimenze
-	- Lineární zobrazení:
+	- [[Lineární zobrazení]]
 		- definice, maticová reprezentace lineárního zobrazení, matice složeného zobrazení
 		- obraz a jádro lineárních zobrazení
 		- isomorfismus prostorů
-	- Skalární součin:
+	- [[Skalární součin]]
 		- skalární součin, norma indukovaná skalárním součinem
 		- Pythagorova věta, Cauchyho-Schwarzova nerovnost, trojúhelníková nerovnost
 		- ortonormální systémy vektorů, Fourierovy koeficienty, Gramova-Schmidtova ortogonalizace
 		- ortogonální doplněk, ortogonální projekce, projekce jako lineární zobrazení
 		- ortogonální matice a jejich vlastnosti
-	- Determinanty:
+	- [[Determinanty]]
 		- definice a základní vlastnosti determinantu (multiplikativnost, determinant transponované matice, vztah s regularitou a vlastními čísly)
 		- Laplaceův rozvoj determinantu
 		- geometrická interpretace determinantu
-	- Vlastní čísla a vlastní vektory:
+	- [[Vlastní čísla a vlastní vektory]]
 		- definice, geometrický význam a základní vlastnosti vlastních čísel, charakteristický polynom, násobnost vlastních čísel
 		- podobnost a diagonalizovatelnost matic, spektrální rozklad
 		- symetrické matice, jejich vlastní čísla a spektrální rozklad
-	- Positivně semidefinitní a positivně definitní matice:
+	- [[Positivně semidefinitní a positivně definitní matice]]
 		- charakterizace a vlastnosti, vztah se skalárním součinem, vlastními čísly
 		- Choleského rozklad (znění věty a praktické použití)
 - Předměty
@@ -117,12 +117,12 @@
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	
 5. Pravděpodobnost a statistika
-	- Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost
+	- [[Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost]]
 		- definice těchto pojmů, příklady
 		- základní pravidla pro počítání s pravděpodobností
 		- nezávislost náhodných jevů, podmíněná pravděpodobnost
 		- Bayesův vzorec
-	- Náhodné veličiny a jejich rozdělení
+	- [[Náhodné veličiny a jejich rozdělení]]
 		- diskrétní i spojitý případ
 		- popis pomocí distribuční funkce a pomocí pravděpodobnostní funkce/hustoty
 		- střední hodnota
@@ -133,13 +133,13 @@
 			- definice
 			- vzorec pro rozptyl součtu (závislých či nezávislých veličin)
 		- práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
-	- Limitní věty
+	- [[Limitní věty]]
 		- zákon velkých čísel
 		- centrální limitní věta
-	- Bodové odhady
+	- [[Bodové odhady]]
 		- alespoň jedna metoda pro jejich tvorbu
 		- vlastnosti
-	- Intervalové odhady: metoda založená na aproximaci normálním rozdělením
+	- [[Intervalové odhady]]: metoda založená na aproximaci normálním rozdělením
 		- Testování hypotéz
 		- základní přístup
 		- chyby 1. a 2. druhu
@@ -181,14 +181,14 @@
 		- regulární gramatiky
 		- deterministický a nedeterministický konečný automat
 		- regulární výrazy
-	- Bezkontextové jazyky
+	- [[Bezkontextové jazyky]]
 		- bezkontextové gramatiky, jazyk generovaný gramatikou
 		- zásobníkový automat, třída jazyků přijímaných zásobníkovými automaty
-	- Rekurzivně spočetné jazyky
+	- [[Rekurzivně spočetné jazyky]]
 		- gramatika typu 0
-	- Turingův stroj
+	- [[Turingův stroj]]
 		- algoritmicky nerozhodnutelné problémy
-	- Chomského hierarchie
+	- [[Chomského hierarchie]]
 		- schopnost zařazení konkrétního jazyka do Chomského hierarchie (zpravidla sestrojení odpovídajícího automatu či gramatiky)
 - Předměty
 	- NTIN071 Automaty a gramatiky (2/5 z 5 kr)
@@ -199,26 +199,26 @@
 		- měření velikosti dat
 		- složitost v nejlepším, nejhorším a průměrném případě
 		- asymptotická notace
-	- Třídy složitosti
+	- [[Třídy složitosti]]
 		- třídy P a NP
 		- převoditelnost problémů, NP-těžkost a NP-úplnost
 		- příklady NP-úplných problémů a převodů mezi nimi
-	- Metoda rozděl a panuj
+	- [[Metoda rozděl a panuj]]
 		- princip rekurzivního dělení problému na podproblémy
 		- výpočet složitosti pomocí rekurentních rovnic
 		- Master theorem (kuchařková věta) (bez důkazu)
 		- aplikace
 			- Mergesort
 			- násobení dlouhých čísel
-	- Binarní vyhledávací stromy
+	- [[Binární vyhledávací stromy]]
 		- definice vyhledávacího stromu
 		- operace s nevyvažovanými stromy
 		- AVL stromy (definice)
-	- Třídění
+	- [[Třídění]]
 		- primitivní třídicí algoritmy (Bubblesort, Insertsort)
 		- Quicksort
 		- dolní odhad složitosti porovnávacích třídicích algoritmů
-	- Grafové algoritmy
+	- [[Grafové algoritmy]]
 		- prohledávání do šířky a do hloubky
 		- topologické třídění orientovaných grafů
 		- nejkratší cesty v ohodnocených grafech (Dijkstrův a Bellmanův-Fordův algoritmus)

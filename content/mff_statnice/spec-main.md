@@ -19,20 +19,20 @@
 	- [[Samoopravné kódy]] ✓
 		- přehled o používané terminologii
 		- vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
-		- [Hammingův odhad](mff_statnice/combinatorics/Samoopravné kódy#Hammingův odhad) (formulace a důkaz) ✓
+		- [Hammingův odhad](mff_statnice/combinatorics/Samoopravné%20kódy#Hammingův%20odhad) (formulace a důkaz) ✓
 		- perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukce)
 - Předměty
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	- NDMI012 Kombinatorika a grafy 2 (5 kr)
 	
 2. Diferenciální a integrální počet ve více rozměrech
-	- Riemannův integrál jedno- i vícerozměrný
-	- Funkce více proměnných
+	- [[Riemannův integrál jedno- i vícerozměrný]]
+	- [[Funkce více proměnných]]
 		- parciální derivace: definice a výpočet
 		- výpočet extrémů pomocí parciálních derivací
 		- existence extrémů pro funkce několika reálných proměnných
 		- vázané extrémy: výpočet pomocí Lagrangeových multiplikátorů
-	- Metrický prostor
+	- [[Metrický prostor]]
 		- definice a základní příklady
 		- otevřené a uzavřené množiny: definice, příklady
 		- spojitost funkce na metrickém prostoru
@@ -42,25 +42,25 @@
 	- NMAI055 Matematická analýza 2 (5 kr)
 
 3. Pokročilé algoritmy a datové struktury
-	- Dynamické programování
+	- [[Dynamické programování]]
 		- princip dynamického programování (řešení podproblémů od nejmenších k největším)
 		- aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
-	- Grafové algoritmy
+	- [[Grafové algoritmy]]
 		- komponenty silné souvislosti orientovaných grafů
 		- toky v sítích (Dinicův a Goldbergův algoritmus)
 		- toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
-	- Algoritmy vyhledávání v textu
+	- [[Algoritmy vyhledávání v textu]]
 		- algoritmy Knuth-Morris-Pratt a Aho-Corasicková
-	- Algebraické algoritmy
+	- [[Algebraické algoritmy]]
 		- diskrétní Fourierova transformace a její aplikace
 		- výpočet Fourierovy transformace algoritmem FFT
-	- RSA
+	- [[RSA]]
 		- šifrování, dešifrování a generování klíčů
-	- Aproximační algoritmy
+	- [[Aproximační algoritmy]]
 		- aproximační poměr a relativní chyba
 		- aproximační schémata
 		- příklady: obchodní cestující, batoh
-	- Paralelní třidění pomocí komparátorových sítí
+	- [[Paralelní třidění]] pomocí komparátorových sítí
 - Předměty
 	- NDMI010 Grafové algoritmy (3 kr)
 	- NMAI062 Algebra 1 (5 kr)
