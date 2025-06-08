@@ -2,7 +2,8 @@
 *Definice:* Funkce $F$ je primitivní k $f$ na intervalu $I$, pokud $F'(x)=f(x)$ pro všechna $x\in I$. Zapisujeme  
 $$
 \int f(x)\,dx = F(x) + c.
-$$*Metody výpočtu:*  
+$$
+*Metody výpočtu:*  
   1. **Substituce**: Pokud $\varphi\colon(\alpha,\beta)\to(a,b)$ má vlastní derivaci a $F$ je primitivní k $f$, pak  
 $$
 \int f(\varphi(t))\,\varphi'(t)\,dt = F(\varphi(t)) + c.
@@ -16,9 +17,10 @@ $$
 $$
 \int f(x)\,G(x)\,dx + \int F(x)\,g(x)\,dx = F(x)G(x) + c.
 $$
+
 ---
 # Riemannův integrál
-*Definice:* Pro dělení $D=(a_0,\dots,a_k)$ intervalu $[a,b]$ a funkci $f\colon[a,b]\to\mathbb R$ definujeme dolní Riemannovu sumu  
+*Definice:* Pro dělení $D=(a_0,\dots,a_k)$ intervalu $[a,b]$ a funkci $f\colon[a,b]\to\mathbb R$ definujeme dolní Riemannovu sumu 
 $$
 s(f,D)=\sum_{i=0}^{k-1}(a_{i+1}-a_i)\,\inf_{x\in[a_i,a_{i+1}]}f(x),
 $$
