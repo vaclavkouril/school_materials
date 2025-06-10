@@ -1,5 +1,5 @@
 # Společná matematika
-1. Základy diferenciálního a integrálního počtu
+1. Základy diferenciálního a integrálního počtu ✓
 	-  [[Posloupnosti reálných čísel a jejich limity]] ✓
 		- definice, aritmetika limit
 		- věta o dvou policajtech, limity a uspořádání
@@ -31,7 +31,7 @@
 	- NMAI054 Matematická analýza 1 (5 kr)
 	
 2. Algebra a lineární algebra
-	- [[Algebraické struktury]]
+	- [[Algebraické struktury]] ✓
 		- grupy a podgrupy, permutace
 		- tělesa a speciálně konečná tělesa
 	- [[Soustavy lineárních rovnic]]
