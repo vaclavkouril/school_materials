@@ -44,11 +44,11 @@
 		- vektorový prostor, lineární kombinace, lineární závislost a nezávislost, lineární obal, systém generátorů
 		- Steinitzova věta o výměně, báze, dimenze, souřadnice
 		- vektorové podprostory, zejména maticové (řádkový, sloupcový, jádro) a jejich dimenze
-	- [[Lineární zobrazení]]
+	- [[Lineární zobrazení]] ✓
 		- definice, maticová reprezentace lineárního zobrazení, matice složeného zobrazení
 		- obraz a jádro lineárních zobrazení
 		- isomorfismus prostorů
-	- [[Skalární součin]]
+	- [[Skalární součin]] ✓
 		- skalární součin, norma indukovaná skalárním součinem
 		- Pythagorova věta, Cauchyho-Schwarzova nerovnost, trojúhelníková nerovnost
 		- ortonormální systémy vektorů, Fourierovy koeficienty, Gramova-Schmidtova ortogonalizace
