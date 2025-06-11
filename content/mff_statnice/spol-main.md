@@ -40,7 +40,7 @@
 	- [[Matice]] ✓
 		- operace s maticemi a základní typy matic, hodnost matice
 		- regulární a inverzní matice
-	- [[Vektorové prostory]]
+	- [[Vektorové prostory]] ✓
 		- vektorový prostor, lineární kombinace, lineární závislost a nezávislost, lineární obal, systém generátorů
 		- Steinitzova věta o výměně, báze, dimenze, souřadnice
 		- vektorové podprostory, zejména maticové (řádkový, sloupcový, jádro) a jejich dimenze
