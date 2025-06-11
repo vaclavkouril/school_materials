@@ -159,6 +159,6 @@ $$
   6. Celková množina řešení je  
 $$
      y + \mathrm{span}\{v_1,\dots,v_{n-r}\}.
-$$
+$$ 
 - **Ověření úplnosti množiny řešení**  
   Dosazení obecného řešení $x = y + \sum p_i v_i$ zpět do původní soustavy ověří jak správnost partikulárního řešení $y$, tak úplnost generované afinní množiny.

@@ -37,7 +37,7 @@
 	- [[Soustavy lineárních rovnic]] ✓
 		- maticový zápis, elementární řádkové úpravy, odstupňovaný tvar matice
 		- Gaussova a Gaussova-Jordanova eliminace, popis množiny řešení
-	- [[Matice]]
+	- [[Matice]] ✓
 		- operace s maticemi a základní typy matic, hodnost matice
 		- regulární a inverzní matice
 	- [[Vektorové prostory]]
