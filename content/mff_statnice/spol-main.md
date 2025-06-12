@@ -54,7 +54,7 @@
 		- ortonormální systémy vektorů, Fourierovy koeficienty, Gramova-Schmidtova ortogonalizace
 		- ortogonální doplněk, ortogonální projekce, projekce jako lineární zobrazení
 		- ortogonální matice a jejich vlastnosti
-	- [[Determinanty]]
+	- [[Determinanty]] ✓
 		- definice a základní vlastnosti determinantu (multiplikativnost, determinant transponované matice, vztah s regularitou a vlastními čísly)
 		- Laplaceův rozvoj determinantu
 		- geometrická interpretace determinantu
