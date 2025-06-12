@@ -34,9 +34,9 @@ $$
    - **Alternativní hypotéza** $H_1$: „zajímavější“ model.  
 1. **Testová statistika** $T(X_1,\dots,X_n)$, jejíž rozdělení za $H_0$ známe (nebo aproximujeme).  
 2. **Kritický obor** $W$: množina hodnot $T$, při jejichž dosažení se $H_0$ zamítá, určená tak, aby  
-   $$
+$$
    P\bigl(T\in W \mid H_0\bigr) = \alpha.
-   $$  
+$$  
    Hodnota $\alpha$ je **hladina významnosti** – pravděpodobnost chyby I. druhu.  
 3. **Rozhodnutí:**  
    - Pokud $T\notin W$, nezamítáme $H_0$.  
@@ -74,15 +74,13 @@ $$
 $$
    z_{\alpha/2} = z_{0{,}025} \approx 1{,}96.
 $$
-3. **Interval**  
+3. **Interval** pro $\hat p \pm z_{\alpha/2}$
 $$
-\begin{array}
-
-   \hat p \pm z_{\alpha/2}\\ \mathrm{se}
+   \mathrm{se}
    = 0{,}60 \pm 1{,}96\cdot0{,}049
    = [\,0{,}60 - 0{,}096,\;0{,}60 + 0{,}096\,]
    ≈ [\,0{,}504,\;0{,}696\,].
-\end{array}
+
 $$
 
 > _Interpretace:_ S 95 % jistotou říkáme, že skutečný $p$ leží někde mezi 0,504 a 0,696.
