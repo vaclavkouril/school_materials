@@ -30,7 +30,7 @@
 - Předměty
 	- NMAI054 Matematická analýza 1 (5 kr)
 	
-2. Algebra a lineární algebra
+2. Algebra a lineární algebra ✓
 	- [[Algebraické struktury]] ✓
 		- grupy a podgrupy, permutace
 		- tělesa a speciálně konečná tělesa
@@ -62,7 +62,7 @@
 		- definice, geometrický význam a základní vlastnosti vlastních čísel, charakteristický polynom, násobnost vlastních čísel
 		- podobnost a diagonalizovatelnost matic, spektrální rozklad
 		- symetrické matice, jejich vlastní čísla a spektrální rozklad
-	- [[Positivně semidefinitní a positivně definitní matice]]
+	- [[Positivně semidefinitní a positivně definitní matice]] ✓ 
 		- charakterizace a vlastnosti, vztah se skalárním součinem, vlastními čísly
 		- Choleského rozklad (znění věty a praktické použití)
 - Předměty
@@ -117,12 +117,12 @@
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	
 5. Pravděpodobnost a statistika
-	- [[Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost]]
+	- [[Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost]] ✓
 		- definice těchto pojmů, příklady
 		- základní pravidla pro počítání s pravděpodobností
 		- nezávislost náhodných jevů, podmíněná pravděpodobnost
 		- Bayesův vzorec
-	- [[Náhodné veličiny a jejich rozdělení]]
+	- [[Náhodné veličiny a jejich rozdělení]] ✓
 		- diskrétní i spojitý případ
 		- popis pomocí distribuční funkce a pomocí pravděpodobnostní funkce/hustoty
 		- střední hodnota
