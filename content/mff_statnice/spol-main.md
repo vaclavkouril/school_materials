@@ -58,7 +58,7 @@
 		- definice a základní vlastnosti determinantu (multiplikativnost, determinant transponované matice, vztah s regularitou a vlastními čísly)
 		- Laplaceův rozvoj determinantu
 		- geometrická interpretace determinantu
-	- [[Vlastní čísla a vlastní vektory]]
+	- [[Vlastní čísla a vlastní vektory]] ✓
 		- definice, geometrický význam a základní vlastnosti vlastních čísel, charakteristický polynom, násobnost vlastních čísel
 		- podobnost a diagonalizovatelnost matic, spektrální rozklad
 		- symetrické matice, jejich vlastní čísla a spektrální rozklad
