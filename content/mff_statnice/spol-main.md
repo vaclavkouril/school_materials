@@ -116,7 +116,7 @@
 	- NDMI002 Diskrétní matematika (5 kr)
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	
-5. Pravděpodobnost a statistika
+5. Pravděpodobnost a statistika ✓
 	- [[Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost]] ✓
 		- definice těchto pojmů, příklady
 		- základní pravidla pro počítání s pravděpodobností
@@ -133,13 +133,13 @@
 			- definice
 			- vzorec pro rozptyl součtu (závislých či nezávislých veličin)
 		- práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
-	- [[Limitní věty]]
+	- [[Limitní věty]] ✓
 		- zákon velkých čísel
 		- centrální limitní věta
-	- [[Bodové odhady]]
+	- [[Bodové odhady]] ✓
 		- alespoň jedna metoda pro jejich tvorbu
 		- vlastnosti
-	- [[Intervalové odhady]]: metoda založená na aproximaci normálním rozdělením
+	- [[Intervalové odhady]] ✓: metoda založená na aproximaci normálním rozdělením
 		- Testování hypotéz
 		- základní přístup
 		- chyby 1. a 2. druhu
