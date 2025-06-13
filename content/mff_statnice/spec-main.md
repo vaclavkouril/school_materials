@@ -32,7 +32,7 @@
 		- výpočet extrémů pomocí parciálních derivací
 		- existence extrémů pro funkce několika reálných proměnných
 		- vázané extrémy: výpočet pomocí Lagrangeových multiplikátorů
-	- [[Metrický prostor]]
+	- [[Metrický prostor]] ✓
 		- definice a základní příklady
 		- otevřené a uzavřené množiny: definice, příklady
 		- spojitost funkce na metrickém prostoru
