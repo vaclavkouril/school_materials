@@ -25,9 +25,9 @@
 	- NDMI011 Kombinatorika a grafy 1 (5 kr)
 	- NDMI012 Kombinatorika a grafy 2 (5 kr)
 	
-2. Diferenciální a integrální počet ve více rozměrech
-	- [[Riemannův integrál jedno- i vícerozměrný]]
-	- [[Funkce více proměnných]]
+2. Diferenciální a integrální počet ve více rozměrech ✓
+	- [[Riemannův integrál jedno- i vícerozměrný]] ✓
+	- [[Funkce více proměnných]] ✓
 		- parciální derivace: definice a výpočet
 		- výpočet extrémů pomocí parciálních derivací
 		- existence extrémů pro funkce několika reálných proměnných

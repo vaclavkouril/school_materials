@@ -24,10 +24,11 @@ $$
 | integrování           |               $\sum_{i=0}^\infty \frac{1}{i+1} a_{i} x^{i+1}$               | $\int_{0}^x a(t) \text{ d} t$ |
 | konvoluce             |                  $c_{n} =\sum_{k=1}^n a_{k} \cdot b_{n-k}$                  | $c(x) = a(x) \cdot b(x)$      |
 Příklady užitečných výrazů a řad:
-$\sum_{n=0}^{\infty} x^n = (1,1,1,1,...) \quad = \frac{1}{1-x}$
-
-$\sum_{n=0}^{\infty} (ax)^n = (a^0,a^1,a^2,a^3,...) \quad = \frac{1}{1-ax}$
-
-$\sum_{n=0}^{\infty} (x^2)^n = (1,0,1,0,...) \quad = \frac{1}{1-x^2}$
-
-$\sum_{n=0}^{\infty} (-1)^n x^n = (1,-1,1,-1,...) \quad = \frac{1}{1+x}$
+$$
+\begin{align}
+\sum_{n=0}^{\infty} x^n &= (1,1,1,1,...) &= \frac{1}{1-x} \\
+\sum_{n=0}^{\infty} (ax)^n &= (a^0,a^1,a^2,a^3,...) &= \frac{1}{1-ax}\\
+\sum_{n=0}^{\infty} (x^2)^n &= (1,0,1,0,...) &= \frac{1}{1-x^2}\\
+\sum_{n=0}^{\infty} (-1)^n x^n &= (1,-1,1,-1,...) &= \frac{1}{1+x}
+\end{align}
+$$
