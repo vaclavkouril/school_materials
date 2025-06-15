@@ -194,12 +194,12 @@
 	- NTIN071 Automaty a gramatiky (2/5 z 5 kr)
 	
 2. Algoritmy a datové stuktury
-	- [[Časová složitost algoritmů]]
+	- [[Časová složitost algoritmů]] ✓
 		- časová a prostorová složitost algoritmu
 		- měření velikosti dat
 		- složitost v nejlepším, nejhorším a průměrném případě
 		- asymptotická notace
-	- [[Třídy složitosti]]
+	- [[Třídy složitosti]] ✓
 		- třídy P a NP
 		- převoditelnost problémů, NP-těžkost a NP-úplnost
 		- příklady NP-úplných problémů a převodů mezi nimi
