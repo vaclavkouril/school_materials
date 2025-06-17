@@ -42,7 +42,7 @@
 	- NMAI055 Matematická analýza 2 (5 kr)
 
 3. Pokročilé algoritmy a datové struktury
-	- [[Dynamické programování]]
+	- [[Dynamické programování]] ✓
 		- princip dynamického programování (řešení podproblémů od nejmenších k největším)
 		- aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
 	- [[Grafové algoritmy]]
