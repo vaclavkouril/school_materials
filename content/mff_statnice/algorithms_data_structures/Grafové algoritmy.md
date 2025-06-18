@@ -269,3 +269,326 @@ Z toho plyne:
 - Pro **iracionální kapacity**: algoritmus **nemusí skončit** ani konvergovat.
 *Poznámka:*
 - Pokud vybíráme vždy **nejkratší nenasycenou cestu**, získáme tzv. **Edmonds-Karpův algoritmus**, který je efektivnější: $O(nm²)$.
+---
+
+# Komponenty silné souvislosti v orientovaných grafech
+
+*Definice:* Silně souvislá komponenta (SSC) je maximální množina vrcholů, ve které existuje cesta mezi každou dvojicí vrcholů v obou směrech.
+$$
+\begin{align}
+&\text{KompSilnéSouvislosti} \\
+&\text{Vstup: Orientovaný graf } G=(V,E) \\
+&\text{Výstup: Seznam silně souvislých komponent} \\
+
+&1.\ \text{Pro všechny } v\in V: \text{stav}(v)\leftarrow nenavštíven, S\leftarrow[\,] \\
+&2.\ \text{Pro každé } v\in V: \text{Pokud }v\text{ nebyl navštíven: DFS1(v)} \\
+
+&3.\ \text{Function DFS1}(u): \\
+&4.\quad \text{stav}(u)\leftarrow navštíven \\
+&5.\quad \forall w:(u\to w)\in E \text{ a } stav(w)=nenavštíven:DFS1(w) \\
+&6.\quad S.\text{push}(u) \\
+
+&7.\ \text{Otoříme všechny hrany }E \text{ na }E^T \\
+&8.\ \text{Pro všechny } v\in V: \text{stav}(v)\leftarrow nenavštíven \\
+&9.\ \text{KosarComponentes}\leftarrow[] \\
+&10.\ \text{Dokud je }S\text{ neprázdné:}\\
+&11.\quad u\leftarrow S.\text{pop}() \\
+&12.\quad \text{Seznam }C\leftarrow[] \\
+&13.\quad \text{Pro }w \text{ dosažitelné DFS2(u) ve }E^T:\ C.\text{append}(w)\\
+&14.\quad \text{Přidej }C\text{ do KosarComponents}\\
+
+&15.\ \text{Funkce DFS2}(u): \\
+&16.\quad \text{stav}(u)\leftarrow navštíven, C.\text{append}(u) \\
+&17.\quad \forall w:(u\to w)\in E^T \text{ a } stav(w)=nenavštíven: DFS2(w)
+\end{align}
+$$
+*Složitost:* $O(n+m)$ – dvě DFS a přetočení hran.
+
+---
+# Dinicův algoritmus pro maximální tok
+
+Síť je orientovaný graf s kapacitami a určeným zdrojem a stokem:
+- $G = (V, E)$ je orientovaný graf.
+- $z \in V$ je **zdroj**.
+- $s \in V$ je **stok**.
+- $c: E \to \mathbb{R}_{\ge 0}$ je funkce udávající **kapacitu** každé hrany.
+- $f: E \to \mathbb{R}_{\ge 0}$ je **tok**, pokud:
+  - $\forall e \in E: 0 \le f(e) \le c(e) \quad \text{(omezujeme tok kapacitami)}$
+  - $\forall v \in V \setminus \{z, s\}: \sum_{u: (u,v) \in E} f(uv) = \sum_{w: (v,w) \in E} f(vw) \quad \text{(Kirchhoffův zákon)}$
+Velikost toku je definována jako:
+$$
+|f| := \sum_{v: (z,v) \in E} f(zv) - \sum_{u: (u,z) \in E} f(uz)
+$$
+Rezerva udává, o kolik lze zvýšit tok přes hranu (nebo snížit v protisměru):
+$$
+r(uv) := c(uv) - f(uv) + f(vu)
+$$
+- Hrana je **nasycená**, pokud $r(uv) = 0$.
+- Cesta je **nenasycená**, pokud má všechny rezervy kladné.
+## Intuice Dinicova algoritmu
+- Vylepšujeme tok, dokud existují nenasycené cesty.
+- Místo náhodných cest používáme jen **nejkratší** cesty — to omezuje počet fází.
+- V každé fázi hledáme **blokující tok**: tok, který „zasytí“ alespoň jednu hranu každé cesty.
+- Postupně tak **zvyšujeme minimální délku zlepšujících cest** → algoritmus skončí.
+$$
+\begin{align}
+&\text{Dinic} \\
+&\text{Vstup: Síť } (V, E, z, s, c) \\
+&\text{Výstup: Maximální tok } f \\
+
+&1.\quad f \leftarrow 0 \\
+&2.\quad \text{Opakujeme:} \\
+&3.\quad\quad \text{Sestrojíme síť rezerv } R \text{ a odstraníme hrany s nulovou rezervou} \\
+&4.\quad\quad \ell \leftarrow \text{délka nejkratší cesty ze } z \text{ do } s \text{ v } R \\
+&5.\quad\quad \text{Pokud taková cesta neexistuje: } \text{vrátíme } f \\
+&6.\quad\quad \text{Pročistíme síť (ponecháme jen nejkratší cesty)} \\
+&7.\quad\quad g \leftarrow \text{Blokující tok v pročištěné síti } R \\
+&8.\quad\quad f \leftarrow f + g \\
+\end{align}
+$$
+
+---
+$$
+\begin{align}
+&\text{ČištěníSítě} \\
+&1.\quad \text{Rozdělíme vrcholy do vrstev podle vzdálenosti od } z \\
+&2.\quad \text{Odstraníme vrcholy za vrstvou } \ell \text{ (tj. vzdálenost > } \ell) \\
+&3.\quad \text{Odstraníme hrany vedoucí do stejné nebo předchozí vrstvy} \\
+&4.\quad \text{Fronta } F \leftarrow \{v \ne z, s \mid \deg^{+}(v) = 0\} \\
+&5.\quad \text{Dokud } F \ne \emptyset: \\
+&6.\quad\quad v \leftarrow F.\text{pop()} \\
+&7.\quad\quad \text{Odstraň } v \text{ a všechny hrany incidentní do } v \\
+&8.\quad\quad \text{Pokud } \deg^{+}(u) = 0 \Rightarrow F.\text{push}(u)
+\end{align}
+$$
+---
+## Hledání blokujícího toku
+$$
+\begin{align}
+&\text{BlokujícíTok} \\
+&\text{Vstup: Pročištěná síť rezerv } R \\
+&\text{Výstup: Blokující tok } g \\
+&1.\quad g \leftarrow 0 \\
+&2.\quad \text{Dokud existuje orientovaná cesta } P \text{ z } z \text{ do } s: \\
+&3.\quad\quad \varepsilon \leftarrow \min\limits_{e \in P} (r(e) - g(e)) \\
+&4.\quad\quad \forall e \in P: \quad g(e) \leftarrow g(e) + \varepsilon \\
+&5.\quad\quad \text{Pokud } g(e) = r(e) \Rightarrow \text{odstraň hranu } e \\
+&6.\quad\quad \text{Dočisti síť (jako výše)} \\
+&7.\quad \text{return } g
+\end{align}
+$$
+---
+## Intuice a důkazy korektnosti
+### Lemma K: Korektnost
+Pokud algoritmus skončí, neexistuje cesta ze $z$ do $s$ v síti rezerv $\implies$ žádné další zlepšení toku není možné $\implies$ výstupní tok je maximální.
+### Lemma C: Délka se prodlužuje
+Po každé fázi se nejkratší cesta prodlouží alespoň o 1 (protože jsme nasytili všechny dosavadní nejkratší).
+### Lemma S: Čas jedné fáze
+Každá fáze trvá $O(nm)$, protože konstrukce vrstvené sítě a blokujícího toku lze provést v lineárním čase vzhledem k počtu hran a vrcholů.
+
+---
+## Věta: Složitost Dinicova algoritmu
+- Nejvýše $n$ fází (protože délka nejkratší cesty se nejvýše $n$-krát prodlouží)
+- Každá fáze trvá $O(mn)$
+- $\Rightarrow O(n^2 m)$
+---
+# Goldbergův algoritmus pro hledání maximálního toku
+
+## Definice
+
+**Síť:** Orientovaný graf $G = (V, E)$ s kapacitní funkcí $c: E \to \mathbb{R}_0^+$, zdrojovým vrcholem $z \in V$ a stokem $s \in V$.
+
+**Vlna:** Funkce $f: E \to \mathbb{R}_0^+$ je vlna, pokud platí:
+- $\forall e \in E: f(e) \leq c(e)$ (nepřekračuje kapacitu hran),
+- $\forall v \in V \setminus \{z, s\}: f^\Delta(v) \geq 0$, kde $f^\Delta(v)$ je přebytek toku ve vrcholu $v$.
+
+> Každý tok je vlnou, ale ne každá vlna je tok – přebytky mohou být nenulové.
+
+**Rezerva:** Pro hranu $e = uv$ je:
+$$
+r(uv) = c(uv) - f(uv)
+$$
+**Převedení přebytku:** Můžeme převést přebytek po hraně $uv$, pokud:
+- $f^\Delta(u) > 0$
+- $r(uv) > 0$
+Pak pošleme tok ve výši:
+$$
+\delta = \min(f^\Delta(u), r(uv))
+$$a aktualizujeme:
+$$
+\begin{align}
+f^\Delta(u) &\leftarrow f^\Delta(u) - \delta \\
+f^\Delta(v) &\leftarrow f^\Delta(v) + \delta \\
+r(uv) &\leftarrow r(uv) - \delta \\
+r(vu) &\leftarrow r(vu) + \delta
+\end{align}
+$$
+## Intuice
+Místo hledání cest postupně přesouváme přebytky ze zdroje k stoku nebo zpět. Abychom zabránili "cestování v kruhu", zavádíme **výšky** $h(v)$ a dovolujeme přesun pouze **dolů** (tj. $h(u) > h(v)$).
+
+Když přebytek uvízne (není kam přelévat dolů), **zvedneme výšku** vrcholu.
+$$
+\begin{align}
+&\text{Goldberg} \\
+&\text{Vstup: Síť } (V, E, z, s, c) \\
+&\text{Výstup: Maximální tok } f \\[6pt]
+
+&1.\quad \text{Pro každý vrchol } v \in V: f^\Delta(v) \leftarrow 0,\ f \leftarrow 0 \\
+&2.\quad \text{Inicializace výšek: } h(z) \leftarrow |V|,\ h(v) \leftarrow 0 \text{ pro } v \neq z \\
+&3.\quad \text{Nastavíme } f(zv) \leftarrow c(zv),\ \forall zv \in E \\
+&4.\quad \text{Pro každé takové } v: f^\Delta(v) \leftarrow c(zv) \\[6pt]
+
+&5.\quad \text{Dokud existuje } u \in V \setminus \{z, s\} \text{ s } f^\Delta(u) > 0: \\
+&6.\quad\quad \text{Pokud existuje } uv \in E \text{ s } r(uv) > 0 \text{ a } h(u) > h(v): \\
+&7.\quad\quad\quad \delta \leftarrow \min(f^\Delta(u), r(uv)) \\
+&8.\quad\quad\quad f(uv) \leftarrow f(uv) + \delta \\
+&9.\quad\quad\quad f^\Delta(u) \leftarrow f^\Delta(u) - \delta \\
+&10.\quad\quad\quad f^\Delta(v) \leftarrow f^\Delta(v) + \delta \\
+&11.\quad\quad \text{Jinak: } h(u) \leftarrow h(u) + 1 \\
+\end{align}
+$$
+---
+### Invariant A (základní):
+- $f$ je vždy vlna.
+- Výšky $h(v)$ nikdy neklesají.
+- $h(z) = n$, $h(s) = 0$.
+- $f^\Delta(v) \geq 0$ pro $v \ne z$.
+
+### Invariant S (spád):
+Neexistuje hrana $uv$ s kladnou rezervou a spádem $h(u) - h(v) > 1$.
+
+### Invariant C (cesta do zdroje):
+Z každého vrcholu s $f^\Delta(v) > 0$ existuje nenasycená cesta do $z$.
+
+### Invariant V (výšky):
+$$
+\forall v \in V: \quad h(v) \leq 2n
+$$
+---
+## Důkaz korektnosti (Lemma K)
+Když algoritmus skončí:
+- Přebytek zůstává jen ve $z$ a $s$.
+- Tedy Kirchhoffovy zákony platí → $f$ je tok.
+- Pokud by nebyl maximální, existuje nenasycená cesta z $z$ do $s$.
+  - Ta by překonávala výšku $n$, ale měla by nejvýš $n-1$ hran.
+  - Musela by mít hranu se spádem alespoň $2$ → spor s invariantem S.
+---
+### **Lemma Z (počet zvednutí):**
+$$
+\text{Každý vrchol } v \text{ může být zvednut nejvýše } 2n \text{ krát}.
+$$
+**Idea důkazu:**
+- Zvedáme výšku pouze tehdy, když je přebytek a nelze ho odvést žádnou hranou "dolů".
+- Díky **invariantu C** víme, že když je přebytek, existuje cesta do zdroje.
+- Tato cesta překonává výšku nejvýše $n$, takže pokud by výška překročila $2n$, musela by obsahovat hranu se spádem $\geq 2$ – to odporuje **invariantu S**.
+### **Lemma S (nasycená převedení):**
+$$
+\text{Každou hranu lze nasyceně použít nejvýše } n \text{ krát } \Rightarrow \text{ celkem } nm \text{ nasycených převedení}.
+$$
+**Idea důkazu:**
+- Mezi dvěma nasycenými převedeními po hraně $uv$ musí být vrchol $u$ zvednut o alespoň 2 (kvůli spádu).
+- Výška $u$ je omezena lemmatem Z ($\leq 2n$), takže mezi každými dvěma nasycenými převedeními je minimálně 2 zvednutí.
+- Tedy pro každou hranu $uv$ maximálně $n$ takových akcí.
+### **Lemma N (nenasycená převedení):**
+$$
+\text{Počet všech nenasycených převedení je } \mathcal{O}(n^2 m).
+$$
+**Idea důkazu – potenciálová metoda:**
+Zavádíme **potenciál**:
+$$
+\Phi := \sum_{v \neq z,s,\ f^\Delta(v) > 0} h(v)
+$$
+Pozorování:
+- Potenciál se nikdy nezvýší příliš:
+  - Zvednutí: $+1$ (max $2n^2$ ×)
+  - Nasycené převedení: maximálně $+2n$ (celkem max $2n^2 m$)
+- Ale **každé nenasycené převedení** ho sníží minimálně o 1 (odebereme $h(u)$ a přidáme max $h(v) = h(u)-1$).
+Z toho plyne, že **nenasycených převedení nemůže být více než celkové zvýšení potenciálu**, tedy $\mathcal{O}(n^2 m)$.
+### **Věta (složitost Goldbergova algoritmu):**
+$$
+\text{Goldbergův algoritmus běží v čase } \mathcal{O}(n^2 m)
+$$
+**Idea důkazu:**
+- Sečteme počet jednotlivých operací a jejich čas:
+  - Zvednutí: $\leq 2n^2$ × (každé v čase $O(n)$) → $O(n^3)$
+  - Nasycené převedení: $\leq nm$ × (každé v čase $O(1)$) → $O(nm)$
+  - Nenasycené převedení: $O(n^2 m)$ × (každé v čase $O(1)$) → $O(n^2 m)$
+- Největší složitost dominuje, tedy výsledná složitost je:
+$$
+\boxed{\mathcal{O}(n^2 m)}
+$$
+---
+# Změny v analýze algoritmů pro toky
+
+### 1. Pokud jsou všechny kapacity hran celočíselné:
+Pokud jsou všechny kapacity hran kladná celá čísla, pak **Ford-Fulkersonův algoritmus skončí po konečném počtu kroků**.
+*Důkaz (intuice):*
+Každá augmentační cesta zvýší tok o alespoň 1 jednotku (protože nejmenší nenulová rezerva je alespoň 1). Maximální možný tok je nejvýše součet kapacit hran ze zdroje — tj. nějaké konečné číslo $C$.
+- Po každé augmentaci se hodnota toku zvětší alespoň o 1.
+- Proto algoritmus skončí nejvýše po $C$ krocích.
+- Pokud je maximální tok $F$, pak složitost je $O(m \cdot F)$, kde $m$ je počet hran a $F$ celkový maximální tok.
+> Slabina: $F$ může být exponenciálně velké vzhledem k velikosti vstupu (např. pokud kapacity jsou velká čísla), proto algoritmus není polynomiální.
+
+---
+### 2. Pokud se Ford-Fulkerson používá s BFS (Edmonds-Karp algoritmus):
+Ford-Fulkerson s výběrem augmentační cesty přes BFS (Edmonds-Karp) má časovou složitost:
+$$
+O(n \cdot m^2)
+$$
+Každá augmentační cesta je nejkratší (v počtu hran). Po každé augmentaci se délka nejkratší augmentační cesty **nikdy nezmenší**. Navíc:
+- Délka augmentační cesty se může zvýšit nejvýše $n$-krát.
+- Každá hrana může být "kritická" (tj. její kapacita se stane nulovou na augmentační cestě) nejvýše $O(n)$-krát.
+- Jelikož je hran $m$, vznikne nejvýše $O(n \cdot m)$ augmentačních kroků.
+A každý BFS běží v $O(m)$, takže složitost je $O(n \cdot m^2)$.
+---
+
+# Párování v bipartitních grafech jako problém maximálního toku
+
+### Definice párování
+- **Párování** je množina hran $F \subseteq E$, kde žádné dvě hrany nesdílejí vrchol.
+- **Velikost párování** je $|F|$.
+
+## Převod bipartitního grafu na síť
+Z bipartitního grafu $G = (V, E)$ vytvoříme síť $(V', E', z, s, c)$:
+- Najdeme **levou** partitu $X$ a **pravou** partitu $Y$.
+- Hrany orientujeme z $X$ do $Y$.
+- Přidáme:
+  - **zdroj** $z$ a hrany $z \to x$ pro každé $x \in X$,
+  - **stok** $s$ a hrany $y \to s$ pro každé $y \in Y$.
+- Všechny hrany mají kapacitu 1: $c(e) = 1$ pro každé $e \in E'$.
+
+---
+### Korektnost: párování odpovídá toku
+**Tvrdíme:** Po výpočtu maximálního toku odpovídá každá hrana s tokem 1 hraně v párování.
+**Důkaz:**
+- Každý vrchol $x \in X$ má z $z$ maximálně jeden tok → může být spojen s nejvýše jedním $y$.
+- Každý vrchol $y \in Y$ má do $s$ maximálně jeden tok → může být spojen s nejvýše jedním $x$.
+- Proto žádné dvě hrany netvoří konflikt na vrcholu: opravdu jde o párování.
+
+---
+### Úplnost: každé párování je tok
+**Tvrdíme:** Každému párování $F$ odpovídá celočíselný tok.
+**Důkaz:**
+- Hranu $(x, y) \in F$ nahradíme třemi hranami: $z \to x$, $x \to y$, $y \to s$, každou s tokem 1.
+- Celkový tok odpovídá velikosti párování.
+
+Tím vzniká bijekce mezi množinou párování a množinou celočíselných toků velikosti $k$.
+
+---
+## Časová složitost
+**Věta:** Ford-Fulkerson na síti s jednotkovými kapacitami najde maximální tok v čase $O(nm)$.
+**Důkaz:**
+- BFS najde augmentační cestu v $O(m)$.
+- V každém kroku se tok zvětší o 1.
+- Maximální tok je nejvýše $n$ (víc než $|X|$ hrany nemůžeme vybrat).
+- Celkem tedy $O(n)$ kroků $\Rightarrow$ celkem $O(nm)$.
+
+---
+
+## Důsledek: Algoritmus pro párování
+**Tvrzení:** Největší párování v bipartitním grafu lze najít v čase $O(nm)$.
+**Důkaz:**
+- Převod na síť: $O(n + m)$.
+- Maximální tok: $O(nm)$.
+- Převod zpět na párování: $O(m)$.
+- Celkově tedy $O(nm)$.

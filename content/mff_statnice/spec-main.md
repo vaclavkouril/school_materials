@@ -45,11 +45,11 @@
 	- [[Dynamické programování]] ✓
 		- princip dynamického programování (řešení podproblémů od nejmenších k největším)
 		- aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
-	- [[Grafové algoritmy]]
+	- [[Grafové algoritmy]] ✓
 		- komponenty silné souvislosti orientovaných grafů
 		- toky v sítích (Dinicův a Goldbergův algoritmus)
 		- toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
-	- [[Algoritmy vyhledávání v textu]]
+	- [[Algoritmy vyhledávání v textu]] ✓
 		- algoritmy Knuth-Morris-Pratt a Aho-Corasicková
 	- [[Algebraické algoritmy]]
 		- diskrétní Fourierova transformace a její aplikace
