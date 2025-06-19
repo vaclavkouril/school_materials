@@ -99,7 +99,8 @@ $$
 &13.\qquad\quad \text{Vložíme } s \text{ do fronty } F \\
 &\text{Výstup: Strom, pole } \text{Slovo}, \text{Zpět}, \text{Zkratka}
 \end{align}
-$$---
+$$
+---
 ## Důkaz složitosti
 - Každý krok v $AcHledej$ běží v čase $O(1)$ (díky zpětným a zkratkovým hranám).
 - Hlásíme výskyty v čase $O(V)$.
@@ -108,8 +109,3 @@ $$---
 $$
 \Theta\left( \sum_i J_i + S + V \right)
 $$
-
----
-## Shrnutí
-Kombinujeme písmenkový strom, zpětné hrany (jako v KMP) a zkratkové hrany pro efektivní hlášení výskytů.  
-Umožňuje najít všechny výskyty v čase úměrném velikosti vstupu a výstupu.

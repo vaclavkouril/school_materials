@@ -75,17 +75,14 @@ $$
 *Věta:* Graf $G$ je perfektní právě tehdy, když každý jeho indukovaný podgraf $H$ splňuje:  
 $$
   \chi(H) = \omega(H)
-  $$kde $\omega(H)$ je velikost největší kliky v $H$.
+$$kde $\omega(H)$ je velikost největší kliky v $H$.
 
 ### Slabá věta o perfektních grafech
 *Věta:* Pro každý graf $G$ platí, že je perfektní $\iff$ $\overline{G}$ (doplněk) je perfektní.
 
 ## Příklady tříd perfektních grafů
-
-- **Chordální grafy** — každý cyklus délky $\geq 4$ má **chordu** (hranu spojující dva nesousední vrcholy cyklu).  
-  Všechny chordální grafy jsou perfektní.
-
-- **Další perfektní grafy:**
+- **Chordální grafy** — každý cyklus délky $\geq 4$ má **chordu** (hranu spojující dva nesousední vrcholy cyklu). 
+Všechny chordální grafy jsou perfektní. **Další perfektní grafy:**
 - $K_{n}$
 - Bipartitní grafy
 - $P_{n}$

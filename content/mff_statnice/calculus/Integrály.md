@@ -8,11 +8,11 @@ $$
 $$
 \int f(\varphi(t))\,\varphi'(t)\,dt = F(\varphi(t)) + c.
 $$
-    Inverzní substituce (Věta 10.9): 
+Inverzní substituce (Věta 10.9): 
 $$
 \int f(x)\,dx = G\bigl(\varphi^{-1}(x)\bigr) + c,
 $$
-	kde $G$ je primitivní k $f\circ\varphi$. 
+kde $G$ je primitivní k $f\circ\varphi$. 
   2. **Per partes**: Pro spojité $f,g$ s primitivními $F,G$ platí  
 $$
 \int f(x)\,G(x)\,dx + \int F(x)\,g(x)\,dx = F(x)G(x) + c.

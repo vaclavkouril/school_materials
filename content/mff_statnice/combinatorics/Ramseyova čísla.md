@@ -22,10 +22,10 @@ Pro $|B| \geq r(k,l-1)$ platí obdobný argument, kde rozšiřujeme kliku o $u$.
 Důsledkem je tedy 
 $$
 r(k,l) \leq \binom{k+l-2}{k-1}= \binom{k+l-2}{l-1} 
-$$$$
+$$
+$$
 r(k,l) \leq r(k,l) \leq r(k-1,l) +r(k,l-1) \leq \binom{k+l-3}{k-2} + \binom{k+l-3}{k-2} = \binom{k+l-2}{k-1}
 $$
-
 #### $\forall k,n \in \mathbb{N}$ t.ž. $\binom{n}{k}2^{1-k/2} <1 \implies r(k)>n$.
 Zapisujeme $r(k)$ jako zkratku $r(k,k)$.
 Chceme ukázat, že existuje graf na $n$ vrcholech, který neobsahuje ani zelenou $K_k$, ani modrou $K_k$. Označme $G\left( n,\frac{1}{2} \right)$ náhodný graf, ve kterém každou hranu obarvíme zeleně (resp. existuje) s pravděpodobností $\frac{1}{2}$, nezávisle.
@@ -37,15 +37,15 @@ $$
 $$
 Pr[U] \leq \binom n k \cdot 2 \cdot 2^{-\binom k 2} = \binom n k \cdot 2^{1-\binom k 2}.
 $$
-	Je-li 
+Je-li 
 $$
 \binom n k \cdot 2^{1-\binom k 2} <1
 $$
-	Pak i $Pr(U) < 1$. Existuje tedy alespoň jeden graf bez monochromatické $K_{k}$. Tedy
+Pak i $Pr(U) < 1$. Existuje tedy alespoň jeden graf bez monochromatické $K_{k}$. Tedy
 $$
 r(k)>n.
 $$
-	Volbou $n=\bigl\lfloor2^{k/2}\bigr\rfloor$ a hrubou odhadovou nerovností $\binom n k \leq \frac{n^k}{k!}$, dostaneme pro velká $k$ 
+Volbou $n=\bigl\lfloor2^{k/2}\bigr\rfloor$ a hrubou odhadovou nerovností $\binom n k \leq \frac{n^k}{k!}$, dostaneme pro velká $k$ 
 $$
 r(k) > 2^{k/2}.
 $$

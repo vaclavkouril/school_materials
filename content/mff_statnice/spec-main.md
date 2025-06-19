@@ -51,10 +51,10 @@
 		- toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
 	- [[Algoritmy vyhledávání v textu]] ✓
 		- algoritmy Knuth-Morris-Pratt a Aho-Corasicková
-	- [[Algebraické algoritmy]]
+	- [[Algebraické algoritmy]] ✓
 		- diskrétní Fourierova transformace a její aplikace
 		- výpočet Fourierovy transformace algoritmem FFT
-	- [[RSA]]
+	- [[RSA]] ✓
 		- šifrování, dešifrování a generování klíčů
 	- [[Aproximační algoritmy]]
 		- aproximační poměr a relativní chyba

@@ -34,7 +34,8 @@ $$
 \begin{align}
 (1+x+x^2+ \dots+ x^{30})(1+x+x^2+ \dots+ x^{40})(1+x+x^2+ \dots+ x^{50}) = \\ = \frac{1-x^{31}}{1-x} \frac{1-x^{41}}{1-x}\frac{1-x^{51}}{1-x} = \frac{1}{(1-x)^3} \cdot (1-x^{31}) \cdot (1-x^{41}) \cdot (1-x^{51})
 \end{align}
-$$$\frac{1}{(1-x)^3} = (1-x)^{-3}$ se dá aplikovat zobecněná binomická věta a získáme
+$$
+$\frac{1}{(1-x)^3} = (1-x)^{-3}$ se dá aplikovat zobecněná binomická věta a získáme
 $$
 \left[\binom{2}{2} + \binom{3}{2} x+ \binom{4}{2} x^2 + \dots\right] \cdot (1-x^{31}) \cdot (1-x^{41}) \cdot (1-x^{51})
 $$

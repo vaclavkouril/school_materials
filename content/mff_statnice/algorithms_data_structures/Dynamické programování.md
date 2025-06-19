@@ -64,7 +64,8 @@ $$
 &6.\ v \leftarrow \text{Edit}(i,\ j+1) \\
 &7.\ \text{Vrátíme } \min(z,\ s,\ v)
 \end{align}
-$$Použitím principu dynamického programování spočteme tabulku $T$ odzadu, kde se tabulka bude chovat jako matice a každý prvek záleží na prvku vpravo dole od něj samotného. 
+$$
+Použitím principu dynamického programování spočteme tabulku $T$ odzadu, kde se tabulka bude chovat jako matice a každý prvek záleží na prvku vpravo dole od něj samotného. 
 $$
 \begin{align}
 &\text{Edit2} \\

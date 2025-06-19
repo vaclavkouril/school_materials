@@ -243,4 +243,4 @@ Další vlastnosti:
 5. zobrazení $x \to Qx$ zachovává úhly a délky
 6. matice zobrazení zachovávající skalární součin je ortogonální
 7. $\forall i,j: |Q_{i,j}| \leq 1$
-8. $\begin{align} \begin{pmatrix} 1 & o^T \\ o & Q\end{pmatrix} \end{align}$ je ortogonální matice
+8. $\begin{pmatrix} 1 & o^T \\ o & Q\end{pmatrix}$ je ortogonální matice

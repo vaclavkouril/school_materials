@@ -6,7 +6,7 @@ Pro důkaz odhadu užijeme indukce a odhad rozdělíme na dva případy:
 $$
 1! \leq e \cdot {1} \cdot \left( \frac{1}{e} \right)^1 = 1
 $$
-	Z indukčního předpokladu platí odhad pro $n-1$ a musíme dokázat platnost odhadu u $n$:
+Z indukčního předpokladu platí odhad pro $n-1$ a musíme dokázat platnost odhadu u $n$:
 $$
 \begin{align}
 n! = n(n-1)! &\leq^{\text{IP}} en(n-1)\left( \frac{n-1}{e} \right)^{n-1} \\
@@ -14,16 +14,13 @@ n! = n(n-1)! &\leq^{\text{IP}} en(n-1)\left( \frac{n-1}{e} \right)^{n-1} \\
 &= en\left( \frac{n}{e} \right)^n \left( \frac{n-1}{n} \right)^n e
 \end{align}
 $$
-	výraz $\left( \frac{n-1}{n} \right)^n e$ je menší než jedna:
+výraz $\left( \frac{n-1}{n} \right)^n e$ je menší než jedna:
 $$
 \left( \frac{n-1}{n} \right)^n e = \left( 1 - \frac{1}{n} \right)^n e \leq \left( e^{-1/n} \right)^n e = e^{-1}e = 1
 $$
-	a tedy máme $n! \leq en\left( \frac{n}{e} \right)^n \left( \frac{n-1}{n} \right)^n e \leq en\left( \frac{n}{e} \right)^n$.
+a tedy máme $n! \leq en\left( \frac{n}{e} \right)^n \left( \frac{n-1}{n} \right)^n e \leq en\left( \frac{n}{e} \right)^n$.
 2. $e\left( \frac{n}{e} \right)^n \leq n!$
-	- n = 1:
-$$
-e \cdot \left( \frac{1}{e} \right)^1 = 1 \leq 1!
-$$
+	- n = 1: $e \cdot \left( \frac{1}{e} \right)^1 = 1 \leq 1!$
 	- $n-1 \rightarrow n$:
 $$
 \begin{align}
@@ -32,27 +29,26 @@ e n\left( \frac{n}{e} \right)^n \left( \frac{e}{n} \right)^n  \left( \frac{n-1}{
 e \left( \frac{n}{e} \right)^n  \left( \frac{n-1}{n} \right)^{n-1} e &=
 \end{align}
 $$
-		kde $\left( \frac{n-1}{n} \right)^{n-1} e \geq 1$:
-		1. Nechť $m=n-1$. Potřebujeme:
+kde $\left( \frac{n-1}{n} \right)^{n-1} e \geq 1$:
+Nechť $m=n-1$. Potřebujeme:
 $$
    \Bigl(\tfrac{n-1}{n}\Bigr)^{n-1}e \ge1
    \;\iff\;
    \Bigl(1+\tfrac1m\Bigr)^m \le e.
 $$
-
-		2. Binomická věta:
+Binomická věta:
 $$
 \Bigl(1+\tfrac1m\Bigr)^m
    =\sum_{k=0}^m \binom m k \,\tfrac1{m^k}
    \le\sum_{k=0}^m \tfrac1{k!}
    \le\sum_{k=0}^\infty \tfrac1{k!}
    = e.
-$$$$
-   \Bigl(1+\tfrac1m\Bigr)^m \le e
+$$
+$$   \Bigl(1+\tfrac1m\Bigr)^m \le e
    \;\Longrightarrow\;
    \Bigl(\tfrac m{m+1}\Bigr)^m e \ge1,
 $$   
-		tedy pro $m=n-1$
+tedy pro $m=n-1$
 $$
    \Bigl(\tfrac{n-1}{n}\Bigr)^{n-1}e \ge1.
 $$

@@ -1,6 +1,4 @@
-## [[Dokazatelnost]]
-
-*Definice:* Formální důkaz formule $ϕ$ z teorie $T$ v daném dokazovacím systému je konečná posloupnost  
+s*Definice:* Formální důkaz formule $ϕ$ z teorie $T$ v daném dokazovacím systému je konečná posloupnost  
 $$
 ϕ_0,\dots,ϕ_n = ϕ
 $$  

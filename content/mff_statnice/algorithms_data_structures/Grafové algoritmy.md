@@ -411,10 +411,12 @@ $$
 **Převedení přebytku:** Můžeme převést přebytek po hraně $uv$, pokud:
 - $f^\Delta(u) > 0$
 - $r(uv) > 0$
+
 Pak pošleme tok ve výši:
 $$
 \delta = \min(f^\Delta(u), r(uv))
-$$a aktualizujeme:
+$$
+a aktualizujeme:
 $$
 \begin{align}
 f^\Delta(u) &\leftarrow f^\Delta(u) - \delta \\
@@ -447,6 +449,7 @@ $$
 &11.\quad\quad \text{Jinak: } h(u) \leftarrow h(u) + 1 \\
 \end{align}
 $$
+
 ---
 ### Invariant A (základní):
 - $f$ je vždy vlna.
