@@ -1,4 +1,4 @@
-# Obecná informatika
+# Obecná informatika ✓
 1. Kombinatorika ✓
 	- [[Vytvořující funkce]] ✓
 		- použití vytvořujících funkcí k řešení lineárních rekurencí
@@ -41,7 +41,7 @@
 - Předměty
 	- NMAI055 Matematická analýza 2 (5 kr)
 
-3. Pokročilé algoritmy a datové struktury
+3. Pokročilé algoritmy a datové struktury ✓
 	- [[Dynamické programování]] ✓
 		- princip dynamického programování (řešení podproblémů od nejmenších k největším)
 		- aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
@@ -56,11 +56,11 @@
 		- výpočet Fourierovy transformace algoritmem FFT
 	- [[RSA]] ✓
 		- šifrování, dešifrování a generování klíčů
-	- [[Aproximační algoritmy]]
+	- [[Aproximační algoritmy]] ✓
 		- aproximační poměr a relativní chyba
 		- aproximační schémata
 		- příklady: obchodní cestující, batoh
-	- [[Paralelní třidění]] pomocí komparátorových sítí
+	- [[Paralelní třidění]] pomocí komparátorových sítí ✓
 - Předměty
 	- NDMI010 Grafové algoritmy (3 kr)
 	- NMAI062 Algebra 1 (5 kr)
