@@ -75,7 +75,8 @@ $$
 *Věta:* Graf $G$ je perfektní právě tehdy, když každý jeho indukovaný podgraf $H$ splňuje:  
 $$
   \chi(H) = \omega(H)
-$$kde $\omega(H)$ je velikost největší kliky v $H$.
+$$
+kde $\omega(H)$ je velikost největší kliky v $H$.
 
 ### Slabá věta o perfektních grafech
 *Věta:* Pro každý graf $G$ platí, že je perfektní $\iff$ $\overline{G}$ (doplněk) je perfektní.
