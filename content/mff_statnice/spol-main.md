@@ -176,17 +176,17 @@
 - Předměty
 	- NAIL062 Výroková a predikátová logika (5 kr)
 # Společná informatika
-1. Automaty a jazyky
-	- [[Regulární jazyky]]
+1. Automaty a jazyky ✓
+	- [[Regulární jazyky]] ✓
 		- regulární gramatiky
 		- deterministický a nedeterministický konečný automat
 		- regulární výrazy
-	- [[Bezkontextové jazyky]]
+	- [[Bezkontextové jazyky]] ✓
 		- bezkontextové gramatiky, jazyk generovaný gramatikou
 		- zásobníkový automat, třída jazyků přijímaných zásobníkovými automaty
-	- [[Rekurzivně spočetné jazyky]]
+	- [Rekurzivně spočetné jazyky](Turingův%20stroj) ✓
 		- gramatika typu 0
-	- [[Turingův stroj]]
+	- [[Turingův stroj]] ✓
 		- algoritmicky nerozhodnutelné problémy
 	- [[Chomského hierarchie]]
 		- schopnost zařazení konkrétního jazyka do Chomského hierarchie (zpravidla sestrojení odpovídajícího automatu či gramatiky)

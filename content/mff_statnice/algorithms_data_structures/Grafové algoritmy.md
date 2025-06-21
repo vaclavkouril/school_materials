@@ -180,6 +180,7 @@ $$
 | Strategická volba vrcholu | min. $h(v)$ (pomocí haldy)        | FIFO fronta  |
 
 ---
+
 # Minimální kostry grafu
 Jako vážené grafu bereme takové, které mají nějakou funkci, která umí ohodnotit jejich hrany.
 ## Jarníkův algoritmus
@@ -272,34 +273,26 @@ Z toho plyne:
 ---
 
 # Komponenty silné souvislosti v orientovaných grafech
-
 *Definice:* Silně souvislá komponenta (SSC) je maximální množina vrcholů, ve které existuje cesta mezi každou dvojicí vrcholů v obou směrech.
 $$
 \begin{align}
 &\text{KompSilnéSouvislosti} \\
 &\text{Vstup: Orientovaný graf } G=(V,E) \\
-&\text{Výstup: Seznam silně souvislých komponent} \\
 
-&1.\ \text{Pro všechny } v\in V: \text{stav}(v)\leftarrow nenavštíven, S\leftarrow[\,] \\
-&2.\ \text{Pro každé } v\in V: \text{Pokud }v\text{ nebyl navštíven: DFS1(v)} \\
+&1.\ \text{Sestrojíme graf } G^T \text{ s obrácenými hranami.} \\
+&2.\ Z \leftarrow \text{prázdný zásobník} \\
+&3.\ \forall v \in V: \text{komp}(v) \leftarrow \text{nedefinováno} \\
 
-&3.\ \text{Function DFS1}(u): \\
-&4.\quad \text{stav}(u)\leftarrow navštíven \\
-&5.\quad \forall w:(u\to w)\in E \text{ a } stav(w)=nenavštíven:DFS1(w) \\
-&6.\quad S.\text{push}(u) \\
+&4.\ \text{Spouštíme DFS v } G^T \text{ opakovaně, dokud neprozkoumáme všechny vrcholy.} \\
+&5.\ \text{Při opuštění vrcholu } v \text{ ho vložíme do zásobníku } Z \\
 
-&7.\ \text{Otoříme všechny hrany }E \text{ na }E^T \\
-&8.\ \text{Pro všechny } v\in V: \text{stav}(v)\leftarrow nenavštíven \\
-&9.\ \text{KosarComponentes}\leftarrow[] \\
-&10.\ \text{Dokud je }S\text{ neprázdné:}\\
-&11.\quad u\leftarrow S.\text{pop}() \\
-&12.\quad \text{Seznam }C\leftarrow[] \\
-&13.\quad \text{Pro }w \text{ dosažitelné DFS2(u) ve }E^T:\ C.\text{append}(w)\\
-&14.\quad \text{Přidej }C\text{ do KosarComponents}\\
+&6.\ \text{Zásobník Z obsahuje vrcholy setříděné podle } \text{out}(v) \\
 
-&15.\ \text{Funkce DFS2}(u): \\
-&16.\quad \text{stav}(u)\leftarrow navštíven, C.\text{append}(u) \\
-&17.\quad \forall w:(u\to w)\in E^T \text{ a } stav(w)=nenavštíven: DFS2(w)
+&7.\ \text{Dokud } Z \text{ není prázdný:} \\
+&8.\quad v \leftarrow Z.\text{pop}() \\
+&9.\quad \text{Pokud } \text{komp}(v) = \text{nedefinováno:} \\
+&10.\qquad \text{Spustíme DFS ve } G \text{ z vrcholu } v \text{, přičemž vstupujeme jen do vrcholů } \\
+&\qquad\ \text{s } \text{komp}(u) = \text{nedefinováno a nastavujeme } \text{komp}(u) \leftarrow v
 \end{align}
 $$
 *Složitost:* $O(n+m)$ – dvě DFS a přetočení hran.

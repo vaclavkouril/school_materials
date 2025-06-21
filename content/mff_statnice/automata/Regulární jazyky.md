@@ -47,4 +47,22 @@ Priorita operací je po řadě iterace $*$, zřetězení, sjednocení $+$. Tří
 
 ---
 # NFA, DFA
+*Definice:* Deterministický konečný automat DFA je $A = (Q,\Sigma,\delta, q_{0}, F)$, kde
+- $Q$ je množina stavů,
+- $\Sigma$ je množina vstupních symbolů,
+- $\delta: Q \times \Sigma \to Q$ je přechodvá funkce,
+- $q_{0} \in Q$ je počáteční stav,
+- $F \subseteq Q$ jsou přijímající stavy.
+Jazykem přijímaným $A$ je
+$$
+L(A) = \{ w\in \Sigma^* \mid \delta*(q_{0}, w) \in F \}.
+$$
+*Definice:* $\epsilon$-Nedeterministický konečný automat $\epsilon$-NFA je $A = (Q,\Sigma,\delta, q_{0}, F)$, kde
+- $Q$ je množina stavů
+- $\Sigma$ je množina vstupních symbolů
+- $\delta: Q \times (\Sigma \cup \{  \epsilon \}) \to \mathscr{P}(Q)$ je přechodvá funkce
+- $q_{0} \in Q$ je počáteční stav
+- $F \subseteq Q$ jsou přijímající stavy.
 
+*Tvrzení:* NFA je ekvivalentní DFA.
+Jeden se dá na druhý převést $DFA \to NFA$, je rovnou hotové. Na $NFA$ uděláme $\epsilon$-closure na stavech, tyto množiny stavů budou nové stavy DFA a přechody odpovídající se berou podle původních NFA. Samozřejmě pokud byl nějaký původní stav přijímající tak i $\epsilon$-closure daného stavu je přijímáno. 
