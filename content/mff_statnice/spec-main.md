@@ -6,7 +6,7 @@
 		- [[Catalanova čísla]] (příklad kombinatorické interpretace, odvození vzorce v uzavřeném tvaru) 
 	- [[Odhady faktoriálu a kombinačních čísel]] ✓
 		- formulace základních odhadů
-			- $(𝑛/𝑒)^𝑛 \leq 𝑛! \leq 𝑒𝑛(𝑛/𝑒)^𝑛$
+			- $e(𝑛/𝑒)^𝑛 \leq 𝑛! \leq 𝑒𝑛(𝑛/𝑒)^𝑛$
 			- $(𝑛/𝑘)^𝑘 \leq \binom{n}{𝑘} \leq (𝑒𝑛/𝑘)^𝑘$
 			- $2^{2𝑚}/(2\sqrt{m}) \leq \binom{2m}{m} \leq 2^{2m}/\sqrt{2m}$
 	- [[Ramseyovy věty]] ✓
