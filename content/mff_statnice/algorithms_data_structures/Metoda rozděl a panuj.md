@@ -20,7 +20,7 @@ $T(n)$ bude značit počet kroků algoritmu MergeSort na $n$ velkém vstupu.
 $$
 \begin{align}
 T(1) &= 1 \\
-T(n) &= 2 \cdot T(n / 2 ) + cn
+T(n) &= 2 \cdot T(n / 2 ) + n
 \end{align}
 $$
 Rovnici vyřešíme dosazením rekurentní rovnice do rekurentní rovnice a pozorujeme přírůstky.
@@ -30,7 +30,7 @@ Rovnici vyřešíme dosazením rekurentní rovnice do rekurentní rovnice a pozo
 *Věta:* Rekurence, $a\in \mathbb{N}$, $b>1, c \geq 0$ 
 $$
 \begin{align}
-T(n) &= a T(n/k) + \Theta(n^c) \\
+T(n) &= a T(n/b) + \Theta(n^c) \\
 T(1) &= T(0) = 1
 \end{align}
 $$

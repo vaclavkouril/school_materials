@@ -35,6 +35,7 @@ $$
 \end{align}
 $$
 *Věta:* (Zobecněná Eulerova formule) Mějme nakreslení grafu $G$ na ploše $\Gamma$, které má $S$ množinu stěn. Pak $|V| - |E| + |S| \geq \text{X}(\Gamma)$. Pokud je zakreslení buňkové tak to platí s rovností.
+
 *Důkaz:* Indukcí dle rodu $\Gamma$, pro $\Gamma \cong \Sigma_{0}$ toto platí, protože to je rovinná verze Eulerovi formule. 
 Následující postup je analogický pro $\Gamma \cong \Sigma_{g}$, kde trháme ucha, nyní si označme $v(G), e(G),s(G)$ jako počty vrcholů hran a stěn. Mějme buňkové nakreslení $G$ na $\Gamma \cong \Pi_{g}$
 
@@ -93,7 +94,7 @@ $$
 $$
 \begin{align}
 e(G) &\leq 3v(G) - 3 \text{X}(\Gamma) \\
-\frac{2e(G)}{v(G)} \leq 6 - \frac{6\text{X}(\Gamma)}{v(G)}  \\
+\frac{2e(G)}{v(G)} &\leq 6 - \frac{6\text{X}(\Gamma)}{v(G)}  \\
 
 \end{align}
 $$a vzhledem k tomu, že to je průměr. tak jistě existuje jeden menší.

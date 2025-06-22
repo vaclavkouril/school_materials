@@ -10,7 +10,7 @@ $$
 
 ---
 # Matice lineárního zobrazení
-*Definice:* Nechť $U,V$ jsou vektorové prostory na tělesem $T$ s uspořádanými bázemi $B = (b_{1},\dots,b_{n})$ a $C = (c_{1}, \dots,c_{n})$. 
+*Definice:* Nechť $U,V$ jsou vektorové prostory na tělesem $T$ s uspořádanými bázemi $B = (b_{1},\dots,b_{n})$ a $C = (c_{1}, \dots,c_{m})$. 
 **Matice lineárního zobrazení** $f: U \to V$ vzhledem k bázím $B,C$ je $[f]_{B,C} \in T^{m \times n}$ jejíž sloupce jsou vektory souřadnic obrazů vektorů báze $B$ vzhledem k bázi $C$. Tedy
 $$
 [f]_{B,C} = ([f(b_{1})]_C|\dots|[f(b_{n})]_C).

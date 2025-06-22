@@ -29,7 +29,7 @@ $$
 &\text{3.  }\quad D(v) = \emptyset, P(v) =\emptyset \\
 &\text{4.  }stav(v_{0}) \leftarrow otevřený \\
 &\text{5.  } \text{Založíme zásobník } S \text{ s vrcholem }v_{0} \\
-&\text{6.  Dokud není fronta } Q \text{ prázdná}:\\
+&\text{6.  Dokud není zásobník } S \text{ prázdný}:\\
 &\text{7.  }\quad \text{Odebereme vrchol z } S \text{ a označíme ho }v: \\
 &\text{8.  }\quad \forall w, \text{ následníky v}: \\
 &\text{9.  }\quad\quad \text{Je-li } stav(w) = nenalezený:  \\

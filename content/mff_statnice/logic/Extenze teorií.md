@@ -1,5 +1,5 @@
 
-*Definice:* Extenze teorie T$ v jazyce L$ je libovolná teorie $T'$ v jazyce $L' \supseteq L$ taková, že množina důsledků $T$ je podmnožinou množiny důsledků $T'$, tj.  
+*Definice:* Extenze teorie $T$ v jazyce $L$ je libovolná teorie $T'$ v jazyce $L' \supseteq L$ taková, že množina důsledků $T$ je podmnožinou množiny důsledků $T'$, tj.  
 $$
 \mathrm{Csq}_L(T) \subseteq \mathrm{Csq}_{L'}(T')
 $$
@@ -10,7 +10,7 @@ $$
 $$  
 Sílu teorií tedy porovnáváme inkluzí jejich důsledků. 
 
-*Pozorování:* Semanticky je $T'$ extenzí $T$ tehdy, když každý model $T'$ redukovaný na jazyk $L$ je modelem $T$ říkáme o ní, že je *konzervativní*, pokud navíc každý model $T$ lze rozšířit na model $T'$.
+*Pozorování:* Sémanticky je $T'$ extenzí $T$ tehdy, když každý model $T'$ redukovaný na jazyk $L$ je modelem $T$ říkáme o ní, že je *konzervativní*, pokud navíc každý model $T$ lze rozšířit na model $T'$.
 
 ---
 # Skolemizace

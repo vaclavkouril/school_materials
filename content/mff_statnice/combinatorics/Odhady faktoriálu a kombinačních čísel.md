@@ -94,15 +94,14 @@ $$
 $$
    kde jsme použili odhad $k!\ge (k/e)^k$: 
 
-	1. **Logaritmický přechod**  
+- **Logaritmický přechod**  
 $$
    \ln(k!) \;=\;\sum_{i=1}^k\ln i
    \;\ge\;\int_{1}^{k}\ln x\,dx
    \;=\;\bigl[x\ln x - x\bigr]_{1}^{k}
    \;=\;k\ln k - k + 1.
 $$
-
-	2. **Jednodušší odhad**
+- **Jednodušší odhad**
    Protože pro $k\ge1$ platí
 $$
    k\ln k - k + 1 \;\ge\; k\ln k - k,
@@ -111,7 +110,8 @@ $$
 $$
    \ln(k!) \;\ge\; k(\ln k - 1)
    \;=\;k\ln\!\bigl(\tfrac{k}{e}\bigr).
-$$$$
+$$
+$$
    k! \;=\;\exp\bigl(\ln(k!)\bigr)
    \;\ge\;\exp\bigl(k\ln(k/e)\bigr)
    \;=\;\bigl(\tfrac{k}{e}\bigr)^k.

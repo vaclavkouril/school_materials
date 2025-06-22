@@ -5,7 +5,7 @@ $$
 O $F$ řekneme, že je zobrazením třídy $X$ do třídy $Y$, a píšeme $F: X \to Y$, jestliže $\text{Dom}(F) = X$ a $\text{Rng}(F) \subseteq Y$.
 
 # Typy funkcí
-*Definice:* Funkce $F: A \to B$ je 
+*Definice:* Funkce $F: X \to Y$ je 
 - **na**, je-li $\text{Dom}(F) = X$ a $\text{Rng}(F) = Y$.
 - **prostá**, je-li i inverzní relace $F^{-1}$ zobrazením.
 - **bijekce**, je-li zároveň **na** i **prostá**.

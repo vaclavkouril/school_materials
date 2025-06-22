@@ -6,7 +6,7 @@
 
 *Pozorování*: $\mathscr{M}$ má SRR, právě tehdy když jeho incidenční graf má párování velikosti $|I|$. Tedy $F \subseteq E: e,e'\in F, e \neq e'$ tak $e \cap e' = \emptyset$, tedy hledáme takovou $|F| = |I|$. 
 
-*Věta:* (Hallova): Systém různých reprezentantů existuje $\iff$ $\forall J \subseteq I: \left|\bigcup_{i \in j} M_{i}\right| \geq |J|$.
+*Věta:* (Hallova): Systém různých reprezentantů existuje $\iff$ $\forall J \subseteq I: \left|\bigcup_{i \in J} M_{i}\right| \geq |J|$.
 *Důkaz:* (SSR $\Rightarrow$ Hallova podmínka) Zvolíme-li libovolnou $J \subseteq I$, pak platí, že $\forall j \in J \exists p_{j} \in M_{j}, p_{j} = f(j)$, tak že prvky $p_{j}$ jsou vzájemně různé, díky prostosti funkce $f$. Takže platí 
 $$
 |J| = |\{p_{j} \in M_{j}\ |\ j \in J\}| \leq \left| \bigcup_{j \in J} M_{j}\right|.
@@ -28,26 +28,26 @@ Chceme efektivně (polynomiálně) rozhodnout, zda existuje **systém různých 
 
 1. **Definice bipartitního grafu $G=(X\;\dot\cup\;Y,\;E)$:**
    - **Vrcholová množina $X$:** indexy množin  
-     $$
+$$
        X \;=\; \{\,1,\,2,\,\dots,\,n\}, 
        \quad\text{kde prvek }i\in X \text{ reprezentuje množinu }S_i.
-     $$
+$$
    - **Vrcholová množina $Y$:** univerzum (podmnožina $U$)  
-     $$
+$$
        Y \;=\; \bigcup_{i=1}^n S_i \;\subseteq\; U.
-     $$
-   - **Hrany $E\subseteq X\times Y$:**  
-     $$
+$$
+   - **Hrany $E\subseteq X\times Y$:** 
+$$
        (i,\,y) \;\in\; E
        \quad\Longleftrightarrow\quad
        y \;\in\; S_i.
-     $$
+$$
    Každá hrana spojuje „množinu“ $i\in X$ s „potencionálním reprezentantem“ $y\in Y$.
 
 1. **Interpretace:** Hledáme tzv. **perfektní (resp. úplné) párování** (párování) z $X$ do $Y$.  
    - párování je množina hran $M \subseteq E$ taková, že žádné dva různé páry v $M$ nesdílejí vrchol (tj. žádný vrchol je v několika hranách z $M$).
    - Perfektní párování relativně vůči $X$ znamená: každé $i \in X$ je „spárováno“ právě s jedním prvkem z $Y$.  
-   - Pokud existuje párování $M$ velikosti $\lvert M\rvert = \lvert X\rvert = n$, pak z každé množiny $S_i$ bereme právě ten prvek $y\in Y$, který je spojen hraničkou $(i,y)\in M$. Tím dostaneme SRR.
+   - Pokud existuje párování $M$ velikosti $\lvert M\rvert = \lvert X\rvert = n$, pak z každé množiny $S_i$ bereme právě ten prvek $y\in Y$, který je spojen hranou $(i,y)\in M$. Tím dostaneme SRR.
 
 1. **Závěr:** Problém "existuje SRR pro $\{S_i\}$" se redukuje na standardní problém bipartitního párování:  
    > Najít párování velikosti $n$ mezi vrcholy $X$ a $Y$ v bipartitním grafu $G$.  

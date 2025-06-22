@@ -1,4 +1,4 @@
-s*Definice:* Formální důkaz formule $ϕ$ z teorie $T$ v daném dokazovacím systému je konečná posloupnost  
+*Definice:* Formální důkaz formule $ϕ$ z teorie $T$ v daném dokazovacím systému je konečná posloupnost  
 $$
 ϕ_0,\dots,ϕ_n = ϕ
 $$  
@@ -30,7 +30,7 @@ $$
 \{\neg p\}\cup_{res}\{p\}\;\to\;\emptyset.
 $$  
 Dosáhli jsme prázdné klauzule, tudíž $T\vdash_\text{res}\bot$ a tedy $T\models q$. 
-2. **Hilbertovský kalkulus:**  
+3. **Hilbertovský kalkulus:**  
 *Definice:* Schémata logických axiomů (pro libovolné výroky $φ,ψ,χ$):  
 $$
    \begin{aligned}

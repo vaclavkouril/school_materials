@@ -43,7 +43,7 @@ Jedná se tedy o třídu problémů, kde pro dosažení polynomiálního času �
    - Každou klauzuli delší než 3 literály rozdělíme pomocí pomocných proměnných. Vzniknou klauzule velikosti $\leq$ 3. Převod v polynomiálním čase.
 
 2. **Nezávislá množina $\iff$ SAT**  
-   - Problém nezávislé množiny lze převést na SAT tím, že pro každý vrchol vytvoříme proměnnou a pro každou hranu klauzuli „ne(obě konce současně vybrané)“.
+   - Problém nezávislé množiny lze převést na SAT tím, že pro každý vrchol vytvoříme proměnnou a pro každou hranu klauzuli „ne oba konce současně vybrané“.
 ## Převod Circuit‑SAT → SAT
 ## 1. Proměnné
 - Pro každý vstup i vnitřní uzel (výstup hradla) zavedeme booleovskou proměnnou.
