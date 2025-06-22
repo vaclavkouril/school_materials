@@ -133,7 +133,8 @@ $$
 Teď nám tedy stačí ukázat 
 $$
 \frac{1}{(2\sqrt{m})} \leq P \leq \frac{1}{\sqrt{2m}},
-$$to rozdělíme na horní a dolní odhad.
+$$
+to rozdělíme na horní a dolní odhad.
 1. Pro horní odhad se nám hodí další kouzlení:
 $$
 \begin{align}
