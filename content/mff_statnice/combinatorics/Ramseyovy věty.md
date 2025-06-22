@@ -1,10 +1,10 @@
 # Konečná Ramseyova věta
-Pro každé $t$ a $p$ existuje $N$ takové, že pro každou funkci $c: \binom{[n]}{2} \mapsto [t], n\geq N$ existuje množina $A \in \binom{[n]}{k}$ pro níž je $c$ ma $\binom A 2$ konstantní.
+Pro každé $t$ a $k$ existuje $N$ takové, že pro každou funkci $c: \binom{[n]}{2} \mapsto [t], n\geq N$ existuje množina $A \in \binom{[n]}{k}$ pro níž je $c$ ma $\binom A 2$ konstantní.
 
 Co to znamená?
 - $t$ udává, kolik barev používáme
 - $k$ předepisuje, jak velkou kliku si přejeme najít
-- $N$ říká, jak velký graf je už „dost velkýˇ
+- $N$ říká, jak velký graf je už „dost velký"
 -  $n$ je počet vrcholů grafu, který se chystáme obarvit
 - $[n] = {1, . . . , n}$ očíslujeme vrcholy tohoto grafu
 - $c$ je obarvení hran grafu $t$ barvami
@@ -15,7 +15,7 @@ Věta je velmi podobná principu holubníku. V něm ovšem nebarvíme hrany, ný
 *Důkaz:* Stačí zvolit $N = t(k − 1) + 1$. 
 # Nekonečná Ramseyova věta
 $\forall p, t \in \mathbb{N}$ a $\forall c:\binom{\mathbb{N}}{p}\mapsto [t]$, tak $\exists A \subseteq \mathbb{N}$ nekonečná že $c$ je na $\binom{A}{p}$ konstantní.
-*Důkaz*: 
+*Důkaz* pro $p=2$: 
 Sestrojme posloupnost nekonečných množin $A_{1},A_{2},A_{3}, \dots$ . Položme $A_{1} = \mathbb{N}$ a opakujme následný krok pro $i=1,2,3,4,\dots$:
 	Zvolíme $v_{i} \in A_{i}$ libovolně. Rozdělíme do ekvivalenčních tříd ostatní vrcholy, tedy $A'_{i} = A_{i} \setminus \{v_{i}\}$, dle toho jakou barvu mají hrany z $v_{i}$ do daného vrcholu a třídy označíme $B^1_{i}, B^2_{i}, B^3_{i},\dots, , B^t_{i}$. $A'_{i}$ je nekonečná a tedy alespoň jedna z tříd musí být taky, nechť je to $B^j_{i}$. Položme nyní $b_{i} = j$ a $A_{i+1} = B_{j}^i$ a znovu iterujme.
 *Pozorování:* Posloupnost vybraných $v_{1}, v_{2},\dots$ má vlastnost, že kdykoliv $i<j$, tak hrana $\{v_{i}, v_{j}\}$ má barvu $b_i$.

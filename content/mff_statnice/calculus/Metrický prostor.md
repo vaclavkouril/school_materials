@@ -53,7 +53,7 @@ $$
 # Kompaktnost
 *Definice:* Metrický prostor $(X, d)$ je kompaktní, pokud každá posloupnost v něm obsahuje konvergentní podposloupnost.
 
-*Věta:*  Podprostor kompaktního prostoru je kompaktní právě když je uzavřený.
+*Věta:* Podprostor kompaktního prostoru je kompaktní právě když je uzavřený.
 
 *Definice:* Množina $A \subseteq X$ v metrickém prostoru $(X,d)$ je omezená, pokud existuje číslo $0< M$ a bod $x_{0} \in X$, že 
 $$

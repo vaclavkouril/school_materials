@@ -37,7 +37,8 @@ potom $\omega = X$.
 - **nespočetná** není-li nejvýše spočetná.
 
 *Věta:* Jsou-li $A,B$ spočetné množiny, potom $A \cup B$ i $A \times B$ jsou spočetné množiny.
-	*Důkaz:* Nechť $f$ je prosté zobrazení $A$ na $\omega$ a $g$ je prosté zobrazení $b$ na $\omega$. Položíme
+
+*Důkaz:* Nechť $f$ je prosté zobrazení $A$ na $\omega$ a $g$ je prosté zobrazení $b$ na $\omega$. Položíme
 $$
 h(x) = \left\{ \begin{array}{rcl}
 \langle f(x), 0 \rangle & \text{pro}

@@ -22,8 +22,8 @@ $\forall r \geq 2: ex(n,K_{r})= T_{k-1}(n)$
 
 
 ### Erdös-Ko-Radoova věta 
-*Definice:* $k$-uniformní hypergraf je dvojice $(V,E)$, kde $E\subseteq\binom{V}{k}$)
-- $f(k,n):= \max m$ t.ž. $\exists$  $k$-uniformní hypergraf $H=(V,E)$ t.ž. $∣V∣=n,∣E∣=m$ a $E$ je „pronikající systém množin“ (t.j. $\forall e,e′\in E:e\cap e' \neq \emptyset$)
+*Definice:* $k$-uniformní hypergraf je dvojice $(V,E)$, kde $E\subseteq\binom{V}{k}$
+- $f(k,n):= \max m$ t.ž. $\exists$  $k$-uniformní hypergraf $H=(V,E)$ t.ž. $∣V∣=n,∣E∣=m$ a $E$ je „pronikající systém množin“ (t.j. $\forall e,e'\in E:e\cap e' \neq \emptyset$)
     - braní všech hran nemusí fungovat (musí se protínat všechny dvojice)
 
 *Věta:* $\forall k,n \in \mathbb{N}: n\geq 2k \implies f(k,n)=\binom{n-1}{k-1}$

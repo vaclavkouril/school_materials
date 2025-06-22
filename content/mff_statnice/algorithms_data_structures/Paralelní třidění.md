@@ -1,8 +1,8 @@
 *Definice:* Hradlová síť je určena 
 - $\Sigma$ abecedou
 - Po dvou disjunktních $I$ vstupy, $O$ výstupy, $H$ hradla
-- Acyklickým orientovaným multigravem $G = (I\cup O\cup H, E)$
-- Zobrazením $F$ které pro každé hradlo $h$ přiřadí nějakou funkci $F(h): \Sigma^{a(h)} \to\Sigma$, což je funkc, kterou toto hradlo vykonává. Číslu $a(h)$ říkáme arita $h$.
+- Acyklickým orientovaným multigrafem $G = (I\cup O\cup H, E)$
+- Zobrazením $F$ které pro každé hradlo $h$ přiřadí nějakou funkci $F(h): \Sigma^{a(h)} \to\Sigma$, což je funkce, kterou toto hradlo vykonává. Číslu $a(h)$ říkáme arita $h$.
 - Zobrazením $z: E \to \mathbb{N}$, které o hranách do hradel říká, kolikátému argumentu funkce odpovídá.
 S podmínkami
 - Do vstupů nevedou hrany

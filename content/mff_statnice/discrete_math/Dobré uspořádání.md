@@ -6,7 +6,7 @@ Mějme dobře uspořádanou množinu $(D,U)$. Transfinitní rekurzí definujeme 
 
 *Příklad:* Pro $(D,U)$ na nosné množině $\{ d_{0},d_{1},d_{2} \}$, kde $d_{0}<d_{1}<d_{2}$, se chová definice takhle:
 $$
-f(d_{0}) = \emptyset, \quad f(d_{1}) = \{\emptyset\}, \quad f(d_{2}) = \{\emptyset, {\emptyset}\} , \quad \text{typ}(D,U) = \Big\{\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}\Big\}.
+f(d_{0}) = \emptyset, \quad f(d_{1}) = \{\emptyset\}, \quad f(d_{2}) = \{\emptyset, \{\emptyset\}\} , \quad \text{typ}(D,U) = \Big\{\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}\Big\}.
 $$
 
 *Definice:* Kardinální číslo (stručně kardinál) je nejmenší ordinální číslo své mohutnosti. Jde tedy

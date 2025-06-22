@@ -13,7 +13,7 @@
 $$
 \forall e,f \in E(G), e \neq f: e \cap f \neq \emptyset \implies b(e) \neq b(f).
 $$
-*Definice:* **Hranová barevnost** grafu $G$ je $\chi'(G) =$ nejmenší takové $k$, aby pro něj existovalo barevné obarvení.
+*Definice:* **Hranová barevnost** grafu $G$ je $\chi'(G) =$ nejmenší takové $k$, aby pro něj existovalo hanové obarvení.
 
 *Pozorováni:* Každá barva odpovídá nezávislému párování hran. Obarvit graf $\chi'(G)$ barvami znamená rozdělit hrany do $\chi'(G)$ párování.
 

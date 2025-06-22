@@ -90,7 +90,7 @@ $$
 2. *anti-reflexivní*, jestliže pro žádný prvek $x\in A$ neplatí $\langle x,x \rangle \in R$
 3. *symetrická*, jestliže pro libovolné $x,y\in A$ platí $\langle x,y \rangle \in R \to \langle y,x\rangle \in R$
 4. *slabě antisymetrická*, jestliže pro libovolné $x,y\in A$ platí $\left(\langle x,y \rangle \in R \land \langle y,x\rangle \in R\right) \to x=y$
-5. *slabě antisymetrická*, jestliže pro libovolné $x,y\in A$ platí $\langle x,y \rangle \in R \to \langle y,x\rangle \notin R$
+5. *silně antisymetrická*, jestliže pro všechna $x,y\in A$ platí $\langle x,y \rangle \in R \to \langle y,x\rangle \notin R$
 6. *trichotomická*, jestliže pro libovolné $x,y\in A$ platí $\langle x,y \rangle \in R \lor \langle y,x \rangle \in R \lor x=y$
 7. *tranzitivní*, jestliže pro libovolné $x,y,z\in A$ platí $\left(\langle x,y \rangle \in R \land \langle y,z \rangle \in R \right) \to \langle x,z \rangle \in R$
 

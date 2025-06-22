@@ -26,7 +26,7 @@ $$
 Kombinací obou bodů tedy zjišťujeme, že každá lichá komponenta $G-S$ je s $S$ spojena alespoň $3$ hranami. Z toho nám pro $p$ označující počet hran mezi $S$ a lichými komponentami vychází zároveň:
 - $p \geq 3 \cdot odd(G-s)$
 - $p \leq 3 \cdot |S|$ z $3$-regularity 
-a platí tedy $odd(G-S) \leq S$ a tedy i Tutteova podmínka a máme existenci perfektního párování zaručenu.
+a platí tedy $odd(G-S) \leq |S|$ a tedy i Tutteova podmínka a máme existenci perfektního párování zaručenu.
 ---
 # Edmonsův algoritmus
 *Základní myšlenka*: v průběhu hledání augmentující cesty může vzniknout **smyčka liché délky** (tzv. „květina“). Tu je třeba **zavřít** (contract), zpracovat zjednodušený graf, poté „rozevřít“ a rozšířit párování zpět.
