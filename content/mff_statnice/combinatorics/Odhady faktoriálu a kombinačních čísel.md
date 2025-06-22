@@ -142,7 +142,7 @@ $$
 & = \frac{1\cdot 3}{2 \cdot 2} \cdot \frac{3\cdot 5}{4 \cdot 4} \cdot \ldots \cdot \frac{(2m-1)(2m+1)}{2m \cdot 2m} = P^2 \cdot (2m+1) 
 \end{align}
 $$
-	ze kterého nám vlastně přirozeně vypadlo, že $P < \frac{1}{\sqrt{ 2m+1}} <  \frac{1}{\sqrt{ 2m+1}}$
+ze kterého nám vlastně přirozeně vypadlo, že $P < \frac{1}{\sqrt{ 2m+1}} <  \frac{1}{\sqrt{ 2m+1}}$
 2. Spodní odhad je opět trikem z nerovnosti:
 $$
 \begin{align}
@@ -151,6 +151,6 @@ $$
 \end{align}
 $$
 
-	z čehož plyne $P > \frac{1}{2\sqrt{m}}$.
+z čehož plyne $P > \frac{1}{2\sqrt{m}}$.
 
 Oba triky nejsou kouzla z ničeho nic, oba staví na konstruování čísel podobných $P$, kde je vždy jen malý rozdíl v chybějících/přebývajících číslech.
