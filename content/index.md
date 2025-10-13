@@ -6,3 +6,5 @@
 
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)
+# Textové algoritmy
+- 
