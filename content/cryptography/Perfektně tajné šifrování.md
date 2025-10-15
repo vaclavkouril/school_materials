@@ -8,11 +8,10 @@
 # Perfektní šifrovací schéma
 Schéma $(Gen, Enc, Dec)$ s množinou zpráv $\mathscr M$ je perfektně tajné, právě tehdy když pro každou pravděpodobnostní distribuci $M$, tak $\forall m \in \mathscr M$ a $\forall c \in \mathscr C$, kde $\Pr[C = c] > 0$:
 $$
-\Pr[M= m \mid C= c] = \Pr[C =c].
+\Pr[M= m \mid C= c] = \Pr[M =m].
 $$
-
 ### Alternativní definice perfektnosti schématu
-_Lemma_: Šifrovací schéma $(Gen, Enc, Dec)$ je perfektně tajné schéma s množinou zpráv $m \in \mathscr M$, právě tehdy když platí
+_Lemma_: Šifrovací schéma $(Gen, Enc, Dec)$ je perfektně tajné schéma s množinou zpráv $m \in \mathscr M,$ právě tehdy když platí
 $$
 \forall m,m' \in \mathscr M, \forall c \in \mathscr C: \Pr[Enc_{k}(m) = c] = \Pr[Enc_{k}(m') = c].
 $$
