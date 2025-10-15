@@ -10,10 +10,7 @@ $$
 Pak pro $c=m$ je tato pravděpodobnost $0$, ale pro jiné dvojice $(m',c)$ kladná.  
 Alternativní definice na základě lemmatu 2.5:
 
->Šifrovací schéma $(Gen, Enc, Dec)$ je perfektně tajné schéma s množinou zpráv $m \in \mathscr M,$ právě tehdy když platí
->$$
-\forall m,m' \in \mathscr M, \forall c \in \mathscr C: \Pr[Enc_{k}(m) = c] = \Pr[Enc_{k}(m') = c].
-$$
+>Šifrovací schéma $(Gen, Enc, Dec)$ je perfektně tajné schéma s množinou zpráv $m \in \mathscr M,$ právě tehdy když platí $\forall m,m' \in \mathscr M, \forall c \in \mathscr C: \Pr[Enc_{k}(m) = c] = \Pr[Enc_{k}(m') = c].$
 
 Tak vidíme, že pro $m=c$ je $\Pr[Enc_{k}(m)=c]=0$, zatímco pro jiné $m'\neq c$ je $\Pr[Enc_{k}(m')=c]=1/(2^{\ell}-1)$, tedy podmínka z lemmatu 2.5 není splněna.
 
