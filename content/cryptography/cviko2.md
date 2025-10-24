@@ -32,21 +32,34 @@ $$
 =\frac{\tfrac{1}{|M|}\Pr[M=m]}{\sum_{m'}\tfrac{1}{|M|}\Pr[M=m']}
 =\Pr[M=m].
 $$
+---
+Mějme schéma, které má deterministický $Dec$ algoritmus. Pokud by deterministický nebyl, můžeme schéma bez újmy na obecnosti upravit tak, že náhodnost použitého dešifrovacího algoritmu zahrneme do rozšířeného klíče. Pokud dešifrování používá náhodné bity $r$, definujeme rozšířený klíč $K'=(K,r)$ a deterministický algoritmus $\mathrm{Dec}'_{K'}(c)=\mathrm{Dec}_K(c;r)$. Pravděpodobnosti zůstanou nezměněné, protože výběr $r$ je součástí náhodného výběru klíče, takže všechny vztahy v důkazu platí stejně.
 
-Nechť schéma je perfektně tajné, zafixujme libovolné $m$. Korektnost znamená, že pravděpodobnost, že se po zašifrování a dešifrování získá zpět $m$, je alespoň $2^{-t}$:
+Nechť je schéma perfektně tajné, zafixujme si libovolné $m$. Korektnost znamená, že pravděpodobnost, že se po zašifrování a dešifrování získá zpět $m$, je alespoň $2^{-t}$:
 $$
 \Pr[\mathrm{Dec}_K(\mathrm{Enc}_K(m))=m]
 =\sum_{c}\Pr[\mathrm{Dec}_K(c)=m \wedge C=c \mid M=m]
 \ge 2^{-t}.
 $$
 Pro každý ciphertext $c$ je tato událost nenulová jen tehdy, pokud existuje klíč $k$ s $\mathrm{Dec}_k(c)=m$.  
-Těchto klíčů je nejvýše $|K|$, zatímco celkový počet možných $(m,c)$ párů je $|M||C|$.  
-Aby měla každá zpráva alespoň pravděpodobnost $2^{-t}$ vrátit se správně, musí být
+Označme $S_m = \{\,c \in \mathcal C : \exists k \in \mathcal K,\, \mathrm{Dec}_k(c)=m\,\}$. Tedy pro každé $m$ platí
 $$
-|K||C| \ge |M||C| \cdot 2^{-t} \quad\Rightarrow\quad |K| \ge |M|\cdot 2^{-t}.
+\Pr[C \in S_m \mid M=m] = \sum_{c \in S_m} \Pr[C=c \mid M=m] \ge 2^{-t}.
 $$
-Proto každé perfektně tajné schéma s korektností $\ge 2^{-t}$ musí mít
+Díky perfektní tajnosti je $q_c := \Pr[C=c \mid M=m]$ nezávislé na $m$.  Sečtením přes všechna $m$ a prohozením sum dostáváme
 $$
-|K| \ge |M|/2^{t},
+\sum_{m \in \mathcal M} \sum_{c \in S_m} q_c
+= \sum_{m \in \mathcal M} \sum_{\substack{c \in \mathcal C \\ c \in S_m}} q_c
+= \sum_{c \in \mathcal C} \sum_{\substack{m \in \mathcal M \\ c \in S_m}} q_c
+= \sum_{c \in \mathcal C} q_c \, \bigl|\{\,m \in \mathcal M : c \in S_m\,\}\bigr|
+\ge |\mathcal M| \cdot 2^{-t}.
 $$
-a konstrukce dosahuje rovnosti.
+Pro pevné $c$ může být $\mathrm{Dec}_k(c)$ různá pro nejvýše $|\mathcal K|$ hodnot $k$, tedy $c$ může být přiřazeno nejvýše $|\mathcal K|$ různých zpráv.  
+Proto platí $|\{\,m : c \in S_m\,\}| \le |\mathcal K|$, a tedy
+$$
+|\mathcal M| \cdot 2^{-t} \le \sum_{c \in \mathcal C} q_c \cdot |\mathcal K| = |\mathcal K| \sum_{c \in \mathcal C} q_c = |\mathcal K|.
+$$
+Z toho plyne dolní odhad
+$$
+|\mathcal K| \ge \frac{|\mathcal M|}{2^{t}}.
+$$
