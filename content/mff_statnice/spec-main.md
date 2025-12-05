@@ -54,7 +54,7 @@
 	- [[Algebraické algoritmy]] ✓
 		- diskrétní Fourierova transformace a její aplikace
 		- výpočet Fourierovy transformace algoritmem FFT
-	- [[RSA]] ✓
+	- [[content/mff_statnice/algorithms_data_structures/RSA]] ✓
 		- šifrování, dešifrování a generování klíčů
 	- [[Aproximační algoritmy]] ✓
 		- aproximační poměr a relativní chyba

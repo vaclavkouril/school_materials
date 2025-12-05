@@ -20,7 +20,32 @@ $$
 \begin{align*}
 \Pr[C = c \mid M = m] &= \Pr[Enc_{K}(M) = c \mid M = m] \\
 &= \Pr[Enc_{K}(m) = c \mid M = m] \\
-&= \Pr[Enc_{K}(m) = c]
+&= \Pr[Enc_{K}(m) = c],
 \end{align*}
 $$
-kde první rovnice je z definice náhodné veličiny $C$, druhá protože máme podmínku na to jak vlastně náhodná veličina $M$ vypadá a vzhledem k tomu, že z definice je klíč nezávislý na $M$. 
+kde první rovnice je z definice náhodné veličiny $C$, druhá protože máme podmínku na to jak vlastně náhodná veličina $M$ vypadá a vzhledem k tomu, že z definice je klíč nezávislý na $M$. Zároveň se nám hodí, pro $c\in \mathscr C: \Pr[C =c] > 0$ 
+$$
+\Pr[M=m \mid C =c] \cdot \Pr[C = c] = \Pr[C =c \mid M = m] \cdot \Pr[M = m]. 
+$$
+Vezměme rovnoměrnou distribuci na $\mathscr M$. Je-li schéma perfektní, tedy $\Pr[M =m \mid C =c] = \Pr[M =m]$, tak rovnice výše ukazuje $\Pr[C =c \mid M=m] = \Pr[C = c].$ Vzhledem k tomu, že to platí pro všechna $m,m'$ a $c$, tak máme
+$$
+\begin{align*}
+\Pr[Enc_{K}(m) = c] &= \Pr[C = c \mid M =m] \\
+&= \Pr[C=c] \\
+&= \Pr[C =c \mid M =m'] = \Pr[Enc_{K}(m') = c].
+\end{align*}
+$$
+Tím jsem dokázali, perfektní tajnost schématu $\implies$ podmínku nerozeznatelnosti ciphertextů.
+
+Máme-li platnou podmínku na pravděpodobnost rozeznatelnosti ciphertextů ke zprávám, tak zafixujeme-li si pravděpodobnostní distribuci na $\mathscr M$, tak můžeme očekávat $\forall c \in \mathscr C, \forall m \in \mathscr M: \Pr[C =c] >0$, tak i $\Pr[M=m] > 0$, protože byla by pravděpodobnost zprávy $0$, tak i víme $\Pr[M=m \mid C =c]$. $\forall c \in \mathscr C$ definujeme $p_{c} := \Pr[Enc_{K}(m) = c]$, z předpokladu a pozorování na začátku důkazu máme $\Pr[C=c \mid M =m'] = p_{c}$ pro všechna $m' \in \mathscr M$. Tedy dostáváme
+$$
+\begin{align*}
+\Pr[C=c] &= \sum_{m'\in \mathscr M} \Pr[C=c \mid M=m'] \cdot \Pr[M=m'] \\
+&= \sum_{m' \in \mathscr M} p_{c} \cdot \Pr[M=m'] = p_{c} = \Pr[C =c \mid M=m],
+\end{align*}
+$$
+kde podle $\Pr[M=m \mid C =c] \cdot \Pr[C = c] = \Pr[C =c \mid M = m] \cdot \Pr[M = m]$ máme $\Pr[M= m \mid C =c] = \Pr[M=m],$ tedy máme perfektně tajné schéma.
+
+---
+# Perfektní nerozpoznatelnost
+Nechť $\Pi = (Gen, Enc, Dec)$ je šifrovací schéma s množinou zpráv $\mathscr M$. Nechť $A$ je nepřítel, který se BÚNO chová jako deterministický algoritmus. Definujeme experiment $\text{PrivK}_{A, \Pi}^{eav}$ následovně

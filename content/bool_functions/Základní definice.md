@@ -1,0 +1,1 @@
+*Definice:* Proměnná je 
