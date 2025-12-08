@@ -1,4 +1,4 @@
-#booleovská_funkce 
+#booleovská_funkce #monotonni_funkce
 
 *Definice:* Booleovská funkce $f(x_{1},x_{2},\dots,x_{n})$ je pozitivní v $x_{i}$, pokud 
 $$
@@ -19,6 +19,7 @@ $$
 #implikant 
 
 *Pozorování 2:* Pokud $f$ je pozitivní v $x_{i}$ a $C$ je primární implikant $f$, tak neobsahuje $\bar{x_{i}}$.
+
 *Důkaz:* Pro spor předpokládejme, že $C = A \lor \bar{x_{i}}$ je primární implikant $f$, pak z toho že je to implikant máme, že pokud ho nastavíme na 0, tak i $f$ je pak 0. Tedy pokud si přeházíme proměnné, tak 
 $$
 \forall i \in [i-1] x_{i}\in A,\forall x_{i+1},x_{i+2},\dots x_{n}: f(\underbrace{\underbrace{x_{1},\dots, x_{i-1}}_{\text{nastavené z }A =0},1}_{C=0}, x_{i+1},\dots,x_{n}) = 0.
@@ -35,4 +36,7 @@ tedy $A \lor x_{i}$ je také implikant, protože nastavení proměnných $A$ a $
 
 Rozpoznání, zda je $f$ dána nějakou CNF pozitivní v $x_{i}$ je $co-NP$ complete.
 
-*Důkaz:* Mějme pro spor poly-čas algoritmus $A$ na rozpoznání zda CNF $F$ je pozitivní v $x_{i}$. Pokud prohodíme $x_{i}$ za $\bar{x_{i}}$, tak máme $A'$ na negativní detekci $x_{i}$. Pokud spustíme $A$ a odpoví ANO, spustíme $A'$ a ten taky odpoví ANO, tak máme rovnost pro $x_{i}$ a tedy $f$ na ní nezávisí, pokud spustíme test na všech proměnných a pokud u všech vyjde, že to nezávisí na dané proměnné, tak máme jen dvě funkce. Tedy jsem schopni poly-rychle rozhodnout, zda je CNF bez splňujícího modelu, protože vyjde-li konstantní 0, tak to odpovídá tomu, že neexistuje řešení, jinak máme buď 1, že modely jsou vše a nebo proměnné na kterých záleží a dá se najít certifikát.
+*Důkaz:* 
+V $co-NP$ je protože certifikátem negativní odpovědi je vektor ostatních $x_{j}$, kde substituujeme-li $1$ za $x_{i}$ tak dostaneme $f$ výsledek $0$ a $x_{i}$ na $0$ tak aby $f$ byl pak $1$.
+
+Mějme pro spor poly-čas algoritmus $A$ na rozpoznání zda CNF $F$ je pozitivní v $x_{i}$. Pokud prohodíme $x_{i}$ za $\bar{x_{i}}$, tak máme $A'$ na negativní detekci $x_{i}$. Pokud spustíme $A$ a odpoví ANO, spustíme $A'$ a ten taky odpoví ANO, tak máme rovnost pro $x_{i}$ a tedy $f$ na ní nezávisí, pokud spustíme test na všech proměnných a pokud u všech vyjde, že to nezávisí na dané proměnné, tak máme jen dvě funkce. Tedy jsem schopni poly-rychle rozhodnout, zda je CNF bez splňujícího modelu, protože vyjde-li konstantní 0, tak to odpovídá tomu, že neexistuje řešení, jinak máme buď 1, že modely jsou vše a nebo proměnné na kterých záleží a dá se najít certifikát.
