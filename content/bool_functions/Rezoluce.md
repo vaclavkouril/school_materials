@@ -1,4 +1,5 @@
 #rezoluce #cnf #implikant 
+
 *Definice:* Mějme množinovou reprezentaci CNF formule, _rezoluční metoda_ je algoritmus
 1. Udělejme všechny absorbce.
 2. Když $\exists C_{1},C_{2}$ takové že $\mathrm{Res}(C_{1},C_{2})$ není absorbovaná, pak přidejme $\mathrm{Res}(C_{1},C_{2})$ do CNF formule a jinak skončíme.

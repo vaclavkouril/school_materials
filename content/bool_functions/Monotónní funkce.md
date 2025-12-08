@@ -1,4 +1,5 @@
 #booleovská_funkce 
+
 *Definice:* Booleovská funkce $f(x_{1},x_{2},\dots,x_{n})$ je pozitivní v $x_{i}$, pokud 
 $$
 \forall x_{1},\dots,x_{i-1},x_{i+1},\dots,x_{n}: f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}) \leq f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}).
@@ -14,7 +15,9 @@ $$
 
 ---
 *Pozorování 1:* Pokud $CNF$ neobsahuje žádný negativní literál proměnné $x_{i}$, pak je pozitivní v $x_{i}$
+
 #implikant 
+
 *Pozorování 2:* Pokud $f$ je pozitivní v $x_{i}$ a $C$ je primární implikant $f$, tak neobsahuje $\bar{x_{i}}$.
 *Důkaz:* Pro spor předpokládejme, že $C = A \lor \bar{x_{i}}$ je primární implikant $f$, pak z toho že je to implikant máme, že pokud ho nastavíme na 0, tak i $f$ je pak 0. Tedy pokud si přeházíme proměnné, tak 
 $$
@@ -31,4 +34,5 @@ tedy $A \lor x_{i}$ je také implikant, protože nastavení proměnných $A$ a $
 ---
 
 Rozpoznání, zda je $f$ dána nějakou CNF pozitivní v $x_{i}$ je $co-NP$ complete.
+
 *Důkaz:* Mějme pro spor poly-čas algoritmus $A$ na rozpoznání zda CNF $F$ je pozitivní v $x_{i}$. Pokud prohodíme $x_{i}$ za $\bar{x_{i}}$, tak máme $A'$ na negativní detekci $x_{i}$. Pokud spustíme $A$ a odpoví ANO, spustíme $A'$ a ten taky odpoví ANO, tak máme rovnost pro $x_{i}$ a tedy $f$ na ní nezávisí, pokud spustíme test na všech proměnných a pokud u všech vyjde, že to nezávisí na dané proměnné, tak máme jen dvě funkce. Tedy jsem schopni poly-rychle rozhodnout, zda je CNF bez splňujícího modelu, protože vyjde-li konstantní 0, tak to odpovídá tomu, že neexistuje řešení, jinak máme buď 1, že modely jsou vše a nebo proměnné na kterých záleží a dá se najít certifikát.
