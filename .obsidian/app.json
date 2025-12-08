@@ -2,7 +2,7 @@
   "tabSize": 4,
   "alwaysUpdateLinks": true,
   "strictLineBreaks": true,
-  "showLineNumber": false,
+  "showLineNumber": true,
   "smartIndentList": true,
   "newFileLocation": "current",
   "useMarkdownLinks": true

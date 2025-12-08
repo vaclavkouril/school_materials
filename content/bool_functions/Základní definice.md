@@ -27,6 +27,7 @@ Je jich $2^{2^n}$.
 *Definice:* Konjunktivní normální forma $CNF$ je formule tvaru $C_{1} \land \ldots \land C_{k}$, kde $C_{i}$ jsou klauzule, tedy disjunkce literálů.
 
 Kanonická CNF je formule složená z konjunkce primárních implikantů.
+Pozitivní CNF je taková, která nemá negativní literály.
 
 ---
 #implikant
