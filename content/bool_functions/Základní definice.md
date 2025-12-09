@@ -32,6 +32,7 @@ Je jich $2^{2^n}$.
 
 Kanonická CNF je formule složená z konjunkce primárních implikantů.
 Pozitivní CNF je taková, která nemá negativní literály.
+Prime CNF je formule složená jen z primárních implikátů.
 
 ---
 #implikant
