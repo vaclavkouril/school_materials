@@ -94,17 +94,17 @@ V poslední části nemůžeme dostat $x_{i} \prec_{f} x_{j}$ protože to by byl
 1. Pro $x_{i} \sim_{f} x_{k}$, pak $C \leq B$ a $B \leq C$ implikuje, že $B$ a $C$ jsou identické (obsahují stejnou množinu klauzulí). Když $P\in B$ je absorbovaná pomocí $Q \in C$ a ta je absorbovaná $P' \in B$, tak $P =Q =P'$ musí platit, jinak $B$ není irredundantní. Tedy $B =C$ a $\implies R_{i} = R_{j}$.
 2. Pro $x_{i} \succ_{f} x_{j}$ máme $B < C$ a tedy nemohou být identické. Definujme 
 	$$
-	\begin{align}
+	\begin{align*}
     B(d) &= \{ P \mid |P| = d \text{ a } \bigvee_{i\in P} x_{i} \in B \} \quad \text{ klauzule } B \text{ velikosti } d  \\
     C(d) &= \{ Q \mid |Q| = d \text{ a } \bigvee_{i\in Q} x_{i} \in C\}
-    \end{align}
+    \end{align*}
 	$$
 	$B \ne C$ znamená, že $\exists m$ nejmenší index takový, že $B(m) \ne C(m)$. Ukážeme, že $C(m) \subsetneqq B(m)$. Mějme arbitrární $Q \in C(m)$, pak $\exists P  \in B$, že $P \subseteq Q$ (aby ji absorbovala). Když $|P| < |Q|$, pak $P \in B(d)$ pro $d<m$ a tedy $P \in C(d)$ (protože $m$ je nejmenší kde se liší) a to by znamenalo, že jedna klauzule $C$ absorbuje druhou a to se nemůže stát z předpokladu, že je v prime $F$ (tam jsou jen primární implikáty). Takže $|P| = |Q|$ a jeden absorbuje druhý, tedy $P =Q$ a $Q \in B(m)$ a tedy $C(m) \subsetneqq B(m)$ platí. Pak 
 	$$
-	\begin{align}
+	\begin{align*}
      C(d) = B(c) \text{ pro } d<m &\implies W[i,d] = W[j,d] \text{ pro } d<m \\ 
      C(m) \subsetneqq B(m) &\implies |C(m)| < |B(m)| \implies W[i,m] > W[j,m] \implies R_{i} >_{L} R_{j}.
-     \end{align}
+     \end{align*}
 	$$
 ---
 *Návodný příklad:* 
@@ -122,9 +122,9 @@ f(p,s_{1},\dots,s_{5},r_{1},\dots,r_{9}) = \begin{cases}
 $$
 $f$ ke pozitivní funkce, protože pokud má daná proměnná vliv na výsledek, tak jednoznačně pokud je 0 tak i výsledek je 0 a obráceně.
 $$
-\begin{align}
+\begin{align*}
 f(p,s_{1},\dots,s_{5},r_{1},\dots,r_{9}) = (p \land m(s_{1},\dots,s_{5}) \land m(r_{1},\dots,r_{9})) \\ \lor ( \bar{p} \land t(s_{1},\dots,s_{5}) \land t(r_{1},\dots,r_{9}) )
-\end{align}
+\end{align*}
 $$
 kde $m(x_{1},\dots,x_{m}) = \begin{cases} 1 &\text{pro } \sum x_{i} \geq 1 / 2 n \\ 0&\text{jinak} \end{cases}$ a $t(x_{1},\dots,x_{m}) = \begin{cases} 1 &\text{pro } \sum x_{i} \geq 2 / 3 n \\ 0&\text{jinak} \end{cases}$
 

@@ -1,0 +1,3 @@
+#prahové_funkce
+
+*Definice:*

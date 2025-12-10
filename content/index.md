@@ -14,6 +14,7 @@
 - [Monotónní funkce](Monotónní%20funkce.md)
 - [Regulární funkce](Regulární%20funkce.md)
 - [Dualizace](Dualizace.md)
+- [Prahové funkce](Prahové%20funkce.md)
 
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)
