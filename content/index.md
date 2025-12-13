@@ -15,6 +15,8 @@
 - [Regulární funkce](Regulární%20funkce.md)
 - [Dualizace](Dualizace.md)
 - [Prahové funkce](Prahové%20funkce.md)
+- [Splnitelnost](Splnitelnost.md)
+- [Minimalizace CNF](Minimalizace%20CNF.md)
 
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)
