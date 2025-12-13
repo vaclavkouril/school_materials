@@ -2,13 +2,13 @@
 
 *Definice:* Booleovská funkce $f(x_{1},x_{2},\dots,x_{n})$ je pozitivní v $x_{i}$, pokud 
 $$
-\forall x_{1},\dots,x_{i-1},x_{i+1},\dots,x_{n}: f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}) \leq f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}).
+\forall x_{1},\dots,x_{i-1},x_{i+1},\dots,x_{n}: f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}) \leq f(x_{1},\dots,x_{i-1}, 1, x_{i+1},\dots,x_{n}).
 $$
 *Příklad:* Funkce $f(x,y) = x \lor \neg y$ je pozitivní v $x$.
 
 O funkci řekneme, že je negativní v $x_{i}$, když 
 $$
-\forall x_{1},\dots,x_{i-1},x_{i+1},\dots,x_{n}: f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}) \geq f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}).
+\forall x_{1},\dots,x_{i-1},x_{i+1},\dots,x_{n}: f(x_{1},\dots,x_{i-1}, 0, x_{i+1},\dots,x_{n}) \geq f(x_{1},\dots,x_{i-1}, 1, x_{i+1},\dots,x_{n}).
 $$
 
 Říkáme, že funkce $f$ je pozitivní, pokud je pozitivní v každé proměnné. Obdobně $f$ je negativní, pokud je negativní v každé proměnné. O funkci řekneme, že je _unate_ pokud je pozitivní, nebo negativní v každé proměnné.

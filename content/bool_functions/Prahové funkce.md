@@ -74,3 +74,33 @@ $$
 
 ---
 # Charakterizace a rozpoznání prahových funkcí
+Mějme $f$ pozitivní prahovou funkci danou kanonickou CNF $F$ a předpokládejme:
+1. $x^1,x^2,\dots,x^k$ jsou všechno minimální True pointy $f$ $\stackrel{1-1}{\leftrightarrow}$ klauzule $f^d$,
+2. $y^1,y^2,\dots,y^l$ jsou maximalní False pointy $f$ $\stackrel{1-1}{\leftrightarrow}$ klauzule $f$,
+obojí je z dualizace a Pozorování 1. z [[Dualizace]]. Pak
+$$
+\sum_{i=1}^n w_{i}x^j_{i} \geq (t+1) \text{ pro } j \in \{ 1,\dots,k \}
+$$
+$$
+\sum_{i=1}^n w_{i}x^j_{i} \leq t \text{ pro } j \in \{ 1,\dots,l \}
+$$
+pro $w_{1},\dots, w_{n},t \geq 0$.
+
+## Algoritmus rozpoznání prahových funkcí
+Potřebujeme pracovat s kanonickou CNF, protože neumíme efektivně rozpoznat, zda je nějaká funkce pozitivní a nemáme rychlou ani redukci z CNF na kanonické.
+
+_Vstup:_ Kanonická CNF $F$ funkce $f$.
+1. Transformujme $F$ na pozitivní CNF $F^P$ flipnutim všech negativních literálů.
+2. Otestujeme, zda $F^P$ reprezentuje regulární funkci $f^P$ (v $O(m^2n^2)$ pomocí [Algoritmus 3](Regulární%20funkce.md#Rozpoznávání%20regulárních%20funkcí#Algoritmus%203))
+	1. Pokud test odpoví Ne $\to$ Ne
+	2. Jinak zkonstruujeme $F^D$ ( v $O(m^2n^2)$)
+	3. Zkonstruujeme systém nerovností a vyřešíme je pomocí lineárního programování (v poly-čase)
+$$
+\begin{align*}
+w_{1},\dots, w_{n},t &\geq 0 : \\
+\sum_{i=1}^n w_{i}x^j_{i} &\geq (t+1) \text{ pro } j \in \{ 1,\dots,k \} \\
+\sum_{i=1}^n w_{i}x^j_{i} &\leq t \text{ pro } j \in \{ 1,\dots,l \}
+\end{align*}
+$$
+	4.  Pokud program nemá řešení, tak Ne
+	5. Pokud máme řešení $w_{1},\dots,w_{n},t$ tak odpovíme Ano a strukturu $f^P$.

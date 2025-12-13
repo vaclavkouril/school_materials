@@ -107,7 +107,7 @@ V poslední části nemůžeme dostat $x_{i} \prec_{f} x_{j}$ protože to by byl
      \end{align*}
 	$$
 ---
-*Návodný příklad:* 
+#### Návodný příklad: 
 Mějme 1 prezidenta $p$, 5 senátorů $s_{1},\dots,s_{5}$ a 9 poslanců (representatives) $r_{1},\dots, r_{9}.$
 Zákon projde pokud
 1. Prezident a většina senátoru a většina poslanců je pro.
