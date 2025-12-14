@@ -110,7 +110,7 @@ $\impliedby$ $F_{q}$ je splnitelná $t$ $\implies$ $F'_{q}$ získaná z $F_{q}$
 
 *Důsledek 1:* Pro kvadratickou CNF máme 
 $$
-F \text{ je splnitené } \implies F \text{ je Hidden Horn}.
+F \text{ je splnitelné } \implies F \text{ je Hidden Horn}.
 $$
 Vzhledem k tomu, že pokud je $F$ hidden horn tak nemáme údaj o unit klauzulích, takže může to být Hidden Horn ale nesplnitelné. Takže pro čistě kvadratickou $F$ máme ekvivalenci.
 
