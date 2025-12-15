@@ -102,5 +102,5 @@ w_{1},\dots, w_{n},t &\geq 0 : \\
 \sum_{i=1}^n w_{i}x^j_{i} &\leq t \text{ pro } j \in \{ 1,\dots,l \}
 \end{align*}
 $$
-	4.  Pokud program nemá řešení, tak Ne
-	5. Pokud máme řešení $w_{1},\dots,w_{n},t$ tak odpovíme Ano a strukturu $f^P$.
+3. Pokud program nemá řešení, tak Ne
+4. Pokud máme řešení $w_{1},\dots,w_{n},t$ tak odpovíme Ano a strukturu $f^P$.

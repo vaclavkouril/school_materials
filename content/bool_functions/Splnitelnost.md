@@ -4,7 +4,9 @@ Hrubou silou to umíme v $O(n\ell)$, kde $n$ je poček proměnných a $\ell$ je 
 
 ## Efektivní Unit rezoluce
 Snažíme se o čas $O(\ell)$.
+
 _Vstup:_ CNF $F$
+
 _Výstup:_ CNF $F'$ bez unit klauzulí
 
 Pořídíme si datovou strukturu, kterou inicializujeme:
@@ -51,6 +53,7 @@ CNF $F$ je kvadratické, když každá klauzule v $F$ má $\leq 2$ literálů a 
 Pro každé kvadratické CNF $F$ můžeme definovat $G=(V_{F},E_{F})$, kde
 1. $V_{F} = \{ x_{1},\bar{x}_{1},\dots,x_{n},\bar{x}_{n} \}$ pro $x_{i} \in F$
 2. $E_F = \{ \bar u v, \bar v u \mid u \lor v \in F \}$, jinými slovy literály mají hranu, když jsou spolu v jedné klauzuli. 
+
 Idea je, že pokud máme nějaký bod s ohodnocením 1, tak i všechny z něj dosažitelné musejí mít $1$ a jinak bychom měli nesplnitelnost.
 
 *Poznámka:* Definice $E_{F}$ implikuje symetrii v $G_{F}$, máme cestu z $x$ do $y$ $\iff$ existuje cesta z $\bar{ y}$ do $\bar{ x}$. Takže pokud $C=\{ u_{1},\dots,u_{k} \}$ je silná komponenta souvislosti grafu, tak i $\bar{C}$ je silná komponenta souvislosti a buď $C = \bar{ C}$ nebo $C \cap \bar{C} = \emptyset$.
@@ -64,6 +67,7 @@ Idea je, že pokud máme nějaký bod s ohodnocením 1, tak i všechny z něj do
 2. je ekvivalentní s $F=1$, protože garantuje splnitelnost všech klauzulí.
 
 *Věta:* $F$ je splnitelné $\iff \forall x$ proměnné $x$ a $\bar{x}$ nepatří do stejné komponenty silné souvislosti.
+
 *Důkaz:* $\implies$ Pro spor předpokládejme splnitelnost a $x,\bar{x}$ ve stejné SCC. Takže máme cestu z $x$ do $\bar{x}$ a obráceně, z lemma 1. máme, že $e(x) \ne e(\bar{x})$, ale existují cesty a tedy by mělo být $e(x) = e(\bar{x})$, tedy spor.
 
 $\impliedby$ Zkonstruujme splňující ohodnocení následovně:
@@ -72,7 +76,9 @@ $\impliedby$ Zkonstruujme splňující ohodnocení následovně:
 Zkonstruované ohodnocení určilo všechny proměnné a když nejsou komplementy v jedné SCC (z předpokladu), tak se splnilo 1 i 2 z lemma.
 ## 2-SAT pro kvadratické CNF
 Pomocí věty máme $O(\ell)$ algoritmus:
+
 _Vstup:_ CNF $F$, kde každá klauzule $|C| = 2$.
+
 _Výstup:_ Ne/Ano+Ohodnocení proměnných
 1. Zkonstruujeme $G_{F}$
 2. Najděme SCC grafu v topologickém seřazení a ubíráme odpovídající první a poslední komponenty konstruujíce ohodnocení.
@@ -122,6 +128,7 @@ Jednoduchý nápad na algoritmus v lineárním čase:
 Oba kroku jen lineárně zvětší velikost CNF.
 
 Nechť $F = \bigwedge_{p=1}^m C^P$, kde $C^P =(u_{1}^P \lor \dots \lor u^{p}_{k_{p}})$ je CNF s $m$ klazulemi.
+
 Definujme:
 1. $F_{q} = \bigwedge_{p=1}^m C_{q}^P$, kde $C_{q}^P = \bigwedge_{1 \leq i<j \leq k_{p}} (u_{i}^P \lor u_{j}^P)$,
 2. $\hat{F} = \bigwedge_{p=1}^m \hat{C}^P$, kde $\hat{C}^P = (u_{1} \lor y_{1}) \land\left[ \bigwedge_{j = 2}^{k_{p}-1} ( \bar{y}_{i-1}^P \lor u_{i}^P \lor y_{i}^P) \right] \land (\bar{y}_{k_{p} -1} \lor u_{k_{p}})$, kde $y$ jsou nové pomocné proměnné,
@@ -130,9 +137,11 @@ Definujme:
 Máme z věty 1: $F$ je Hidden Horn $\equiv$ $F_{q}$ je splnitelná $\stackrel{\text{dokážeme}}{\equiv}$ $\hat{F}_{q}$ je splnitelná. Z věty 1 i pak dostáváme, že $\hat{F}$ je Hidden Horn. (Tedy že redukce zachovává Hidden Horn vlastnost)
 
 *Důkaz:* ($F_{q}$ je splnitelná $\equiv$ $\hat{F}_{q}$ je splnitelná)
+
 Stačí nám dokázat pro jednotlivé hodnoty $P$
 1. Splňující ohodnocení $C^P_{q}$ se dá rozšířit na splňují $\hat{C}_{q}^P$
 2. Omezení splňujícího ohodnocení $\hat{C}_{q}^P$ na původní proměnné z $C_{q}^P$ je splňující ohodnocení $C_{q}^P$.
+
 Bod 1. nechť $t$ je splňující ohodnocení $C_{q}^P \implies \exists$ maximálně jedno $i$ takové že $t(u_{i}^P) = 0$ (protože každá klauzule má jen 2 prvky)(není-li tak nechť $i$ je libovolné) definujme: $t(y_j^P) =0$ pro $1 \leq j \leq i-1$ a $t(y_{j}^P) = 1$ pro $i \leq j \leq k_{P}$. 
 Pro taková $t$ je pak splněno $C_{q}^P$, protože všechny před nulou mají vždy $y_{j}^P$ s negací a nula je tedy splní a $i$-tá je nastavena $y^P_{i}$ a zbytek zase víme, že $u_{j}^P$ jsou $1$, jinak spor se splnitelností $C_{q}^P$
 

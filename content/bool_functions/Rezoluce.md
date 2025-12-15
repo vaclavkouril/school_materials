@@ -25,10 +25,12 @@ Rozdělme $P^*$ dle počtu proměnných:
 1. $|P^*|=n$, kde $n$ je počet všech proměnných. Pak $\forall k: C_{k}$ mají konflikt s $P^*$ a tedy pak
 	1. nastavíme-li $P^* = 0 \implies \forall k: C_{k} = 1 \implies f = 1$,
 	2. ale zároveň také $P^* = 0 \implies P=0 \implies f = 0$, protože $P$ je také prime implikát,
+	
 	dohromady máme tedy spor.
-2. $|P^*| < n$ a tedy $\exists x$, které není v $P^*$. O obou $P^* \lor x, P^* \lor \overline{x}$ víme, že nejsou v $X$ a tedy z výběru $P^*$ není problém s pravidlem $(1)$, takže musí být problém s pravidlem $(2)$ a tedy $\exists i,j$, že jsou $C_{i}, C_{j}$ podmnožinami. 
+1. $|P^*| < n$ a tedy $\exists x$, které není v $P^*$. O obou $P^* \lor x, P^* \lor \overline{x}$ víme, že nejsou v $X$ a tedy z výběru $P^*$ není problém s pravidlem $(1)$, takže musí být problém s pravidlem $(2)$ a tedy $\exists i,j$, že jsou $C_{i}, C_{j}$ podmnožinami. 
 	1. $C_{i} \subseteq P^* \lor x$ a tedy obsahuje $x$ a podmnožinu $P^*$,
 	2. $C_{j} \subseteq P^* \lor \overline{x}$ a tedy obsahuje $\overline {x}$ a podmnožinu $P^*$.
+	
 	ale to znamená, že $C_{i}, C_{j}$ jsou rezolvovatelné přes $x$ a $\mathrm{Res}(C_{i}, C_{j}) \subseteq P^*$ a tedy není absorbovatelný nějakým $C_{k}$. Ale to je spor se skončením algoritmu, protože ten by našel v další iteraci rezoluci přes $x$.
 
 ---

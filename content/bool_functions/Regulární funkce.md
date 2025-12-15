@@ -86,6 +86,7 @@ Označme řádky $W$ pomocí $R_{1},R_{2},\dots,R_{n}$.
 3. Rozběhneme metodu testu síly na $n-1$ párů v pořadí odpovídajícímu pořadí řádek (v čase $O(n^2m^2)$). Pak máme 2 možnosti:
 	1. Dostaneme $x_{1} \succ_f x_{2} \succ_{f} \dots \succ_{f} x_{n}\implies R_{1} \geq_{L} R_{2} \geq_{L}\dots \geq_{L} R_{n}$ a pak máme regulární funkci.
 	2. Dostaneme, že nějaké z $x_{i}$ se nedá porovnat s $x_{i+1}$ a tedy to není regulární.
+
 V poslední části nemůžeme dostat $x_{i} \prec_{f} x_{j}$ protože to by bylo v rozporu s větou výše. 
 
 *Poznámka:* Test síly mezi $x_{i}$ a $x_{j}$ se dá implementací s vhodnou datovou strukturou zlepšit časovou složitost na $O(mn)$ a tedy se zlepší běh algoritmů o faktor $m$.
@@ -109,6 +110,7 @@ V poslední části nemůžeme dostat $x_{i} \prec_{f} x_{j}$ protože to by byl
 ---
 #### Návodný příklad: 
 Mějme 1 prezidenta $p$, 5 senátorů $s_{1},\dots,s_{5}$ a 9 poslanců (representatives) $r_{1},\dots, r_{9}.$
+
 Zákon projde pokud
 1. Prezident a většina senátoru a většina poslanců je pro.
 2. Prezident je proti, ale $\geq 2/3$ senátorů jsou pro a $\geq 2 / 3$ poslanců je pro.
