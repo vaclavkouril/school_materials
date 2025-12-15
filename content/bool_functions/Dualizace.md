@@ -81,7 +81,7 @@ a množina jedniček v $Y$ je opět minimální, takže máme $\iff Y$ je MTP fu
 $$
 (X,0) \text{ je } MFP \text{ funkce } f \iff (X, 1) \text{ je } MTP \text{ funkce}  f.
 $$
-*Důkaz Lemma 2:* $\implies$ mějme $(X,0)$ MFP, pak $(X,1)$ ke True point z maximality, mějme $(X \setminus e_{i}, 1)$, pak z regularity $f(X \setminus e_{i}, 1) \leq (X, 0) = 0$ a tedy je $(X,1)$ MTP.
+*Důkaz Lemma 2:* $\implies$ mějme $(X,0)$ MFP, pak $(X,1)$ je True point z maximality, mějme $(X \setminus e_{i}, 1)$, pak z regularity $f(X \setminus e_{i}, 1) \leq (X, 0) = 0$ a tedy je $(X,1)$ MTP.
 
 $\impliedby$ mějme MTP $(X,1)$, pak z minimality $(X,0)$ je False point, mějme $(X \cup e_{i}, 0)$, pak pro každé $i$ máme z regularity $f(X \cup e_{i}, 0) \geq f(X,1) = 1$ a tedy je $(X,0)$ maximální (stačí přehodit jeho libovolnou 0 na 1 mále True point).
 

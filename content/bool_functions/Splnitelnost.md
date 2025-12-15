@@ -19,8 +19,8 @@ Pořídíme si datovou strukturu, kterou inicializujeme:
 Uděláme unit-rezoluci:
 1. vezmeme klauzuli z fronty unit klauzulí a nastavíme její literál na $1$.
 2. Projdeme list dané proměnné:
-	1. Pokud je proměnná nastavena na $1$ tak odstraníme celou klauzuli (na kterou máme pointer).
-	2. Jinak je proměnná nastavena na $0$ a odstraníme strukturu literálu a odebereme jedna z počítadla.
+	1. Pokud je literál nastaven na $1$ tak odstraníme celou klauzuli (na kterou máme pointer).
+	2. Jinak je literál nastaven na $0$ a odstraníme strukturu literálu a odebereme jedna z počítadla.
 		1. Když je počítadlo 1, tak máme novou unit klauzuli a přidáme ji na konec fronty.
 		2. Když je počítadlo 0, tak zastavíme a našli jsme $\square$ (nesplnitelnost).
 3. Vydáme zbylé klauzule. 

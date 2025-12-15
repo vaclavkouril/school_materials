@@ -64,7 +64,7 @@ $$
 f^d(x) = 0 \iff \bar{f}(\bar{x}) = 0 \iff f(\bar{x}) = 1 \iff \sum_{i=1}^n v_{i}(1-x_{i})> p \iff 
 $$
 $$
-\iff \sum_{i=1}^n v_{i} - \sum_{i=1}^n v_{i} x_{i})> p \iff \sum_{i=1}^n v_{i} x_{i} < \sum_{i=1}^n v_{i} -p \overset{\text{celočíselnost}}{\iff} \sum_{i=1}^n v_{i} x_{i} \leq \sum_{i=1}^n v_{i} -p -1
+\iff \sum_{i=1}^n v_{i} - \sum_{i=1}^n v_{i} x_{i}> p \iff \sum_{i=1}^n v_{i} x_{i} < \sum_{i=1}^n v_{i} -p \overset{\text{celočíselnost}}{\iff} \sum_{i=1}^n v_{i} x_{i} \leq \sum_{i=1}^n v_{i} -p -1
 $$
 *Důsledek věty 4:* 
 1. $p \leq \sum_{i=1}^n v_{i} -p -1$ ($\iff p \leq \frac{1}{2} (\sum_{i=1}^n v_{i} -1)$) $\implies f^d \leq f$,
@@ -76,7 +76,8 @@ $$
 # Charakterizace a rozpoznání prahových funkcí
 Mějme $f$ pozitivní prahovou funkci danou kanonickou CNF $F$ a předpokládejme:
 1. $x^1,x^2,\dots,x^k$ jsou všechno minimální True pointy $f$ $\stackrel{1-1}{\leftrightarrow}$ klauzule $f^d$,
-2. $y^1,y^2,\dots,y^l$ jsou maximalní False pointy $f$ $\stackrel{1-1}{\leftrightarrow}$ klauzule $f$,
+2. $y^1,y^2,\dots,y^l$ jsou maximální False pointy $f$ $\stackrel{1-1}{\leftrightarrow}$ klauzule $f$,
+
 obojí je z dualizace a Pozorování 1. z [[Dualizace]]. Pak
 $$
 \sum_{i=1}^n w_{i}x^j_{i} \geq (t+1) \text{ pro } j \in \{ 1,\dots,k \}

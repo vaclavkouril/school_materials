@@ -27,6 +27,7 @@ $co-NP$-těžkost, protože $F \equiv \square$ je doplněk k SAT problému.
 *Příklady takových tříd:* kvadratické, Hornovské, Hidden Horn, $\dots$
 
 *Lemma:* Nechť CNF $F$ je z tractable třídy a $C$ je klauzule, pak umíme v poly-čase zjistit, zda je implikátem.
+
 *Důkaz:* Vezmeme implikáty $C$, vynutíme dosazení takové, aby $C$ bylo $0$ a dosadíme do $F$ a zeptáme se SAT na splnitelnost dosazené $F$ a pokud někde vyjde, že ano tak není implikátem.
 
 *Pozorování:*
