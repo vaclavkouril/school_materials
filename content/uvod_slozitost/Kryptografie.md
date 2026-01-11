@@ -1,0 +1,7 @@
+# Pseudonáhodné generátory
+
+
+---
+# Jednosměrné funkce
+
+---
