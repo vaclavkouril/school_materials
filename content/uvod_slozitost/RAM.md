@@ -21,5 +21,38 @@ tedy je ekvivalentní procedurálnímu jazyku, můžeme udělat proměnné, cykl
 1. Jazyk $L$ je přijímaný nějakým TS $M$, právě když je přijímaný nějakým RAM $R$.
 2. Funkce $f$ je turingovsky vyčíslitelná, právě když je RAM vyčíslitelná.
 
-*Důkaz:* Rozdělíme na dvě části $TS$ a turingovsky vyčíslitelná funkce převedeme na RAM $R$ a RAM vyčíslitelnou funkci a poté druhou stranu ekvivalencí.
+*Důkaz:* Rozdělíme na dvě části $TS$ a turingovsky vyčíslitelná funkce převedeme na RAM $R$ a RAM vyčíslitelnou funkci a poté druhou stranu ekvivalencí. Očekávejme, že stroj $M$ má pásku jen doprava.
 ## TS na RAM
+Mějme TS $M=(Q,\Sigma,\delta,q_{0}, F)$, kde $Q=\{ q_{1},\dots,q_{r} \}$ pro $r \geq 0$ s $q_0$ počátečním stavem a $\Sigma = \{ \sigma_{0},\dots \sigma_{s} \}$ s $\sigma_{0} = \lambda$ a chceme ekvivalentní $R$ a počítající $f_M$. Pro $R$ si pořiďme
+1. Proměnná $q$ označující index aktuálního stavu $M$
+2. Proměnná $h$ označuje index buňky na kterou ukazuje hlava $M$
+3. Pole $T$, které reprezentuje obsah pásky $M$, tedy aktuální obsah buňky je $T[h]$
+
+Načtení vstupu je pro RAM procedura, kde vstup $T[0],\dots,T[n-1]$ a $n$ je počet nenulových indexů. 
+
+Přechod $\delta(q_{i},\sigma_{j}) = (q_{k}, \sigma_{l}, Z)$ se provede pomocí podmíněných skoků na které převedeme:
+1. Když $q = i$ a $T[h]=j$ pak
+2. $q\leftarrow j$
+3. $T[h]\leftarrow l$ 
+4. Pro $Z=R:$ $h \leftarrow h+1$; $Z =L:h\leftarrow h-1$; $Z=N: h \leftarrow h$.
+
+Pokud by měl turingův stroj skončit, tak jen ověříme, zda je $q$ v $F$ a vypíšeme $1$ na výstup. Pokud nás zajímá $f_{M}$ tak vypíšeme obsah pole $T$ na první buňku, buď $T$ k první prázdné buňce, nebo nejdále kam se $M$ při výpočtu dostal. 
+
+## RAM na TS
+Mějme RAM $R$ a vyrobíme $4$-páskový $TS$, které mají funkce:
+1. Vstupní páska oddělující vstupní čísla pomocí $\#$, jen čte
+2. Výstupní, sem zapisuje TS $M$ čísla, která by dal $R$ na výstup a odděluje je $\#$, jen zapisuje
+3. Paměť RAM
+4. Pomocná páska pro výpočet součtu, rozdílu, nepřímých adres, posunů pásky atd.
+
+Předpokládejme binární zápis na vstupu TS $M$ čísel vstupu $R$.
+
+Pro paměť RAM-u si stačí pamatovat využité registry v rostoucím pořadí čísel registrů. Za každý registr dodáme na pásku dvojici indexem $i$ a číslem $[r_i]$, ta jsou oddělen $|$ a binárně zapsaná a dvojice jsou od sebe oddělena $\#$.  
+
+ Mějme instrukce $P=I_{0},\dots,I_{\ell}$ a $\delta$ musí udržovat pořadí instrukcí, ale $\ell$ je konstanta tedy program counter (čítač instrukcí) se dá uložit do stavu. Pro danou instrukci $I_{j}$ si vyrobíme stavy které se chovají dle tabulky a sice, 
+ 1. $LOAD$ přepíše paměť konstantou
+ 2. $ADD, SUB$ si druhý registr přepíše na pomocnou pásku a provede binární počítání přepisující paměť na daném registru
+ 3. $COPY$ si vytáhne co má být kopírováno na pomocnou pásku a přepíše to na označené místo
+ 4. $JNZ$ ověří podmínku a případně přepíše $j$ v $I_{j}$
+
+Existují tedy zjevně převody oběma směry a tedy jsou ekvivalentní.
