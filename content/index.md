@@ -18,6 +18,8 @@
 - [Splnitelnost](Splnitelnost.md)
 - [Minimalizace CNF](Minimalizace%20CNF.md)
 
+# Základy složitosti a vyčíslitelnosti
+- [Zkouška](Zkouška.md) - index s otázkami
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)
 
