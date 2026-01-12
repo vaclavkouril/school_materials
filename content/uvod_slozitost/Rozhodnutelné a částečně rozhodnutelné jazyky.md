@@ -23,6 +23,8 @@ $B$ je rozhodnutelný, protože je omezená simulace $M$ čítačem kroků a ted
 
 ($\impliedby$) jsou-li $L$ i $\overline{L}$ částečně rozhodnutelné, tak existují TS $M_{1}, M_{2}$ s $L=L(M_{1})$ a $\overline{L} = L(M_{2})$ a můžeme pustit pro dané $x \in \Sigma^*$ paralelně krok po kroku $M_{1}(x)$ a $M_{2}(x)$ a podle toho, který přijme tak přijme odmítne i celý TS.
 
+*Poznámka:* $DEC$ značí rozhodnutelné problémy na nějakém TS, $PD$ značí částečně rozhodnutelné a Postova věta říká $DEC = PD \cap co-PD$.
+
 ---
 # Enumerátory
 *Definice:* Nechť $L \subseteq \Sigma^*$ je jazyk nad abecedou $\Sigma$. Turingův stroj $E$ je **enumerátor** pro jazyk $L$, pokud ignoruje vstup a během práce vypisuje všechna slova $w \in L$ na speciální výstupní pásku a každé slovo $w \in L$ je někdy během výpočtu vypsáno $E$.
