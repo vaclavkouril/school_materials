@@ -24,3 +24,11 @@ Mějme klauzuli $C_{j}$ a nechť $C_{j} = (l_{1} \lor l_{2} \lor l_{3})$ a $S$ o
 2. Pro každý trojúhelník $\{ u_{j},v_{j},w_{j} \}, j =1,\dots,m$, tak jeden z $l_{1},l_{2},l_{3}$ je splněný pomocí $a$, nechť je to $l_{1}$, pak je $\{ u_{j},l_{1} \}$ pokryta a zbývají ostatní, tak přidáme $v_{j},w_{j}$ do $S$.
 
 Tedy máme $|S|=2m+n$, které je vrcholové pokrytí.
+
+---
+# 3-SAT je NP-úplný
+*Tvrzení:* $SAT \leq_{m}^P 3-SAT$
+
+*Důkaz:* $C_{j}$ s velikostí menší $3$ dopadujeme a ty $3$ velikosti necháme být.
+
+Zajímají nás $|C_{j}| > 3$, přidáme si proměnné, že vytáhneme první 2 literály přidáme je s novou proměnnou $\lor y$ a do staré klauzule dáme $\lor \neg y$ ohodnocení jsou stále splnitelná.  Iterujeme dokud taková zbývají a to je max $m \cdot n$ krát. 
