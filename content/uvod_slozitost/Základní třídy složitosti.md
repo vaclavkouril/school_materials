@@ -146,7 +146,8 @@ $$
 *Důkaz:* Definujme $C^x_{0}$ jako počáteční konfiguraci NTS $N$ v prostoru $f(n)$ a $C_{F}$ přijímající konfiguraci BÚNO je jediná. Graf $G_{N,x} = (V,E)$, kde vrcholy reprezentují možné konfigurace výpočtů $M(x)$ a $(C_{1},C_{2})\in E$ je-li možné přejít z $C_{1}$ do $C_{2}$ pomocí $\delta$. Tedy
 $$
 N(x) \text{ přijme} \iff G_{N,x} \text{ má cestu mezi } C^x_{0} \text{ a } C_{F}.
-$$Předpokládejme, že $N$ má jednu vstupní pásku a jednu pracovní pásku.
+$$
+Předpokládejme, že $N$ má jednu vstupní pásku a jednu pracovní pásku.
 
 *Lemma:* Uvažme funkci $f(n) \geq \log n$ a NTS $N = (Q, \Sigma,\delta,q_{0},F)$, který pracuje v prostoru $f(n)$, nechť $x$ je vstup délky $n$ a nechť $G_{N,x}$ je odpovídající graf konfigurací. Pak $|2^{c_{N} f(n)}|$ pro nějakou konstantu $c_{N} \in \mathbb{N}$.
 
