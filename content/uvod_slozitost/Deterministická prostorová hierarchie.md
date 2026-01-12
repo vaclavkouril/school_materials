@@ -34,7 +34,7 @@ Dle **5.** máme $x\in L(M) \iff x\not\in L(N)$ a tedy $L(M) \neq A$, my ale př
 
 ---
 # Důsledky
-$f_{1},f_{2}: \mathbb{N} \to \mathbb{N}$ prostorově konstruovatelné funkce a $f_{1} \in o(f_{2})$, pak
+$f_{1},f_{2}: \mathbb{N} \to \mathbb{N}$ prostorově konstruovatelné funkce a $f_{1} = o(f_{2})$, pak
 $$
 SPACE(f_{1}(n)) \subsetneq SPACE(f_{2}(n))
 $$
