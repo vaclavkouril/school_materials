@@ -204,7 +204,7 @@ $$
 
 *Důsledek:* $PSPACE = NPSPACE$.
 
-*Idea:* Pořídíme si graf konfigurací a budeme v něm hledat, ale nemůžeme použít DFS/BFS, protože oba mají polynomiální v $|V|$, ta je ale exponenciální, tedy vezmeme $C^x_{0}, C_{F}$ a pokusíme se rekurzivně zeptat, zda se dá najít cesta, že vyzkoušíme $O(f(n))$ mezi vrcholů v půlce cesty, a tu zase vydělíme, tedy sice bude algoritmus $O(|V|^{\log |V|})$ ale nevyužije moc paměti. Budeme také muset spočíst $f(n)$, abychom věděli jak dlouhá cesta maximálně může být, což je pro algoritmicky nevyčíslitelné funkce netriviální.
+*Idea:* Pořídíme si graf konfigurací a budeme v něm hledat, ale nemůžeme použít DFS/BFS, protože oba jsou polynomiální v $|V|$, ta je ale exponenciální, tedy vezmeme $C^x_{0}, C_{F}$ a pokusíme se rekurzivně zeptat, zda se dá najít cesta, že vyzkoušíme $O(f(n))$ mezi vrcholů v půlce cesty, a tu zase vydělíme, tedy sice bude algoritmus $O(|V|^{\log |V|})$ ale nevyužije moc paměti. Budeme také muset spočíst $f(n)$, abychom věděli jak dlouhá cesta maximálně může být, což je pro algoritmicky nevyčíslitelné funkce netriviální.
 
 *Důkaz:* Mějme NTS $N$ rozhodující jazyk $L$ a vstup $x$, funkci $f(n) \geq \log n$, omezující prostor $N$, vyrobme $G_{N,x}$ graf konfigurací. Chceme najít cestu mezi $C_{0}^x$ a $C_{F}$ délky $2^{c_{M}f(n)}$, tak si pořídíme funkci:
 
