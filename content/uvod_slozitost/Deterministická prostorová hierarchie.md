@@ -44,4 +44,4 @@ SPACE(n^{\epsilon_{1}}) \subsetneq SPACE(n^{\epsilon_{2}})
 $$
 *Tvrzení:* Platí $NL  \subsetneq PSPACE  \subsetneq EXPSPACE = \bigcup_{k\in \mathbb{N}} 2^{n^{k}}$.
 
-*Důkaz:* $NL=NSPACE(\log n)$ dle Savičovy věty tedy $NL \subseteq c a dle věty o detereministické prostorové hierarchii pro $\log^2 n = o(n)$ máme $SPACE(\log^2 n) c$ a z definice $SPACE(n) \subsetneq PSPACE \subseteq SPACE(2^n)$ a dle věty o detereministické prostorové hierarchii pro $n = o(n^2)$ máme $PSPACE  \subsetneq SPACE(2^{n^2}) \subseteq EXPSPACE$.
+*Důkaz:* $NL=NSPACE(\log n)$ dle Savičovy věty tedy $NSPACE(\log n) \subseteq SPACE(\log^2 n)$ a dle věty o detereministické prostorové hierarchii pro $\log^2 n = o(n)$ máme $SPACE(\log^2 n) \subsetneq SPACE(n)$ a z definice $SPACE(n) \subseteq PSPACE \subseteq SPACE(2^n)$ a dle věty o detereministické prostorové hierarchii pro $n = o(n^2)$ máme $PSPACE  \subsetneq SPACE(2^{n^2}) \subseteq EXPSPACE$.
