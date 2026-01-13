@@ -53,8 +53,8 @@ Každou hranu nahradíme podgrafem o $m = n \log n$ úrovních, že úroveň 1 m
 
 Obsahuje-li $G$ hamiltonovský cyklus, tak $G'$ má alespoň $2^{m \cdot n} = n^{n^2}$ cyklů.
 
-Pokud $G$ nemá hamiltonovskou kružnici, tak každý cyklus v $G$ má délku maximálně $n-1$ a tedy $n^{n-1}$ cyklů a to je
+Pokud $G$ nemá hamiltonovskou kružnici, tak každý cyklus v $G$ má délku maximálně $n-1$ a vezměme $n^\ell$ jako horni odhad na počet cyklů velikosti $\ell$
 $$
- (2^{m})^{n-1} \cdot n^{n-1} = (2^{n \log n} \cdot n)^{n-1} = n^{(n+1)(n-1)} = n^{n^2 -1} < n^{n^2}
+\#CYCLE(G') \leq \sum^{n-1}_{\ell=2} n^\ell \cdot 2^{m\ell} \leq \sum^{n-1}_{\ell = 2}(n \cdot n^{n})^\ell \leq (n-2) \cdot (n n^n)^{n-1} < n \cdot (n n^n)^{n-1}   = n^{n^2} 
 $$
 tedy pokud $\#CYCLE$ lze vyčíslit, tak rozhodujeme v poly čase existenci Hammiltonovské cesty.
