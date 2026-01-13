@@ -2,7 +2,7 @@
 *Definice:* $G: \{ 0,1 \}^n \to \{ 0,1 \}^{\ell(n)}$ je pseudonáhodný generátor pokud
 - $G$ je vyčíslitelná deterministickým polynomiálním algoritmem
 - $\ell(n)>n$ pro každé $n\in \mathbb{N}$
-- Pro každý polynomiální algoritmus $A$ platí, a zanedbatelnou $\epsilon(n)$ (existuje $n_{k}, že všechna $n$ platí $\epsilon(n) < \frac{1}{n^k}$$) že
+- Pro každý polynomiální algoritmus $A$ platí, a zanedbatelnou $\epsilon(n)$ (existuje $n_{k}$, že všechna $n$ platí $\epsilon(n) < \frac{1}{n^k}$) že
 $$
 \left| \Pr_{y \in \{ 0,1 \}^{\ell(n)}} [A(y) = 1] - \Pr_{y \in \{ 0,1 \}^n} [A(G(y)) = 1]  \right| \leq \epsilon(n)
 $$
