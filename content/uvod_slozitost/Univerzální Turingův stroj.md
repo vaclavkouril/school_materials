@@ -100,6 +100,7 @@ $$
 DIAG = \{ \langle M\rangle  \mid \langle M\rangle \not\in L(M)\}
 $$
 Takový $DIAG$ není částečně rozhodnutelný. (Neexistuje pro něj TS)
+
 *Důkaz:* sporem, nechť TS $M_{D}$, která přijímá $DIAG = L(M_{D})$, pak ale zeptáme-li se, zda $\langle M_{D} \rangle \in DIAG$, tak
 1. z definice $DIAG$ do $DIAG$ jazyk patří, jen když $\langle M_{D}\rangle \not\in L(M_{D})$,
 2. z definice $M_{D}$ máme $DIAG = L(M_{D})$ a tedy můžeme ekvivalentně přepsat $\langle M_{D}\rangle \in L(M_{D})$.

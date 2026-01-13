@@ -9,7 +9,6 @@
 
 *Věta:* $TIME(f(n))\subseteq SPACE(f(n))$ pro každou funkce $f:\mathbb{N} \to \mathbb{N}$.
 
-
 *Důkaz:* Stroj v jednom kroku pohne hlavou jen o jednu buňku vpravo nebo vlevo a tedy v každém kroku použije nejvýše jednu buňku navíc.
 
 *Definice:*
@@ -187,7 +186,7 @@ protože
 $$
 L \in TIME(2^{c_{L}\log n}) = TIME(n^{c_{L}}) \subseteq P.
 $$
-*Důsledek:* $NPSAPACE = \bigcup_{k\in \mathbb{N}} NSPACE(n^k), EXPTIME = \bigcup_{k\in \mathbb{N}} TIME(2^{n^k})$ máme
+*Důsledek:* $NPSPACE = \bigcup_{k\in \mathbb{N}} NSPACE(n^k), EXPTIME = \bigcup_{k\in \mathbb{N}} TIME(2^{n^k})$ máme
 $$
 NPSPACE \subseteq EXPTIME
 $$
@@ -206,7 +205,7 @@ $$
 
 *Idea:* Pořídíme si graf konfigurací a budeme v něm hledat, ale nemůžeme použít DFS/BFS, protože oba jsou polynomiální v $|V|$, ta je ale exponenciální, tedy vezmeme $C^x_{0}, C_{F}$ a pokusíme se rekurzivně zeptat, zda se dá najít cesta, že vyzkoušíme $O(f(n))$ mezi vrcholů v půlce cesty, a tu zase vydělíme, tedy sice bude algoritmus $O(|V|^{\log |V|})$ ale nevyužije moc paměti. Budeme také muset spočíst $f(n)$, abychom věděli jak dlouhá cesta maximálně může být, což je pro algoritmicky nevyčíslitelné funkce netriviální.
 
-*Důkaz:* Mějme NTS $N$ rozhodující jazyk $L$ a vstup $x$, funkci $f(n) \geq \log n$, omezující prostor $N$, vyrobme $G_{N,x}$ graf konfigurací. Chceme najít cestu mezi $C_{0}^x$ a $C_{F}$ délky $2^{c_{M}f(n)}$, tak si pořídíme funkci:
+*Důkaz:* Mějme NTS $N$ rozhodující jazyk $L$ a vstup $x$, funkci $f(n) \geq \log n$, omezující prostor $N$, vyrobme $G_{N,x}$ graf konfigurací. Chceme najít cestu mezi $C_{0}^x$ a $C_{F}$ mezi $2^{c_{M}f(n)}$ konfiguracemi, tak si pořídíme funkci:
 
 $Reachable(C_{0},C_{1}, k)$:
 1. Je-li $C_{0} = C_{1} \lor (C_{0},C_{1})\in E$ přijmeme

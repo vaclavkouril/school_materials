@@ -32,7 +32,7 @@ $$
 
 Mějme NTS $M = (Q, \Sigma, \delta, q_{0}, F=\{ q_{1} \})$, s $Q \cap\Sigma = \emptyset$, pracující v čase $n^k - 3$ a $w$ je přijato $M$ pokud v posloupnosti konfigurací existuje přijímající konfigurace.
 
-Definujme si **Tablo** jako $n^k \times n^k$ tabulku, kde řádky popisují konfigurace, tak aby byly ohraničeny $\#$ a stav je zapsané před políčkem, které je pod hlavou $M$ a konfigurace na řádku $i >1$ následuje z konfigurace na řádku $i-1$ pomocí $\delta$.
+Definujme si **Tablo** jako $n^k \times n^k$ tabulku, kde řádky popisují konfigurace, tak aby byly ohraničeny $\#$ a stav je zapsaný před políčkem, které je pod hlavou $M$ a konfigurace na řádku $i >1$ následuje z konfigurace na řádku $i-1$ pomocí $\delta$.
 
 Přijímající tablo je takové, které obsahuje přijímající konfiguraci na nějakém řádku.
 
@@ -61,7 +61,7 @@ $$
 ### $\varphi_{move}$
 Okno je $2\times 3$ podmatice $T$ a $(i,j)$-okno je takové, že levá horní buňka je na $i,j$. **Přípustné okno** je součástí nějakého přechodu dle $\delta$. 
 
-*Lemma:* Předpokládejme, že 1. řádek tabla obsahuje počáteční konfiguraci se vstupem $w$ a všechna okna jsou přípustná, pak každá řádka table je konfigurací jež následuje předchozí konfiguraci dle $\delta$. 
+*Lemma:* Předpokládejme, že 1. řádek tabla obsahuje počáteční konfiguraci se vstupem $w$ a všechna okna jsou přípustná, pak každá řádka tabla je konfigurací jež následuje předchozí konfiguraci dle $\delta$. 
 
 *Důkaz:* Indukcí, ukážeme, že pokud $i$ je konfigurací tak i $i+1$ je konfigurací. Uvažme tedy každý symbol na $i$ řádku:
 1. $\#$ přípustné okno ho jen okopíruje a jsou jen na okrajích.

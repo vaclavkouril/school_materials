@@ -45,7 +45,7 @@ a formule $\varphi$ je splnitelná když existuje dvojice ortogonálních vektor
 $$
 a^\alpha \cdot b^\beta = 0 \iff \varphi(\alpha \circ \beta) = 1.
 $$
-Nyní předpokládejme pro spor algoritmus pro OV se složitostí $O(N^{2-\delta} d^c)$ pro $\delta,c >0$. Platí $d = m = O(n^k) \implies d^c = O(n^{kc} = o(2^{n \delta / 10}))$ pro každé $k$. Platí $N = 2^{n/2}$, tedy
+Nyní předpokládejme pro spor algoritmus pro OV se složitostí $O(N^{2-\delta} d^c)$ pro $\delta,c >0$. Platí $d = m = O(n^k) \implies d^c = O(n^{kc}) = o(2^{n \delta / 10})$ pro každé $k$. Platí $N = 2^{n/2}$, tedy
 $$
 O(N^{2- \delta}d^c) = O(2^{n(1-\delta /2)}2^{n(\delta/ 10)}) = O(2^{n(1-\delta')})
 $$
