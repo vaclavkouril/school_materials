@@ -32,7 +32,6 @@ $$
 \Pr_{x \in \{ 0,1 \}^*} [A(f(x)) \in f^{-1}(f(x)))] \leq \epsilon(n).
 $$
 *Věta:* PRG existují $\iff$ existují OWF.
-OWF ke konstrukci $PRG$
 
 ---
 # Bit commitment

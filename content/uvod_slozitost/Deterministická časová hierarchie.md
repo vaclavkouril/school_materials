@@ -1,4 +1,4 @@
-*Definice:* Funkci $f: \mathbb{N} \to \mathbb{N}$, kde $f (n)= \Omega(m \log n)$ nazveme časově konstruovatelnou, je-li funkce, která zobrazuje $1^n$ na binární reprezentaci $f(n)$ vyčíslitelná v čase $O(f(n))$.
+*Definice:* Funkci $f: \mathbb{N} \to \mathbb{N}$, kde $f (n)= \Omega(n \log n)$ nazveme časově konstruovatelnou, je-li funkce, která zobrazuje $1^n$ na binární reprezentaci $f(n)$ vyčíslitelná v čase $O(f(n))$.
 
 *Věta:* (o deterministické časové hierarchii) Pro každou funkci $f: \mathbb{N} \to \mathbb{N}; f(n) = \Omega(n \log n)$ časově vyčíslitelnou a existuje jazyk $A$, který je rozhodnutelný v čase $O(f(n))$, nikoli však v čase $o(f(n)/\log f(n))$.
 

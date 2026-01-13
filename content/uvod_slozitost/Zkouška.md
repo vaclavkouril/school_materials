@@ -16,5 +16,5 @@
 - (B9) Definice třídy [[FPT]] a parametrizovaný algoritmus pro Vrcholové pokrytí založený na prohledávání s omezenou hloubkou (se složitostí menší než $O^*(2^k)$).
 - (B10) Třída \#P a \#P-úplnost, důkaz těžkosti počítání cyklů v grafu. [viz. HashP](HashP.md)
 - (B11) Třída [[co-NP]] a co-NP-úplnost.
-- (B12) [Pseudonáhodné generátory](Kryptografie#Pseudonáhodné%20generátory), [jednosměrné funkce]((Kryptografie#Jednosměrné%20funkce)) a jejich souvislost s kryptografií (symetrické šifrování, bit-commitment).
-- (B13) Příklad [[zjemnělé redukce]] (redukce SETH na OV nebo OV na hledání regulárního výrazu v textu).
+- (B12) [Pseudonáhodné generátory](Kryptografie#Pseudonáhodné%20generátory), [jednosměrné funkce](Kryptografie#Jednosměrné%20funkce)) a jejich souvislost s kryptografií (symetrické šifrování, bit-commitment).
+- (B13) Příklad [zjemnělé redukce](Zjemnělé redukce) (redukce SETH na OV nebo OV na hledání regulárního výrazu v textu).
