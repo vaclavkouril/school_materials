@@ -56,7 +56,7 @@ Kernelizační algoritmus pro vrcholové pokrytí je vstupem $G,k$ a výstup ker
 	1. pro každý izolovaný vrchol $v$ grafu tak $G \leftarrow G-v$
 	2. dokud existuje vrchol $v: deg(v)>k$ tak $G \leftarrow G-v; k \leftarrow k -1$
 2. dokud se hodnota $k$ nezměnila iterací
-3. když $k<0$ nebo $|V| >k^2+k$ nebo $|k^2|$ tak vrátíme negativní instanci
+3. když $k<0$ nebo $|V| >k^2+k$ nebo $|E|>k^2$ tak vrátíme negativní instanci
 4. jinak vrátíme $\langle G,k\rangle$
 
 Výsledkem je kernel s $O(k^2)$ vrcholy a $O(k^2)$ hranami. 
