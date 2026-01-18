@@ -1,4 +1,5 @@
-# Notace
+# Systémy Hash funkcí
+## Notace
 - Univerzum $\mathcal{U}$ je množina celých čísel $\{ 0,\dots,U-1 \}$ označená $[U]$.
 - Množina přihrádek $B = [m]$.
 - Množina $X \subset \mathcal{U}$ o celkem $n$ prvcích uložených v datové struktuře.
@@ -45,7 +46,7 @@ $$
 - Když je $\mathcal{H}$ $(2,c)$-nezávislá, pak je $c$-univerzální.
 
 ---
-# Konstrukce $\mathcal{L}$ a $\mathcal{L}'$
+## Konstrukce $\mathcal{L}$ a $\mathcal{L}'$
 *Definice:* Pro libovolné prvočíslo $p$ a $m \leq p$, tak definujeme rodinu lineárních funkcí 
 $$
 \mathcal{L} = \{ h_{a,b} \mid a,b\in [p],\, h_{a,b} : [p] \to [m],\, \text{kde } h_{a,b}(x) = ((ax+b) \mod p) \mod m\}.
@@ -91,7 +92,7 @@ $$
 Symetricky to samé platí pro $s$ a tedy pokud obě mají pravděpodobnost pro prvek $[p]$, že bude s nimi kongruentní v $\mod p$, tak dohromady máme $\frac{4}{m^2}$. 
 
 ---
-# Lemma M&K&G
+## Lemma M&K&G
 ### *Lemma M:* (Kompozice modulo $m$) Mějme $\mathcal{H}$ $(2,c)$-nezávislou rodinu funkcí z $\mathcal{U}$ do $[r]$ a $m < r$, pak rodina $\mathcal{H} \mod m = \{ h \mod m \mid h \in \mathcal{H} \}$ je $2c$-univerzální a $(2,4c)$-nezávislá.
 *Důkaz:* $2c$-univerzalita: Pokud nastane $h(x)\mod m \equiv h(y)\mod m$ pro dvě různá $x,y$ nastane když máme nějaká $i_{1} \equiv i_{2} \mod m$ a $h(x) = i_{1} \land h(y) = i_{2}$, a z $(2,c)$-nezávislosti máme
 $$
@@ -118,3 +119,72 @@ $$
 Tedy máme ověřenou $(2,4c)$-nezávislost.
 
 ### *Lemma K:* ($k$-nezávislé modulo $m$) Nechť $\mathcal{H}$ je $(k,c)$-nezávislá rodina funkcí z $\mathcal{U}$ do $[r]$, $m<r,2km < r$, pak $\mathcal{H} \mod m$ je $(k,2c)$-nezávislá.
+*Důkaz:* V minulém důkazu jsme argumentovali pro $2$, pokud ale máme pravděpodobnost $h(x_{j})  = i_{j}$ pro všech $k$ hodnot $j$, je omezená
+$$
+\frac{c}{r^k} \cdot \left( \frac{r+m-1}{m} \right)^k = \frac{c}{m^k} \cdot \left( \frac{r+m-1}{r} \right)^k \leq \frac{c}{m^k} \cdot \left( 1+ \frac{m}{r} \right)^k.
+$$
+Tedy $\mathcal{H} \mod m$ je $(k,c')$-nezávislá pro
+$$
+c'=c \cdot \left( 1+\frac{m}{r} \right)^k.
+$$
+Protože $\forall x\in \mathbb{R}: 1+x \leq e^x$ získáváme $(1+m / r)^k \leq (e^{m / r})^k = e^{mk/r}$. A z předpokladu $km/r < \frac{1}{2}$ tak máme $e^{mk/r} \leq e^{1/2} \leq 2$. Tedy $c' \leq 2c$.
+
+*Poznámka:* Dle *lemma M* je $\mathcal{L}$ 2-univerzální a také $(2,4)$-nezávislá, protože bijekce mezi $(a,b)$ a $(r,s)$ nám dává $(2,1)$-nezávislost bez modula $m$. Pro $p > 4m$ je dokonce $(2,2)$-nezávislá dle *lemma K*.
+
+### *Lemma G:* (Obecné skládání) Nechť $\mathcal{F}$ je $c$-univerzální rodina funkcí z $\mathcal{U}$ do $[r]$. Nechť $\mathcal{G}$ je $(2,d)$-nezávislá rodina funkcí z $[r]$ do $[m]$. Pak $\mathcal{H} = \mathcal{F} \circ \mathcal{G} = \{ f \circ g \mid f \in \mathcal{F}, g \in \mathcal{G} \}$ je $(2,c')$- nezávislá pro $c'=(cm/r + 1)d$.
+*Důkaz:* Pro různá $x_{1},x_{2} \in \mathcal{U}$ a $i_{1},i_{2} \in [m]$ chceme omezit
+$$
+\Pr_{h \in \mathcal{H}} [h(x_{1}) = i_{1} \land h(x_{2}) = i_{2}] = \Pr_{\substack{f \in \mathcal{F}\\ g \in  \mathcal{G}}} [g(f(x_{1})) = i_{1}) \land g(f(x_{2})) = i_{2}].
+$$
+Nechť $M$ označuje že platí $g(f(x_{1})) = i_{1}) \land g(f(x_{2})) = i_{2}$ a $C$ značí kolizi a sice $f(x_{1}) = f(x_{2})$, pak
+$$
+\Pr[M] = \Pr[M \land \neg C] + \Pr[M \land C] = \Pr[M \mid \neg C] \cdot \Pr[\neg C] + \Pr[M \mid C] \cdot \Pr[C].
+$$
+Pro $\Pr[C] = 0$, nebo $\Pr[\neg C]=0$ jsou nedefinované podmíněné pravděpodobnosti, ale to pak triviálně platí lemma. Můžeme rozebrat jednotlivé členy:
+- $\Pr[M \mid \neg C] \leq d/m^2$ z $(2,d)$-nezávislosti $\mathcal{G}$,
+- $\Pr[\neg C] \leq 1$,
+- $\Pr[M \mid C] \leq d/m$, protože pokud $i_{1} \ne i_{2}$ je levá strana $0$ a jinak $(2,d)$-nezávislost implikuje $(1,d)$-nezávislost,
+- $\Pr[C] \leq c/r$ z $c$-univerzality $\mathcal{F}$.
+
+Takže $\Pr[M] \leq d/m^2 + cd/mr$, přepišme 
+$$
+\frac{d}{m^2} + \frac{cd}{mr} = \frac{d}{m^2} + \frac{cdm}{m^2r} = \left( \frac{1 +c \frac{m}{r}}{m^2} \right)d
+$$
+a máme $c'=(1+cm/r)d$ pro které je rodina $\mathcal{H}$ chtěných $(2,c')$-nezávislá.
+
+*Důsledek:* Když $r\geq m$, tak $\mathcal{F} \circ \mathcal{G}$ je $(2,c')$-nezávislý pro $c'=(c+1)d$.
+
+---
+## Polynomiální hashování
+
+
+
+---
+## Multiply-shift hash
+
+
+
+---
+## Hash tabulkou
+
+
+---
+## Hashování vektorů použitím skalárního násobení
+
+
+---
+## Rolling Hash z polynomů
+
+---
+## Hashování řetězců
+
+---
+# Kukačkové hashování
+
+
+---
+# Linear probing
+
+
+---
+# Bloomovy filtry
