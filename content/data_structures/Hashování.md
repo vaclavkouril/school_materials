@@ -31,7 +31,7 @@ $$
 \mathbb{E}_{h\in \mathcal{H}}\left[ \sum_{i=1}^n A_{i} \right] = n \cdot \frac{c}{m}
 $$
 *Důsledky:* Mějme hashovací tabulku (tedy pole přihrádek velikosti $m$) s řetězením (spojový seznam v každé buňce) používající $m$ přihrádek a hash funkci $h$ vybranou uniformně náhodně z $c$-univerzální rodiny funkcí. Mějme v tabulce $x_{1},\dots,x_{n}$.
-- Hledání nexsitujícího $y$ ve struktuře odlišné od všech $x_{i}$ se podívá na všechny prvky přihrádky $h(y)$. Dle tvrzení je očekávané množství v takové přihrádce $cn/m$.
+- Hledání nexesitujícího $y$ ve struktuře odlišné od všech $x_{i}$ se podívá na všechny prvky přihrádky $h(y)$. Dle tvrzení je očekávané množství v takové přihrádce $cn/m$.
 - Vložení nového prvku $y$ do její přihrádky $h(y)$ je konstantní, ale musíme překontrolovat, zda je $y$ opravdu nové. Pokud tam doopravdy není tak je to ekvivalentní předešlému hledání.
 - V případě úspěšného hledání $x_{i}$, tak všechny prvky $x_{i}$ přihrádky které jsme museli projít, než jsme našli $x_{i}$ tak tam byli ještě než jsme $x_{i}$ přidali. Tedy očekávaná časová složitost úspěšného hledání je omezena časovou složitosti předešlého přidání $x_{i}$.
 - Neúspěšné přidání $y$ (tedy, že už tam bylo) zabere stejně času jako úspěšné hledání.
