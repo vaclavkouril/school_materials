@@ -1,0 +1,4 @@
+
+
+---
+# Sleatorovu–Tarjanova věta

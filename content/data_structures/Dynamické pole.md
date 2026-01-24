@@ -1,0 +1,4 @@
+# Definice
+
+---
+# Amortizovaná složitost

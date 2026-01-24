@@ -5,6 +5,8 @@
 - Množina $X \subset \mathcal{U}$ o celkem $n$ prvcích uložených v datové struktuře.
 - Hashovací funkce $h: \mathcal{U} \to \mathcal{B}$,
 
+---
+## Univerzalita
 *Definice:* Mějme rodinu funkcí $\mathcal{H} = \{ f \mid f: \mathcal{U} \to [m]\}$, řekneme o ní, že je $c$-univerzální pro nějakou konstantu $c>0$, když
 $$
 \forall x,y \in \mathcal{U}, x \ne y : \Pr_{h \in \mathcal{H}} [h(x) = h(y)] \leq \frac{c}{m}.
@@ -37,6 +39,8 @@ $$
 
 Pokud je $m = \Omega(n)$, tak je vše konstantní. Pokud nevíme jaké bude $n$ (kolik toho budeme vkládat) tak můžeme měnit velikost tabulky a znovu hashovat všechny prvky, když $n$ se moc zvětší. Obdobně jako u dynamického pole.
 
+---
+## Nezávislost
 *Definice:* Nechť $\mathcal{H}$ je rodina funkcí z $\mathcal{U}$ do $[m]$. Rodina je $(k,c)$-nezávislá, pro $1\leq k \leq |\mathcal{U}|$ a $c>0$ právě tehdy, když $\forall x_{1},\dots,x_{k} \in \mathcal{U}$ každou $k$-tici různých prvků a každou $k$-tici $a_{1},\dots,a_{k}$ přihrádek v $[m]$ platí
 $$
 \Pr_{h \in \mathcal{H}} [h(x_{1}) = a_{1} \land\dots \land h(x_{k}) = x_{k}] \leq \frac{c}{m^k}.
@@ -74,7 +78,7 @@ $$
 ### *Tvrzení:* Rodina $\mathcal{L}'$ je $1$-univerzální
 *Důkaz:* Mějme $x,y$ a $(r,s)$ jako v předešlém důkazu a bijekce pořád platí, jen $a \neq 0$ se propíše na $r \ne s$ a tedy pro každé $r$ máme jen $\left\lceil  \frac{p}{m}  \right\rceil -1$ (nerovnají se a tedy i když jsou kongruentní tak nevzniknou jako špatné páry) a různých párů máme $p(p-1)$ a voleb $r$ je $p$, pak je **špatných párů**
 $$
-p \left( \left\lceil  \frac{p}{m}  \right\rceil -1  \right) \leq p \left(\frac{p+m-1}{m} -1\right) = \frac{p(p-1)}{m} \
+p \left( \left\lceil  \frac{p}{m}  \right\rceil -1  \right) \leq p \left(\frac{p+m-1}{m} -1\right) = \frac{p(p-1)}{m}
 $$
 a pokud uniformně náhodně volíme páry, tak nám vychází pro dané $(a,b)$ pravděpodobnost $\frac{1}{m}$ na špatnost páru.
 
@@ -156,21 +160,61 @@ a máme $c'=(1+cm/r)d$ pro které je rodina $\mathcal{H}$ chtěných $(2,c')$-ne
 
 ---
 ## Polynomiální hashování
+Chceme $k$-nezávislé rodiny funkcí, které si můžeme jednoduše vyrobit pomocí polynomů řádu $k$. 
 
+*Definice:* Pro libovolné těleso $\mathbb{Z}_{p}$ a $k \geq 1$ definujeme **polynomiálních hash funkcí**
+$\mathcal{P}_{k} = \{ h_{t} : \mathbb{Z}_{p} \to  \mathbb{Z}_{p} \mid t \in \mathbb{Z}_{p}^k \}$, kde $h_{t} = \sum_{i=0}^{k-1} t_{i}x^{i}$ a $k$-tice $t := (t_{0},\dots,t_{k-1})$ je indexovaná od $0$.
 
+### *Lemma:* Rodina $\mathcal{P}$ je $(k,1)$-nezávislá.
+*Důkaz:* Nechť $x_{1},\dots,x_{k} \in \mathbb{Z}_{p}$ jsou různé a $a_{1},\dots,a_{k} \in \mathbb{Z}_{p}$ jsou přihrádky. Víme, že máme přesně jeden polynom $h$ stupně $k$, takový aby $h(x_{i})= a_{i}$ pro každé $i$. Tedy pravděpodobnost, že náhodný polynom má tuto vlastnost je $\frac{1}{p^k}$.
+
+*Důsledek:* Když $p\geq 2km$, tak $\mathcal{P}_{k} \mod m$ je díky *Lemma K* $(k,2)$-nezávislá.
+
+Potřebujeme $\Theta(k)$ na výběr funkce z rodiny a na výpočet pro jedno $x$.
 
 ---
 ## Multiply-shift hash
+Mějme *bit-slice* operaci $x \left\langle a:b\right\rangle = \lfloor x / 2^a \rfloor \mod 2^{b-a}$, tedy se vezmou jen bity mezi pozicemi $a$ a $b-1$ a posunou se na least significant bit.
 
+*Definice:* Pro libovolné $w$ (délka slova v počítači) a $\ell$ (šířku výsledku), definujeme **multiply-shift** rodinu $\mathcal{M} = \{ h_{a} : [2^w] \to [2^\ell] \mid a \in [2^w],\text{ kde }a \text{ je liché} \}$ a $h_{a}(x) =(ax)\left\langle w -\ell : w\right\rangle$.
 
+### *Tvrzení:* $\mathcal{M}$ je $2$-univerzální.
+
+*Definice:* Mějme $\mathcal{U} = [2^w],\ell \geq 1$ a $w' \geq w + \ell -1$. Definujme multiply-shift rodinu funkcí $\mathcal{M'} =\{ h_{a,b} \mid a,b\in [2^{w'}], a \text{ liché} \}$ z $[2^{w}]$ do $[2^\ell]$, kde $h_{a,b}(x) = (ax +b)\left\langle w' - \ell: w'\right\rangle$.
+
+Takovou rodinu jednoduše implementujeme pro $32$-bitová slova a $\ell \leq32$, nastavme $w' = 64$. spočteme $ax+b$ s $64$-bitovým výsledkem a extrahujeme $\ell$ nejvyšších bitů shiftem doprava o $64- \ell$ bitů.
+
+### *Tvrzení:* $\mathcal{M}'$ je $2$-nezávislá.
 
 ---
 ## Hash tabulkou
+Mějme univerzum $\mathcal{U} = [2^{kt}]$ pro nějaké $t\geq1$ (počet částí) a $k\geq1$ (velikost částí) a $[2^\ell]$ množinu přihrádek. Vygenerujeme náhodné tabulky $T_{0},\dots,T_{t-1}$ s $2^k$ řádky s $\ell$ bity.
 
+Rozdělíme si pro vyhodnocení funkce $x$ na části $x\left\langle ik: (i+1)k \right\rangle$ pro $0 \leq i <t$ a spočteme výsledek
+$$
+h(x) = \bigoplus_{0 \leq i <t} T_{i}[x\left\langle ik : (i+1)k \right\rangle].
+$$
+Vybrání funkce zabere $\Theta (t \cdot 2^k)$ času pro inicializaci tabulek a výpočet pro jedno $x$ zabere $\Theta(t)$.
+
+### *Tvrzení:* Tabulkové hashování je $3$-nezávislé, ale ne $4$-nezávislé pro $t \geq 2$.
 
 ---
 ## Hashování vektorů použitím skalárního násobení
+Mějme vstupu $d$-dimenzionální vektory nad $\mathbb{Z}_{p}$.
 
+*Definice:* Pro prvočíslo $p$ a velikost vektorů $d\geq{1}$, definujeme rodinu skalární násobků jako $\mathcal{S}=\{ h_{t} : \mathbb{Z}_{p}^d \to \mathbb{Z}_{p} \mid t \in \mathbb{Z}_{p}^d \}$, kde $h_{t}(x)=t \cdot x$.
+
+### *Tvrzení:* Rodina $\mathcal{S}$ je $1$-univerzální. Funkce může být vybrána z $\mathcal{S}$ náhodně v čase $\Theta(d)$ a vyhodnocena ve stejném čase.
+*Důkaz:* Mějme různé vektory $x,y \in \mathbb{Z}_{p}^d$. Nechť $k$ je index, kde $x_{k} \ne y_{k}$, na pořadí nezáleží, BÚNO $k=d$.
+
+Pro náhodný parametr $t$ máme při počítání na $\mathbb{Z}_{p}$
+$$
+\begin{split}
+\Pr[h_{t}(x) = h_{t}(y)] = \Pr[x \cdot t = y \cdot t] = \Pr[(x-y) \cdot t = 0] = \\
+= \Pr\left[ \sum_{i=1}^{d} (x_{i} -y_{i})t_{i} =0 \right] = \Pr\left[ (x_{d}-y_{d})t_{d} = - \sum_{i=1}^{d-1} (x_{i} -y_{i}) t_{i} \right].
+\end{split}
+$$
+pro všechny výběry $t_{1},\dots,t_{d-1}$ máme právě jednu hodnotu $t_{d}$, takovou aby rovnost vyšla, tedy pravděpodobnost je $1 / p$.
 
 ---
 ## Rolling Hash z polynomů
