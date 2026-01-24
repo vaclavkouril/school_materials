@@ -17,7 +17,7 @@
 - Formulujte cache-oblivious algoritmus pro transpozici čtvercové matice. Rozeberte časovou složitost a I/O složitost.
 - Popište systém hešovacích funkcí odvozený ze skalárního součinu. Dokažte, že je to 1-univerzální systém ze $\mathbb{Z}_p^k$ do $\mathbb{Z}_p$. [Hashování](Hashování.md##Hashování%20vektorů%20použitím%20skalárního%20násobení) ✅
 - Popište systém hešovacích funkcí založených na lineární kongruenci. Dokažte, že je to 2-nezávislý systém ze $\mathbb{Z}_p$ do $[m]$ (můžete využít lemma o modulení, které zformulujte, ale nemusíte dokazovat). [Hashování](Hashování.md##Konstrukce%20$\mathcal{L}$%20a%20$\mathcal{L}'$) ✅
-- Sestrojte k-nezávislý systém hešovacích funkcí ze $\mathbb{Z}_p$ do $[m]$. Zdůvodněte k-nezávislost (můžete využít lemma o modulení, které zformulujte, ale nemusíte dokazovat).  [Hashování](Hashování.md##Polynomiální%20hashování) ✅
+- Sestrojte k-nezávislý systém hešovacích funkcí ze $\mathbb{Z}_p$ do $[m]$. Zdůvodněte k-nezávislost (můžete využít lemma o modulení, které zformulujte, ale nemusíte dokazovat).  [Hashování](Hashování##Polynomiální%20hashování) ✅
 - Sestrojte 2-nezávislý systém hešující řetězce délky nejvýše $L$ nad abecedou $[a]$ do $[m]$ založený na polynomech, tedy „rolling hash“. Popište výhodu použití tohoto systému oproti jiným hešovacím funkcím.  [Hashování](Hashování.md##Rolling%20Hash%20z%20polynomů)
 - Popište a analyzujte Bloomův filtr. Uveďte příklad jeho praktického použití.
 - Definujte k-d stromy a ukažte, že 2D intervalové dotazy trvají $\Omega(\sqrt{n})$.
