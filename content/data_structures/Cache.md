@@ -178,12 +178,12 @@ Chceme dokázat, že $LRU$ $k$-kompetitivní algoritmus k $OPT$, tedy chtěli by
 
 Pak pro $i>0$ máme dvě možnosti pro epochu $E_{i}$
 1. Všechny bloky, které LRU miss-nulo jsou různé, tedy máme od v epoše alespoň $M_{LRU}$ různých bloků a optimum jich mohlo mít na začátku epochy nejvýše $M_{OPT}$, tedy musel se musel miss stát aspoň $M_{OPT}-M_{LRU}$ krát.
-2. Jinak $LRU$ udělá miss na stejném bloku $b$. Pro prvním miss se přidal na vršek $LRU$ listu a vzhledem k tomu, že se musel načíst podruhé, tak musel být vyměněn a to se stane jen pokud se probublá až na konec $LRU$ seznamu, to implikuje alespoň $M_{LRU}$ přístupů k jiným bloků mezitím. Opět $OPT$ musí miss aspoň $M_{LRU} - M_{OPT}$, protože máme aspoň $M_{LRU}$ různých bloků ke kterým jsme přistoupili.
+2. Jinak $LRU$ udělá miss na stejném bloku $b$. Pro prvním miss se přidal na vršek $LRU$ seznamu a vzhledem k tomu, že se musel načíst podruhé, tak musel být vyměněn a to se stane jen pokud se probublá až na konec $LRU$ seznamu, to implikuje alespoň $M_{LRU}$ přístupů k jiným bloků mezitím. Opět $OPT$ musí miss aspoň $M_{LRU} - M_{OPT}$, protože máme aspoň $M_{LRU}$ různých bloků ke kterým jsme přistoupili.
 
 V každé epoše kromě $0$-té tak máme poměr $C_{LRU} / C_{OPT}$ nejvýše $M_{LRU}/M_{LRU} - M_{OPT}$ a průměrem přes všechny epochy máme chtěné omezení. 
 
 Problémem je $E_{0}$, pokud máme prázdnou cache na začátek, tak $C_{LRU}/C_{OPT} =1$, ale pokud je už před vyplněná cache, tak optimum může ušetřit nejvýše $M_{OPT}$ miss-ů.
-Dohromady dávajíc
+Dohromady dávaje
 $$
 C_{LRU} \leq \frac{M_{LRU}}{M_{LRU}- M_{OPT}} \cdot C_{OPT} + M_{OPT}.
 $$

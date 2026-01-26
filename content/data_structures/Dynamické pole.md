@@ -67,12 +67,7 @@ Pozorování:
 - mezi dvěma realokacemi musí proběhnout alespoň $\Theta(C)$ operací,
 - náklad realokace lze rovnoměrně rozdělit mezi tyto operace.
 
-Každé operaci tak přiřadíme konstantní „kredit“.
-
 ---
 ## Výsledek amortizované analýzy
 
-Pro libovolnou posloupnost $m$ operací:
-$$
-\text{celkový čas} = \Theta(m)
-$$
+Pro libovolnou posloupnost $m$ operací je $\Theta(m)$

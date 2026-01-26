@@ -5,7 +5,7 @@ Mějme značení pro binární strom
 
 *Definice:* O stromu řekneme, že je **perfektně vyvážený** právě tehdy, když $\forall v: |s(l(v)) -s(l(r))| \leq 1$. 
 
-*Definice:* Strom je **vyvážený**, když pro každý vrchol $v$ a jeho následníka $c$ platí $s(c) \leq \frac{2}{3} s(v)$.
+*Definice:* Strom je **vyvážený**, když pro každý vrchol $v$ a jeho následníka $c$ platí $s(c) \leq \frac{2}{3} s(v)$. Potenciálně libovolné $\alpha \in (\frac{1}{2},1)$.
 
 BB\[$\alpha$\]-stromy jsou pro $\frac{1}{2} < \alpha <1$ přesně jako ten vyvážený výše s $\frac{2}{3}$.
 #### *Lemma:* Výška vyváženého stromu s $n$ vrcholy je $O(\log n)$.
@@ -13,7 +13,7 @@ BB\[$\alpha$\]-stromy jsou pro $\frac{1}{2} < \alpha <1$ přesně jako ten vyvá
 ### *Tvrzení:* Amortizovaná časová složitost Insert je $O(\log n)$ ve vyváženém stromě.
 Operace $Insert$ přidá nový list a procházíme od kořene a po cestě k novému listu a přidáváme každému vrcholu $1$, pokud by nějaký podstrom měl být nevyvážený, tak najdeme nejvyšší takový $v$ a přestavíme ho celý vyváženě v $O(s(v))$ čase.
 
-*Důkaz:* Definujeme potenciál a by perfektně vyvážené stromu neměli potenciál $1$ pro to kdy se liší o jedna, tak máme
+*Důkaz:* Definujeme potenciál aby perfektně vyvážené stromy neměli potenciál $1$ pro to kdy se liší o jedna, tak máme
 $$
 \phi := \sum_{v} \varphi(v), \text{ kde} \quad \varphi(v) \begin{cases}
 |s(l(v)) -s(r(v))| &\text{pokud je rozdíl} \geq 2, \\
