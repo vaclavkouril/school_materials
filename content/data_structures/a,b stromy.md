@@ -65,7 +65,7 @@ $$
 $$
 chceme totiž splnit
 - štěpení/spojení $1+ \Delta \Phi \geq 0$,
-- Insert/Delete $1+ \Delta \Phi \geq c \in O(1)$,
+- Insert/Delete $1+ \Delta \Phi \leq c \in O(1)$,
 - $|\phi(k) - \phi (k-1)| \leq c \in O(1)$, splněno pro $c=2$.
 
 Chceme ověřit štěpení

@@ -18,6 +18,7 @@
 
 ## Datové struktury 1
 - [Zkouška Datové struktury 1](Zkouška%20Datové%20struktury%201.md)
+- [Amortizace](Amortizace.md)
 - [Hashování](Hashování.md)
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)
