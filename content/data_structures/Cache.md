@@ -173,7 +173,7 @@ Chceme dokázat, že $LRU$ $k$-kompetitivní algoritmus k $OPT$, tedy chtěli by
 
 *Spor:* Mějme používání bloků$(1\dots M+1)^k$, načteme prvních $M$ a u $M+1$ LRU strategie, vždy zahodí ten další používaný blok, který vzápětí musí načítat, kdežto $OPT$ by prostě mělo na jeden blok jen 2 načtení a to asymptoticky nevychází. Tedy $C_{LRU}$ se blíží libovolně moc $M$.
 
-## *Věta (Sleator-Tarjan):* Pro každou $M_{LRU} > M_{OPT}\geq 1$ a každou posloupnost dotazů na cache máme $C_{LRU} \leq \frac{M_{LRU}}{M_{LRU}\cdot M_{OPT}} \cdot C_{OPT} + M_{OPT}$
+## *Věta (Sleator-Tarjan):* Pro každou $M_{LRU} > M_{OPT}\geq 1$ a každou posloupnost dotazů na cache máme $C_{LRU} \leq \frac{M_{LRU}}{M_{LRU}- M_{OPT}} \cdot C_{OPT} + M_{OPT}$
 *Důkaz:* Rozdělme posloupnost do epoch $E_{0},\dots,E_{t}$ takové, aby cena každé byla přesně $M_{LRU}$ kromě $E_{0}$, která je nejvíce $M_{LRU}$. 
 
 Pak pro $i>0$ máme dvě možnosti pro epochu $E_{i}$
@@ -185,6 +185,6 @@ V každé epoše kromě $0$-té tak máme poměr $C_{LRU} / C_{OPT}$ nejvýše $
 Problémem je $E_{0}$, pokud máme prázdnou cache na začátek, tak $C_{LRU}/C_{OPT} =1$, ale pokud je už před vyplněná cache, tak optimum může ušetřit nejvýše $M_{OPT}$ miss-ů.
 Dohromady dávajíc
 $$
-C_{LRU} \leq \frac{M_{LRU}}{M_{LRU}\cdot M_{OPT}} \cdot C_{OPT} + M_{OPT}.
+C_{LRU} \leq \frac{M_{LRU}}{M_{LRU}- M_{OPT}} \cdot C_{OPT} + M_{OPT}.
 $$
 
