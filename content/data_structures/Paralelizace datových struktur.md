@@ -37,7 +37,6 @@ funguje takto:
 - vždy vrací původní hodnotu $R$.
 
 ---
-
 ## Load-Linked / Store-Conditional (LL/SC)
 
 ### Definice

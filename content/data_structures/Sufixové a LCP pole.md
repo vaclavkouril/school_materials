@@ -37,7 +37,6 @@ $$
 ## LCP pole (Longest Common Prefix)
 *Definice:* LCP pole $L[0\dots n-1]$ ukládá délku nejdelšího společného prefixu každého suffixu a jeho lexikografického následníka. Tedy $L[i] =LCP(\alpha[S[i]:],\alpha[S[i+1]:])$, kde $LCP(\gamma,\delta) = \max_{k} \gamma[:k] = \delta[:k]$.
 
-
 Mějme $\alpha_{i},\alpha_{i+1}$ ve lexikografickém pořadí vedle sebe a $L[i] = k>0$, pak $\alpha_{i}[1:],\alpha_{i+1}[1:]$ jsou také sufixy $\alpha$ rovné $i'<j': \alpha_{i}[1:] = \alpha_{i'}, \alpha_{i+1}[1:] = \alpha_{j'}$, zjevně $LCP(\alpha_{i'},\alpha_{j'}) = LCP(\alpha_{i},\alpha_{i+1}) -1 = k-1$ ale LCP je ne $[i',j']$ nejmenší, tedy $L[i']\geq k-1$.
 ### Konstrukce LCP z Sufix
 BuildLCP($\alpha$, S, R):
