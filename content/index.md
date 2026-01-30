@@ -15,11 +15,14 @@
 
 # 🟢 Základy složitosti a vyčíslitelnosti
 - [Zkouška](Zkouška.md) - index s otázkami
-
-## Datové struktury 1
+## 🟢 Datové struktury 1
 - [Zkouška Datové struktury 1](Zkouška%20Datové%20struktury%201.md)
 - [Amortizace](Amortizace.md)
 - [Hashování](Hashování.md)
+
+## Foundations of theoretical cryptography
+- [Informačně-teoretické šifrování a jeho omezení](Informačně-teoretické%20šifrování%20a%20jeho%20omezení.md)
+- [Digitální podpisy z jednosměrných funkcí přes Lamportova jednorázová schémata](Digitální%20podpisy%20z%20jednosměrných%20funkcí%20přes%20Lamportova%20jednorázová%20schémata.md)
+- [Digitální podpisy pomocí identifikačních schémat a podpisy založené na DLP](Digitální%20podpisy%20pomocí%20identifikačních%20schémat%20a%20podpisy%20založené%20na%20DLP.md)
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)
-
