@@ -120,4 +120,87 @@ Pro $i=1,j=n$ máme $b_{k}^{1,n}=a_{k}$ pro každé $k$, tedy $b^{1,n}=a$ a tedy
 *Důkaz důsledku:* Odpovídající 2-CNF $\varphi$ nemá žádné klauzule, jinak by $(x_{i}^a \lor x_{j}^b)\in \varphi$, pak pro každé $u$ máme $u_{i}=a$ nebo $u_{j}=b$.
 
 ---
+Triviální proměnná $p_i$ v $\varphi$ pokud je její hodnota stejná v každém splňujícím ohodnocení, tedy $\varphi \models p_{i}$ nebo $\varphi \models \neg p_{i}$. Dvě netriviální proměnné nazveme ekvivalentní, pokud $\varphi \models p_{i} \leftrightarrow p_{j}$ nebo $\varphi \models p_{i} \leftrightarrow \neg p_{j}$. 
 
+#### *Lemma 15:* Množina $S \subseteq V(Q_{n})$ je spojitá medianová množina právě tehdy, když $S= M(\varphi)$ pro nějakou 2-CNF formuli $\varphi$ s $n$ proměnnými, která nemá žádné ekvivalentní proměnné.
+*Důkaz:* ($\implies$) nechť je $\varphi$ 2-CNF formule s ekvivalentními proměnnými $p_{i},p_{j}$, vezměme $\varphi \models p_{i} \leftrightarrow p_{j}$ (druhý způsob ekvivalence je to podobné) a nechť $S = M(\varphi)$. 
+- Protože $p_{i},p_{j}$ jsou z definice ekvivalence netriviální tak máme dvě ohodnocení $a,b \in S s $a_{i}=a_{j}\ne b_{i} =b_{j}$, 
+- Předpokládejme souvislost $S$, pak máme nějaké $c \in S$, která má stejné ohodnocení jako $a$ v jedné z $i,j$ a v druhé s $b$ (tedy je na cestě mezi $a,b$).
+- $c$ ale je spor s ekvivalencí $p_{i},p_{j}$ a tedy $S$ je nespojitá.
+
+($\impliedby$) Nechť $M(\varphi) =S$ je nespojitá pro nějakou 2-CNF (dle Lemma 13 je $S$ medianová množina). Nechť $a,b\in S$ takové aby v indukované podkrychli $Q_{n}[S]$ nebyli spojité a $d_{H}(a,b)\geq 2$ je minimální. Nechť $i,j$ jsou pozice, kde se $a,b$ liší a předpokládejme $a_{i}=a_{j} \ne b_{i} = b_{j}$ (případ pro $a_{i} \ne a_{j} = b_{i}\ne b_{j}$ je podobný) pak tvrdíme $\varphi \models p_{i} \leftrightarrow p_{j}$.
+- Předpokládejme $x\in S$, že $a_{i}=x_{i}$ a $b_{j}=x_{j}$ a nechť $m \in med(a,b,x)$ (je jen jeden protože $S$ je medianová množina dle Lemma 13).
+- Dle výběru $x$ platí $m_{i} =x_{i} = a_{i}$ a $m_{j}=x_{j}=b_{j}$, tedy $m$ je na nejkratší $a,b$-cestě, protože $S$ je medianová množina ale $m\ne a,b$ a to je spor s minimalitou vzdálenosti mezi $a,b$, tedy $\varphi$ nemá žádné ekvivalentní proměnné.
+
+---
+# 2-CNF a retrakty
+## Implikační graf
+Implikační graf 2-CNF formule $\varphi$ je $G$ s literály jako vrcholy a pro každou klauzuli $p^a \lor q^b$ máme dvě hrany $(p^{1-a},q^b),(q^{1-b},p^a)$.
+
+*Definice:* 2-CNF formule $\varphi$ je acyklická (tranzitivně uzavřená), když její implikační graf je acyklický.
+
+Každá (vyřešitelná) 2-CNF formule je převoditelná na acyklickou, protože můžeme vyměnit komponenty silné souvislosti za novou proměnnou.
+
+*Pozorování:* Implikační graf 2-CNF formule bez dvou ekvivalentních proměnných je skoro acyklický, až na silně souvislé komponenty odpovídající ekvivalentním proměnným.
+## Retrakty
+#### *Lemma 3:* (Netriviální) množina řešení 2-CNF formule $\varphi$ na $n$ proměnných indukuje retrakt na $Q_{n}$.
+*Důkaz:* Předpokládejme, že  $\varphi$ je trazitivně uzavřené. Vezměme nejdříve případ, kde $\varphi$ nemá triviální proměnné, tedy je acyklická (nemá ani ekvival.). Pro klauzuli $C = (x_{i}^a \lor x_{j}^b)$ formule $\varphi$ definujeme *gate*
+$$
+g_{C}(x)=\begin{cases}
+x &\text{když } x \models C, \\
+x \oplus e_{i} \oplus e_{j} &\text{jinak.}
+\end{cases}
+$$
+$g_{c}$ je vlastně retraktem na $Q_{n}$. 
+
+Protože je $\varphi$ acyklické, tak můžeme seřadit klauzule $C_{1} \land C_{2}\land \dots\land C_{r}$ tak aby $C_{1},\dots,C_{j-1}\not\models C_j$ pro každé $j\leq r$. Zobrazení $f= g_{C_{1}} g_{C_{2}}\dots g_{C_{r}}$ (booleovský obvod) je endomorfismus na $Q_{n}$. Pro $S=M(\varphi)$ zjevně
+$$
+u \in S \implies \forall i \in \{ 1,\dots,r \} : g_{C_{i}}(u) = u \implies f(u)=u,
+$$
+tedy každé řešení $\varphi$ je fixed pointem $f$ a tedy stačí ukázat, že $rng(f) \subseteq S$.
+
+*Pomocné tvrzení:* (v netriviální 2-CNF $\varphi$) Pro každé $l\geq0$, když $u\in rng(g_{C_{1}}g_{C_{2}}\dots g_{C_{l}})$ pak $u \models C_{1} \land C_{2} \land\dots \land C_{l}$.
+
+*Důkaz pomocného tvrzení:* Indukce na $l$. Pro $l=0$ je tvrzení prázdné. Nechť $C_{l} = (x_{i}^a \lor x^b_{j})$ a $v \in rng(g_{C_{1}}g_{C_{2}}\dots g_{C_{l-1}})$ a $u= g_{C_{l}}(v)$, tedy $u \models C_{l}$, Musíme ukázat, že $u\models C_{p}$ pro všechna $p\leq l$. Oddělujeme následující možnosti:
+1. $C_{p}$ neobsahuje $x_{i},x_{j}$, pak vezmeme redukci $v=u$.
+2. $C_{p}=(x_{i}^a \lor x_{k}^c)$ pro nějaké $k \ne j$ a $c \in \{ 0,1 \}$. Pak $v_{i}=a \Rightarrow u_{i} =a$ nebo $v_{i}=c \Rightarrow u_{k}=v_{l}=c$.
+3. $C_{p}=( \neg x_{i}^a \lor x_{k}^c)$ pro nějaké $k \ne j$ a $c \in \{ 0,1 \}$. Pak $C_{p},C_{l}\models ( x_{j}^b \lor x_{k}^c)$. Protože je $\varphi$ tranzitivní a dle seřazení klauzulí, tak je toto již splněné pomocí $v$ dle indukce, takže $v_{j}=b \Rightarrow u_{j}=v_{j}=b$ nebo $v_{k}=c \Rightarrow u_{k}=v_{k}=c$.
+4. $C_{p}=(x_{i}^a \lor \neg x_{j}^b)$, tak $C_{P},C_{l} \models x_{i}^a$ a tedy by $x_{i}$ bylo triviální proměnná a taková dle předpokladu nemůže být, stejně i pro $C_{p}=(\neg x_{i}^a \lor x_{j}^k)$.
+5. $C_{p}=(\neg x_{i}^a \lor \neg x_{j}^b)$, pak máme $C_{p},C_{l} \models x_{i}^a \leftrightarrow x_{j}^b$. Tedy máme ekvivalentní proměnné a to se dle předpokladu nestane.
+
+Aplikujeme-li pomocné tvrzení pro $l=r$, tak máme $u \in rng(f) \implies r\in S$. Tedy $rng(f)=fix(f)=S$ a $f$ je retrakce na $Q_{n}$.
+
+Pokud máme triviální proměnnou $x_{i}^a$, tak ji můžeme díky netrivialitě $\varphi$ odstranit a aplikovat endomorfismus
+$$
+h_{i,j}(x) = \begin{cases}
+x \oplus e_{i} \oplus e_{j} &\text{když } x_{i} \ne a, \\
+x &\text{jinak.}
+\end{cases}
+$$
+kde $j$ je index nějaké netriviální proměnné.
+
+---
+# Vztahy
+### *Věta 5:* Nechť $S \subseteq V(Q_{n})$ netriviální. Následující výroky jsou ekvivavalentní:
+1. $S$ je spojitá medianová množina,
+2. $S$ indukuje medianový graf,
+3. $S$ je množina řešení 2-CNF formule bez ekvivalentních proměnných,
+4. $S=rng(f)$ pro nějakou retrakci $f$ na $Q_{n}$ (indukuje retrakt).
+
+*Důkaz:*
+$1. \stackrel{\text{Lemma 15}}{\iff}  3. \stackrel{\text{Lemma 3}}{\iff} 4.$
+
+### *Věta 6:* Množina $S \subseteq V(Q_{n})$ je medianová množina $\iff$ $S=fix(f)$ pro nějaké neexpanzivní zobrazení $f$ na $Q_{n} \iff$ $S$ je množina řešení nějaké 2-CNF formule.
+
+--- 
+# Fixed cube věta
+*Definice:* DIstance center spojitého grafu $G=(V,E)$ je množina vrcholů $x$, která minimalizuje sumu $\sum_{y\in V} d(x,v)$. 
+
+#### *Lemma 8:* Distance center spojité medianové množiny $S \subseteq V(Q_{n})$ je podkrychle $Q_{n}$.
+*Důkaz:* Nechť $S = rng(f)$ odpovídající retrakce $f$. Nechť $C$ je množina vrcholů $x$ z $Q_{n}$, minimalizující $\sum_{y\in S} d(x,y)$ pro každé $x \in V(Q_{n})$, 
+$$
+\sum_{y\in S} d(f(x),y) = 
+\sum_{y\in S} d(f(x),f(y)) \leq 
+\sum_{y\in S} d(x,y).
+$$
+Když $x \not\in S$, tak $d(f(x),f(x))=0 < d(x,f(x))$, takže $x\not\in C$. Takže $C \subseteq S$.
