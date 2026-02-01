@@ -22,5 +22,9 @@
 - [Informačně-teoretické šifrování a jeho omezení](Informačně-teoretické%20šifrování%20a%20jeho%20omezení.md)
 - [Digitální podpisy z jednosměrných funkcí přes Lamportova jednorázová schémata](Digitální%20podpisy%20z%20jednosměrných%20funkcí%20přes%20Lamportova%20jednorázová%20schémata.md)
 - [Digitální podpisy pomocí identifikačních schémat a podpisy založené na DLP](Digitální%20podpisy%20pomocí%20identifikačních%20schémat%20a%20podpisy%20založené%20na%20DLP.md)
+## Hypercube structures
+- [Medianové množiny a 2-SAT](Medianové%20množiny%20a%202-SAT.md)
+- [[Párování v hyperkrychlích a spektra]]
+- [[Počítání perfektních párování]]
 ## 🟢 Teorie her
 - [Výpisky ve formátu PDF](alg_game_theory/build/main.pdf)

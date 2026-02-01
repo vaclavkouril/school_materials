@@ -188,13 +188,14 @@ kde $j$ je index nějaké netriviální proměnné.
 4. $S=rng(f)$ pro nějakou retrakci $f$ na $Q_{n}$ (indukuje retrakt).
 
 *Důkaz:*
-$1. \stackrel{\text{Lemma 15}}{\iff}  3. \stackrel{\text{Lemma 3}}{\iff} 4.$
-
+- $1. \stackrel{\text{Lemma 15}}{\iff}  3. \stackrel{\text{Lemma 3}}{\implies} 4.,4. \implies 1.$,
+- $1\implies 2$ dle *Pozorování:* Každá spojitá medianová množina $Q_{n}$ indukuje medianový graf. (Definice medianové množiny),
+- $2\implies 1$ z definice, protože medianový graf je daný majoritou a pokud je indukovaný graf medianový tak je uzavřen na majoritu a tedy je to i množina.
 ### *Věta 6:* Množina $S \subseteq V(Q_{n})$ je medianová množina $\iff$ $S=fix(f)$ pro nějaké neexpanzivní zobrazení $f$ na $Q_{n} \iff$ $S$ je množina řešení nějaké 2-CNF formule.
 
 --- 
 # Fixed cube věta
-*Definice:* DIstance center spojitého grafu $G=(V,E)$ je množina vrcholů $x$, která minimalizuje sumu $\sum_{y\in V} d(x,v)$. 
+*Definice:* Distance center spojitého grafu $G=(V,E)$ je množina vrcholů $x$, která minimalizuje sumu $\sum_{y\in V} d(x,v)$. 
 
 #### *Lemma 8:* Distance center spojité medianové množiny $S \subseteq V(Q_{n})$ je podkrychle $Q_{n}$.
 *Důkaz:* Nechť $S = rng(f)$ odpovídající retrakce $f$. Nechť $C$ je množina vrcholů $x$ z $Q_{n}$, minimalizující $\sum_{y\in S} d(x,y)$ pro každé $x \in V(Q_{n})$, 
@@ -203,4 +204,18 @@ $$
 \sum_{y\in S} d(f(x),f(y)) \leq 
 \sum_{y\in S} d(x,y).
 $$
-Když $x \not\in S$, tak $d(f(x),f(x))=0 < d(x,f(x))$, takže $x\not\in C$. Takže $C \subseteq S$.
+Když $x \not\in S$, tak $d(f(x),f(x))=0 < d(x,f(x))$, takže $x\not\in C$. Takže $C \subseteq S$. Můžeme ale přepsat $\sum_{y\in S}d(x,y)=\sum_{i\in[n]} d(x_{i},y_{i})$ definujme $s\in \{ 0,1,* \}^n$ pomocí
+$$
+s_{i} = \begin{cases}
+x_{i} &\text{když } \sum_{y\in S} d(x_{i},y_{i}) < \sum_{y\in s} d(\overline{x}_{i},y_{i}), \\
+* &\text{když } \sum_{y\in S} d(x_{i},y_{i}) = \sum_{y\in s} d(\overline{x}_{i},y_{i}).
+\end{cases}
+$$
+Pak $C= Q_{n}[s]$, což je podkrychle $Q_{n}$ ($*$ jsou ty kde je celá podkrychle a $0,1$ jsou zafixované, tedy nejsou relevantní pro pokrychli).
+
+*Definice:* Fixed cube $C$ neexpanzivního zobrazení $f$ na $Q_{n}$ je podkrychle taková, že $f(C)=C$ (ne nutně bod po bodu).
+
+### *Věta 10:* Každé neexpanzivní zobrazení $f$ na $Q_{n}$ má fixed cube.
+*Důkaz:* Díky [Lemma 9](#*Lemma%209%20*%20Nechť%20$f$%20je%20neexpanzivní%20zobrazení%20na%20medianovém%20grafu%20$G$%20a%20$x,y,z$%20jsou%20**fixed%20points**,%20pak%20i%20$a%20in%20med(x,y,z)$%20je%20fixed%20point%20$f$.) a jeho aplikovatelnosti i na $per(f)$ máme, že je to spojitá medianová množina a $f \restriction S$ je automorfismus na $\left\langle S \right\rangle$. Distance centrum $C$ je invariantní vůči automorfismům. Tedy $f \restriction C$ je automorfismus na $\left\langle C \right\rangle$, Dle *Lemma 8* je to podkrychle a tedy i fixed cube $f$.
+
+*Důsledek:* Každý medianový graf obsahuje podkrychli invariantní vůči všem automorfismům (neexpanzivním zobrazením).
