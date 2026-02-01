@@ -12,14 +12,12 @@
 - [Prahové funkce](Prahové%20funkce.md)
 - [Splnitelnost](Splnitelnost.md)
 - [Minimalizace CNF](Minimalizace%20CNF.md)
-
 # 🟢 Základy složitosti a vyčíslitelnosti
 - [Zkouška](Zkouška.md) - index s otázkami
 ## 🟢 Datové struktury 1
 - [Zkouška Datové struktury 1](Zkouška%20Datové%20struktury%201.md)
 - [Amortizace](Amortizace.md)
 - [Hashování](Hashování.md)
-
 ## Foundations of theoretical cryptography
 - [Informačně-teoretické šifrování a jeho omezení](Informačně-teoretické%20šifrování%20a%20jeho%20omezení.md)
 - [Digitální podpisy z jednosměrných funkcí přes Lamportova jednorázová schémata](Digitální%20podpisy%20z%20jednosměrných%20funkcí%20přes%20Lamportova%20jednorázová%20schémata.md)
