@@ -90,7 +90,7 @@ $$
 $$
 ---
 # Forcing number
-Mějem $M \subseteq E(G)$ perfektní párování. Množina $S \subseteq M$ vynucuje $M$ když $S$ není v žádném jiném perfektním párování než v $M$. $f(M)$ je forcing number $M$, které označuje minimální velikost vynucující množiny $S \subseteq M$. Nechť $f_{\min}$ je nejmenší forcing number všech perfektních párování $G$.
+Mějme $M \subseteq E(G)$ perfektní párování. Množina $S \subseteq M$ vynucuje $M$ když $S$ není v žádném jiném perfektním párování než v $M$. $f(M)$ je forcing number $M$, které označuje minimální velikost vynucující množiny $S \subseteq M$. Nechť $f_{\min}$ je nejmenší forcing number všech perfektních párování $G$.
 
 *Pozorování 1:* Pro každou $S \subseteq E(G)$, která vynucuje perfektní párování tak indukovaný podgraf $G \setminus V(S)$ má unikátní perfektní párování.
 
