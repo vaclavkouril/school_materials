@@ -3,7 +3,7 @@
 
 Definice pomocí $\forall xy \in E(G): (f(u)f(v)\in E(H) )\lor (f(u)=f(v))$ je ekvivalentní.
 
-*Definice:* Nechť $f$ je neexpanzivní zobrazení na $G$. O $x$ řekneme, že to je **fixed point**, pokud $f(x) = x$, množinu takových bodů značme $fix(f)$. O $x$ řekneme, že je **periodic point**, pokud $\exists p\in \mathbb{N}: f^{(p)} =x$, nejmenší takové $p$ značí periodu bodu $x$ a množinu všech periodic bodů označíme $per(f)$.
+*Definice:* Nechť $f$ je neexpanzivní zobrazení na $G$. O $x$ řekneme, že to je **fixed point**, pokud $f(x) = x$, množinu takových bodů značme $fix(f)$. O $x$ řekneme, že je **periodic point**, pokud $\exists p\in \mathbb{N}: f^{(p)}(x) =x$, nejmenší takové $p$ značí periodu bodu $x$ a množinu všech periodic bodů označíme $per(f)$.
 
 *Definice:* Nazveme $f$ **retrakcí**, pokud je to endomorfismus na $G$  (je z $G$ na $G$) a **weak retrakcí** pokud je to neexpanzivní zobrazení na grafu $G$ takové, že $f^{(2)}(x) = f(x)$ pro každé $x$ (je tedy idempotentní). Jinými slovy platí $rng(f) = per(f) = fix(f)$.  Podgraf $G$ indukovaný $rng(f)$ je nazván **(weak) retraktem**.
 
@@ -124,7 +124,7 @@ Triviální proměnná $p_i$ v $\varphi$ pokud je její hodnota stejná v každ�
 
 #### *Lemma 15:* Množina $S \subseteq V(Q_{n})$ je spojitá medianová množina právě tehdy, když $S= M(\varphi)$ pro nějakou 2-CNF formuli $\varphi$ s $n$ proměnnými, která nemá žádné ekvivalentní proměnné.
 *Důkaz:* ($\implies$) nechť je $\varphi$ 2-CNF formule s ekvivalentními proměnnými $p_{i},p_{j}$, vezměme $\varphi \models p_{i} \leftrightarrow p_{j}$ (druhý způsob ekvivalence je to podobné) a nechť $S = M(\varphi)$. 
-- Protože $p_{i},p_{j}$ jsou z definice ekvivalence netriviální tak máme dvě ohodnocení $a,b \in S s $a_{i}=a_{j}\ne b_{i} =b_{j}$, 
+- Protože $p_{i},p_{j}$ jsou z definice ekvivalence netriviální tak máme dvě ohodnocení $a,b \in S$ s $a_{i}=a_{j}\ne b_{i} =b_{j}$, 
 - Předpokládejme souvislost $S$, pak máme nějaké $c \in S$, která má stejné ohodnocení jako $a$ v jedné z $i,j$ a v druhé s $b$ (tedy je na cestě mezi $a,b$).
 - $c$ ale je spor s ekvivalencí $p_{i},p_{j}$ a tedy $S$ je nespojitá.
 
