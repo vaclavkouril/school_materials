@@ -195,7 +195,7 @@ kde $j$ je index nějaké netriviální proměnné.
 
 --- 
 # Fixed cube věta
-*Definice:* Distance center spojitého grafu $G=(V,E)$ je množina vrcholů $x$, která minimalizuje sumu $\sum_{y\in V} d(x,v)$. 
+*Definice:* Distance center spojitého grafu $G=(V,E)$ je množina vrcholů $x$, která minimalizuje sumu $\sum_{y\in V} d(x,y)$. 
 
 #### *Lemma 8:* Distance center spojité medianové množiny $S \subseteq V(Q_{n})$ je podkrychle $Q_{n}$.
 *Důkaz:* Nechť $S = rng(f)$ odpovídající retrakce $f$. Nechť $C$ je množina vrcholů $x$ z $Q_{n}$, minimalizující $\sum_{y\in S} d(x,y)$ pro každé $x \in V(Q_{n})$, 
