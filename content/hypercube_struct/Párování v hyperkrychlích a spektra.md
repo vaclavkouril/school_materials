@@ -66,15 +66,15 @@ Dle *Lemma 5* je posloupnost $m(Q_{n})/2^n$ nerostoucí a s limitou. Dle Důsled
 ### *Věta 6:* $\lim_{ n \to \infty } m(Q_{n})/2^n = 1 / 3$.
 *Důkaz:* Předpokládejme $6 \mid n$. Nechť $L_{0} \cup L_{1} \cup\dots \cup L_{n}$ je rozdělení $V(Q_{n})$ na úrovně a pro $k=0,1,2$ nechť 
 $$
-C_{k} = \bigcup_{i \equiv k \mod 3,\, i\leq2/n} (L_{i} \cup L_{n-i}).
+C_{k} = \bigcup_{i \equiv k \mod 3,\, i\leq n/ 2} (L_{i} \cup L_{n-i}).
 $$
-Když $S \subseteq L_{i}$ s $i<n / 2$, pak $|N(S) \cap L_{i+1}|\geq|S|\frac{n-1}{i+1}$. Tedy dle Hallovy věty
+Když $S \subseteq L_{i}$ s $i<n / 2$, pak $|N(S) \cap L_{i+1}|\geq|S|\frac{n-1}{i+1}$ (vrchol v $S$ má $n-1$ hran v $L_{i+1}$ a $L_{i+1}$ má $i+1$ sousedů na $L_{i}$). Tedy dle Hallovy věty
 
 >*Hallova věta:* Pro množinu $S=\{ S_{1},S_{2},\dots \}$ existuje systém různých reprezentantů $X=\{ x_{1},x_{2},\dots \}$ právě když $S$ pro každou její podmnožinu platí, že libovolných $n$ množin má alespoň $n$ různých prvků.
 
 existuje párování $M_{1} \subseteq E(C_{1},C_{2})$, které je maximální v $C_{1} \cup C_{2}$ (pokrývá $C_1$) podobně existuje $M_{2} \subseteq E(C_{2},C_{0})$ pokrývající zbylé vrcholy $C_{2}$ (až na pár vrcholů na $n / 2 -1, n/ 2 +1$ úrovních). Pozorujme, že párování $M_{1} \cup M_{2}$ je maximální, navíc
 $$
-|M_{1} \cup M_{2}| \leq 2 \cdot \sum_{i \equiv k \mod 3,\, i\leq2/n} \binom{n}{i} = m.
+|M_{1} \cup M_{2}| \leq 2 \cdot \sum_{i \equiv k \mod 3,\, i\leq n/2} \binom{n}{i} = m.
 $$
 - $M_{1}$ páruje každý vrchol z $C_1$ s nějakým v $C_{2}$, tedy $|M_{1}|=|C_{2}|$.
 - $M_{2}$ páruje část $C_{2}$ s $C_{0}$, takže $|M_{2}| \leq C_{2}$.

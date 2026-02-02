@@ -105,7 +105,7 @@ $$
 
 ($\implies$) Nechť $S$ je medianová množina. Nechť
 $$
-\varphi = \{ C \mid S \models \varphi, C \text{ je 1-klauzule nebo 2-klauzule} \}.
+\varphi = \{ C \mid S \models C, C \text{ je 1-klauzule nebo 2-klauzule} \}.
 $$
 Zjevně volbou $\varphi$ platí $S \subseteq M(\varphi)$, protože plní $\varphi$ z definice. Musíme tedy dokázat, že neexistuje nic v $M(\varphi)$, co by nebylo v $S$.
 
@@ -130,7 +130,7 @@ Triviální proměnná $p_i$ v $\varphi$ pokud je její hodnota stejná v každ�
 
 ($\impliedby$) Nechť $M(\varphi) =S$ je nespojitá pro nějakou 2-CNF (dle Lemma 13 je $S$ medianová množina). Nechť $a,b\in S$ takové aby v indukované podkrychli $Q_{n}[S]$ nebyli spojité a $d_{H}(a,b)\geq 2$ je minimální. Nechť $i,j$ jsou pozice, kde se $a,b$ liší a předpokládejme $a_{i}=a_{j} \ne b_{i} = b_{j}$ (případ pro $a_{i} \ne a_{j} = b_{i}\ne b_{j}$ je podobný) pak tvrdíme $\varphi \models p_{i} \leftrightarrow p_{j}$.
 - Předpokládejme $x\in S$, že $a_{i}=x_{i}$ a $b_{j}=x_{j}$ a nechť $m \in med(a,b,x)$ (je jen jeden protože $S$ je medianová množina dle Lemma 13).
-- Dle výběru $x$ platí $m_{i} =x_{i} = a_{i}$ a $m_{j}=x_{j}=b_{j}$, tedy $m$ je na nejkratší $a,b$-cestě, protože $S$ je medianová množina ale $m\ne a,b$ a to je spor s minimalitou vzdálenosti mezi $a,b$, tedy $\varphi$ nemá žádné ekvivalentní proměnné.
+- Dle výběru $x$ platí $m_{i} =x_{i} = a_{i}$ a $m_{j}=x_{j}=b_{j}$, tedy $m$ je na nejkratší $a,b$-cestě, protože $S$ je medianová množina ale $m\ne a,b$ a to je spor s minimalitou vzdálenosti mezi $a,b$, protože $m$ BÚNO v komponentě s $a$ tak teď je blíže k $b$ než $a$ a spor minimality, tedy $\varphi$ nemá žádné ekvivalentní proměnné.
 
 ---
 # 2-CNF a retrakty
@@ -163,7 +163,7 @@ tedy každé řešení $\varphi$ je fixed pointem $f$ a tedy stačí ukázat, ž
 
 *Důkaz pomocného tvrzení:* Indukce na $l$. Pro $l=0$ je tvrzení prázdné. Nechť $C_{l} = (x_{i}^a \lor x^b_{j})$ a $v \in rng(g_{C_{1}}g_{C_{2}}\dots g_{C_{l-1}})$ a $u= g_{C_{l}}(v)$, tedy $u \models C_{l}$, Musíme ukázat, že $u\models C_{p}$ pro všechna $p\leq l$. Oddělujeme následující možnosti:
 1. $C_{p}$ neobsahuje $x_{i},x_{j}$, pak vezmeme redukci $v=u$.
-2. $C_{p}=(x_{i}^a \lor x_{k}^c)$ pro nějaké $k \ne j$ a $c \in \{ 0,1 \}$. Pak $v_{i}=a \Rightarrow u_{i} =a$ nebo $v_{i}=c \Rightarrow u_{k}=v_{l}=c$.
+2. $C_{p}=(x_{i}^a \lor x_{k}^c)$ pro nějaké $k \ne j$ a $c \in \{ 0,1 \}$. Pak $v_{i}=a \Rightarrow u_{i} =a$ nebo $v_{k}=c \Rightarrow u_{k}=v_{k}=c$.
 3. $C_{p}=( \neg x_{i}^a \lor x_{k}^c)$ pro nějaké $k \ne j$ a $c \in \{ 0,1 \}$. Pak $C_{p},C_{l}\models ( x_{j}^b \lor x_{k}^c)$. Protože je $\varphi$ tranzitivní a dle seřazení klauzulí, tak je toto již splněné pomocí $v$ dle indukce, takže $v_{j}=b \Rightarrow u_{j}=v_{j}=b$ nebo $v_{k}=c \Rightarrow u_{k}=v_{k}=c$.
 4. $C_{p}=(x_{i}^a \lor \neg x_{j}^b)$, tak $C_{P},C_{l} \models x_{i}^a$ a tedy by $x_{i}$ bylo triviální proměnná a taková dle předpokladu nemůže být, stejně i pro $C_{p}=(\neg x_{i}^a \lor x_{j}^k)$.
 5. $C_{p}=(\neg x_{i}^a \lor \neg x_{j}^b)$, pak máme $C_{p},C_{l} \models x_{i}^a \leftrightarrow x_{j}^b$. Tedy máme ekvivalentní proměnné a to se dle předpokladu nestane.
@@ -204,7 +204,7 @@ $$
 \sum_{y\in S} d(f(x),f(y)) \leq 
 \sum_{y\in S} d(x,y).
 $$
-Když $x \not\in S$, tak $d(f(x),f(x))=0 < d(x,f(x))$, takže $x\not\in C$. Takže $C \subseteq S$. Můžeme ale přepsat $\sum_{y\in S}d(x,y)=\sum_{i\in[n]} d(x_{i},y_{i})$ definujme $s\in \{ 0,1,* \}^n$ pomocí
+Když $x \not\in S$, tak $d(f(x),f(x))=0 < d(x,f(x))$, takže $x\not\in C$. Takže $C \subseteq S$. Můžeme ale přepsat $\sum_{y\in S}d(x,y)=\sum_{i\in[n]} \sum_{y\in S} d(x_{i},y_{i})$ definujme $s\in \{ 0,1,* \}^n$ pomocí
 $$
 s_{i} = \begin{cases}
 x_{i} &\text{když } \sum_{y\in S} d(x_{i},y_{i}) < \sum_{y\in s} d(\overline{x}_{i},y_{i}), \\
