@@ -156,7 +156,7 @@ A^{-1}_{n} + 2A^{-1}_{n} & 2I + 2 A_{n} A_{n}^{-1}
 $$
 Tedy je regulární i $A_{n+1}$, protože má inverzi.
 
-### *Věta 10:* Každý indukovaný podgraf $H$ z $Q_{n}, n\geq{2}$, s unikátním perfektním párováním má maxiálně $2^{n -1}$ vrcholů.
+### *Věta 10:* Každý indukovaný podgraf $H$ z $Q_{n}, n\geq{2}$, s unikátním perfektním párováním má maximálně $2^{n -1}$ vrcholů.
 *Důkaz:* Nechť $A_{n-1}$ je matice jako v předešlém Lemma, tedy vzhledem k regularitě, tak má $rank(A_{n -1)} = 2^{n-2}$. Nechť 
 $$
 B_{n} = \begin{pmatrix}
@@ -164,7 +164,7 @@ A_{n-1}  & I \\
 I & A^{-1}_{n-1}
 \end{pmatrix}
 $$
-pak $2^{n-2}\leq rank(B_{n}) \leq 2^{n-1}$. Navíc pro všechny vextory $x \in \mathbb{Z}_{3}^{2^{n-2}}$ dostáváme
+pak $2^{n-2}\leq rank(B_{n}) \leq 2^{n-1}$. Navíc pro všechny vektory $x \in \mathbb{Z}_{3}^{2^{n-2}}$ dostáváme
 $$
 B_{n} \begin{pmatrix}
 x  \\

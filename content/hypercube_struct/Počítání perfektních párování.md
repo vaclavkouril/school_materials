@@ -145,7 +145,7 @@ $1$-faktorizace regulárního grafu $G=(V,E)$ je rozdělení $E$ na $1$-faktory 
 *Důkaz:* Nechť $Q_{k+l} = Q_{k} \,\square\, Q_{l}$ a
 - Nechť $A_{1},\dots,A_{k}$ a $B_{1},\dots,B_{k}$ jsou $1$-faktorizace pro $Q_{k}$,
 - $X_{1},\dots,X_{l}$ a $Y_{1},\dots,Y_{l}$ jsou $1$-faktorizace pro $Q_{l}$ jako v Důsledku věty 11.
-- Nechť $A_{i}^v,B_{i}^v$ označují kopie $A_{i},B_{i}$ v $v$-tém vlákně $Q_{k}$ (její podkrychli $*^kv$, kde $v\in \{ 0,1 \}^l$) a podobně $X_{i}^u,Y_{i}^u$ pro $u \in \{ 0,1 \}^k$.
+- Nechť $A_{i}^v,B_{i}^v$ označují kopie $A_{i},B_{i}$ v $v$-tém vlákně $Q_{k}$ (její podkrychli $*^kv$, kde $v\in \{ 0,1 \}^l$) a podobně $X_{i}^u,Y_{i}^u$ pro $u \in \{ 0,1 \}^k$ pro $u*^l$.
 
 Pro $1\leq i\leq k$ definujeme
 $$
@@ -166,10 +166,10 @@ Každý vrchol má stupeň $2$ a jednu hranu z $M_{i}$ a druhou z $N_{j}$ a stř
 1. Zvolíme start $u_{0},v_{0}$.
 	1. pravidlo z $M_i$,
 	2. pravidlo z $N_{j}$,
-	3. Opakujeme dokud nevidíme opět $u_{0},v(0)$.
+	3. Opakujeme dokud nevidíme opět $u_{0},v_{0}$.
 
 ---
-Definujme $G$ s $1$-faktorizací $\mathcal{F}=\{ F_{1},\dots,F_{n} \}$ graf $H(\mathcal{F})$ definovaný na $\mathcal{F}$ s  hranami mezi $F_{i},F_{j}$ pokud tvoří hamiltonovský cyklus. Věta 14 říká, že $Q_{k+l}$ pro $k \ne 3,3 \ne l$ má $1$-faktorizaci $\mathcal{F}$ s $H(\mathcal{F})$ jako $K_{k,l}$.
+Definujme pro graf $G$ s $1$-faktorizací $\mathcal{F}=\{ F_{1},\dots,F_{n} \}$ graf $H(\mathcal{F})$ definovaný na $\mathcal{F}$ s  hranami mezi $F_{i},F_{j}$ pokud tvoří hamiltonovský cyklus. Věta 14 říká, že $Q_{k+l}$ pro $k \ne 3,3 \ne l$ má $1$-faktorizaci $\mathcal{F}$ s $H(\mathcal{F})$ jako $K_{k,l}$.
 
 ### Nechť $G$ je bipartitní graf s oběma partitami velikosti $n$, kde $n$ je sudé a $\mathcal{F}$ je $1$-faktorizace. Pak $H(\mathcal{F})$ je bipartitní.
 *Důkaz:* Mějme $U,V$ partity $G$. Každá $1$-faktorizace $F_{i}$ idukuje bijekci mezi $U$ a $V$. Pro $F_{i},F_{j}\in \mathcal{F}$ nechť $\pi_{ji}=F^{-1}_{j}F_{i}$ takže je to vlastně permutace na $U$. Zjevně je $\pi_{ii} = id$, $\pi_{ij}=\pi_{ji}^{-1}$ a $\pi_{ij}\pi_{jk}=\pi_{ik}$. 

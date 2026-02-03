@@ -144,7 +144,7 @@ Každá (vyřešitelná) 2-CNF formule je převoditelná na acyklickou, protože
 *Pozorování:* Implikační graf 2-CNF formule bez dvou ekvivalentních proměnných je skoro acyklický, až na silně souvislé komponenty odpovídající ekvivalentním proměnným.
 ## Retrakty
 #### *Lemma 3:* (Netriviální) množina řešení 2-CNF formule $\varphi$ na $n$ proměnných indukuje retrakt na $Q_{n}$.
-*Důkaz:* Předpokládejme, že  $\varphi$ je trazitivně uzavřené. Vezměme nejdříve případ, kde $\varphi$ nemá triviální proměnné, tedy je acyklická (nemá ani ekvival.). Pro klauzuli $C = (x_{i}^a \lor x_{j}^b)$ formule $\varphi$ definujeme *gate*
+*Důkaz:* Předpokládejme, že $\varphi$ je trazitivně uzavřené. Vezměme nejdříve případ, kde $\varphi$ nemá triviální proměnné, tedy je acyklická (nemá ani ekvival.). Pro klauzuli $C = (x_{i}^a \lor x_{j}^b)$ formule $\varphi$ definujeme *gate*
 $$
 g_{C}(x)=\begin{cases}
 x &\text{když } x \models C, \\
