@@ -1,8 +1,11 @@
 # 📚 Rozcestník ke všem materiálům
 
-## 🟢 MFF Bc. státnice
+## 🟢 MFF státnice
+### Bc. státnice
 - [Společná témata](mff_statnice/spol-main.md)
 - [Speciální témata](mff_statnice/spec-main.md)
+### Mgr. státnice
+- [Zkušební okruhy](Zkušební%20okruhy.md)
 ## 🟢 Booleovské funkce
 - [Základní definice](Základní%20definice.md)
 - [Rezoluce](Rezoluce.md)

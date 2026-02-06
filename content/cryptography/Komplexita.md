@@ -1,1 +1,0 @@
-pocitani odmocnin v Z_p
