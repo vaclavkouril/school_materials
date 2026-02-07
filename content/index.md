@@ -1,7 +1,7 @@
 # 📚 Rozcestník ke všem materiálům
 
-## 🟢 MFF státnice
-### Bc. státnice
+## MFF státnice
+### 🟢 Bc. státnice
 - [Společná témata](mff_statnice/spol-main.md)
 - [Speciální témata](mff_statnice/spec-main.md)
 ### Mgr. státnice
