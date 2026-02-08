@@ -13,7 +13,7 @@ Schéma $(Gen, Enc, Dec)$ s množinou zpráv $\mathscr M$ **je perfektně tajné
 $$
 \Pr[M= m \mid C= c] = \Pr[M =m].
 $$
-### Alternativní definice perfektnosti schématu
+### ★ Alternativní definice perfektnosti schématu
 _Lemma_: Šifrovací schéma $(Gen, Enc, Dec)$ je perfektně tajné schéma s množinou zpráv $m \in \mathscr M,$ právě tehdy když platí
 $$
 \forall m,m' \in \mathscr M, \forall c \in \mathscr C: \Pr[Enc_{k}(m) = c] = \Pr[Enc_{k}(m') = c].
@@ -67,6 +67,9 @@ $$
 $$
 
 *Lemma:* Šifrovací schéma je **perfektně tajné** $\iff$ je **perfektně nerozpoznatelné**.
+*Důkaz:* ($\implies$) Rozdělení $C \mid M = m_{0}$ a $C \mid M=m_{1}$ je stejné a tedy pak $\mathcal{A}$ nemá výhodu ze znalosti několika.
+
+($\impliedby$) Pokud by $m,m',c$ s různými pravděpodobnostmi $\Pr[Enc_{K}(m)=c] \ne\Pr[Enc_{K}(m')=c]$, tak by mohl adversary dostat výhodu.
 
 ---
 # One-time Pad
@@ -117,8 +120,8 @@ $$
 a tedy spor.
 
 ---
-# Shannonova věta
-## *Věta:* Nechť $(Gen,Enc,Dec)$ šifrovací schéma s prostorem zpráv $\mathcal{M}$, klíčů $\mathcal{K}$ a ciphertextů $\mathcal{C}$, kde $|\mathcal{M}| = |\mathcal{C}| = |\mathcal{K}|$. Schéma je perfektně tajné právě tehdy když 
+# Shannonova věta 
+## ★ *Věta:* Nechť $(Gen,Enc,Dec)$ šifrovací schéma s prostorem zpráv $\mathcal{M}$, klíčů $\mathcal{K}$ a ciphertextů $\mathcal{C}$, kde $|\mathcal{M}| = |\mathcal{C}| = |\mathcal{K}|$. Schéma je perfektně tajné právě tehdy když 
 1. Každý klíč $k \in \mathcal{K}$ je vybrán se stejnou pravděpodobností $1 / |\mathcal{K}|$ pomocí $Gen$.
 2. $\forall m \in \mathcal{M}, \forall c \in \mathcal{C}$ existuje unikátní klíč $k \in \mathcal{K}$ takový, že $Enc_{k}(m)$ vydá $c$.
 
