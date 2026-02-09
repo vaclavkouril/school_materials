@@ -16,7 +16,7 @@ $$
 ### ★ Alternativní definice perfektnosti schématu
 _Lemma_: Šifrovací schéma $(Gen, Enc, Dec)$ je perfektně tajné schéma s množinou zpráv $m \in \mathscr M,$ právě tehdy když platí
 $$
-\forall m,m' \in \mathscr M, \forall c \in \mathscr C: \Pr[Enc_{k}(m) = c] = \Pr[Enc_{k}(m') = c].
+\forall m,m' \in \mathscr M, \forall c \in \mathscr C: \Pr[Enc_{K}(m) = c] = \Pr[Enc_{K}(m') = c].
 $$
 _Důkaz_: Pozorujme, že pro libovolné $\mathscr M, m \in \mathscr M$, pro které $\Pr[M =m]>0$ a libovolné $c \in \mathscr C$ platí
 $$

@@ -43,6 +43,7 @@ Nechť $\Pi$ je Lamportovo schéma a $\mathcal{A}$ je PPT útočník. Mějme pr�
 O $\mathcal{A}$ řekneme, že vydává falšovaný podpis na $(i,b)$ když $Vrfy_{pk}(m,\sigma)=1$ a $m_{i} \ne m'_{i}$ a mějme $b = m_{i}$. Vždy když $\mathcal{A}$ vydá falešný podpis tak je to falšované na nějaké pozici $i$.
 
 Mějme následující PPT algorimus $I$ inverutující $H$:
+
 0. Dostaneme jako vstup $1^n$ a $y$ jako vstup.
 1. Vybereme uniformně náhodně $i^* \in \{ 1,\dots,\ell \}$ a $b^*\in \{ 0,1 \}$, nastavme $y_{i^*,b^*}:= y$.
 2. $\forall i\in \{ 1,\dots,\ell \}$ a $b\in \{ 0,1 \}$ s $(i,b)\ne (i^*,b^*)$ vybereme uniformně náhodně $x_{i,b} \in \{ 0,1 \}^{n}$ a nastavíme $y_{i,b}:= H(x_{i,b})$.
@@ -138,7 +139,8 @@ V experimentu $\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n)$ je z pohle
 $$
 pk_{m\mid_{j}0}\,||\,pk_{m\mid_{j}1} \ne pk'_{m\mid_{j}0}\,||\,pk'_{m\mid_{j}1}
 $$
-	ale $\sigma'_{m\mid_{j}}$ je správný podpis pro $pk'_{m\mid_{j}0}\,||\,pk'_{m\mid_{j}1}$ vůči klíči $pk$. Tedy $\mathcal{A}$ vrátí falšovaný podpis.
+ale $\sigma'_{m\mid_{j}}$ je správný podpis pro $pk'_{m\mid_{j}0}\,||\,pk'_{m\mid_{j}1}$ vůči klíči $pk$. Tedy $\mathcal{A}$ vrátí falšovaný podpis.
+
 2. Z uniformity výběru $i^*$ máme pravděpodobnost jeho výběru $1 / \ell$ a když $i=i^*$ a $\mathcal{A}$ nechtěl podpisy vzhledem k $pk = pk^{i^*}=pk_{m}$, ale vydal platný podpis $\sigma'_{m}$ zprávy $m$ vzhledem k $pk$.
 
 Tedy za podmínky, že $\mathcal{A}^*$ vydá falešný podpis, tak $\mathcal{A}$ tak udělá také s pravděpodobností alespoň $1/\ell$, tedy
