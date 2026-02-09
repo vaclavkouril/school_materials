@@ -54,7 +54,7 @@ Mějme následující PPT algorimus $I$ inverutující $H$:
 
 Pokud $\mathcal{A}$ vydá falešný podpis na $(i^*,b^*)$ tak $I$ uspěje při invertování $y$ vstupu. Zajímá nás pravděpodobnost výskytu takového invertování, když $x \in \{ 0,1 \}^n$ je uniformně vybráno a $y := H(x)$ je vstupem pro $I$.
 
-Uvažujme experiment, kde $I$ má k dispozici $x$ a 1, nastaví $x_{i^*,b^*}:=x$ a ve 4. se nikdy neabortuje, tedy i kdyby $m'_{i^*} = b^*$. Pak $\mathcal{A}$ při běhu vidí úplně to samé jako při $\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n)$, protože to co vidí $\mathcal{A}$ je nezávislé na námi zvolené dvojici $(i^*,b^*)$, takže pravděpodobnost toho, že $\mathcal{A}$ vydá falešný podpis na konkrétní $(i^*,b^*)$ za podmínky, že umí falšovat je alespoň $1 / 2\ell$, tedy v takové úpravě je pravděpodobnost falešnosti na $(i^*,b^*)$ alespoň $\frac{1}{2\ell}\cdot \Pr[\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n) =1]$.
+Uvažujme experiment, kde $I$ má k dispozici $x$ a 1, nastaví $x_{i^*,b^*}:=x$ a ve 4. se nikdy neabortuje, tedy i kdyby $m'_{i^*} = b^*$. Pak $\mathcal{A}$ při běhu vidí úplně to samé jako při $\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n)$, protože to co vidí $\mathcal{A}$ je nezávislé na námi zvolené dvojici $(i^*,b^*)$, takže pravděpodobnost toho, že $\mathcal{A}$ vydá falešný podpis na konkrétní $(i^*,b^*)$ za podmínky, že umí falšovat je alespoň $1 / 2\ell$ (uniformně náhodně z $\{ 1,\dots,\ell \}\times \{ 0,1 \}$ slotů), tedy v takové úpravě je pravděpodobnost falešnosti na $(i^*,b^*)$ alespoň $\frac{1}{2\ell}\cdot \Pr[\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n) =1]$.
 
 Pokud ale vezmeme náš experiment s $I$ tak pravděpodobnost, že $\mathcal{A}$ vydá falešný podpis na $(i^*,b^*)$ je stejná. Protože experimenty se liší jen, když $m'_{i^*}=b^*$, ale když se to stane tak je z definice nemožné, aby byl vydán falešný podpis na námi zvolené dvojici. Tedy dohromady
 $$
@@ -64,7 +64,7 @@ a protože $H$ je OWF, tak platí
 $$
 negl(n) \geq \Pr[\text{Invert}_{I,H} (n)=1 ].
 $$
-Navíc $\ell$ je polynomiální, takže i $\Pr[\text{Invert}_{I,H} (n)=1 ]$ je zanedbatelná.
+Navíc $\ell$ je polynomiální, takže i $\Pr[\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n) =1]$ je zanedbatelná.
 
 *Důsledek:* Pokud existují OWF, tak pro libovolný polynom $\ell$ existuje one-time signature scheme pro zprávy délky $\ell$.
 
