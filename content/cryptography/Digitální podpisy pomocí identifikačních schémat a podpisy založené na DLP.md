@@ -36,7 +36,7 @@ $$
 $$
 To můžeme i s každým degenerovaným schématem doplněním $I||rand$ pro uniformně náhodné $rand \in \{ 0,1 \}^n$.
 
-$Trans_{sk}$ je orákulum bez vstupu takové, že provede pravou interakci mez Prover($sk$) a Verifier($pk$) vracející přepis komunikace $(I,r,s)$.
+$Trans_{sk}$ je orákulum bez vstupu takové, že provede pravou interakci mezi Prover($sk$) a Verifier($pk$) vracející přepis komunikace $(I,r,s)$.
 
 Pro $\Pi=(Gen,\mathcal{P}_{1},\mathcal{P}_{2},\mathcal{V})$ je identifikační schéma a uvažujme experiment pro útočníka $\mathcal{A}$ s parametrem $n$:
 
@@ -84,7 +84,7 @@ Vezměme případ, kde experiment $Ident_{\mathcal{A},\Pi}(n)$ ve kterém $\math
 $$
 \begin{align}
 \Pr[Ident_{\mathcal{A},\Pi}(n)=1] &\geq \frac{1}{q(n)} \cdot (\Pr[\text{Sig-forge}_{\mathcal{A}',\Pi'}(n)=1]) -ne gl (n)  \\
-\Pr[\text{Sig-forge}_{\mathcal{A}',\Pi'}(n)=1] &\leq {q(n)} \cdot \Pr[Ident_{\mathcal{A},\Pi}(n)=1]  -ne gl (n)
+\Pr[\text{Sig-forge}_{\mathcal{A}',\Pi'}(n)=1] &\leq {q(n)} \cdot \Pr[Ident_{\mathcal{A},\Pi}(n)=1]  +ne gl (n)
 \end{align}
 $$
 Když $\Pi$ je bezpečné, tak $\Pr[Ident_{\mathcal{A},\Pi}(n)=1]$ je zanedbatelné a protože $q(n)$ je polynomiální, tak máme $\Pr[\text{Sig-forge}_{\mathcal{A}',\Pi'}(n)=1]$ taky zanedbatelné. Protože $\mathcal{A}'$ byl libovolný tak $\Pi'$ je také bezpečné.
