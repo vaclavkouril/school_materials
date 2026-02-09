@@ -7,7 +7,7 @@ Obsahuje 3 poly-time algoritmy $(Gen,Sign,Vrfy)$ takové, že
 2. $Sign$ vezme jako vstup private key a zprávu $m$ z nějakého prostoru zpráv $\mathcal{M}$. Vrátí podpis $\sigma$ a píšeme $\sigma \leftarrow Sign_{sk}(m)$.
 3. $Vrfy$ je deterministický dostávající $pk$ a zprávu $m$ s podpisem $\sigma$. Vrací bit $b$, který je $1$, pokud je podpis validní a $b=0$ pokud není. Píšeme $b:= Vrfy_{pk}(m,\sigma)$.
 
-Je potřeba, aby se s zanedbatelnou pravděpodobností nad $(pk,sk)$ výstupy $Gen(1^n)$ platilo $Vrfy_{pk}(m,Sign_{sk}(m))=1$ pro každou (legální) zprávu $m$.
+Je potřeba, aby se s **nezanedbatelnou** pravděpodobností nad $(pk,sk)$ výstupy $Gen(1^n)$ platilo $Vrfy_{pk}(m,Sign_{sk}(m))=1$ pro každou (legální) zprávu $m$.
 
 Pokud existuje funkce $\ell$ taková, že všechny výstupy $Gen(1^n)$ je prostor zpráv $\{ 0,1 \}^{\ell(n)}$ tak, řekneme o $(Gen,Sign,Vrfy)$, že je podpisové schéma pro zprávy délky $\ell(n)$.
 
@@ -108,7 +108,7 @@ $I=g^k$ u $k \leftarrow \mathbb{Z}_{q}$, takže je $I$ uniformní v $\left\langl
 3. Spustíme $\mathcal{A}(pk)$ podruhé se stejnou náhodností $\omega$ a místo $r_{1}$ mu dáme jako odpověď na $I$ $r_{2}$ útočník vraceje $s_{2}$.
 4. Když $g^{s_{1}}\cdot y^{-r_{1}} = I$ a $g^{s_{2}}\cdot y^{-r_{2}} =I$ a $r_{1} \ne r_{2}$ tak výstupem bude $[(s_{1}-s_{2})\cdot (r_{1}-r_{2})^{-1} \mod q]$, jinak nebude výstupem nic.
 
-Pokud vezmeme jeden běh $\mathcal{A}$ v $\mathcal{A}'$ a $\omega$ bude značit náhodnost použité při běhu, kromě náhodnosti po challenge $r$. Tedy z $\omega$ můžeme odvodit náhodnost pro $\mathcal{G}$, volbu $sk =x$, náhodnost v $\mathcal{A}$ a náhodnost při odpovídání na $Trans_{sk}$. Definujme $V(\omega,r)=1 \iff \mathcal{A}$ správně odpoví na challenge $r$ při náhodnosti $\omega$. Pro nějaké zafixované $\omega$ definujme $\delta_{\omega} = \Pr_{r}[V(\omega,r)=1]$, pro fixované $\omega$ je to pravděpodobnost přes výběr challenge, které $\mathcal{A}$ umí odpovědět.
+Pokud vezmeme jeden běh $\mathcal{A}$ v $\mathcal{A}'$ a $\omega$ bude značit náhodnost použité při běhu, kromě náhodnosti pro challenge $r$. Tedy z $\omega$ můžeme odvodit náhodnost pro $\mathcal{G}$, volbu $sk =x$, náhodnost v $\mathcal{A}$ a náhodnost při odpovídání na $Trans_{sk}$. Definujme $V(\omega,r)=1 \iff \mathcal{A}$ správně odpoví na challenge $r$ při náhodnosti $\omega$. Pro nějaké zafixované $\omega$ definujme $\delta_{\omega} = \Pr_{r}[V(\omega,r)=1]$, pro fixované $\omega$ je to pravděpodobnost přes výběr challenge, které $\mathcal{A}$ umí odpovědět.
 
 Definujme $\delta( n)=\Pr[\text{Ident}_{\mathcal{A},\Pi}(n)=1]$. Protože simulace $Trans_{sk}$ je perfektní, tak máme 
 $$
