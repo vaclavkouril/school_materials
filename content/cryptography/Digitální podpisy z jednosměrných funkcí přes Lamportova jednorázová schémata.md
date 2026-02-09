@@ -117,7 +117,39 @@ Nechť $\Pi = (Gen, Sign,Vrfy)$ je podpisové schéma. Pro binární string $m$,
 	2. $Vrfy_{pk_{m}}(m,\sigma_{m}) =1$.
 
 ### *Věta:* Nechť $\Pi$ je one-time signature schema, pak je stromová konstrukce bezpečné podpisové schéma.
-*Důkaz:*
+*Důkaz:* Mějme $\Pi^*$ jako výstup konstrukce a PPT útočníka $\mathcal{A}^*$ a $\ell^*=\ell^*(n)$ horní hranice na počet signing dotazů od $\mathcal{A}^*$ a nastavme $\ell=\ell(n)=2n \ell^* (n) + 1$, tedy je to upper bound na počet podpisů vygenerovaných  pro $\Pi^*$.
+
+Mějme útočníka $\mathcal{A}$, který dostane vstup $pk$ útočící na $\Pi$.
+- Vybere uniformně náhodně index $i^* \in \{ 1,\dots,\ell \}$ zkonstruuje $pk^{1},\dots,pk^\ell$ následovně
+	- nastaví $pk^{i^*}:=pk$,
+	- pro $i\ne i^*$ spočteme $(pk^i,sk^i)\leftarrow Gen(1^n)$.
+- Spustíme $\mathcal{A}^*$ na vstupu $pk_{\epsilon} = pk^1$, když $\mathcal{A}^*$ chce podpis na zprávu $m$ tak
+	1. Pro $i=0$ do $n-1$ tak pokud nebyli hodnoty $pk_{m\mid_{i}0},pk_{m\mid_{i}1},\sigma_{m\mid_{i}}$ spočteny tak nastavíme $pk_{m\mid_{i}0},pk_{m\mid_{i}1}$ na další dva nevyužité klíče $pk^j,pk^{j+1}$ a spočteme $\sigma_{m\mid_{i}} \leftarrow Sign_{pk_{m\mid_{i}}} (pk_{m\mid_{i}0}\,||\,pk_{m\mid_{i}1})$.
+	2. Když $\sigma_{m}$ není definováno tak spočteme podpis $m$ vzhledem k $pk_{m}$.
+	3. Vrátíme $(\{\sigma_{m\mid_{i}}, pk_{m\mid_{i}0},pk_{m\mid_{i}1} \}_{{i=0}}^{n-1}, \sigma_{m})$ pro $\mathcal{A}^*$.
+- Řekněme, že $\mathcal{A}^*$ vydá jako výstup zprávu $m$ (pro kterou si dříve neřekl o podpis) a podpis $(\{\sigma'_{m\mid_{i}}, pk'_{m\mid_{i}0},pk'_{m\mid_{i}1} \}_{{i=0}}^{n-1}, \sigma'_{m})$, pokud je to správný podpis tak:
+	1. Možnost: Existuje $j\in \{ 0,\dots,n-1 \}$ pro které $pk'_{m\mid_{j}0} \ne pk_{m\mid_{j}0}$, nebo $pk'_{m\mid_{j}1}\ne pk_{m\mid_{j}1}$; to je platné i kdyby ani jeden nebyl definován v $\mathcal{A}$. Vezmeme nejmenší takové $j$ a řekněme, že mu odpovídá $i$ pro $pk^i = pk_{m\mid_{j}} = pk'_{m\mid_{j}}$ (existuje z minimality $j$). Když $i=i^*$ tak vrátíme jako výstup $(pk'_{m\mid_{j}0}\,||\,pk'_{m\mid_{j}1}, \sigma'_{m\mid_{i}})$.
+	2. Možnost: Neexistuje-li takové $j$, tak $pk'_{m}=pk_{m}$ a nechť $i$ je takové, že $pk^i=pk_{m}$. Když $i=i^*$ vrátíme $(m,\sigma_{m})$.
+
+Při 1. 2. odpovídání na $\mathcal{A}^*$ když $i^*\ne i$ tak so může $\mathcal{A}$ spočíst podpis vzhledem k $pk^i$. $\mathcal{A}$ může navíc dostat (jeden) podpis vzhledem k $pk^{i^*}$ dle odpovídajícího dotazu na svoje signing oracle. 
+
+V experimentu $\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n)$ je z pohledu $\mathcal{A}^*$ spuštěného jako funkce v $\mathcal{A}$ stejné, jako, když $\mathcal{A}^*$ běží v experimentu $\text{Sig-forge}_{\mathcal{A}^*,\Pi^*}(n)$. Když $\mathcal{A}^*$ vydá falešný podpis tak uvažujeme dvě možnosti:
+1. Protože $\Pr_{i}[i = i^*] = \frac{1}{\ell}$ dle uniformity výběru, tak když $i=i^*$ pak $\mathcal{A}$ chtěl podpis na zprávu $pk_{m\mid_{j}0}\,||\,pk_{m\mid_{j}1}$ s korespondujícím public key $pk=pk^{i^*}=pk_{m\mid_{j}}$ který dostal a navíc
+$$
+pk_{m\mid_{j}0}\,||\,pk_{m\mid_{j}1} \ne pk'_{m\mid_{j}0}\,||\,pk'_{m\mid_{j}1}
+$$
+	ale $\sigma'_{m\mid_{j}}$ je správný podpis pro $pk'_{m\mid_{j}0}\,||\,pk'_{m\mid_{j}1}$ vůči klíči $pk$. Tedy $\mathcal{A}$ vrátí falšovaný podpis.
+2. Z uniformity výběru $i^*$ máme pravděpodobnost jeho výběru $1 / \ell$ a když $i=i^*$ a $\mathcal{A}$ nechtěl podpisy vzhledem k $pk = pk^{i^*}=pk_{m}$, ale vydal platný podpis $\sigma'_{m}$ zprávy $m$ vzhledem k $pk$.
+
+Tedy za podmínky, že $\mathcal{A}^*$ vydá falešný podpis, tak $\mathcal{A}$ tak udělá také s pravděpodobností alespoň $1/\ell$, tedy
+$$
+\Pr[\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n) =1] = \frac{1}{\ell} \cdot \Pr[\text{Sig-forge}_{\mathcal{A}^*,\Pi^*}(n) = 1],
+$$
+protože je $\Pi$ one-time signature scheme, tak existuje zanedbatelná funkce $negl(n)$, že
+$$
+\Pr[\text{Sig-forge}_{\mathcal{A},\Pi}^{1-\text{time}}(n) =1] \leq negl(n)
+$$
+tak máme, díky tomu že $\ell$ je polynom i $\Pr[\text{Sig-forge}_{\mathcal{A}^*,\Pi^*}(n) = 1]$ jako zanedbatelnou.
 
 
 ## Bezstavové řešení

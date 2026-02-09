@@ -102,7 +102,7 @@ $$
 $I=g^k$ u $k \leftarrow \mathbb{Z}_{q}$, takže je $I$ uniformní v $\left\langle g \right\rangle$, tak je nedegenerovaná.
 
 ### ★ *Věta:* Když je výpočet diskrétního logaritmu těžký vůči $\mathcal{G}$, pak Schnorrovo identifikační schéma je bezpečné.
-*Důkaz:* Nechť $\Pi$ je Schnorrovo identifikační schéma. Nechť $\mathcal{A}$ je PPT (pravděpodobnostní poly-time) útočník na toto schéma. Vyrobíme algorimus $\mathcal{A}'$ řešící problém diskrétního logaritmu vůči $\mathcal{G}$: algoritmus $\mathcal{A}'$ dostane $\mathbb{G},q,g,y$ na vstupu.
+*Důkaz:* Nechť $\Pi$ je Schnorrovo identifikační schéma. Nechť $\mathcal{A}$ je PPT (pravděpodobnostní poly-time) útočník na toto schéma. Vyrobíme algorimus $\mathcal{A}'$ řešící problém diskrétního logaritmu vůči $\mathcal{G}$: algoritmus $\mathcal{A}'$ dostane $(\mathbb{G},q,g,y)$ na vstupu.
 1. Běží $\mathcal{A}(pk)$, odpovídající na jeho dotazy na $Trans_{sk}$, které se mohou simulovat i bez znalosti $sk$, protože poctivé $(I,r,s)$ mají stejnou distribuci jako: vybereme uniformně náhodně $r,s\in \mathbb{Z}_{q}$ a nastavíme $I:= g^s \cdot y^{-r}$.
 2. Když $\mathcal{A}$ vrátí $I$, vybereme uniformně náhodně $r_{1}\in \mathbb{Z}_{q}$ jako challenge. Dáme $r_{1}$ jako odpověď $\mathcal{A}$, který vydá $s_{1}$.
 3. Spustíme $\mathcal{A}(pk)$ podruhé se stejnou náhodností $\omega$ a místo $r_{1}$ mu dáme jako odpověď na $I$ $r_{2}$ útočník vraceje $s_{2}$.
