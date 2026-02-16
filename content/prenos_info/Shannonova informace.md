@@ -9,8 +9,7 @@
 - Jevy $S,S' \subseteq R$ jsou nezávislé, když $[x \in S]$ a $[y \in S']$ jsou nezávislé, tedy
 $$
 \Pr[S=x \mid S'=y] = \Pr[S=x].
-$$ 
-
+$$
 #### Markovova nerovnost
 *Věta:* Pro $X \geq 0$ náhodnou proměnnou a $\forall k\in \mathbb{R}^+$ platí
 $$
