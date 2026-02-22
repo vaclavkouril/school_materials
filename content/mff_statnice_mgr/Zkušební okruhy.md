@@ -61,7 +61,7 @@ Student si zvolí tři okruhy z následující nabídky, z nichž dostane po j
 ---
 # 4. Datové struktury
 - Výpočetní modely (RAM a jeho varianty).
-- Entropie a informace.
+- [[Entropie]] a [informace](Shannonova%20informace.md).
 - Samoopravné kódy.
 - Komprese dat.
 - Vyhledávací stromy.
