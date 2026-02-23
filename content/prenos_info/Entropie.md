@@ -2,7 +2,8 @@
 *Definice:* Entropie (expectation of information) je funkce $H(X)$ pro $X$ náhodnou proměnnou, že
 $$
 H(X) = \sum_{x\in X} \Pr[X=x] \cdot \overbrace{(- \log \Pr[X=x])}^{\text{informace}} = \mathbb{E}[I(X)] = \sum_{x\in \Omega} p(x) \log \frac{1}{p(x)},
-$$kde $x \in X$ je myšleno, že $x$ validním vstupem pro $X$.
+$$
+kde $x \in X$ je myšleno, že $x$ validním vstupem pro $X$.
 
 - Problémem u $\sum_{x} p(x) \log \frac{1}{p(x)}$ je možnost $p(x)=0$ a $\log(0)$ i $\log\left( \frac{1}{p(x)} \right)$ nejsou definované, tedy užíváme konvence $0 \cdot \log \frac{1}{0}=0$.
 - Kvůli ne-negativitě informace, máme $H(X) \geq0$.
@@ -34,8 +35,8 @@ $H(X)\leq \log |\text{image}(X)|$
 
 
 ---
-# Sdružená entropie
-*Definice:* Pro dvě náhodné proměnné $X,Y$ máme sdruženou entropii 
+# Společná entropie
+*Definice:* Pro dvě náhodné proměnné $X,Y$ máme společnou entropii 
 $$
 H(X,Y) = \sum_{x \in X, y \in Y} p(x,y) \cdot \log \frac{1}{p(x,y)}.
 $$
