@@ -81,3 +81,10 @@ $H(X,Y\mid Z) = \mathbb{E}_{z \in Z} [H(X,Y\mid Z=z)]$, $H(X,Y \mid Z) = H(X \mi
 $$
 H(X,Y,Z) = H(X) + H(Y \mid X) + H(Z\mid X,Y).
 $$
+
+$$
+\begin{split}
+H(X_{1},\dots,X_{k}) = H(X_{1}) + H(X_{2},\dots,X_{k} \mid X_{1}) = \dots = H(X_{1}) + H(X_{2} \mid X_{1}) +\dots + H(X_{k} \mid, X_{1},\dots,X_{k-1}). 
+\end{split}
+$$
+
