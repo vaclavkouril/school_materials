@@ -5,7 +5,7 @@ Student si zvolí tři okruhy z následující nabídky, z nichž dostane po j
 - Výpočty s orákuly a relativizované výpočetní třídy.
 - Polynomiální hierarchie.
 - Pravděpodobnostní výpočetní třídy.
-- Neuniformní modely výpočtu.
+- Neuniformní modely výpočtu. [Uniformní vs neuniformní modely](Uniformní%20vs%20neuniformní%20modely.md)
 - Interaktivní protokoly.
 - Komunikační složitost.
 - Vztahy a separace různých tříd složitosti.
@@ -20,7 +20,7 @@ Student si zvolí tři okruhy z následující nabídky, z nichž dostane po j
 1. NTIN063	Složitost
 2. NTIN081	Výpočetní složitost a interaktivni protokoly
 3. NTIN082	Neuniformní výpočetní modely
-4. NTIN104	Foundations of theoretical cryptography
+4. ✓ NTIN104 Foundations of theoretical cryptography
 ---
 # 2. Reprezentace znalostí v binární doméně
 - [[Rezoluce]] a její úplnost.
