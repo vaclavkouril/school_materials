@@ -26,7 +26,7 @@ Mějme $B\in PSPACE(PSPACE)$, tedy pro něj existuje DTS $M$ s orákulem $A$, kt
 
 $M$ z definice pracuje v polynomiálním prostoru, stejně jako $M'$, takže $M''$ rozhoduje jazyk $B$ v polynomiálním prostoru, protože i kdyby $M$ více než polynomiálně-krát vyvolalo $\text{DOTAZ}$ tak to nevadí, protože se vždy na oracle pásce jen znovu spustí $M'$, takže se jen znovu užívá stejného polynomiálně velkého prostoru.
 
-Dostáváme tedy, že $\forall A \in PSPACE(PSPACE): A \in PSPACE$, takže platí indukční krok platí.
+Dostáváme tedy, že $\forall A \in PSPACE(PSPACE): A \in PSPACE$, takže platí indukční krok.
 
 ---
 ### *Věta:* $\mathcal{PH} = \bigcup_{k=0}^\infty \Sigma_{k} = \bigcup_{k=0}^\infty \Pi_{k} = \bigcup_{k=0}^\infty \Delta_{k}$.
