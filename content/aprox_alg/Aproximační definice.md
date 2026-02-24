@@ -17,4 +17,4 @@ $$
 # PTAS, FPTAS
 *Definice:* Polynomial time aproximation scheme (PTAS) je rodina algoritmů $\{ A_{\epsilon} \}$, kde $\forall \epsilon >0$ je takové, že $A_{\epsilon}$ je $(1+\epsilon)$-aproximační algoritmus (pro minimalizační problémy) nebo $(1-\epsilon)$-aproximační algoritmus pro maximalizační problémy.
 
-*Definice:* Fully polynomial time aproximation scheme (FPTAS) je aproximační schéma takové, že jeho čas běhu je omezem polynomem v $1 / \epsilon$. 
+*Definice:* Fully polynomial time aproximation scheme (FPTAS) je aproximační schéma takové, že jeho čas běhu je omezem polynomem v $1 / \epsilon$.
