@@ -1,4 +1,4 @@
-## *Translační lemma:* Pro funkce $S_{1}(n),S_{2}(n)\geq n, f(n)\geq n$, kde $f$ je prostorově konstruovatelná funkce, splňující $NSPACE(S_{1}(n)) \subseteq NSPACE(S_{2}(n))$ pak platí $NSPACE(S_{1}(f(n))) \subseteq NSPACE(S_{2}(f(n)))$.
+ ## *Translační lemma:* Pro funkce $S_{1}(n),S_{2}(n)\geq n, f(n)\geq n$, kde $f$ je prostorově konstruovatelná funkce, splňující $NSPACE(S_{1}(n)) \subseteq NSPACE(S_{2}(n))$ pak platí $NSPACE(S_{1}(f(n))) \subseteq NSPACE(S_{2}(f(n)))$.
 *Důkaz:* Mějme libovolný jazyk $L_{1} \in NSPACE(S_{1}(f(n)))$, pro který tedy existuje NTS $M_{1}$, který ho rozhoduje. Definujme si, pro $\$$, který nebyl v pracovní abecedě $M_{1}$
 $$
 L_{2} = \{ x\$^i \mid M_{1}(x)\text{ přijme v prostoru } S_{1}(|x|+i) \text{, pro }i \geq f(|x|) \}.
