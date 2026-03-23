@@ -92,3 +92,30 @@ $$
 \sum_{x\in C} 2^{-\ell(x)} \leq 1,
 $$
 protože jinak by existoval $k_{0}$ od kterého bychom měli spor.
+
+---
+# Odhad na délku kódu
+### *Věta:* $\forall C:H(X)-2\log H(X) \leq L(C)$
+*Idea důkazu:* Z $C$ uděláme bezprefixový jazyk, protože o bezprefixových umíme říct odhad $H(X)\leq L(C)$. Přidáme délku binárního zápisu jako prefix
+$$
+x \to O^{|x|} 1 |x|x, \quad \ell(x) \to \ell'(x)\leq \ell(x)+ 2\log \ell(x) + 3
+$$
+$$
+\begin{align}
+H(X) \leq L(C') &= \sum p(x) \ell'(x)  \\
+&\leq \sum p(x)\ell(x) + 2\sum p(x) \log\ell(x) + 3 \sum p(x)
+\end{align}
+$$
+a můžeme aplikovat Jensenovu nerovnost na $\log$
+$$
+2\sum p(x) \log \ell(x) \leq 2 \log \sum p(x) \ell(x) = 2\log L(C)
+$$
+a tedy 
+$$
+H(X)\leq L(C) + 2\log L(C) +3.
+$$
+a rozborem případů pro $H(X)$ máme
+- $H(X)\leq L(C)$, tedy věta platí,
+- $H(X)\geq L(C)$, tak jsme se výše dostali k $H(X)\leq L(C)+2\log L(C) +3$, takže i tak věta platí.
+---
+
