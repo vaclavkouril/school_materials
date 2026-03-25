@@ -100,8 +100,13 @@ Protože $\mathcal{C}$ je uzavřené na zdrojování, tak $A\in \mathcal{C}\impl
 - (5.) $\implies$ (6.), protože $\forall \Sigma_{k} = \forall(co-\Pi_{k})=co-\exists\Pi_{k} \stackrel{\text{5.}}{=} co-\Sigma_{k+1}=\Pi_{k+1}$.
 - (1. $\subseteq$) Nechť $A\in \exists \mathcal{P} \implies \exists B\in \mathcal{P},\exists p: \exists^{p|x|} y: \left\langle x,y \right\rangle \in B$ a existuje DTS $M$ rozhodující $B$ v polynomiálním čase. Zkonstruujeme NTS $M'$ pracující v polynomiálním čase takový, že $A=L(M')$. $M'$ nad vstupem $x$ přečte $x$ uhodne nedeterministicky $y$ a ověří, že $\left\langle x,y \right\rangle\in L(M)=B$ simulací $M$ a tedy $\exists P \subseteq \mathcal{NP}$.
 - (1. $\supseteq$) $A\in \mathcal{NP}\implies \exists \text{ NTS } M$ pracující v polynomiálním čase s $A=L(M)$, definujme $B =\{ \left\langle x,y \right\rangle \mid x \in A, y \text{ je kód přijímacího výpočtu }M(x) \}\implies B\in \mathcal{P}$ a tedy $x\in A\iff \exists^{p|x|}y: \left\langle x,y \right\rangle\in B$.
-- (3. $\subseteq$) 
-- (3. $\supseteq$)
+- (3. $\subseteq$) Nechť $A\in \exists\Sigma_{k}$ libovolný, takže $\exists B\in \Sigma_{k},\exists p(n): x\in A \iff \exists^{p(|x|)}y:\left\langle x,y \right\rangle \in B$, kde $B\in\Sigma_{k}=NP(\Sigma_{k-1})$ a tedy existuje NTS $M$ pracující v polynomiálním čase pro který $\exists D\in \Sigma_{k-{1}}$, pro který platí $B=L(M,D)$. Zkonstruujeme NTS $M'$ pracující následovně:
+	1. Přečte $x$ vstup,
+	2. Nedeterministicky uhodne $y\leq p(|x|)$,
+	3. Ověří zda $\left\langle x,y \right\rangle\in B$ simulací $M$.
+	
+  $A=L(M',D)\in NP(\Sigma_{k-1})=\Sigma_{k}$. Intuitivně si vlastně jedním nedeterminismem uhodneme více věcí: $(\exists y, \exists z) \equiv (\exists \left\langle y,z \right\rangle)$.
+- (3. $\supseteq$) Platí dle *Věty 1.* a uzavřenosti na zdrojování.
 - (5. $\subseteq$)
 
 #### *Důsledky:*
