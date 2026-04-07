@@ -1,0 +1,5 @@
+- [Stroje s orákuly](Stroje%20s%20orákuly.md)
+- [Věta o nedeterministické prostorové hierarchii](Věta%20o%20nedeterministické%20prostorové%20hierarchii.md)
+- [Polynomiální hierarchie](Polynomiální%20hierarchie.md)
+- 
+- [Neuniformní výpočetní modely](Neuniformní%20výpočetní%20modely.md)

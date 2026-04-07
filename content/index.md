@@ -25,6 +25,9 @@
 - [Amortizace](Amortizace.md)
 - [Hashování](Hashování.md)
 ---
+## Složitost
+- [Index](content/slozitost/Index.md)
+---
 ## 🟢 Foundations of theoretical cryptography
 - [Informačně-teoretické šifrování a jeho omezení](Informačně-teoretické%20šifrování%20a%20jeho%20omezení.md)
 - [Digitální podpisy z jednosměrných funkcí přes Lamportova jednorázová schémata](Digitální%20podpisy%20z%20jednosměrných%20funkcí%20přes%20Lamportova%20jednorázová%20schémata.md)
