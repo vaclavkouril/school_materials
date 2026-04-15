@@ -1,4 +1,4 @@
-# 17 - Boolean Circuits and the Class NC
+ # 17 - Boolean Circuits and the Class NC
 
 ![[assets/cc_lecture_15_4_2020_page_01.png]]
 ![[assets/cc_lecture_15_4_2020_page_02.png]]

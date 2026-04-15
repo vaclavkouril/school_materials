@@ -165,4 +165,55 @@ a tedy musí existovat $f_{n}$ na $n$ proměnných, kterou žádný obvod s $m =
 *Pozorování:* Pokud bychom nalezli rodinu funkcí, která je v $\mathcal{NP}$ a ne v $\mathcal{P} / \text{poly}$, tak dostaneme $\mathcal{P} \subsetneqq \mathcal{NP}$.
 
 ---
-# Věta $\mathcal{NP} \sum \mathcal{P} / \text{poly} \implies \mathcal{PH} = \Sigma_{2}^\mathcal{P}$.
+# Věta(Karp-Lipton): $\mathcal{NP} \subseteq \mathcal{P} / \text{poly} \implies \mathcal{PH} = \Sigma_{2}^\mathcal{P}$.
+*Důkaz:* $\Pi_{2} \subseteq\Sigma_{2} \implies \Pi_{2}=\Sigma_{2} \implies \Sigma_{2}=\mathcal{PH}$ už víme z TODO, takže stačí dokázat, že vhodný $\Pi_{2}$-úplný problém $X$, že $X\in \Sigma_{2}$ (což stačí k důkazu inkluze $\Pi_{2}\subseteq\Sigma_{2}$).
+
+Vezměme $\Pi_{2}$-SAT, tedy jazyk $X=\{\varphi \mid \forall u\in \{ 0,1 \}^n,\exists v\in \{ 0,1 \}^m : \varphi(u,v)=1\}$ BÚNO vezměme $n=m$ (lze doplnit vycpávkovými proměnnými) a cílem je ukázat, že $\Pi_{2}-SAT\in \Sigma_{2}$.
+
+Pro jazyk $L=\{ (\varphi,u)\mid \exists v: \varphi(u,v)=1 \}$, je zřejmě $L\in \mathcal{NP}$. Tím pádem je $L\stackrel{\text{předp.}}{\in} \mathcal{P}/\text{poly}$ a tedy $\exists$ poly-velká rodina obvodů $\{ C_{k} \}_{k\in \mathbb{N}}$ takových, že $\forall\varphi \forall u$, kde $(\varphi,u)$ má $k$-bitový kód
+$$
+(\varphi,u)\in L (\text{tedy } \exists v: \varphi(u,v)=1)\iff C_{k}(\varphi,u)=1.
+$$
+Nyní ukážeme, že $\exists \{ C_{k} \}$ tak také $\exists$ polynom. velká rodina  $\{ C'_{k} \}_{k\in \mathbb{N}}$, která nejen rozhodne, zda je $(\varphi,u)\in L$, ale také v kladném případě vrátí příslušné $v$ pro které $\varphi(u,v)=1$.
+
+Nyní nechť $|C'_{k}|\leq q(k)$, kde $q$ je polynom. Tím pádem je popis $C'_{k}$ lze zakódovat do binárního řetězce $w$ délky $O(q^2(k))=r(k)$.
+$$
+\exists w\in \{ 0,1 \}^{r(k)}\forall u \in \{ 0,1 \}^n: \varphi(u, C'_{k}(\varphi,u))=1
+$$
+Platí $X=\{ \varphi\mid \text{splňují podmínku výše} \}$, tak $X=\Pi_{2}-SAT$ 
+1. $\varphi\in \Pi_{2}-SAT$ (tedy platí $\forall u\in \{ 0,1 \}^n,\exists v\in \{ 0,1 \}^m : \varphi(u,v)=1$) tak pro dané $\varphi$ a každé $u$ existuje $v:\varphi(u,v)=1\implies C'_{k}(\varphi,u)$ vrátí $v$.
+2. $\varphi \not\in \Pi_{2}-SAT$, tak pro dané $\varphi$ existuje $u$ pro které neexistuje certifikát $v$ $(\forall v: \varphi(u,v)=0)$ a tedy není splněno $\exists w\in \{ 0,1 \}^{r(k)}\forall u \in \{ 0,1 \}^n: \varphi(u, C'_{k}(\varphi,u))=1$.
+
+A nyní máme důkaz $\Pi_{2}-SAT\in \Sigma_{2}$, protože pro dané $\varphi$ (instance $\Pi_{2}-SAT$u) a $w,u$ (kvantifikované proměnné), lze $\varphi(u,C_{k}'(\varphi,u))$ spočítat v polynomiálním čase.
+
+---
+# Třídy $NC$ a $AC$
+*Definice:* $L\in NC^d$ pokud $\exists$ polynomiálně velká rodina obvodů $\{ C_{n} \}_{n\in \mathbb{N}}$ rozpoznávající $L$ taková, že $\forall n:$ hloubka $C_{n}$ je $O(\log^d n)$.
+$$
+NC=\bigcup_{d\geq 1} NC^d
+$$
+*Poznámka:* Můžeme definovat uniformní $NC$, kde vyžadujeme uniformitu příslušné rodiny obvodů.
+
+*Definice:* $AC^d$ definována stejně jako $NC^d$, ale bez omezení na $deg_{in}$ (fan-in).
+$$
+AC=\bigcup_{d\geq 1} AC^d.
+$$
+### *Lemma:* $\forall d: NC^d \subseteq AC^d \subseteq NC^{d+1}$.
+*Důkaz:* První $\subseteq$ z definice. Nechť $C \in AC^d$ velikosti $p(n)$. Každé hradlo s nejvýše $p(n)$ vstupy nahradíme binárním stromem binárních hradel hloubky $\log p(n)$ a to je v $O(\log n)$ a tedy hloubka stoupne o tento faktor.
+
+---
+## Souvislost mezi $NC$ a paralelními algoritmy
+*Model výpočtu:* Paralelní počítač je $n$ procesorů, kanály mezi nimi, taktováno globálními hodinami, vzdálenost mezi libovolnými dvěma procesory je $O(\log n)$, počet kanálu na procesor je také $O(\log n)$.
+
+Příklad: Hyperkrychlová architektura, každý z $u = 2^k$ procesorů má binární kód délky $k=\log u$ a procesory jsou propojeny pokud $d_{Ham}$ jejich kódů je $1$.
+
+*Definice:* Výpočetní úloha má efektivní paralelní algoritmus, pokud zadání velikosti $n$ (binární řetězec délky $n$), lze vyřešit na paralelním počítači s $n^{O(1)}$ procesory v čase $\log^{O(1)} n$.
+
+Příklad:
+- carry-lookahead sčítání, kde máme obvod a počítače jsou hradla v obvodu
+- spočítání matice dosažitelnosti (orientovaného) grafu z matice sousednosti. $n^3$ procesorů lze spočíst $O(\log n)$. 
+
+### *Věta:* Jazyk $L$ (nad abecedou $\{ 0,1 \}$) má efektivní paralelní algoritmus $\iff L\in NC$.
+*Důkaz:* ($\implies$) $L$ přijat paralelním počítačem, který pro vstup $n$ má $N=O(n^c)$ procesorů a pracuje v čase $D\in O(\log^d {n})$. Zkonstruujeme obvod $C_{n}$ s $N\cdot D$ "hradly" (obvody konstantní velikost) uspořádanými do $d$ hladin po $n$ hradlech. (Zjevně $C_{n}$ má polynomiální velikost vzhledem k $n$). Hradlo $j$ na $k$-té hladině simuluje práci procesoru $j$ v $k$-tém kroku. Hradla na $k$-té hladině jsou propojena s příslušnými hradlami tak, jak jsou příjímány signály mezi procesory. Zjevně obvod má hloubku $D$ a tudíž patří do $AC^d$ a tím pádem do $NC^{d+1}$
+
+($\impliedby$) Když $L\in NC$, tak $L$ je rozpoznáváno rodinou obvodů $\{ C_{n} \}_{n\in \mathbb{N}}$, kde $\forall n: |C_{n}|\in O(n^c)$ a hloubka $C_{n}$ je v $O(\log^d n)$ a to jsou po řadě čísla $N,D$, zkonstruujeme paralelní počítač s $N$ procesory, kde každý procesor simuluje jedno hradlo $C_{n}$. Zatímco v $C_{n}$ je signál mezi hradly přenesen v $1$ kroku, tak v simulujícím počítači může přenos trvat až $\log N= O(\log n)$ kroků díky omezení na propojovací kanály $\implies$ počítač pracuje v $O(\log^{d+1}n)$ to stále plní definici.
