@@ -98,7 +98,7 @@ protože jinak by existoval $k_{0}$ od kterého bychom měli spor.
 ### *Věta:* $\forall C:H(X)-2\log H(X) \leq L(C)$
 *Idea důkazu:* Z $C$ uděláme bezprefixový jazyk, protože o bezprefixových umíme říct odhad $H(X)\leq L(C)$. Přidáme délku binárního zápisu jako prefix
 $$
-x \to O^{|x|} 1 |x|x, \quad \ell(x) \to \ell'(x)\leq \ell(x)+ 2\log \ell(x) + 3
+x \to 0^{|x|} 1 |x|x, \quad \ell(x) \to \ell'(x)\leq \ell(x)+ 2\log \ell(x) + 3
 $$
 $$
 \begin{align}
