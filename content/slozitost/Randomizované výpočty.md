@@ -170,5 +170,97 @@ $$
 $$
 Očekávaný počet kol než $\tilde{M}$ zastaví je $\leq \sum_{i} i \left( \frac{1}{3} \right)^{i-1} = const$ a každé spuštění $M,\bar{M}$ trvá $p'(|x|)$ a tedy očekávaná časová složitost $\tilde{M}$ je $const \cdot p'(|x|) = p(|x|)$. 
 ## $\mathcal{BPP} \subseteq \mathcal{P}/\text{poly}$
+Nechť $L\in \mathcal{BPP}$ libovolný a ukážeme, že $L\in \mathcal{P}/\text{poly}$.
 
-## $\mathcal{BPP} \subseteq \Sigma_{2} \cap \Pi_{2}$
+V (\*) vezmeme $d=2$, pak platí
+$$
+2^{-n^2}= \frac{1}{2^{n^2}} < \frac{1}{2^{n+1}}.
+$$
+Tedy máme DTS pro $L$ s chybou $\frac{1}{2^{n+1}}$.
+
+Řekneme, že $r\in \{ 0,1 \}^m$ je **dobrý** pro $x$ pokud $M(x,r)=L(x)$ a **špatný** naopak.
+
+Pro pevné $x$ máme $< \frac{2^m}{2^{n+1}}$ špatných $r$ $\implies$ máme $2^n \cdot \frac{2^m}{2^{n+1}} = \frac{1}{2} \cdot 2^m$, takových $r$, která jsou špatná pro nějaké $x$ a tedy $\exists r_{0}$, které je dobré $\forall x$. 
+
+Z věty $\mathcal{P}\subseteq \mathcal{P} / \text{poly}$ (TODO: link) víme, že k DTS $M$ existuje poly-size rodina obvodů $\{ C_{k} \}_{k=1}^\infty$ která $C_{n+m}(x,r)=M(x,r)$. V této rodině obvodů zadrátujeme $r=r_{0}$ vstup napevno.
+$$
+C_{n+m}(x,r) = C_{n+m}(x,r_{0})= M(x,r_{0}) = L(x) \text{ dobré } r_{0}:\forall x
+$$
+a tedy příslušná rodina obvodů rozpoznává $L$.
+## (Věta Sigson-Gáes) $\mathcal{BPP} \subseteq \Sigma_{2} \cap \Pi_{2}$
+Už víme $\mathcal{BPP} = co-\mathcal{BPP}$ a tedy stačí $\mathcal{BPP} \subseteq \Sigma_{2}$. V \* vezmeme $d=1$, takže chyba je $<\frac{1}{2^n}$. 
+
+$L\in\mathcal{BPP}\implies$ platí (díky \* s $d=1$) 
+- $x\in L\iff \Pr[M(x,r)\text{ přijímá}]\geq{1}-\frac{1}{2^{n}}$
+- $x\not\in L\iff \Pr[M(x,r)\text{ přijímá}]<\frac{1}{2^{n}}$
+
+Značení: 
+- $\forall x\in \{ 0,1 \}^n:S_{x}=\{ r\in \{ 0,1 \}^m\mid M(x,r)\text{ přijímá} \}$,
+- Pro $r,u\in \{ 0,1 \}^m:r+u= r XOR u$.
+- Pro $S\subseteq \{ 0,1 \}^m: S+{u}=\{ r+u\mid r\in S \}$
+- Zvolíme $k:= \left\lceil  \frac{m}{n}+1  \right\rceil$
+
+Platí 
+- $x\in L \implies |S_{x}|\geq (1-\frac{1}{2^n}) 2^m$,
+- $x\in L \implies |S_{x}|< \frac{1}{2^n} 2^m$
+
+*Myšlenka důkazu:* TODO OBRÁZEK
+
+#### Lemma 1: Nechť $S\subseteq \{ 0,1 \}^m$ taková, že $|S|<2^{m-n}$ a nechť $u_{1},\dots,u_{k}\in \{ 0,1 \}^m$. Pak $\bigcup_{i=1}^k (S+u_{i})\subsetneqq \{ 0,1 \}^m$.
+*Důkaz Lemma 1:* $\forall i: |S+u_{i}|=|S|\implies$ 
+$$
+|\bigcup_{i=0}^k(S+u_{i})| \leq k|S| < \left( \left\lceil  \frac{m}{n}  \right\rceil +1  \right) \frac{1}{2^n} 2^m
+$$
+kde poslední $<$ $\forall n\geq n_{0}$ platí pro vhodně zvolené $n_{0}$.
+
+Lze uvažovat, že $L=L_{1}\cup L_{2}$, kde $L_{1}=\{ x\in L \mid |x| \le u_{0} \}$. Jistě $L_{1}\in \mathcal{P} \subseteq\Sigma_{2}$ a tím pádem $L\in \Sigma_{2}\iff L_{2}\in \Sigma_{2}$. Tedy lemma platí pro jazyk $L_{2}$. 
+
+#### Lemma 2: Nechť $S \subseteq \{ 0,1 \}^m$ takové, že $|S|\geq (1-\frac{1}{2^n}) 2^m$. Pak existují $u_{1},\dots,u_{k}\in \{ 0,1 \}^m$ takové, že $\bigcup_{i=1}^k (S+u_{i})=\{ 0,1 \}^m$.
+*Důkaz:* Stačí ukázat, že při náhodném výběru $u_{1},\dots,u_{k}$ platí, že
+$$
+\Pr[\bigcup_{i=1}^k (S+u_{i})=\{ 0,1 \}^m]>0 \iff \Pr[\bigcup_{i=1}^k (S+u_{i})=\{ 0,1 \}^m]<1
+$$
+a to je vlastně ekvivalentní
+$$
+\Pr[\exists r\in \{ 0,1 \}^m: r\not\in \bigcup_{i=1}^k (S+u_{i})]<1.
+$$
+Definujme $r$ je **špatné** pro $i\iff r\not\in S+u_{i}\iff r+u_{i}\not\in S$. Protože
+$$
+a (XOR)b=c \iff a=b(XOR)c.
+$$
+
+Pokud $u_1,\dots,u_k$ vybrány náhodně uniformně, tak také $r+u_{i},\dots,r+u_{k}$ mají náhodnou uniformní distribuci v $\{ 0,1 \}^m$. 
+
+Pro pevné $r\in \{ 0,1 \}^m$ libovolně zvolené:
+$$
+\Pr[r+u_{i}\in S] \geq 1-\frac{1}{2^n} \implies \Pr[r \text{ špatné pro }i]< \frac{1}{2^n}
+$$
+- $\implies \Pr[r \text{je špatnépro všechna }i]< \left( \frac{1}{2^n} \right)^k=2^{-nk}$
+- $\implies$ $\Pr[\exists r: r \text{ je špatné } \forall i]< 2^m \cdot 2^{-nk}$
+
+Poslední bod je ekvivalentní s $\Pr[\exists r\in \{ 0,1 \}^m: r\not\in \bigcup_{i=1}^k (S+u_{i})]<1.$ a potřebujeme, aby $2^m \cdot 2^{-nk}\leq 1$ pro důkaz a to vychází pro naši volbu $k$, protože
+$$
+n\left( \left\lceil  \frac{m}{n}  \right\rceil  +1\right)\ge \left( n\left( \frac{m}{n}+1 \right) \right)= m+\frac{1}{n} \geq m \implies 2^m2^{-nk}\leq 2^{m}2^{-m} =1.
+$$
+
+Důkaz Věty: Lemma 1+2 implikují
+$$
+x\in L \iff \exists u_{1},\dots,u_{k}\in \{ 0,1 \}^m \forall r\in \{ 0,1 \}^m:r\in \bigcup_{i=1}^k (S_{x} +u_{i})
+$$
+zleva doprava 1. a obráceně lemma 2.
+
+Můžeme přepsat
+$$
+x\in L \iff \exists u_{1},\dots,u_{k}\in \{ 0,1 \}^m \forall r\in \{ 0,1 \}^m: \underbrace{\bigvee_{i=1}^k (M(x,r+u_{i})\text{ přijímá})}_{\text{predikát v }\mathcal{P}}.
+$$
+"Vezmeme-li libovolné $r$, tak ho máme pokrytý." 
+
+a tedy poly velký predikát a tedy $L\in \Sigma_{2}$.
+
+
+---
+$L\in \mathcal{BPP}\implies \forall d \exists$PTS $M$: 
+- $\Pr[L(x) = M(x)]\ge 1- 2^{-|x|^d}$
+- $\Pr[L(x)\ne M(x)]<2^{|x|^d}$
+
+\* $\iff \forall d\exists$ DTS $M \Pr[L(x)\ne M(x,r)] < 2^{|x|^d}$, kde $r$ je řetězec náhodných bitů délky $m=poly(n), |x|=n$. 
