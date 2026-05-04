@@ -1,0 +1,1 @@
+Mějme Alenku s $x\in \{ 0,1 \}^n$ a Boba s $y\in \{ 0,1 \}^n$, kteří si chtějí vyměnit data, zda se shodují $x,y$.

@@ -42,7 +42,8 @@ Tedy $\exists$ netriviální řešení $E(x),q(x)$, kde $E(x)\not\equiv{0}$. Mě
 *Důkaz:* Stupně $q_{2}(x)E_{1}(x)$ a $q_{1}(x)E_{2}(x)$ jsou nejvýše $n-2$. Tvrdíme, že polynomy splňují
 $$
 \forall j\in \{ 1,\dots,n \}: g_{2}(\alpha_j) E_{1}(\alpha_j) = q_{1}(\alpha_j) E_{2}(\alpha_j).
-$$ A v každém bodě $j$ platí taky
+$$
+A v každém bodě $j$ platí taky
 $$
 r_{j} E_{1} (\alpha_j) = q_{1}(\alpha_j),\quad r_{j}E_{2}(\alpha_j) = q_{2}(\alpha_j).
 $$
