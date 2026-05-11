@@ -32,3 +32,15 @@ a tedy $r_{j}=r_{k}$ tedy je nemožné aby taková $\beta$ byla comprossed.
 ---
 # vtree
 *Definice:* Vtree pro proměnné $X$ je binární strom, kde každý vnitřní uzel má všechny syny a jeho listy jsou jedna-k-jedné odpovídající proměnným v $X$.
+
+Každý vtree určuje pořadí proměnných.
+
+$\left\langle . \right\rangle$ značí zobrazení z SDDs do Booleovských funkcí.
+
+*Definice:* $\alpha$ je SDD vzhledem k vtree $v$ $\iff$
+- $\alpha =\bot$ nebo $\alpha =\top$, kde $\left\langle \bot \right\rangle=false,\left\langle \top \right\rangle=true$.
+- $\alpha=X$ nebo $\alpha=\neg X$ a $v$ je listem s proměnnou $X$.
+- $\alpha=\{ (p_{1},s_{1}),\dots,(p_{n},s_n) \}$, $v$ je vnitřní uzel, $p_{1},\dots,p_{n}$ jsou SDD odpovídající podstromům $v^l$ (levý syn) a $s_{1},\dots,s_{n}$ jsou SDD odpovídající podstromům $v^r$, a $\left\langle p_{1} \right\rangle, \dots,\left\langle p_{n} \right\rangle$ je partice.
+
+---
+# Cannonicity
