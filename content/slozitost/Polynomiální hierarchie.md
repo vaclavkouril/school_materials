@@ -87,8 +87,8 @@ Protože $\mathcal{C}$ je uzavřené na zdrojování, tak $A\in \mathcal{C}\impl
 
 ---
 ### *Věta o vztazích $\mathcal{PH}$* 
-1. $\exists P =NP$
-2. $\forall P=co-NP$
+1. $\exists \mathcal{P} =\mathcal{NP}$
+2. $\forall \mathcal{P}=co-\mathcal{NP}$
 3. $k>0:\exists\Sigma_{k} = \Sigma_{k}$
 4. $k>0:\exists\Pi_{k} = \Pi_{k}$
 5. $k>0: \exists \Pi_{k}=\Sigma_{k+1}$
@@ -107,7 +107,8 @@ Protože $\mathcal{C}$ je uzavřené na zdrojování, tak $A\in \mathcal{C}\impl
 	
   $A=L(M',D)\in NP(\Sigma_{k-1})=\Sigma_{k}$. Intuitivně si vlastně jedním nedeterminismem uhodneme více věcí: $(\exists y, \exists z) \equiv (\exists \left\langle y,z \right\rangle)$.
 - (3. $\supseteq$) Platí dle *Věty 1.* a uzavřenosti na zdrojování.
-- (5. $\subseteq$)
+- (5. $\subseteq$) $\exists\Pi_{k}\subseteq \Sigma_{k+{1}} = NP(\Sigma_{k})= NP(\Pi_{k}):A \in \exists \Pi_{k}: \exists B\in \Pi_{k},\exists p: x\in A \iff \exists^{p(|x|)}y:\left\langle x,y \right\rangle\in B.$ Máme NTS $M$, který přečte $x$, uhodne $y$ a ověří pomocí orákula $B$, zda $\left\langle x,y \right\rangle$ patří do $B$, kde $B$ je z $\Pi_{k}$, takže $M$ přijímající $A$ je z $NP(\Pi_{k})=\Sigma_{k+1}$.
+- (5. $\supseteq$) Indukce dle $k$, pro $k=0:\Sigma_{1}\subseteq \exists\Pi_{0}\stackrel{\text{1.}}{=}\mathcal{NP}$. 
 
 #### *Důsledky:*
 ###### Definice $\mathcal{PH}$ pomocí alternujících kvantifikátorů.
