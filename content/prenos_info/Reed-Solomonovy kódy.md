@@ -1,4 +1,4 @@
- ## Motivace
+## Motivace
 Chceme parametry
 - $d\approx \epsilon n$
 - $k\approx (1-\epsilon) n$
