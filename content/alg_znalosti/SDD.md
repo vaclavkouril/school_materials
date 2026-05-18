@@ -69,7 +69,7 @@ Tedy každé dvě $\alpha,\beta$ která jsou compressed, trimmed a $a\equiv b$ m
 
 Předpokládejme $\alpha \equiv \beta$ a nechť $f = \left\langle \alpha \right\rangle= \left\langle \beta \right\rangle$. Pak lze ukázat $\alpha=\beta$ pomocí lemma 1 a 2. Když $f=false$ tak $\alpha=\beta=\bot$ a když $f=true$ pak $\alpha=\beta=\top$. Předpokládejme nyní netriviální $f$  a essentially depend na vtree uzlu $v$, který musí být unikátní. SDD $\alpha$ a $\beta$ musí oba respect tento unikátní uzel $v$.
 
-Předpokládejme, že $v$ je list, pak jen terminálové SDDs respektují listový uzel, ale $\alpha$ a $\beta$ nemohou být $\bot$, nebo $\top$ dle předpokladů. Tedy jsou $\alpha,\beta$ literály a protože $\alpha\equiv \beta$ tak musí i $\alpha= \beta$.
+Předpokládejme, že $v$ je list, pak jen terminálové SDDs respektující listový uzel, ale $\alpha$ a $\beta$ nemohou být $\bot$, nebo $\top$ dle předpokladů. Tedy jsou $\alpha,\beta$ literály a protože $\alpha\equiv \beta$ tak musí i $\alpha= \beta$.
 
 Pro indukci předpokládejme, že máme interní uzel $v$ a věta platí pro SDDs odpovídající synům (a pokolení) $v$. Nechť $X$ jsou proměnné podstromu $v^l$ a $Y$ proměnné pro $v^r$, $\alpha=\{ (\left\langle p_{1} \right\rangle,\left\langle s_{1} \right\rangle),\dots,(\left\langle p_{n} \right\rangle,\left\langle s_{n} \right\rangle) \}$ a $\beta=\{ (\left\langle q_{1} \right\rangle, \left\langle r_{1} \right\rangle),\dots,(\left\langle q_{m} \right\rangle, \left\langle r_{m} \right\rangle) \}$. Dle definice SDD, primes $p_{i},q_{i}$ respect uzly v $v^l$ a mohou obsahovat jen proměnné z $X$. To samé pro $s_{i},r_{i}$ s uzly v $v^r$ a proměnné z $Y$. Tedy obě $\alpha,\beta$ jsou $X$-partice funkce $f$. Jsou compressed dle předpokladu a dle [Věta 2: Funkce $f$ má jen jednu compressed $X$-partici.](#*Věta%202%20*%20Funkce%20$f$%20má%20jen%20jednu%20compressed%20$X$-partici.) tak dekompozice se musí rovnat a tedy $m=n$ a existuje jedna-k-jedné $\equiv$-odpovídající prvky a tedy $\implies \alpha=\beta$.
 
@@ -129,7 +129,7 @@ $$
 $$
 Všechny tyto dekompozice jsou omezeny $2$. 
 
-Nakonec musíme reprezentovat primes pomocí SDDs nad proměnnými $X$ a subs odpovídající terminálů. Můžeme zvolit right-linear vtree pro proměnné $X$ a obdobně pro $Y$ vedoucí na OBDD reprezentaci každého prime a sub s velikostí lineární v $m$ a tedy kompletní SDD pro $f^a_{m}$ je uncompressed a má $O(m^2)$ velikost. 
+Nakonec musíme reprezentovat primes pomocí SDDs nad proměnnými $X$ a subs odpovídající terminálů. Můžeme zvolit right-linear vtree pro proměnné $X$ a obdobně pro $Y$ vedoucí na [[OBDD]] reprezentaci každého prime a sub s velikostí lineární v $m$ a tedy kompletní SDD pro $f^a_{m}$ je uncompressed a má $O(m^2)$ velikost. 
 
 Compressed SDD pro $f^a_{m}$ a vtree je unikátní a dá se ukázat, že velikost je $\Omega(2^m)$. Pozorujme, že unikátní compressed $(XY,Z)$-dekompozice funkce $f^a_{m}$ je 
 $$
@@ -163,13 +163,9 @@ Compressed $(X,Y)$-partice funkce $f^b_{m}$ musí mít $2^m$ různých subs, ted
 
 ---
 # SDD jsou exponenciálně více succinct než OBDD
-$L_{1}\preceq L_{2}$ znamená, že $L_{2}$ je alespoň tak succinct jako $L_{1}$, když existuje polynom $p$ takový, že pro každou Booleovskou funkci $f$ platí, 
-$$
-L_{1}(f) \leq p(L_{2}(f)).
-$$
-tedy každá reprezentace z $L_{2}$ jde polynomiálně simulovat pomocí $L_{1}$.
+$L_{1}\leq_{S} L_{2}$ existuje polynom $p: \forall \alpha\in L_{1}$ existuje ekvivalentní $\beta\in L_{2}$ takový, že $|\beta|\leq p(|\alpha|)$ z NNF $|\alpha|=\# \text{hran}$, říkáme, že $L_{1}$ je alespoň tak succinct jako $L_{2}$.
 
-V případě SDD a OBDD platí    
+V případě SDD a [[OBDD]] platí    
 $$  
 OBDD \subseteq SDD_c \subseteq SDD,  
 $$
@@ -177,9 +173,9 @@ tedy každé OBDD je speciální compressed SDD. SDD jsou proto alespoň tak suc
 
 ## Hidden weight bit
 $$
-HWD_{n}(x_{1},\dots,x_{n})=x_{i} \text{, kde } \sum_{j=1}^n x_{j} = i.
+HWB_{n}(x_{1},\dots,x_{n})=x_{i} \text{, kde } \sum_{j=1}^n x_{j} = i.
 $$
-## OBDD pro HWB je velikosti $2^{\Omega(n)}$.
+## HWB a OBDD podproblému.
 Definujme si pomocné po každé $i \in \{ 1,\dots,n \}$
 $$
 E_{i} = \sum_{j=1}^n x_{j}=i
@@ -188,12 +184,59 @@ ohodnocení $f$ je modelem $E_{i}\iff f(x_{1})+\dots+f({x_{n}})=i$.
 
 Nechť 
 $$
-P_{n} = \{ P_{0},P_{n} \} \cup \{ P_{i,0},P_{i,1}:i=1,\dots,n-1 \}
+\mathcal{P}_{n} = \{ P_{0},P_{n} \} \cup \{ P_{i,0},P_{i,1}:i=1,\dots,n-1 \}
 $$
 je rodina $2n$ funkcí definována následovně
 - $P_{0}\equiv E_{0}$
 - $P_{n}\equiv E_{n}$
-- $P_{i,0}\equiv E_{i} \land x_{i}$
-- $P_{i,1}\equiv E_{i} \land \neg x_{i}$
+- $P_{i,0}\equiv E_{i} \land \neg x_{i}$
+- $P_{i,1}\equiv E_{i} \land x_{i}$
 
+každá funkce rodiny $\mathcal{P}_{n}$ počítá rodinu podmnožiny $\{ 1,\dots,n \}$. 
+- $P_{0}$ počítá $\emptyset$,
+- $P_{n}$ počítá $\{ 1,\dots,n \}$,
+- $P_{i,0}$ jsou podmnožiny $\{ 1,\dots,n \}$ velikosti $i$ bez prvku $i$,
+- $P_{i,1}$ jsou podmnožiny $\{ 1,\dots,n \}$ velikosti $i$ vždy s prvkem $i$.
+
+Mějme $\mathcal{P}_{n}$ a $P,P'\in \mathcal{P}_{n}$ s $P \ne P'$, pak
+- $P\not\equiv \bot$,
+- $P \land P' \equiv = \top$,
+- $\bigvee_{P\in \mathcal{P}_{n}} P \equiv \top$.
+
+![obdd_hwb.excalidraw](obdd_hwb.excalidraw.svg)
+
+Pro převod u takových uzlů v $E_{j}$ přidá konstantně mnoho hran do obvodu a pro dané seřazení proměnných máme $O(n^2)$ uzlů, tedy i výsledný obvod z OBDD má pro $E_{j}$ velikost $O(n^2)$.
+
+Navíc umíme efektivně $\land$ v OBDD, takže i $P\in \mathcal{P}_{n}$ jsou v $O(n^2)$.
 ## SDD pro HWB je $O(n^3)$.
+Dle definice $\mathcal{P}_{n}$ máme
+$$
+HWB_{n}= (P_{0} \land \bot) \lor (P_{n} \land \top) \lor \bigvee_{{i=1}}^{n-1} ((P_{i,0} \land \bot) \lor (P_{i,1} \land \top)),
+$$
+protože to je ekvivalentní (jedno je převoditelné na druhé)
+$$
+(E_{1} \land x_{1}) \lor \dots \lor (E_{n} \land x_{n}).
+$$
+
+Mějme vtree, kde je root a jeho levý syn je nějaký vtree pro $x$ proměnné a pravý syn je s pomocnou proměnnou $y$. Pak kořenové SDD má dekompozici
+$$
+\{(P_{0} \land \bot) \lor (P_{n} \land \top) \lor (P_{1,0} \land \bot) \lor (P_{1,1} \land \top) \lor \dots \lor (P_{n-1,0} \land \bot) \lor (P_{n-1,1} \land \top)  \}.
+$$
+Pro prvky $\mathcal{P}_{n}$ pak máme $O(n^2)$ OBDD a každý takový je i pro Right linear vtree SDD, tedy máme $O(n^3)$ SDD pro $HWB_n$.
+
+## OBDD pro $HWB_{n}$ má velikost $2^{\Omega(n)}$
+Dle věty (Bryant) platí $HWB_{n}$ s velikostí OBDD $2^{\Omega(n)}$.
+
+> Bryant, R. E. 1986. Graph-Based Algorithms for Boolean Function Manipulation. IEEE Transactions on Computers 35(8):677–691.
+
+Každý uzel OBDD po přečtení části proměnných reprezentuje nějakou zbytkovou funkci nad nepřečtenými proměnnými.
+
+Když dvě různá částečná ohodnocení vedou do stejného uzlu, OBDD je už nerozliší. To je povolené jen tehdy, když mají stejnou zbytkovou funkci.
+
+U $HWB_n$ ale mnoho různých prefixů dává různé zbytkové funkce.
+
+- Když se dva prefixy liší třeba v hodnotě $x_k$, zbytek vstupu může být zvolen tak, aby celkový počet jedniček byl právě $k$.
+- Pak výsledek funkce závisí právě na $x_k$.
+- Takže dva prefixy s různou hodnotou $x_k$ musí zůstat rozlišitelné.
+
+Tedy OBDD musí mít mnoho různých stavů.
