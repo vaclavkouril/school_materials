@@ -200,7 +200,7 @@ každá funkce rodiny $\mathcal{P}_{n}$ počítá rodinu podmnožiny $\{ 1,\dots
 
 Mějme $\mathcal{P}_{n}$ a $P,P'\in \mathcal{P}_{n}$ s $P \ne P'$, pak
 - $P\not\equiv \bot$,
-- $P \land P' \equiv = \top$,
+- $P \land P' \equiv  \bot$,
 - $\bigvee_{P\in \mathcal{P}_{n}} P \equiv \top$.
 
 ![obdd_hwb.excalidraw](obdd_hwb.excalidraw.svg)
@@ -220,7 +220,9 @@ $$
 
 Mějme vtree, kde je root a jeho levý syn je nějaký vtree pro $x$ proměnné a pravý syn je s pomocnou proměnnou $y$. Pak kořenové SDD má dekompozici
 $$
-\{(P_{0} \land \bot) \lor (P_{n} \land \top) \lor (P_{1,0} \land \bot) \lor (P_{1,1} \land \top) \lor \dots \lor (P_{n-1,0} \land \bot) \lor (P_{n-1,1} \land \top)  \}.
+\{(P_0,\bot),(P_n,\top)\}  
+\cup  
+\{(P_{i,0},\bot),(P_{i,1},\top):i=1,\dots,n-1\}.  
 $$
 Pro prvky $\mathcal{P}_{n}$ pak máme $O(n^2)$ OBDD a každý takový je i pro Right linear vtree SDD, tedy máme $O(n^3)$ SDD pro $HWB_n$.
 
@@ -240,3 +242,48 @@ U $HWB_n$ ale mnoho různých prefixů dává různé zbytkové funkce.
 - Takže dva prefixy s různou hodnotou $x_k$ musí zůstat rozlišitelné.
 
 Tedy OBDD musí mít mnoho různých stavů.
+
+---
+## Compressed SDD
+Přidejme si nové proměnné 
+$$
+y_{0},\dots,y_{{n}}.
+$$
+Definujme
+$$
+F_{n} = (P_0\land \neg y_0)  
+\lor  
+(P_n\land y_n)  
+\lor  
+\bigvee_{i=1}^{n-1}  
+\left(  
+(P_{i,0}\land \neg y_i)  
+\lor  
+(P_{i,1}\land y_i)  
+\right).
+$$
+  
+Subs se neopakují:  
+$$  
+\neg y_0,\ y_n,\ \neg y_i,\ y_i  
+$$
+jsou navzájem neekvivalentní. Proto je SDD compressed.
+
+Primes jsou stejné jako předtím a mají velikost $O(n^2)$, subs jsou literály, tedy konstantní velikosti. Proto  
+$$  
+SDD_c(F_n)=O(n^3).  
+$$
+Dosazením $y_0=y_1=\dots=y_n=1$ dostaneme  
+$$  
+F_n(x_1,\dots,x_n,1,\dots,1)=HWB_n(x_1,\dots,x_n).  
+$$
+Conditioning OBDD nezvětšuje. Kdyby tedy $F_n$ mělo malé OBDD, mělo by malé OBDD i $HWB_n$, což je spor s Bryantovým dolním odhadem. Proto
+$$  
+OBDD(F_n)=2^{\Omega(n)}.  
+$$
+Tedy  
+$$  
+SDD_c(F_n)=O(n^3),  
+\qquad  
+OBDD(F_n)=2^{\Omega(n)}.  
+$$
