@@ -160,3 +160,40 @@ $$
 a tedy dvě různá ohodnocení dávají dvě různé podfunkce nad $Y$ a ohodnocení je $2^m$.
 
 Compressed $(X,Y)$-partice funkce $f^b_{m}$ musí mít $2^m$ různých subs, tedy dekompozice je aspoň $2^m$ velká.
+
+---
+# SDD jsou exponenciálně více succinct než OBDD
+$L_{1}\preceq L_{2}$ znamená, že $L_{2}$ je alespoň tak succinct jako $L_{1}$, když existuje polynom $p$ takový, že pro každou Booleovskou funkci $f$ platí, 
+$$
+L_{1}(f) \leq p(L_{2}(f)).
+$$
+tedy každá reprezentace z $L_{2}$ jde polynomiálně simulovat pomocí $L_{1}$.
+
+V případě SDD a OBDD platí    
+$$  
+OBDD \subseteq SDD_c \subseteq SDD,  
+$$
+tedy každé OBDD je speciální compressed SDD. SDD jsou proto alespoň tak succinct jako OBDD.
+
+## Hidden weight bit
+$$
+HWD_{n}(x_{1},\dots,x_{n})=x_{i} \text{, kde } \sum_{j=1}^n x_{j} = i.
+$$
+## OBDD pro HWB je velikosti $2^{\Omega(n)}$.
+Definujme si pomocné po každé $i \in \{ 1,\dots,n \}$
+$$
+E_{i} = \sum_{j=1}^n x_{j}=i
+$$
+ohodnocení $f$ je modelem $E_{i}\iff f(x_{1})+\dots+f({x_{n}})=i$. 
+
+Nechť 
+$$
+P_{n} = \{ P_{0},P_{n} \} \cup \{ P_{i,0},P_{i,1}:i=1,\dots,n-1 \}
+$$
+je rodina $2n$ funkcí definována následovně
+- $P_{0}\equiv E_{0}$
+- $P_{n}\equiv E_{n}$
+- $P_{i,0}\equiv E_{i} \land x_{i}$
+- $P_{i,1}\equiv E_{i} \land \neg x_{i}$
+
+## SDD pro HWB je $O(n^3)$.
