@@ -117,5 +117,3 @@ $$
 a rozborem případů pro $H(X)$ máme
 - $H(X)\leq L(C)$, tedy věta platí,
 - $H(X)\geq L(C)$, tak jsme se výše dostali k $H(X)\leq L(C)+2\log L(C) +3$, takže i tak věta platí.
----
-
