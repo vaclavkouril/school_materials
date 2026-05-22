@@ -55,7 +55,20 @@ $$
 
 ---
 $\forall X,Y: H(X),H(Y)\leq H(X,Y) \leq H(X) + H(Y)$
+
 *Důkaz:* 
+Použijeme Chain rule
+$$
+H(X,Y) = H(X) + H(X\mid Y)  
+$$
+a entropie je dle důsledku [$I(X:Y)\geq{0}$](Vzájemná%20informace.md#$I(X:Y)\geq{0}$) máme $H(Y\mid X)\leq H(X)$ a tedy
+$$
+H(X,Y) \leq H(X) + H(Y).
+$$
+A protože je informace nezáporná, tak i $H(X \mid Y)\geq{0}$ dávající
+$$
+H(X)\leq H(X,Y).
+$$
 
 ---
 # Podmíněná entropie
@@ -63,9 +76,9 @@ $\forall X,Y: H(X),H(Y)\leq H(X,Y) \leq H(X) + H(Y)$
 $$
 \begin{split}
 H(Y \mid X) = \sum_{x \in X, p(x) \ne 0} p(x) \cdot H(Y \mid X=x) =
-\\ = \sum_{x\in X, p(x) \ne 0} p(x) \sum_{y\in Y} p(y\mid x) \log \frac{1}{p(y \mid x))} = \\
-= \sum_{x\in X, y\in Y, p(x) \ne 0} p(x) p(y\mid x) \log \frac{1}{p(y \mid x))} = \\
-= \sum_{x\in X, y\in Y, p(x) \ne 0} p(x,y) \cdot  \log \frac{1}{p(y \mid x))}
+\\ = \sum_{x\in X, p(x) \ne 0} p(x) \sum_{y\in Y} p(y\mid x) \log \frac{1}{p(y \mid x)} = \\
+= \sum_{x\in X, y\in Y, p(x) \ne 0} p(x) p(y\mid x) \log \frac{1}{p(y \mid x)} = \\
+= \sum_{x\in X, y\in Y, p(x) \ne 0} p(x,y) \cdot  \log \frac{1}{p(y \mid x)}
 \end{split}
 $$
 ---
