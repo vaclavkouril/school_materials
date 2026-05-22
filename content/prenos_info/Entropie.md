@@ -35,7 +35,7 @@ $$
 H(g) = \sum_{x\in supp(X)} \frac{1}{|supp(X)|} \log |supp(X)| = \log |supp(X)|
 $$
 $$
-0 \leq D(X ||Y) = \sum_{x\in supp(X)} p(x) \log \frac{1}{q(x)} - \sum_{x\in supp(X)} p(x) \log \frac{1}{p(x)} = \log |supp(X)| - H(X)
+0 \leq D(p ||g) = \sum_{x\in supp(X)} p(x) \log \frac{1}{g(x)} - \sum_{x\in supp(X)} p(x) \log \frac{1}{p(x)} = \log |supp(X)| - H(X)
 $$
 a tedy
 $$

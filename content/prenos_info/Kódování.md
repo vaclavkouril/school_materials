@@ -3,15 +3,29 @@
 - $\forall C: L(C)\geq H(X)$, $\exists C: L(C)\leq H(X)+1$.
 - $C^*(x_{1},\dots,x_k) = C(x_{1}) \circ \dots\circ C(x_{k})$.
 ## Jednoznačné kódování
-*Definice:* Kód je jednoznačný, pokud $C^*$ nemá kolizi (je to prosté zobrazení), tedy neexistuje $x_{1},\dots,x_{k},y_{1},\dots,y_{l}: C^(x_{1},\dots,x_{k}) = C^*(y_{1},\dots,y_{l})$.
+*Definice:* Kód je jednoznačný, pokud $C^*$ nemá kolizi (je to prosté zobrazení), tedy neexistuje $x_{1},\dots,x_{k},y_{1},\dots,y_{l}: C^*(x_{1},\dots,x_{k}) = C^*(y_{1},\dots,y_{l})$.
 
 *Definice:* Kód je bezprefixový, když $\forall x,y,x\neq y: C(x)$ není prefixem $C(y)$.
 
 #### *Tvrzení:* Bezprefixový kód $C$ $\implies$ $C$ je jednoznačný.
 *Důkaz:* Vezmeme-li libovolné $C^*$ tak hladově hledáme kódová slova a vzhledem k tomu, že žádné není prefixem jiného tak vždy když najde kódové slovo tak ohlásíme jaké to je hledáme další, tedy je to zjevně jednoznačné.
 
-### *Věta:* Nechť $C$ je prefixový kód s kódovými slovy délek $\ell_{1},\ell_{2},\dots$, pak $\sum_{i} 2^{-\ell_{i}} \leq 1$.
-*Důkaz:* 
+### *Věta (Kraftova nerovnost):* Nechť $C$ je bezprefixový kód s kódovými slovy délek $\ell_{1},\ell_{2},\dots$, pak $\sum_{i} 2^{-\ell_{i}} \leq 1$.
+*Důkaz:* Mějme mapping $f:c\in C\to I_{c}\subseteq[0,1)$, kde $c=a_{1}a_{2}\dots a_{k}$ s 
+$$
+f(c)=[0.a_{1}a_{2}\dots a_{k},0.a_{1}a_{2}\dots a_{k}+2^{-k}] = I_{c}
+$$
+a intervaly jsou z bezprefixovosti disjunktní a tedy
+$$
+|\bigcup_{c\in C} I_{c}| = \sum_{i=1}^{n} \underbrace{2^{-\ell_{i}}}\leq |[0,1)| = 1.
+$$
+---
+#### *Tvrzení:* Nechť $\ell_{1},\dots,\ell_{n}$ jsou taková, že $\sum_{j=1}^n 2^{-\ell_{j}}\leq 1$. Pak existuje bezprefixový kód s těmito délkami kódových slov.
+*Důkaz:* Seřadíme klíče od nejmenšího $\ell_{1}\leq \dots\leq\ell_{n}$. Rozdělíme $[0,1]$ na intervaly po řadě na 
+$$
+[0.0,0.0+2^{-\ell_{1}})\dots[0.a_{1}a_{2}a_{3}\dots a_{\ell_{j}},0.a_{1}a_{2}a_{3}\dots a_{\ell_{j}} + 2^{\ell_{j}})\dots
+$$
+protože součet čísel je menší než jedna tak dostaneme $\forall \ell$ interval a $C$ bude mít slova jako začátek každého intervalu za desetinnou čárkou.
 
 ---
 # Minimalizace $L(C)$
@@ -22,9 +36,9 @@ L(C) - H(X) = \sum_{x} p(x) \ell(x) - \sum_{x} p(x) \log \frac{1}{p(x)}
 $$
 a protože $\ell(x)= \log \frac{1}{2^{-\ell(x)}}$ tak dostáváme
 $$
-\log 2^{-y} - y = \sum_{x} p(x) \log \frac{1}{2^x} - \sum_{x} p(x) \log \frac{1}{p(x)} = \sum_{x} p(x) \log \frac{p(x)}{2^{-\ell (x)}}
+\sum_{x} p(x) \log \frac{1}{2^{-\ell(x)}} - \sum_{x} p(x) \log \frac{1}{p(x)} = \sum_{x} p(x) \log \frac{p(x)}{2^{-\ell (x)}}
 $$
-a pro $c= \sum_{x} 2^{-\ell(x)} \leq 1$ a tedy $c\leq 1$ a $g(x) = 2^{-\ell (x)} \frac{1}{c}$ pomůžeme si
+a pro $c= \sum_{x} 2^{-\ell(x)} \leq 1$ (díky bezprefixovosti) a $g(x) =\frac{1}{c} \cdot 2^{-\ell (x)}$ (aby $g$ byla distribuce) dostáváme
 $$
 \sum_{x} p(x) \log \frac{p(x)}{2^{-\ell (x)}} = \sum_{x} p(x) \log \frac{p(x)}{c \cdot \frac{1}{c} \cdot 2^{-\ell (x)}} = \sum_{x} p(x) \log \frac{p(x)}{g(x)} + \sum_{x} p(x) \log \frac{1}{c}
 $$

@@ -1,4 +1,4 @@
-# KL-Divergence
+ # KL-Divergence
 Mějme náhodné proměnné s stejnou range $X,Y$ a mějme $p(x) = \Pr[X=x]$, $q(x)=\Pr[Y=x]$. 
 
 *Definice:* KL-divergence mezi náhodnými proměnnými $X,Y$ se stejným prostorem obrazů je
@@ -50,7 +50,7 @@ $$
 $$
 Předpokládejme konečnost $|X|$.
 
-*Důkaz:* Indukce na velikosti $|X|$, pak pro $|X|=2$ máme dva body $x_{1},x_{2}$ a $p(x_{1}), p(x_{2})=1-p(x_{1})$, pak máme
+*Důkaz:* Indukce na velikosti $|X|$, pak pro $|X|=2$ máme dva body $x_{1},x_{2}$ a $p(x_{1}), p(x_{2})=1-p(x_{1})$ a máme
 $$
 \alpha f(x_{1}) + (1-\alpha)f(x_{2}) \geq f(\alpha x_{1} + (1-\alpha)x_{2})
 $$
@@ -72,7 +72,8 @@ a dle konvexity máme
 $$
 \mathbb{E}[f(X)] \geq f\left( p_{n}x_{n} + (1-p_{n}) \sum_{i=1}^{n-1} p'_{i} x_{i} \right) = f\left( \sum_{i=1}^n p_{i}x_{i} \right).
 $$
-### *Věta:* $D(p||q)\geq {0}$ pro $p=q$ platí $D(p||q)=0$.
+---
+### *Věta:* $\forall p,q: D(p||q)\geq {0}$ a $p=q \iff D(p||q)=0$.
 Pro důkaz mějme $A = \{ x, p(x)>0 \}$ a pak můžeme upravit výraz
 $$
 -D(p||q) = -\sum_{x \in A} p(x) \log \frac{p(x)}{q(x)} =\sum_{x \in A} p(x) \log \frac{q(x)}{p(x)}

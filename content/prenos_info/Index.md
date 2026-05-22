@@ -3,6 +3,7 @@
 - [Entropie](Entropie.md)
 - [Vzájemná informace](Vzájemná%20informace.md)
 - [KL-Divergence](KL-Divergence.md)
+- [Markovovská vlastnost](Markovovská%20vlastnost.md)
 - [Kódování](Kódování.md)
 - [Kolmogorovská složitost](Kolmogorovská%20složitost.md)
 # Oprava chyb
