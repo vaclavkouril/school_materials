@@ -1,5 +1,5 @@
 ## Motivace
-- $33333$ - $3^{11}$
+- $33333333333$ - $3^{11}$
 - $314159265358$ - $\pi$
 - $843542795217$ - náhodné číslo
 
@@ -26,11 +26,10 @@ Algoritmus pro $\mathcal{U}$
 Mějme
 - $g-\phi_{n}$
 - $x$, kde $p$ je nejkratší program pro $x$ vzhledem k $g$
-- $\left\langle n,p \right\rangle$ je program $x$ vůči $\mathcal{U}$. $\overbrace{0^{|n|}1n}^{c_{g}}p$
+- $\left\langle n,p \right\rangle$ je program $x$ vůči $\mathcal{U}$. $\overbrace{0^{|n|}1n}^{c_{g}}p$, tedy $c_{g}=2|n|+1$
 $$
 C_{\mathcal{U}} (x) \leq |\left\langle n,p  \right\rangle| \leq |p| + c_{g} = C_{g}(x) + c_{g}.
 $$
-
 ---
 # Vztah mezi $C(x)$ a $C_{\mathcal{U}}(x)$
 Zafixujme si č. r. f. $\mathcal{U}$, pak $C(x) = C_{\mathcal{U}}(x)$
@@ -38,12 +37,12 @@ Zafixujme si č. r. f. $\mathcal{U}$, pak $C(x) = C_{\mathcal{U}}(x)$
 - $C(O^n) \leq \log n + O(1)$
 - $C(\pi_{[1:n]}) \leq \log n + O(1)$
 
-#### *Tvrzení:* $\forall n \exists x\in \{ 0,1 \}^n: C(x)\geq n$
+#### *Tvrzení:* $\forall n \geq 1,\exists x\in \{ 0,1 \}^n: C(x)\geq n$
 *Důkaz:* Počet programů $p$ délky $\leq n-1$ je
 $$
-\sum_{i=0}^{n-1} 2^{i} = 2^n - 1.
+\sum_{i=0}^{n-1} 2^{i} = 2^{n}-1.
 $$
-a tedy musí existovat $x$, který se nevejde do programu délky $n-1$. Takové $x$ nazveme **Kolmogorovsky náhodné**, pokud $C(x) \geq |x|$.
+a tedy musí existovat $x\in \{ 0,1 \}^n$ (je jich $2^n$), který se nevejde do programu délky $n-1$. Takové $x$ nazveme **Kolmogorovsky náhodné**, pokud $C(x) \geq |x|$.
 
 ---
 # Podmíněná Kolm. složitost
@@ -68,7 +67,10 @@ $$
 ##### *Důsledek:* $C(x,y) = C(x)+C(y\mid x) \pm O(\log|x| + |y|)$.
 ---
 # Kolmogorovská informace
-*Definice:* $I_{C} (x:y) = C(x)- C(y\mid x)=C(y)- C(y\mid x) \pm O(\log|x| + |y|)$.
+*Definice:* $I_{C} (x:y) = C(x)- C(x\mid y)$ a navíc
+$$
+I_{C}(x:y) = I_{C}(y:x) + O(\log n)
+$$
 
 ---
 Mějme náhodnou proměnnou $X\in \{ 0,1 \}^*$, která je spočitatelná, pak
