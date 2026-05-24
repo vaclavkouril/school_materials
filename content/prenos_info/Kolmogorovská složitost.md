@@ -77,7 +77,7 @@ Mějme náhodnou proměnnou $X\in \{ 0,1 \}^*$, která je spočitatelná, pak
 $$
 H(X) \approx \mathbb{E}[C(X)]
 $$
-Spočitatelnost ve smyslu existence algoritmy, který s $n,x$ vydá $p(x)$ v $X_{n}$
+Spočitatelnost ve smyslu existence algoritmu, který s $n,x$ vydá $p(x)$ v $X_{n}$
 ### *Věta:* Mějme posloupnost náhodných proměnných $X_{1},X_{2},X_{3},\dots$ spočitatelné, pak $\forall n: H(X_{n}) - O(\log n) \leq \mathbb{E}[C(X_n)] \leq H(X_{n})+O(\log n)$.
 *Důkaz:* (1. $\leq$) mějme pro $x$ její program $p_{x}$, ten tvoří kód pro $C_{n}$ a tedy $H(X_{n})-O(\log n)\leq \mathbb{E}[|C_{n}|]$.
 
