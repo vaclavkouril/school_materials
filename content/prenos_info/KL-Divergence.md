@@ -1,4 +1,4 @@
- # KL-Divergence
+# KL-Divergence
 Mějme náhodné proměnné s stejnou range $X,Y$ a mějme $p(x) = \Pr[X=x]$, $q(x)=\Pr[Y=x]$. 
 
 *Definice:* KL-divergence mezi náhodnými proměnnými $X,Y$ se stejným prostorem obrazů je
@@ -76,15 +76,15 @@ $$
 ### *Věta:* $\forall p,q: D(p||q)\geq {0}$ a $p=q \iff D(p||q)=0$.
 Pro důkaz mějme $A = \{ x, p(x)>0 \}$ a pak můžeme upravit výraz
 $$
--D(p||q) = -\sum_{x \in A} p(x) \log \frac{p(x)}{q(x)} =\sum_{x \in A} p(x) \log \frac{q(x)}{p(x)}
+D(p||q) = \sum_{x \in A} p(x) \log \frac{p(x)}{q(x)}
 $$
-teď zvolme $c(x) = \frac{q(x)}{p(x)}$, to je dle konvence nejvýše $\infty$ a pak $f(x) = \log(c(x))$ a na $f$ aplikujme [*Lemma (Jensenova nerovnost)*](#*Lemma%20(Jensenova%20nerovnost)*) a sice
+teď zvolme $c(x) = \frac{q(x)}{p(x)}$, to je dle konvence nejvýše $\infty$ a pak $f(t) = - \log(t)$ a na $f$ aplikujme [*Lemma (Jensenova nerovnost)*](#*Lemma%20(Jensenova%20nerovnost)*) a sice
 $$
-\sum_{x \in A} p(x) f(x) \stackrel{\text{Jensen}}\leq \log \sum_{x \in A} p(x) c(x) = \log \sum_{x \in A} p(x) \frac{q(x)}{p(x)}.
+\sum_{x \in A} p(x) f(c(x)) \stackrel{\text{Jensen}}\geq -\log \sum_{x \in A} p(x) c(x) = -\log \sum_{x \in A} p(x) \frac{q(x)}{p(x)}.
 $$
 Protože $p(x)$ se jednoduše pokrátí a i kdyby $q$ mělo jinou doménu od $p$, tak stále je to jen suma pravděpodobností a ta je omezena $1$:
 $$
--D(p||q) \leq \log 1 = 0,
+D(p||q) \geq -\log 1 = 0,
 $$
 takže $D(p||q)\geq{0}$.
 
