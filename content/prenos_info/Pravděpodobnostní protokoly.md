@@ -37,10 +37,63 @@ Pravděpodobnost toho, že protokol dojde do $v$ je $\Pr[x] \cdot p_{A}^{r,x} \c
 To je $1+\underbrace{2^D \cdot (D+10)}_{p_{A}^{v_{1},x}\dots p_{A}^{v_{2^D},x}}$ bitů a tedy $2^D \cdot 2^{-(D+1-)}=\frac{1}{2^{10}}$.
 
 ---
-Mějme $r$ veřejných bitů, chceme je simulovat soukromými.
+# Mějme $r$ veřejných bitů, chceme je simulovat soukromými.
 
-Náhodně nezávisle vyberme $r_{1},\dots,r_{n^{10}}$. Pravděpodobnost, že $\frac{2}{3}n^{10}$ budou bez chyby pomocí Chernoff je $\leq cn^{10}$ a TODO: pořádný odhad
+Mějme veřejný protokol $\Pi$ pro $f$ s chybou nejvýše $1/3$.  
+Nejprve jej konstantní amplifikací převedeme na protokol s chybou nejvýše $1/10$.  
+  
+Náhodně nezávisle vybereme veřejné bity
+$$  
+r_1,\dots,r_t,\qquad t=n^{10}.  
+$$
+Pro pevný vstup $(x,y)$ označme  
+$$  
+X_i^{x,y}  
+=  
+\begin{cases}  
+1, & \Pi(x,y;r_i)\neq f(x,y),\\  
+0, & \text{jinak.}  
+\end{cases}  
+$$
+Pak  
+$$  
+\mathbb E[X_i^{x,y}]\leq \frac{1}{10}.  
+$$
+[Chernoffovou nerovností](Shannonovy%20věty.md) dostáváme  
+$$  
+\Pr\left[  
+\sum_{i=1}^t X_i^{x,y}>\frac{t}{3}  
+\right]  
+\leq  
+2e^{-ct}  
+$$
+pro nějakou konstantu $c>0$.  
+  
+Počet vstupů $(x,y)$ je nejvýše $2^{2n}$, tedy podle union boundu  
+$$  
+\Pr\left[  
+\exists (x,y):  
+\sum_{i=1}^t X_i^{x,y}>\frac{t}{3}  
+\right]  
+\leq  
+2^{2n}\cdot 2e^{-ct}.  
+$$
+Pro $t=n^{10}$ je tato pravděpodobnost menší než $1$.  
+Proto existuje pevný seznam $r_1,\dots,r_t$, který je dobrý pro všechny vstupy.  
+  
+Soukromý protokol potom funguje tak, že Alice náhodně vybere index  
+$i\in[t]$, pošle jej Bobovi pomocí $O(\log t)=O(\log n)$ bitů a oba spustí  
+veřejný protokol s $r_i$.  
 
+Protože pro každý vstup je špatných nejvýše $\frac{1}{3}$ indexů, chyba  
+nového protokolu je nejvýše $\frac{1}{3}$.  
+
+Tedy  
+$$  
+R^{priv}_{1/3}(f)  
+\leq  
+O(R^{pub}_{1/3}(f)+\log n).  
+$$
 ---
 # Data streams
 - $\dots(i, \pm cnt_{i})\dots$

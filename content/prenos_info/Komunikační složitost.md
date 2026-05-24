@@ -36,16 +36,24 @@ tak dostáváme $(x',y),(x,y')\in R$ a tedy $A\times B=R$ a tedy je to kombinato
 
 ### *Tvrzení:* $\forall v, Rv$ je kombinatorický obdélník.
 
-**Motivace** pro kombinatorické obdélníky máme $Rv =\{ (x,y), \text{které nás dovedou do }v \}$.
+**Motivace** pro kombinatorické obdélníky máme $Rv =\{ (x,y), \text{které nás dovedou do }v \}$, kde $v$ je vrcholem stromu protokolu.
 
-*Důkaz:* Indukcí, pro kořen platí a $R_{u}=A\times B$ pro $m_{u}:X\to \{ 0,1 \}$ a tedy $A_{0}\dot{\cup} A_{1}=A$ máme $R_{u_{i}}=A_{i}\times B$. (Dochází k půlení dle rozhodnutí ve stromu, které je určeno tím obdélníkem.)
+*Důkaz:* Indukcí, pro kořen platí a $R_{u}=A\times B$ 
 
-Pro $EQ$, pro každé $(x,y),(x',y')$, kde $EQ(x,y)=1, EQ(x',y')=1$ musí ležet v různých obdélnících. Navíc máme $2^n$ 1-obdélníků a $\geq{1}$ $0$-obdélníků, tedy $2^n+1$ obdélníků $\implies$ protokol pro $EQ$ má hloubku $\log(2^n+1)>n$
+Pro $m_{u}:X\to \{ 0,1 \}$, máme $A_{0}\dot{\cup} A_{1}=A$, protože rozdělíme odpovědi dle prefixu, kde jsme ve stromě ($A_{1}$ jsou prvky $A$ s prefixem $1$), takže máme $R_{u_{i}}=A_{i}\times B$. (Dochází k půlení dle rozhodnutí ve stromu, které je určeno tím obdélníkem.)
+
+- Na konci máme $\forall (x,y), (x',y') \in R: f(x,y)=f(x',y')$
+- Pokud protokol stojí $t$ hloubku, tak můžeme rozdělit $M_{f}$ na nejvýše $2^t$ monochromatických obdélníků.
+
+---
+Pro $EQ$, pro každé $(x,y),(x',y')$, kde $EQ(x,y)=1, EQ(x',y')=1$ musí ležet v různých obdélnících. Navíc máme $2^n$ 1-obdélníků a $\geq{1}$ $0$-obdélníků, tedy aspoň $2^n+1$ obdélníků $\implies$ protokol pro $EQ$ má hloubku $\log(2^n+1)>n$ $\implies D(EQ)=n+1$.
 - Protokol pro $f$ rozřeže matici na jednobarevné obdélníky, jejich počet je $k$ a tedy hloubka je $\log k$.
 
 $DISJ$: (obrázek TODO:) $\forall x\ne 0^n:DISJ(x,x)= 1$, pokud vezmeme $(x,x),(x',x')$ tak $DISJ(x,x')=?(1/0)$.
 - $x\ne0^n,1^n:(x,x),(\bar{x},\bar{x})$ je $DISJ(x,\bar{x})= DISJ(\bar{x},x)=0$, ale $DISJ(x,x)=DIS(\bar{x},\bar{x})=1$.
 - $DISJ(x,\bar{x})=0$ a mějme $(x,\bar{x}),(x',\bar{x'})$ a tedy aspoň jeden ze $DISJ(x,\bar{x'}),DISJ(x',\bar{x})$ je jedna
-- $\implies$ $D(DISJ)\geq n+1$.
+- $\implies$ $D(DISJ)\geq n+1$. Protože $(x,\bar{x}), (x',\bar{x}')$ nemohou být ve stejných obdélnících, tedy $\log 2^n +1$.
 
-$IP:$ Matice $M_{f}$, její $\text{rank}(M_{f}) \leq R$ (počet 1 údajů) (rank je na $\mathbb{R}$) 
+$IP:$ Matice $M_{f}$, její $\text{rank}(M_{f}) \leq R$ (počet 1 údajů) (rank je nad $\mathbb{R}$) 
+
+---
