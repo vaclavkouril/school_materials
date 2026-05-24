@@ -99,7 +99,7 @@ $$
    (\neg Y_{1} \land Y_{2} \land \neg X_{2},\bot), \\
    \vdots  \\
 (\neg Y_{1} \land \dots \neg Y_{m-1} \land Y_{m} \land \neg X_{m},\bot),\\
- (\neg Y_{1} \land \dots \land \neg Y_{m})
+ (\neg Y_{1} \land \dots \land \neg Y_{m}, \bot)
 \end{array}\right\}.
 $$
 - Musí pro primes platit $\bigvee p_{i} = true$.
