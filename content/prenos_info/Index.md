@@ -13,6 +13,7 @@
 - [Lineární kód](Lineární%20kód.md)
 - [Reed-Solomonovy kódy](Reed-Solomonovy%20kódy.md)
 - [Skládání kódu](Skládání%20kódu.md)
+- [Náhodný lineární kód](Náhodný%20lineární%20kód.md)
 - [Dekódování se seznamem](Dekódování%20se%20seznamem.md)
 # Komunikační složitost
 - [Komunikační složitost](Komunikační%20složitost.md)

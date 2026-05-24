@@ -13,20 +13,24 @@ Zjevně $m\ne m': p_{m}(x)+ p_{m'}(x)=p_{m+m'}(x)$ a také $\alpha p_{m}(x)=p_{\
 
 Protože polynom je stupně $k-1$ tak to je i maximum kořenů polynomu a protože $d=\min_{z\in C,z \ne{0}} wt_{Ham}(z)$. Jen kořeny mohou vyjít $0$ a těch je omezeně, takže $d \geq n-k+1$
 
+Tedy je to lineární kód $[n,k,n-k+1]_{q}$.
+
 ---
 # Berlekamy-Welch
-Chceme chybový polynom $E(x)$, kde chyba $\alpha_{i}\implies E(\alpha_{i})=0$. $E(x)\equiv 0$, stupeň $E(x)\leq$ počet chyb $\approx d /2$.
+Mějme $(r_{1},\dots,r_{n})$ jako kódová slova, která přišli k přijímači. 
+
+Chceme chybový polynom $E(x)$ ukazující na špatné indexy, kde chyba $\alpha_{i}\implies E(\alpha_{i})=0$. $E(x)\equiv 0$, stupeň $E(x)\leq$ počet chyb $\approx d /2$.
 
 $$
 \forall i\in \{ 1,\dots,n \}: p(\alpha_{i})\ne r_{i}\implies E(\alpha_{i})=0
 $$
 $$
-\forall i\in \{ 1,\dots,n \}: r_{i}E(\alpha_{i}) = p(\alpha_{i}) \cdot E(\alpha_{i})
+\forall i: (r_{i}-p_{m}(\alpha_{i}))E(\alpha_{i})=0
 $$
 $$
-\forall i: (r_{i}-p(\alpha_{i}))E(\alpha_{i})=0
+\forall i\in \{ 1,\dots,n \}: r_{i}E(\alpha_{i}) = p_{m}(\alpha_{i}) \cdot E(\alpha_{i})
 $$
-hledáme tedy $\text{deg } p(x)\le k-1$ a $\text{deg }E(x)\leq \frac{n-k-1}{2}\approx \frac{d}{2} \pm 1$. Z rovnic hledáme $q(x)$ se stupněm $\leq \frac{n+k-3}{2}$.
+Protože $\text{deg } p(x)\le k-1$ a $0<\text{deg }E(x)\leq \frac{n-k-1}{2}\approx \frac{d}{2} \pm 1$. Definujme $q(x)=p_{m}(x)E(x)$ se stupněm $\leq \frac{n+k-3}{2}$.
 $$
 q(x) = \sum_{i=0}^{\frac{n+k-3}{2}} c_{i}' x^i \quad E(x) = \sum_{i=0}^{\frac{n-k-1}{2}} c_{i} x^i
 $$
@@ -36,23 +40,28 @@ j\in \{ 1,\dots,n \}: r_{j}\sum_{i=0}^{\frac{n-k-1}{2}} c_{i} \alpha^i = \sum_{i
 $$
 a to je soustava $n$-lineárních rovnic s $n$ neznámými $c'_{i},c_{i}$.
 
-Tedy $\exists$ netriviální řešení $E(x),q(x)$, kde $E(x)\not\equiv{0}$. Mějme pak $p(x)=\frac{q(x)}{E(x)}$, které failne pokud máme příliš mnoho chyb. Pokud $\left\langle p(\alpha_{1}),\dots,p(\alpha_{n}) \right\rangle$ a $\left\langle r_{1},\dots,r_{n} \right\rangle$ se liší na více než $\frac{n-k-1}{2}\implies$ fail.
+Tedy $\exists$ netriviální řešení $E(x),q(x)$, kde $E(x)\not\equiv{0}$. Mějme pak $p(x)=\frac{q(x)}{E(x)}$ (toto je dle definice pro $q(x)= p_{m}(x)E(x)$), které failne pokud máme příliš mnoho chyb. Pokud $\left\langle p(\alpha_{1}),\dots,p(\alpha_{n}) \right\rangle$ a $\left\langle r_{1},\dots,r_{n} \right\rangle$ se liší na více než $\frac{n-k-1}{2}\implies$ fail.
+
+Složitost je omezena $O(n^3)$, protože Gaussova eliminace, ale protože 
 
 #### *Tvrzení:* Pokud $(E_{1}(x),q_{1}(x))$ a $(E_{2}(x),q_{2}(x))$ řeší $\forall j:r_{j}\sum_{i=0}^{\frac{n-k-1}{2}} c_{i} \alpha^i = \sum_{i=0}^{\frac{n+k-3}{2}} c_{i}' \alpha^i$, tak $E_{1}(x)\not\equiv 0,E_{2}(x)\not\equiv 0$, pak $\frac{q_{1}(x)}{E_{1}(x)} = \frac{q_{2}(x)}{E_{2}(x)}$.
 *Důkaz:* Stupně $q_{2}(x)E_{1}(x)$ a $q_{1}(x)E_{2}(x)$ jsou nejvýše $n-2$. Tvrdíme, že polynomy splňují
 $$
-\forall j\in \{ 1,\dots,n \}: g_{2}(\alpha_j) E_{1}(\alpha_j) = q_{1}(\alpha_j) E_{2}(\alpha_j).
+\forall j\in \{ 1,\dots,n \}: q_{2}(\alpha_j) E_{1}(\alpha_j) = q_{1}(\alpha_j) E_{2}(\alpha_j).
 $$
 A v každém bodě $j$ platí taky
 $$
-r_{j} E_{1} (\alpha_j) = q_{1}(\alpha_j),\quad r_{j}E_{2}(\alpha_j) = q_{2}(\alpha_j).
+\forall j:  r_{j} E_{1} (\alpha_j) = q_{1}(\alpha_j),\quad r_{j}E_{2}(\alpha_j) = q_{2}(\alpha_j).
 $$
-Tedy pro dané $j$, je-li $r_{j}=0$, tak se rovnají $q_{1},q_{2}$ a pro $r_{j}\ne 0$, tak můžeme zkrátit rovnici a tedy platí
+Tedy pro dané $j$, je-li $r_{j}=0$, tak se rovnají $q_{1},q_{2} = 0$ a pro $r_{j}\ne 0$, tak můžeme zkrátit rovnici a tedy platí
 $$
-\forall j\in \{ 1,\dots,n \}: g_{2}(\alpha_j) E_{1}(\alpha_j) = q_{1}(\alpha_j) E_{2}(\alpha_j).
+\forall j\in \{ 1,\dots,n \}: q_{2}(\alpha_j) E_{1}(\alpha_j) = q_{1}(\alpha_j) E_{2}(\alpha_j).
 $$
 A oba polynomy se rovnají v $n$ bodech a taky $q_{2}(x)=p_{2}(x)E_{2}(x)$ a tedy se rovná
 $$
 p_{2}(x)E_{2}(x)E_{1}(x) = p_{1}(x)E_{1}(x)E_{2}(x).
 $$
-Kde se v nenulových bodech vytknou $E_{1}(x)E_{2}(x)$.
+Kde se v nenulových bodech vytknou $E_{1}(x)E_{2}(x)$. Dohromady máme jen jedno stejné řešení
+$$
+p_{1}(x) = p_{2}(x).
+$$

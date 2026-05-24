@@ -53,7 +53,7 @@ $$
 
 ---
 # Shannonův kód
-Chceme ideální délku a to je $\ell(x)=\log \frac{1}{p(x)} \approx I(X)$, protože $\sum_{x} 2^{-\ell(x)} = \sum_{x} 2^{\log p(x)} = 1$, pak by $L(C)=H(X)$, ale to nejde kvůli omezením na reálná čísla, takže $\left\lceil  \log \frac{1}{p(x)}  \right\rceil$, kde každá délka přiroste maximálně o jedna, takže (platí to pro každý bezprefixový jazyk)
+Chceme ideální délku a to je $\ell(x)=\lceil  \log \frac{1}{p(x)}\rceil \approx I(X)$, protože $\sum_{x} 2^{-\ell(x)} = \sum_{x} 2^{\log p(x)} = 1$, pak by $L(C)=H(X)$, ale to nejde kvůli omezením na reálná čísla, takže $\left\lceil  \log \frac{1}{p(x)}  \right\rceil$, kde každá délka přiroste maximálně o jedna, takže (platí to pro každý bezprefixový jazyk)
 $$
 H(X) \leq L(C) \leq H(X)+1.
 $$

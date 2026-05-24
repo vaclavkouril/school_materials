@@ -42,23 +42,8 @@ $$
 *Syndrom* je $eH$ u dekódování $y'H= (y+e)H=yH + eH=eH$, kde můžeme mít pak look-up tabulku a dekódovat co dělá tento error.
 
 ---
-### *Věta (Singelton):* $\forall$ kód $C$, $[n,k,d]_{q}$, kde $n\geq k+d-1$.
-*Důkaz:* 
-
-
----
-# Náhodný lineární kód
-Mějme náhodnou $G \in \{ 0,1 \}^{k \times n}$.
-
-### *Tvrzení:* Pokud $d;2^k< \frac{2^n}{\text{Vol}_{2}(n,d)} \cdot \frac{1}{2}$, pak $G$ generuje s velkou pravděpodobností ($p\in(0, 1/2), d=pn$) $[n,k,d]_{2}$ kód.
-*Důkaz:* TODO:
-
----
-# Hammingova mez
-$[n,k,pn]_{2}$ kód má $k< \left( 1-H\left( \frac{p}{2} \right) \right)n (+\log n)$. Protože $\text{Vol}_{2}\left( n, \frac{pn}{2} \right) \ge \frac{2^{H(p/2)n}}{(n+1)}$ a tedy
+### *Věta (Singelton):* $\forall$ kód $C$, $[n,k,d]_{q}$, platí $n\geq k+d-1$.
+*Důkaz:* Protože $C$ je lineární kód, tak $\exists x,y\in C: x|_{\{ 1,\dots,k-1 \}}=y|_{\{ 1,\dots,k-1 \}}$ pak
 $$
-2^k \leq \frac{2^n \cdot n}{2^{H(p/2)n}}
-$$
-$$
-k\leq \left( 1-H\left(  \frac{p}{2}  \right) \right)n + \log n
+d_{Ham} \leq n - k + 1 \implies d \leq n-k+1.
 $$
