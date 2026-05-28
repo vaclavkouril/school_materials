@@ -105,7 +105,7 @@ $$
 
 $$
 \begin{split}
-H(X_{1},\dots,X_{k}) = H(X_{1}) + H(X_{2},\dots,X_{k} \mid X_{1}) = \dots = H(X_{1}) + H(X_{2} \mid X_{1}) +\dots + H(X_{k} \mid, X_{1},\dots,X_{k-1}). 
+H(X_{1},\dots,X_{k}) = H(X_{1}) + H(X_{2},\dots,X_{k} \mid X_{1}) = \dots \\ = H(X_{1}) + H(X_{2} \mid X_{1}) +\dots + H(X_{k} \mid, X_{1},\dots,X_{k-1}). 
 \end{split}
 $$
 

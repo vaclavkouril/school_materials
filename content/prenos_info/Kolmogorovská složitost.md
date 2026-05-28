@@ -34,7 +34,7 @@ $$
 # Vztah mezi $C(x)$ a $C_{\mathcal{U}}(x)$
 Zafixujme si č. r. f. $\mathcal{U}$, pak $C(x) = C_{\mathcal{U}}(x)$
 - $C(x) \leq |x| + O(1)$ pro č. r. f. $f(x)=x$ a tedy $C_{f}(x) = |x|$
-- $C(O^n) \leq \log n + O(1)$
+- $C(0^n) \leq \log n + O(1)$
 - $C(\pi_{[1:n]}) \leq \log n + O(1)$
 
 #### *Tvrzení:* $\forall n \geq 1,\exists x\in \{ 0,1 \}^n: C(x)\geq n$

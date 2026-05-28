@@ -146,22 +146,20 @@ $$
 &\text{BellmanFord} \\
 &\text{Vstup: Orientovaný graf } G = (V, E), \text{ ohodnocení hran } \ell(e), \text{ startovní vrchol } v_0 \\
 &\text{Výstup: Nejkratší vzdálenosti } h(v) \text{ z } v_0 \text{ a pole předchůdců } P(v) \\
-
 &1.\ \text{Pro každý } v \in V: \quad h(v) \leftarrow +\infty,\ P(v) \leftarrow \text{nedef} \\
 &2.\ h(v_0) \leftarrow 0 \\
-
 &3.\ \text{Opakuj } |V| - 1 \text{ krát:} \\
 &4.\quad \text{Pro každou hranu } (u, v) \in E: \\
 &5.\quad\quad \text{Pokud } h(v) > h(u) + \ell(u, v): \\
 &6.\quad\quad\quad h(v) \leftarrow h(u) + \ell(u, v) \\
 &7.\quad\quad\quad P(v) \leftarrow u \\
-
 &8.\ \text{// Detekce záporného cyklu} \\
 &9.\ \text{Pro každou hranu } (u, v) \in E: \\
 &10.\quad \text{Pokud } h(v) > h(u) + \ell(u, v): \\
 &11.\quad\quad \text{Graf obsahuje záporný cyklus – chyba} \\
 \end{align}
 $$
+
 ## *Správnost a analýza*
 - **Fáze výpočtu:** Fáze $F_0$ otevře pouze $v_0$, každá další fáze $F_i$ relaxuje vrcholy otevřené během $F_{i-1}$.
 - **Invariant F (fáze):** Po $i$-té fázi platí: $h(v) \leq$ délka nejkratší cesty z $v_0$ do $v$ s nejvýše $i$ hranami.
@@ -189,7 +187,6 @@ $$
 &\text{Jarník} \\
 &\text{Vstup: Souvislý graf } G = (V, E) \\
 &\text{Výstup: Minimální kostra } T\\
-
 &1.\ v_{0} \leftarrow \text{libovolný vrchol grafu}\\
 &2.\ T \leftarrow \text{strom obsahující } v_{0} \text{ a žádné hrany} \\
 &3.\ \text{Dokud existuje hrana } uv \text{ taková, že } u\in V(T), v \not\in V(T): \\
@@ -204,13 +201,11 @@ $$
 &\text{Borůvka} \\
 &\text{Vstup: Souvislý graf } G = (V, E)\text{ s unikátními váhami} \\
 &\text{Výstup: Minimální kostra } T\\
-
 &1.\ T \leftarrow (V,\emptyset)\\
 &2.\ \text{Dokud $T$ není souvislý}: \\
 &3.\ \quad \text{Rozložíme $T$ na komponenty souvislosti } T_{1},\dots,T_{k}\text{.} \\
 &4. \ \quad \text{Pro každý strom } T \text{ najdeme nejlehčí z hran mezi } T_{i} \text{ a zbytkem grafu a označíme ji $e_{i}$.} \\
 &5. \ \quad \text{Přidáme do } T \text{ hrany } \{ e_{1},\dots,e_{n} \} \text{.}
-
 \end{align}
 $$
 *Tvrzení:* Borůvkův algoritmus skončí po nejvýše $\lfloor \log n \rfloor$ iteracích a najde minimální kostru.
@@ -236,16 +231,13 @@ $$
 &\text{FordFulkerson} \\
 &\text{Vstup: Síť } (V, E), \text{ kapacitní funkce } c(e), \text{ zdroj } z, \text{ stok } s \\
 &\text{Výstup: Maximální tok } f \\
-
 &1.\ \text{Pro každou hranu } e \in E: \quad f(e) \leftarrow 0 \\
-
 &2.\ \text{Dokud existuje nenasycená cesta } P \text{ z } z \text{ do } s: \\
 &3.\quad \varepsilon \leftarrow \min\{ r(e) \mid e \in P \} \quad \text{// rezerva cesty} \\
 &4.\quad \text{Pro každou hranu } uv \in P: \\
 &5.\quad\quad \delta \leftarrow \min\{ f(vu),\ \varepsilon \} \quad \text{// kolik lze odečíst proti směru} \\
 &6.\quad\quad f(vu) \leftarrow f(vu) - \delta \\
 &7.\quad\quad f(uv) \leftarrow f(uv) + (\varepsilon - \delta) \\
-
 &8.\ \text{Vrátíme tok } f
 \end{align}
 $$
@@ -278,16 +270,12 @@ $$
 \begin{align}
 &\text{KompSilnéSouvislosti} \\
 &\text{Vstup: Orientovaný graf } G=(V,E) \\
-
 &1.\ \text{Sestrojíme graf } G^T \text{ s obrácenými hranami.} \\
 &2.\ Z \leftarrow \text{prázdný zásobník} \\
 &3.\ \forall v \in V: \text{komp}(v) \leftarrow \text{nedefinováno} \\
-
 &4.\ \text{Spouštíme DFS v } G^T \text{ opakovaně, dokud neprozkoumáme všechny vrcholy.} \\
 &5.\ \text{Při opuštění vrcholu } v \text{ ho vložíme do zásobníku } Z \\
-
 &6.\ \text{Zásobník Z obsahuje vrcholy setříděné podle } \text{out}(v) \\
-
 &7.\ \text{Dokud } Z \text{ není prázdný:} \\
 &8.\quad v \leftarrow Z.\text{pop}() \\
 &9.\quad \text{Pokud } \text{komp}(v) = \text{nedefinováno:} \\
@@ -328,7 +316,6 @@ $$
 &\text{Dinic} \\
 &\text{Vstup: Síť } (V, E, z, s, c) \\
 &\text{Výstup: Maximální tok } f \\
-
 &1.\quad f \leftarrow 0 \\
 &2.\quad \text{Opakujeme:} \\
 &3.\quad\quad \text{Sestrojíme síť rezerv } R \text{ a odstraníme hrany s nulovou rezervou} \\

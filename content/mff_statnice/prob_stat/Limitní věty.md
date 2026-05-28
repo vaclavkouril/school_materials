@@ -18,8 +18,9 @@ Y_{n} \stackrel{d}{\to} N(0,1).
 $$
 Neboli pokud $F_{n}$ je distribuční funkce $Y_{n}$ tak 
 $$
-\lim_{ n \to \infty } F_{n}(x)= \phi(x) \quad \text{pro každé } x\in \mathbb{R}
+\lim_{ n \to \infty } F_{n}(x)= \phi(x) \quad \text{pro každé}\, x\in \mathbb{R}
 $$
+
 Říkáme, že posloupnost $Y_{n}$ konverguje k $N(0,1)$ v distribuci.
 
 *Intuice:* Vlastně to říká, že pro libovolné náhodné veličiny, když jich máme hodně tak se více a více přibližujeme k průměrnému hodu býti jako střední hodnota jedné této veličiny.

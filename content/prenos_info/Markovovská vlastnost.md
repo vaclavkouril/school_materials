@@ -19,7 +19,7 @@ I(X:Y,Z) &= I(X:Y) + I(X:Z \mid Y) \\
 &= I(X:Z) + I(X:Y \mid Z)
 \end{align}
 $$
-protože víme, že $X,Z$ jsou za podmínky $Y$ nezávislé ($I(X:Z \mid Y)= I(X:X\mid Z) =0$) tak máme
+protože víme, že $X,Z$ jsou za podmínky $Y$ nezávislé ($I(X:Z \mid Y)= I(X:X\mid Y) =0$) tak máme
 $$
 I(X:Y) = I(X:Z) + I(X:Y \mid Z).
 $$

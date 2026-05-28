@@ -76,17 +76,11 @@ $$
 $$
 3. **Interval** pro $\hat p \pm z_{\alpha/2}$
 $$
-   \mathrm{se}
-   = 0{,}60 \pm 1{,}96\cdot0{,}049
-   = [\,0{,}60 - 0{,}096,\;0{,}60 + 0{,}096\,]
-   ≈ [\,0{,}504,\;0{,}696\,].
-
+\mathrm{se} = 0{,}60 \pm 1{,}96\cdot0{,}049= [\,0{,}60 - 0{,}096,\;0{,}60 + 0{,}096\,] ≈ [\,0{,}504,\;0{,}696\,].
 $$
-
-> _Interpretace:_ S 95 % jistotou říkáme, že skutečný $p$ leží někde mezi 0,504 a 0,696.
+Interpretace: S 95 % jistotou říkáme, že skutečný $p$ leží někde mezi 0,504 a 0,696.
 
 ---
-
 ### 3. Testování hypotézy
 #### Hypotézy
 - $H_0\!: p = 0{,}5$  
@@ -99,6 +93,7 @@ Z = \frac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}}
 = \frac{0{,}10}{0{,}05}
 = 2.
 $$
+
 #### p-hodnota
 $$
 \text{p-hodnota} = P(Z > 2) = 1 - \Phi(2) \approx 1 - 0{,}9772 = 0{,}0228.
@@ -107,7 +102,7 @@ $$
 - Zvolíme $\alpha = 0{,}05$.  
 - Protože p-hodnota $0{,}0228 < 0{,}05$, zamítáme $H_0$.  
 
-> _Interpretace:_ Pozorování 60 úspěchů z 100 je při $p=0{,}5$ dost nepravděpodobné (jen asi 2,3 % šance), proto usuzujeme, že skutečný podíl úspěchů je vyšší než 0,5.
+_Interpretace:_ Pozorování 60 úspěchů z 100 je při $p=0,5$ dost nepravděpodobné (jen asi 2,3 % šance), proto usuzujeme, že skutečný podíl úspěchů je vyšší než 0,5.
 
 ---
 ### 4. Chyby a síla testu
@@ -126,9 +121,7 @@ $$
   Síla testu $1-\beta\approx0{,}64$.
 
 ---
-
 ### Shrnutí
-
 1. **Intervalový odhad:** Dává rozsah, kde s danou jistotou leží parametr.  
 2. **Test hypotézy:** Porovnává data s předpokladem $H_0$, rozhoduje podle hladiny $\alpha$.  
 3. **Chyba I. druhu:** Prorazíme $H_0$, i když je pravdivá (říkáme si „falešný poplach“).  

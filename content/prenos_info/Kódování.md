@@ -17,7 +17,7 @@ f(c)=[0.a_{1}a_{2}\dots a_{k},0.a_{1}a_{2}\dots a_{k}+2^{-k}] = I_{c}
 $$
 a intervaly jsou z bezprefixovosti disjunktní a tedy
 $$
-|\bigcup_{c\in C} I_{c}| = \sum_{i=1}^{n} \underbrace{2^{-\ell_{i}}}\leq |[0,1)| = 1.
+|\bigcup_{c\in C} I_{c}| = \sum_{i=1}^{n} \underbrace{2^{-\ell_{i}}}_{\text{šířka intervalu}}\leq |[0,1)| = 1.
 $$
 ---
 #### *Tvrzení:* Nechť $\ell_{1},\dots,\ell_{n}$ jsou taková, že $\sum_{j=1}^n 2^{-\ell_{j}}\leq 1$. Pak existuje bezprefixový kód s těmito délkami kódových slov.
@@ -61,7 +61,7 @@ Nepřesnost o bit může být drahá.
 - Mějme $p(x_{1}) = 0,99999, p(x_{2}) = 0,00001$ a $\ell(x_{1}) = 1, \ell(x_{2}) = 17$. Tedy Shannonův kód přiřadí $c(x_{1})=0, c(x_{2})=10^{16}$ a to jde zlepšit na $c'(x_{1})=0, c'(x_{2})=1$.
 ---
 # Huffmanův kód
-Seřadíme si pravděpodobnosti $p_{1}\geq p_{2}\geq\ldots\geq p_{n}$, kde vyrábíme strom, tak že vezmeme $p_{n} + p_{n+1} = p'_{{n-1}}$ a to co dostaneme definuje podstrom.
+Seřadíme si pravděpodobnosti $p_{1}\geq p_{2}\geq\ldots\geq p_{n}$ do listů, vyrábíme strom, tak že vezmeme $p_{n} + p_{n-{1}1} = p'$ a $p'$ dává podstrom propojením $p_{n},p_{n-1}$.
 
 Mějme $x_{1},x_{2},\dots,x_{k} \approx X$ nezávislé a sestrojme pro $k$-tici kód a tedy $H(x_{1},\dots,x_{k})  \leq \mathbb{E}[C(x_{1},\dots,x_{k})]\leq H(x_{1},\dots,x_{k}) +1$ a z nezávislosti $H(x_{1},\dots,x_{k})  = k\cdot H(X)$ a tedy
 $$
