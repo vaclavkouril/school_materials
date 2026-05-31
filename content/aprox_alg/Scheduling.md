@@ -21,43 +21,34 @@ $$
 
 ---
 # (F)PTAS
-Pro pevné $m$ máme pseudo-polynomiální dynamické programování přes zatížení strojů.  
-Abychom z něj dostali FPTAS, zmenšíme délky prací.  
-  
-Nechť  
-$$  
-P_{\max}=\max_i p_i.  
-$$  
-Protože každé řešení musí zpracovat i největší práci, platí  
-$$  
-OPT\geq P_{\max}.  
-$$  
-  
-Zvolíme  
-$$  
-K=\frac{\varepsilon P_{\max}}{n}  
-$$  
-a definujeme zaokrouhlené délky  
-$$  
-p_i'=\left\lfloor \frac{p_i}{K}\right\rfloor.  
-$$  
-  
-Na instanci s délkami $p_i'$ spustíme přesné pseudo-polynomiální DP.  
-Dostaneme optimální rozvrh pro zaokrouhlenou instanci a použijeme stejný rozvrh pro původní práce.  
-  
-Protože  
-$$  
-p_i < K(p_i'+1),  
-$$  
-tak se každá práce při návratu k původním délkám zvětší oproti zaokrouhlené verzi o méně než $K$.  
-Na jedné cestě/stroji tedy celková chyba je nejvýše  
-$$  
-nK=\varepsilon P_{\max}\leq \varepsilon OPT.  
-$$  
-  
-Proto  
-$$  
-ALG\leq OPT+\varepsilon OPT=(1+\varepsilon)OPT.  
-$$  
-  
-Algoritmus je polynomiální v délce vstupu i v $\frac1\varepsilon$, tedy je to FPTAS.
+Mějme pseudopoly-dynamické programování
+$$
+DP[i,s]= 1\text{ když prvních }i \text{ jobů lze vybrat podmnožinu s} \sum s
+$$
+a $DP[0,0]=1$ a $DP[i,s]=DP[i-1,s] \lor DP[i-1,s-p_{i}]$ a na konci hledáme $s$, tak aby $max(s,P-s)$, tedy běžíme v $O(nP)$ a pro zobecnění $P(npP^{m-1})$
+
+$LB=\max\left( \frac{P}{m},p_{j} \right)$ a definujeme $A_{\varepsilon}$ a $\varepsilon=\frac{1}{k}$, spočteme pro instanci $I$:
+- $I'$ instance bez jobů $\leq \epsilon \cdot LB$
+- $I''$ je instance $I'$ s velikostmi jobů zaokrouhlenými dolů na $k$ násobek $\varepsilon^2 \cdot LB$, tedy
+$$
+k \cdot \varepsilon^2 \cdot LB, (k+1)\varepsilon^2LB, \dots, k^2 \varepsilon^2 LB
+$$
+$$
+\varepsilon LB, (\varepsilon+\varepsilon^2)LB, \dots, LB
+$$
+
+ALG pak
+1. $ALG(I'')=OPT(I'')$ se spočítá díky DP
+2. $ALG(I')$ použije stejné rozdělení jobů jako $I''$
+3. $ALG(I)$ použije $ALG(I')$ hladově
+
+Zjevně
+$$
+OPT(I)\geq OPT(I') \ge OPT(I'')
+$$
+$$
+ALG(I') \leq (1+\epsilon) ALG(I'') \leq (1+\epsilon)OPT(I')
+$$
+$$
+ALG(I)\geq ALG(I')\implies ALG(I)\leq LB + \varepsilon LB \leq (1+\varepsilon)OPT(I).
+$$
