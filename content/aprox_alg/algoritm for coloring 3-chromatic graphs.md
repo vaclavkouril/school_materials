@@ -7,7 +7,7 @@ SDP:
 - $(\forall ij\in E)v_{i}^T v_{j}= - \frac{1}{2}$
 
 ALG: Mějme $v_{i}$ jako feasible řešení SDP
-1. $\alpha=\sqrt{ \frac{2}{3}\Delta }$
+1. $\alpha=\sqrt{ \frac{2}{3}\ln\Delta }$
 2. $r$ náhodně s $r_{i}\in N(0,1)$
 3. $S:=\{ i\in V \mid v_{i} r \geq \alpha\}$
 4. $S':= \{ i \in S \mid (\forall i,ij\in E) j \not\in S \}$
