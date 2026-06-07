@@ -144,7 +144,7 @@ Pak
 $$  
 \mathbb E[X_i^{x,y}]\leq \frac{1}{10}.  
 $$
-[Chernoffovou nerovností](Shannonovy%20věty.md) dostáváme  
+[Chernoffovou nerovností](Shannonovy%20věty.md) dostáváme
 $$  
 \Pr\left[  
 \sum_{i=1}^t X_i^{x,y}>\frac{t}{3}  
@@ -153,7 +153,7 @@ $$
 2e^{-ct}  
 $$
 pro nějakou konstantu $c>0$.  
-  
+
 Počet vstupů $(x,y)$ je nejvýše $2^{2n}$, tedy podle union boundu  
 $$  
 \Pr\left[  
