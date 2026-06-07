@@ -79,20 +79,20 @@ H(X) \approx \mathbb{E}[C(X)]
 $$
 Spočitatelnost ve smyslu existence algoritmu, který s $n,x$ vydá $p(x)$ v $X_{n}$
 ### *Věta:* Mějme posloupnost náhodných proměnných $X_{1},X_{2},X_{3},\dots$ spočitatelné, pak $\forall n: H(X_{n}) - O(\log n) \leq \mathbb{E}[C(X_n)] \leq H(X_{n})+O(\log n)$.
-*Důkaz:* (1. $\leq$) mějme pro $x$ její program $p_{x}$, ten tvoří kód pro $C_{n}$ a tedy $H(X_{n})-O(\log n)\leq \mathbb{E}[|C_{n}|]$.
+*Důkaz:* (1. $\leq$) mějme pro $x$ její program $p_{x}$, ten tvoří kód pro $C_{n}$ ($0^{|bin(|p_{x}|)|}1bin(|p_{x}|)p_{x}$) a tedy $H(X_{n})-O(\log n)\leq \mathbb{E}[|C_{n}|]$.
 
 (2. $\leq$) pro $n\to p(x_{1}),p(x_{2}),\dots,p(x_{2^n})$ a z těchto pravděpodobností vyrobíme [Huffmanův kód](Kódování.md#Huffmanův%20kód) $F_{n}$ a pro něj máme 
 $$
 \mathbb{E}[|F_{n}(X_{n})|]\leq H(X_{n})+1
 $$
-program pro $x_{i}$ je $|n|+O(1)+O(1)+\text{ kód }x_{i} \text{ v rámci } F_{n}$ a tedy
-1. $|n|\to \log n$,
-2. $O(1)\to X_{n}$,
-3. $O(1)\to Huff$.
+program pro $x_{i}$ je $0^{|bin(|n|)|}1bin(|n|) \, Huff \, F_{n}(x_{i})$ a tedy
+1. $0^{|bin(|n|)|}1bin(|n|) \to O(\log n)$,
+2. $Huff\to O(1)$,
+3. $F_{n}(x_{i})\to \ell_{F_{n}}(x_{i})$.
 
 A dohromady délka programu pro $X_{i}$ máme
 $$
-C(x_{i})\leq O(\log n) - \ell_{F_{n}}(x_{i}),
+C(x_{i})\leq O(\log n) + \ell_{F_{n}}(x_{i}),
 $$
 $$
 \mathbb{E}[C(X_{n})] \leq \mathbb{E}[|F_{n}(X)|] + O(\log n).
