@@ -38,9 +38,47 @@ tak dostáváme $(x',y),(x,y')\in R$ a tedy $A\times B=R$ a tedy je to kombinato
 
 **Motivace** pro kombinatorické obdélníky máme $Rv =\{ (x,y), \text{které nás dovedou do }v \}$, kde $v$ je vrcholem stromu protokolu.
 
-*Důkaz:* Indukcí, pro kořen platí a $R_{u}=A\times B$ 
+*Důkaz:* Pro kořen platí  
+$$  
+R_{\mathrm{root}}=X\times Y,  
+$$
+což je kombinatorický obdélník.  
+  
+Nechť $u$ je vrchol a $R_u=A\times B.$
+Pokud ve vrcholu $u$ mluví Alice, potom její zpráva závisí pouze na $x\in A$ a dosavadním transcriptu, který je ve vrcholu $u$ už fixní. Definujeme 
+$$  
+A_0=\{x\in A: \text{Alice ve vrcholu }u\text{ pošle }0\},  
+$$
+$$  
+A_1=\{x\in A: \text{Alice ve vrcholu }u\text{ pošle }1\}.  
+$$
+Pak  
+$$  
+A=A_0\dot\cup A_1.  
+$$
+Synové vrcholu $u$ tedy odpovídají množinám  
+$$  
+R_{u_0}=A_0\times B,  
+$$
+$$  
+R_{u_1}=A_1\times B.  
+$$
+Obě jsou kombinatorické obdélníky.  
 
-Pro $m_{u}:X\to \{ 0,1 \}$, máme $A_{0}\dot{\cup} A_{1}=A$, protože rozdělíme odpovědi dle prefixu, kde jsme ve stromě ($A_{1}$ jsou prvky $A$ s prefixem $1$), takže máme $R_{u_{i}}=A_{i}\times B$. (Dochází k půlení dle rozhodnutí ve stromu, které je určeno tím obdélníkem.)
+Pokud ve vrcholu $u$ mluví Bob, analogicky rozdělíme $B$:  
+$$  
+B_0=\{y\in B: \text{Bob ve vrcholu }u\text{ pošle }0\},  
+$$
+$$  
+B_1=\{y\in B: \text{Bob ve vrcholu }u\text{ pošle }1\}.  
+$$
+Pak  
+$$  
+R_{u_0}=A\times B_0,  
+$$
+$$  
+R_{u_1}=A\times B_1.  
+$$
 
 - Na konci máme $\forall (x,y), (x',y') \in R: f(x,y)=f(x',y')$
 - Pokud protokol stojí $t$ hloubku, tak můžeme rozdělit $M_{f}$ na nejvýše $2^t$ monochromatických obdélníků.

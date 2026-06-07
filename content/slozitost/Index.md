@@ -3,3 +3,4 @@
 - [Polynomiální hierarchie](Polynomiální%20hierarchie.md)
 - 
 - [Neuniformní výpočetní modely](Neuniformní%20výpočetní%20modely.md)
+- [Landerova věta](Landerova%20věta.md)

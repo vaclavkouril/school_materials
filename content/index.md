@@ -26,10 +26,13 @@
 - [Hashování](Hashování.md)
 ---
 ## Základy přenosu a zpracování informace
-- [Index](content/prenos_info/Index.md)
+- [Index](prenos_info/Index.md)
 ---
 ## Složitost
-- [Index](content/slozitost/Index.md)
+- [Index](slozitost/Index.md)
+---
+## 🟢 Aproximační a online algoritmy
+- [Index](aprox_alg/Index.md)
 ---
 ## 🟢 Foundations of theoretical cryptography
 - [Informačně-teoretické šifrování a jeho omezení](Informačně-teoretické%20šifrování%20a%20jeho%20omezení.md)
