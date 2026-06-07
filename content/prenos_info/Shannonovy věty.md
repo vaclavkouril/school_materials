@@ -85,7 +85,7 @@ $$
 $$
 Z Chernoffovy nerovnosti víme
 $$
-\Pr[x +e \in D_{x} \land |e| \not\in [(p-\alpha)n,(p+\alpha)n]] \leq 2 \cdot e^{c_{p,\alpha}\cdot n}.
+\Pr[x +e \in D_{x} \land |e| \not\in [(p-\alpha)n,(p+\alpha)n]] \leq 2 \cdot e^{-c_{p,\alpha}\cdot n}.
 $$
 Tvrdíme, že 
 $$
@@ -97,7 +97,7 @@ $$
 $$
 kde
 $$
-[p^p (1-p)^{(1-p)}]^n = [2^{-H(p)}]^n,\quad [p^p (1-p)^{(1-p)}]^n = 2^{(-\alpha \log n + \alpha \log 1-p)n}.
+[p^p (1-p)^{(1-p)}]^n = [2^{-H(p)}]^n,\quad [p^{-\alpha} (1-p)^{(1-\alpha)}]^n = 2^{(-\alpha \log n + \alpha \log 1-p)n}.
 $$
 Dostáváme
 $$

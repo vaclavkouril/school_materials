@@ -92,7 +92,7 @@ program pro $x_{i}$ je $|n|+O(1)+O(1)+\text{ kód }x_{i} \text{ v rámci } F_{n}
 
 A dohromady délka programu pro $X_{i}$ máme
 $$
-C(x_{i})\leq O(\log n) - \ell_{F_{n}}(x_{i}),z
+C(x_{i})\leq O(\log n) - \ell_{F_{n}}(x_{i}),
 $$
 $$
 \mathbb{E}[C(X_{n})] \leq \mathbb{E}[|F_{n}(X)|] + O(\log n).
