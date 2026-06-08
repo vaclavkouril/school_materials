@@ -25,7 +25,7 @@
 - [Amortizace](Amortizace.md)
 - [Hashování](Hashování.md)
 ---
-## Základy přenosu a zpracování informace
+## 🟢 Základy přenosu a zpracování informace
 - [Index](prenos_info/Index.md)
 ---
 ## Složitost
