@@ -1,7 +1,5 @@
 # P/poly, NP/poly, EXP/poly a coNEXP
 
-Zdrojové stránky: ![[../Assets/pages/page-21.png]], ![[../Assets/pages/page-22.png]], ![[../Assets/pages/page-23.png]]
-
 ## Věta: $P/poly = PSIZE$
 
 Věta:
@@ -39,7 +37,6 @@ Na vstupu $x$ algoritmus používá radu $g(|x|)$. Pro pevnou délku $n$ lze jeh
 Výsledek: dostaneme obvody $C_1,C_2,\dots$ a tedy $L\in PSIZE$.
 
 ## $NP/poly$
-
 $NP/poly$ se poznamenává jako „neuniformní NP“.
 
 Definice:
