@@ -230,7 +230,7 @@ $ACC^0$ obvod $C$ rozepíšeme $MOD-m$ jako $MOD-p_{i}$ a hradla rozvrstvíme ta
 $\to$ $C$ je stále konstantně hluboké ($O(k)$) a polynomiálně velké.
 ### Nahradíme hradla polynomy
 1. $\neg y_{i}\to r_{\neg}(y_{i}) = 1-y_{i} \mod 2$
-2. $OR(y_{1},\dots,y_\ell) \to r_{OR}(y_{1},\dots,y_{\ell}) = 1- \prod_{i=0}^{\log^2 n}\left( 1-\left( \sum_{j=1}^{\ell} a_{ij}y_{j} \right) \right) \mod 2$, kde $a_{ij}$ jsou zvoleny náhodně. Pro pevné $y_{1},\dots,y_{\ell}$ je $\Pr[r_{OR} = OR] \geq 1-\left( \frac{1}{\log^2 n} \right)\geq 1 - \frac{1}{n^{\log n}}$.
+2. $OR(y_{1},\dots,y_\ell) \to r_{OR}(y_{1},\dots,y_{\ell}) = 1- \prod_{i=0}^{\log^2 n}\left( 1-\left( \sum_{j=1}^{\ell} a_{ij}y_{j} \right) \right) \mod 2$, kde $a_{ij}$ jsou zvoleny náhodně. Pro pevné $y_{1},\dots,y_{\ell}$ je $\Pr[r_{OR} = OR] \geq 1-\left( \frac{1}{2^{\log^2 n}} \right)\geq 1 - \frac{1}{n^{\log n}}$.
 3. $MOD-p(y_{1},\dots,y_{\ell}) \to r_{MOD-p}(y_{1},\dots,y_{\ell}) =\left( \sum_{i=1}^{\ell} y_{i}\right)^{p-1} \mod p$ a to vychází z malé Fermatovy věty $0 / 1$.
 
 $C''$ takto vzniklý pro dané $x$ vstup máme
@@ -246,6 +246,8 @@ $$
 a tedy lze zafixovat $a_{ij}$ takové, že se odpoví správně na všech vstupech.
 
 Zkonstruujeme $C''''$ do podoby kterou chceme postupným kolapsem vrchních dvou vrstev. 
+
+Chceme aby MAJ, která rozhoduje na $r(y_{1},\dots,y_{n})=\sum_{i=1}^n y_{i}$ se zkolabovalo s polynomy $r'_{1},r'_{2},\dots,r_{\ell}'$, které jsou všechny $\mod p$. Nemůžeme je ale jednoduše substituovat protože při $\mod p$ může dojít k tomu, že vyjde $r(x)=0$, i když se něco splnilo, můžou vznikat chyby při splnění přesně $p$ členů.
 
 Pro polynom je norma součet koeficientů v absolutní hodnotě.
 
@@ -267,34 +269,57 @@ Tvrzení:
 $$
 P_{2^i} \text{ splňuje zesílení modulo } p^{2^i}.
 $$
-Důkaz:
+Důkaz: pro $i=0$ máme
+- $x=0 \mod p \implies x=  c \cdot p \implies p^2 \mid 3 x^2$ i $p^2 \mid 2x^3$ a tedy $p^2 \mid 3x^2 - 2x^3$
+- $x=1 \mod p \implies x=  c \cdot p +1 \implies 3(2cp + 1) - 2(2cp +1 )(cp+1)$, protože $x^2 \mod p^2 = (2cp+1)$ a pak máme $\stackrel{\mod p^2}= 6cp +3 - 4cp -2cp -2$ a $\stackrel{\mod p^2}= 1$.
 
+Pro $i>1$ máme
+- $x=0 \mod p \implies y = P_{2^{i-1}}(x)=c \cdot p^{2^{i-1}}$ a pak stejným odvozením jako výše máme $\implies p^{2^{i}} \mid P_{2}(y)$.
+- $x=1 \mod p \implies y = P_{2^{i-1}}(x)=cp^{2^{i-1}}+1 \implies P_{2}(y) = c' p^{2^i}+1 \mod p^{2^i}$.
 
-Pro $k=2^i$ platí odhady:
-$$
-\deg P_k(x) \leq k^2-1,
-$$
-$$
-\|P_k(x)\| \leq 5^{k^2-1}.
-$$
-Důkaz indukcí:
+Tvrzení: Pro $k=2^i$ platí odhady:
+1. $\deg P_k(x) \leq k^2-1$,
+2. $\|P_k(x)\| \leq 5^{k^2-1}$.
 
+Důkaz indukcí: Stupeň $P_{k}(x) \leq 3\left[ \left( \frac{k}{2} \right)^2 -1 \right]=\frac{3}{4}k^2 -3 \leq k^2 -1$
+
+A norma $P_{k}(x)$, předpokládejme $P_{\frac{k}{2}}(X)= N \leq 5^{(k/2)^2 -1}$, pak 
+$$
+P_{k}(x)\leq 3 N^2 + 2N^3 \leq{5}N^3 \leq5(5^{(k/2)^2 -1})^3 \leq 5^{((k/2)^2 -1)3+1} \leq 5^{k^2 -1}.
+$$
 ## Čínská věta o zbytcích
-Definujeme operaci
+Definujeme operaci (má hodnoty z $\left[ -\frac{m}{2}, \frac{m}{2} \right]$)
 $$
-x \bmod m =
+x \overline{\bmod} m =
 \begin{cases}
 x \bmod m, & x \bmod m < \frac m2,\\
 (x \bmod m)-m, & x \bmod m \geq \frac m2.
 \end{cases}
 $$
-Lemma: Jestliže $r(y_1,\dots,y_\ell)$ je polynom normy $N$ a
+Lemma: Jestliže $r(y_1,\dots,y_\ell)$ je polynom normy $N$ a $m^k \geq 2N+1$, pak pro všechna $a_1,\dots,a_\ell$ (t.ž $a_{i}\mod m\in \{ 0,1 \})$ je 
 $$
-m^k \geq 2N+1,
+r(a_{1} \mod m,a_{2} \mod m,\dots,a_{\ell} \mod m) = r(P_{k}(a_{1}),\dots,P_{k}(a_{\ell})) \overline{\bmod} m^k
 $$
-pak pro všechna $a_1,\dots,a_\ell$ existuje ekvivalentní vztah mezi hodnotou $r$ modulo $m$ a hodnotou po aplikaci polynomů $P_k$ na argumenty.
+Důkaz
+$$
+\begin{align*}
+&r(a_{1} \mod m,a_{2} \mod m,\dots,a_{\ell} \mod m)\\ 
+& = r(P_{k}(a_{1}) \mod m^k,\dots,P_{k}(a_{\ell}) \mod m^k) \\
+& = r(P_{k}(a_{1}) \mod m^k,\dots,P_{k}(a_{\ell}) \mod m^k) \overline{\bmod} m^k \\
+&= r(P_{k}(a_{1}),\dots,P_{k}(a_{\ell})) \overline{\bmod} m^k
+\end{align*}
+$$
+kde 2. rovnost platí, protože $m^k \geq 2N +1$, protože hodnota polynomu je $\leq N$ pro všechny. 
 
-Tím se dá zachovat správná hodnota při přechodu do vyšších mocnin modulu.
+Kolabujeme vrstvy dle lemma a vznikne nám polynom $R(x)= \sum_{i} P_{k}(r_{i}(x))$ a ten roznásobíme na 
+$$
+R(x) = \sum_{I} c_{I} \prod_{j\in I} x_{j}
+$$
+to si můžeme dovolit, protože výsledky u $x_{i}$ jsou jen $0,1$ a každý člen $\prod x_{j}$ je AND nad proměnnými z $I$. Pokud je stupeň polynomu $\log^{O(1)}n$ (a to je protože or ma nejvyšše $\log^2 n$ faktorů a mocnění na $p$ je konstanta), pak každý AND má fan-in také $\log^{O(1)}n$. 
+
+Norma pro polynom $OR$ je $(1+n^c)^{\log^2 n}$, protože máme $(1-a_{ij}y_{i})$, pak tedy je norma $2^{\log^{O(1)}n}$, to samé pro $MOD-p$ hradla. Když vše naskládáme přes konstantně mnoho vrstev, tak mám stále normu $2^{\log^{O(1)}n}$. 
+
+Protože počet různých členů stupně nejvýše $d$ je $n^d$ a $d=\log^{O(1)}n$ a jeden unikátní člen musíme mít jako vstup maximálně norma-krát, takže fan-in symetrické funkce je $2^{\log^{O(1)}n}$.
 
 ## Výsledek pro ACC0-SAT
 Testování splnitelnosti $ACC^0$ obvodu:
@@ -303,15 +328,30 @@ Máme $ACC^0$ obvod $C$ s $n$ bity vstupu. Existují vstupy $a_1,\dots,a_n$ tako
 
 Triviální algoritmus: čas přibližně $poly(n)2^n$.
 
-Lepší algoritmus: čas
+Lepší algoritmus: čas $2^{n-\log^{O(1)}n}.$
+
+V čase $2^{\log^{O(1)}n}$ si vyrobíme redukci dle mechanismu výše, překontrolujeme validitu $h$ (symetrická funkce) a $r(x_{1},\dots,x_{n'})$, kde $n'=n-\log^{O(1)}n$ a chceme otestovat zda $\exists x_{1},\dots,x_{n'}\in \{ 0,1 \}$ takové, že $h(r(x_{1},\dots,x_{n'}))=1$.
+
+Mějme $x\in \{ 0,1 \}^{n'}$ a definujme $S_{x}=\{ i;x_{i}=1 \}$ a $g(S)=$ koeficienty mnohočlenu $\prod_{i\in S}x_{i}$ v $r(x_{1},\dots,x_{n'})$. Navíc $\forall S\subseteq \{ 1,\dots,n' \}$ je $|S|\leq \log^{O(1)}n$ a lze $g(S)$ spočítat v čase $2^{\log^{O(1)}n}$.
 $$
-2^n - 2^{n-g^{O(1)}n}.
+\forall x; r(x) = \sum_{T \subseteq S_{x}} g(T)
 $$
-Náčrt:
-- rozdělíme vstup na $n'$ pevně zvolených bitů a zbytek,
-- obvod redukujeme na symetrickou vrstvu,
-- používáme aritmetické nahrazení hradel,
-- vytvoříme tabulky hodnot funkcí pro malé množiny bitů.
+Definujme $g_{i}(S)= \sum_{T \subseteq S,T \cap \{ i+1,\dots,n' \}=S\cap \{ i+1,\dots,n' \}} g(T)$, pak
+- $g_{0}(S)=g(S)$
+- $g_{n'}(S_{x})=r(x)$
+
+Spočteme $g_{i}(S)$ pro $\forall S \subseteq \{ 1,\dots,n' \}$ tak, že
+$$
+g_{i}(S) = \begin{cases}
+g_{i-1}(S) & i\not\in S \\
+g_{i-1}(S)+g_{i-1}(S \setminus \{ i \}) & i\in S
+\end{cases}
+$$
+$g_{n'}(S)$ lze spočítat v čase $2^{n'}\cdot n'$ pokud známe $g_{0}(S)=g(S)$, z tabulky pro $g_{n'}(S)=r(x)$ se určí spolu s tabulkou pro $h$ splnitelnosti $C(x)$. 
+
+Program vypadá jak vypadá protože v $i$ t€m kroku si dovolujeme vynechávat prvky jen z množiny $\{ 1,\dots,i \}$, pokud $i \not\in S$ tak stejně nemůže být v $T$ a druhá možnost charakterizuje to když $i\in T$, pak $g_{i-1}(S)$ jsou přesně podmnožiny s $i$ (musí z def ho vybrat, protože $i>i-1$) a $g_{i-1}(S \setminus \{ i \})$ jsou podmnožiny bez $i$.
+
+Obojí tabulky jsou nad $n'$ a tedy se dá rozhodnout ve $2^{n - \log^{O(1)}n}$.
 
 ---
 ## $NEXP \not\subseteq ACC^0.$
