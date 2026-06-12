@@ -354,7 +354,10 @@ Program vypadá jak vypadá protože v $i$ t€m kroku si dovolujeme vynechávat
 Obojí tabulky jsou nad $n'$ a tedy se dá rozhodnout ve $2^{n - \log^{O(1)}n}$.
 
 ---
-## $NEXP \not\subseteq ACC^0.$
+## WIlliams 2010: $NEXP \not\subseteq ACC^0.$
+$$
+NEXP = \bigcup_{k \in \mathbb{N}} NTIME(2^{n^k}), \quad E= DTIME(2^{O(n)})
+$$
 Slabší výsledek:
 $$
 E^{NP} \not\subseteq ACC^0.
@@ -365,16 +368,31 @@ NEXP \subseteq P/poly \Rightarrow NEXP \text{ má svědky v } P/poly.
 $$
 
 Důkazová idea:
-- uvažujme $L \in NTIME(2^n)$ přijímaný strojem $M$,
-- pokud $NEXP \subseteq ACC^0$, pak lze ověřovací obvod zapsat jako $ACC^0$,
-- pro dané $x$ existuje svědek $\varphi_x$ velikosti $2^n poly(n)$,
+- uvažujme $L \in NTIME(2^n)$, který $L\not\in NTIME(o(2^n))$ přijímaný strojem $M$,
+- pokud $NEXP \subseteq ACC^0$, pak $L\in NTIME(o(2^n))$. To je spor s větou o nedeterministické časové hierarchii $NTIME(o(t(n)) \subsetneqq NTIME(t(n+1))$
+- $\forall x, \exists \varphi_x$ 3-CNF velikosti $2^n poly(n)$ taková, že $x\in L \iff \varphi_{x}$ je splnitelná (svědek),
 - ověření svědka lze převést na problém $ACC^0$-SAT.
 
-Pomocný algoritmus pro $ACC^0$-SAT rozlišuje, zda daný obvod přijímá nějaký vstup.
+$\varphi_{x}$ kóduje tabulku výpočtu $M$ pro $x$ a to dá $\varphi_{x}$ velikosti $O(2^n \cdot 2^n)$ ale to můžeme zlepšit na $O(2^n poly(n))$.
 
-Tím vznikne algoritmus pro $L$ v čase menším než očekávaný podle časové hierarchie, což dá spor:
+Existuje poly-time algoritmus, který pro $x$ sestrojí poly-velký obvod $C_{x}$ kódující $\varphi_{x}$. 
+- $C_{x}$ na vstupu $i\in \{ 0,1 \}^{n +O(\log n)}$ vypíše indexy tří proměnných obsažených v $i$-té disjunkci $\varphi_{x}$ spolu se třemi bity určujícími, které z těchto tří proměnných jsou v $i$-té disjunkci negované.
+- v $E^{NP}$ lze najít pro dané $x\in L$ splňující ohodnocení $\varphi_{x}$ (binární vyhledávání na proměnných $\varphi_{x}$)
+- Pokud je $E^{NP} \subseteq ACC^0$ pak pro dané $x\in L$ existuje $ACC^0$ obvod $W_{x}$ kódující splnitelné ohodnocení $\varphi_{x}$. $W_{x}$ jako vstup vezme index proměnné a spočítá její hodnotu ve splňujícím ohodnocení pro $\varphi_{x}$.
+- Kdyby $C_{x}$ byl $ACC^0$ obvod, pak $T_{x}$, který je $1 \iff i$-tá klauzule $\varphi_{x}$ je splněná ohodnocením $W_{x}$ je také v $ACC^0$.
+![[t-x.excalidraw.svg]]
+
+Pomocí algoritmu pro $ACC^0$-SAT otestujeme v čase $o(2^n)$, zda $T_{x}$ dává $1$ pro všechna $i$.
+
+Pak máme algoritmus pro $L$
+1. Uhodneme $C'_{x}$ ($ACC^0$ obvod ekvivalentní $C_{x}$)
+2. Ověříme, že $C_{x}'\equiv C_{x}$,
+3. Uhodni $W_{x}$ a otestuj, že $T_{x}$ dává vždy $1$
+
+Ověření ekvivalence je uhodnutí posloupnosti obvodů ekvivalentní jednotlivým hradlům v $C_{x}$ a pomocí $ACC^0$-SAT ověříme, že jejich konkatenace dělají co by měli.
+
+Tím vzniklý algoritmus v čase $NTIME(o(2^n))$ menším než očekávaný podle časové hierarchie, což dá spor:
 $$
 NTIME(o(2^n)) \neq NTIME(t(n)).
 $$
 
-Poznámka v rukopisu: vhodná posloupnost obvodů ekvivalentních jednotlivým hradlům, proměnným a podobvodům v $C_x$, a proměnná $ACC^0$-SAT určí, zda jejich kombinace dělají, co by měly.

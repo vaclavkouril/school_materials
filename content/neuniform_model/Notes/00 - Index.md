@@ -1,9 +1,5 @@
 # Výpočetní složitost - přepis ručně psaných poznámek
 
-Zdroj: `Source.pdf`.
-
-Toto je přepis ručně psaných poznámek do Obsidian-kompatibilního Markdownu. Matematika je zapsaná inline pomocí `$...$` a blokově pomocí `$$...$$`.
-
 ## Poznámka ke kvalitě přepisu
 
 Rukopis v některých místech nejde spolehlivě přečíst. Taková místa jsou značena:

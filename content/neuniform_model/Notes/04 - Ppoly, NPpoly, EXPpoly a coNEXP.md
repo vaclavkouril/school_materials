@@ -1,82 +1,56 @@
 # P/poly, NP/poly, EXP/poly a coNEXP
 
 ## Věta: $P/poly = PSIZE$
-
 Věta:
-
 $$
 P/poly = PSIZE.
 $$
+Tedy jazyky počitatelné s polynomiálními radami jsou právě jazyky počitatelné posloupností obvodů polynomiální velikosti.
 
-Tedy jazyky počitatelné polynomiálními radami jsou právě jazyky počitatelné posloupností obvodů polynomiální velikosti.
-
-Důkaz „$\supseteq$“:
-
-Je-li $L \in PSIZE$, existuje posloupnost obvodů $\{C_n\}_{n\geq 1}$ počítající $L \cap \{0,1\}^{n}$ a
-
+Důkaz „$\supseteq$“: Je-li $L \in PSIZE$, existuje posloupnost obvodů $\{C_n\}_{n\geq 1}$ počítající $L \cap \{0,1\}^{n}$ a
 $$
 |C_n| = poly(n).
 $$
-
 Radící funkce $g(n)$ je binární zakódování popisu obvodu $C_n$.
 
 Pak $L \in P/poly$:
-
-- rada je $g(n)$,
+- rada je $g(n)=$ binárně zakódovaný popis obvodu $C_{n}$,
 - algoritmus na vstupu $x$ dostane $g(|x|)$,
 - z $g(|x|)$ zrekonstruuje $C_{|x|}$,
 - vyhodnotí $C_{|x|}$ na vstupu $x$,
 - běží v čase polynomiálním v $|C_{|x|}|=poly(|x|)$.
 
-Důkaz „$\subseteq$“:
+Důkaz „$\subseteq$“: Je-li $L \in P/poly$, máme poly-časový algoritmus a radící funkci $g(n)$.
 
-Je-li $L \in P/poly$, máme poly-časový algoritmus a radící funkci $g(n)$.
+Na vstupu $x$ algoritmus používá radu $g(|x|)$ aby rozhodl, že $x\in L$. 
 
-Na vstupu $x$ algoritmus používá radu $g(|x|)$. Pro pevnou délku $n$ lze jeho výpočet simulovat polynomiálně velkým obvodem, kde vstup $x$ je proměnný a rada $g(n)$ je zadrátovaná jako konstanta.
+Pro pevnou délku $n$ lze jeho výpočet simulovat polynomiálně velkým obvodem, kde vstup $x$ je proměnný a rada $g(n)$ je zadrátovaná jako konstanta (jako v Cook-Levinově větě).
 
-Výsledek: dostaneme obvody $C_1,C_2,\dots$ a tedy $L\in PSIZE$.
-
+- Dostaneme tabulku výpočtu (Kachlíkování)
+- Hodnota každého políčka lze spočítat konstantně velkým obvodem ze tří předešlých políček
+- výstup lze spočítat v $poly(n)$ velkým obvodem $C_{|x|}$
+- $\to$ dostaneme obvody $C_1,C_2,\dots$ a tedy $L\in PSIZE$.
+---
 ## $NP/poly$
 $NP/poly$ se poznamenává jako „neuniformní NP“.
 
-Definice:
-
-$$
-L \in NP/poly
-$$
-
-pokud existuje radící funkce
-
-$$
-g : \mathbb{N} \to \{0,1\}^{*}
-$$
-
-s polynomiální délkou a nedeterministický algoritmus $A$ pracující v polynomiálním čase takový, že
-
+Definice:$L \in NP/poly$, pokud existuje radící funkce $g : \mathbb{N} \to \{0,1\}^{*}$ s polynomiální délkou a nedeterministický algoritmus $A$ pracující v polynomiálním čase takový, že
 $$
 \forall x \qquad x\in L \iff A \text{ přijímá } (x,g(|x|)).
 $$
-
 ## Nedeterministické obvody
-
 Nedeterministický obvod $C$ má vstup
-
 $$
 x \in \{0,1\}^{n}, \qquad y \in \{0,1\}^{p(n)}.
 $$
-
 Říkáme, že $C$ přijímá $x$, pokud existuje $y$ takové, že
-
 $$
 C(x,y)=1.
 $$
-
 Věta:
-
 $$
 L\in NP/poly \iff L \text{ je počitatelný nedeterministickými obvody polynomiální velikosti.}
 $$
-
 Důkaz: obdobný předchozí větě.
 
 ## $EXP/poly$
