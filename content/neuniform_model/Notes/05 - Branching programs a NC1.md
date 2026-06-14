@@ -1,21 +1,17 @@
 # Branching programs a NC1
 
-## Branching programy
-
+## Branching programy OBDD
 Alternativní názvy:
-
 - ordered binary decision diagrams,
 - switching and rectifier networks.
 
 Branching program je orientovaný acyklický graf:
-
 - jeden zdrojový uzel `Init`,
 - dva cílové uzly `ACCEPT`, `REJECT`,
 - každý vnitřní vrchol je označen proměnnou,
 - z každého vnitřního vrcholu vedou dvě hrany označené $0$ a $1$.
 
 Výpočet branching programu:
-
 - začíná ve vrcholu `Init`,
 - čte hodnotu proměnné přiřazené aktuálnímu vrcholu,
 - následuje hranu konzistentní s hodnotou této proměnné,
@@ -23,98 +19,60 @@ Výpočet branching programu:
 - výsledek je cílový vrchol.
 
 Zajímá nás:
-
-- velikost branching programu = počet vrcholů,
-- délka branching programu = nejdelší cesta v programu,
-- šířka branching programu = maximální velikost vrstvy.
+- **velikost** branching programu = počet vrcholů,
+- **délka** branching programu = nejdelší cesta v programu,
+- **šířka** branching programu = maximální velikost vrstvy.
 
 Hrany pouze mezi sousedními vrstvami.
-
 Příklady:
-
-1. Parita
-
-$$
-x_1 \oplus x_2 \oplus \cdots \oplus x_n
-$$
-
-lze spočítat branching programem velikosti $2n+O(1)$, šířky $2$ a délky $n$.
-
-2. Součet modulo $p$
-
-$$
-\sum_i x_i \bmod p
-$$
-
-má branching program velikosti $pn+O(p)$, šířky $p$, délky $n$.
-
-3. Majorita/`MAJ` má branching program, velikost a šířka podle počtu možných hodnot počitadla. V poznámkách: šířka kolem $3$ a dále `[nečitelné]`.
+1. Parita $x_1 \oplus x_2 \oplus \cdots \oplus x_n$ lze spočítat branching programem velikosti $2n+O(1)$, šířky $2$ a délky $n$. TODO: obrázek
+2. Součet modulo $p$ $\sum_i x_i \bmod p$ má branching program velikosti $pn+O(p)$, šířky $p$, délky $n$.
+3. Majorita/`MAJ` má branching program, velikost a šířka podle počtu možných hodnot počitadla.
 
 Kombinování branching programů:
-
 - pro $f\wedge g$ se spojí přijímající větev programu pro $f$ s programem pro $g$,
 - pro $f\vee g$ obdobně.
 
 Z toho:
-
 - $AC^0$ má branching programy polynomiální velikosti a konstantní šířky,
 - $ACC^0$ se řeší pomocí hradel modulo.
-
 ## Věta: $L/poly$ a branching programy
-
 Věta v poznámkách:
-
 $$
 f\in L/poly \iff f \text{ je počitatelná branching programy polynomiální velikosti.}
 $$
-
-Poznámka: log-space výpočet s polynomiální radící funkcí $g$.
+Poznámka: $L / poly$ je log-space výpočet s polynomiální radící funkcí $g$.
 
 Na vstupu $x,g(|x|)$ je konfigurace log-space stroje reprezentována vrcholem branching programu. Přechody stroje určují hrany programu.
 
 ## NC1
-
 $NC^1$ jsou obvody hloubky $O(\log n)$ sestávající z binárních hradel $\vee,\wedge,\neg$.
-
 ### Příklad: binární sčítání
-
-Mějme $x,y\in\{0,1\}^{n}$.
-
-Pro přenos $c_{ij}$, zda $j$-tá pozice generuje carry, který probublá až na $i$-tou pozici:
-
+Mějme $x,y\in\{0,1\}^{n}$. Pro přenos $c_{ij}$, zda $j$-tá pozice generuje carry, který probublá až na $i$-tou pozici:
 $$
 c_{ij} = (x_j \wedge y_j) \wedge \bigwedge_{\ell=i}^{j-1}(x_
 \ell \vee y_\ell).
 $$
-
 Potom:
-
 $$
 c_i = \bigvee_{j=i+1}^{n} c_{ij},
 $$
-
 $$
 z_i = x_i \oplus y_i \oplus c_i,
 $$
-
 $$
 z_0=c_0.
 $$
-
 Tedy sčítání dvou čísel je v $NC^1$.
 
 ### Součet více čísel
-
 Pro součet tří čísel lze zkonstruovat součet dvou čísel pomocí carry-save principu:
-
 $$
 e_i = a_i \oplus b_i \oplus c_i,
 $$
-
 $$
 f_{i-1} = [a_i+b_i+c_i \geq 2].
 $$
-
 Suma tří čísel se převádí na sumu dvou čísel. Rekurzivní součet $n$ čísel dává hloubku přibližně $\frac23 n \to (\frac23)^i n \to 2$ čísel.
 
 Z toho plyne sčítání více čísel v $NC^1$.
@@ -123,18 +81,15 @@ Další příklady:
 3. $x\cdot y \in NC^1$.
 4. `MAJ` je v $NC^1$.
 ## Barringtonova věta
-
 Věta (Barrington, Ben-Or, Cleve): Formuli hloubky $d$ nad oborem $R$ s proměnnými $x_1,\dots,x_n$ lze vyhodnotit registrovým programem délky $\leq 4^d$ se třemi registry nad $R$.
 
 Tím se ukazuje souvislost $NC^1$ a branching programů konstantní šířky.
 ## Okruhy a formule
-
 Okruh nad strukturou $(R,+,\cdot)$ nemusí být multiplikativní grupa. Příklady struktur:
 $$
 \mathbb{C},\; \mathbb{R},\; \mathbb{Z},\; \mathbb{Z}_n,\; GF[p].
 $$
 Formule nad $R(+ ,\cdot)$ je strom výpočtu s operacemi $+$ a $\cdot$.
-
 ## Registrový model
 Registry:
 - $r_1,\dots,r_k$ jsou pracovní registry, a
@@ -142,7 +97,6 @@ Registry:
 - Hodnoty jsou z $R$.
 
 Program je posloupnost instrukcí typu:
-
 - $r_i \leftarrow r_j \pm r_k$,
 - $r_i \leftarrow r_j \cdot r_k$.
 - Registry $r_i,r_j,r_k$ mohou být i vstupní registry $x_j,x_k$.
@@ -198,55 +152,39 @@ $$
 f(x_1,
 \dots,x_n)=x_i
 $$
-
 stačí přímá instrukce
-
 $$
 r_1 \leftarrow r_1+r_2x_i.
 $$
-
 2. Pro součet
-
 $$
 f=g+h
 $$
-
 spustíme program pro $g$ a potom program pro $h$:
-
 $$
 r_1 \leftarrow r_1+r_2g(x),
 $$
-
 $$
 r_1 \leftarrow r_1+r_2h(x).
 $$
-
 Tím se efekty sečtou.
-
 3. Pro součin
-
 $$
 f=g\cdot h
 $$
-
 použijeme pomocný registr $r_3$ a programy pro $g,h$:
-
 $$
 r_3 \leftarrow r_3+r_2g(x),
 $$
-
 $$
 r_1 \leftarrow r_1+r_3h(x),
 $$
-
 $$
 r_3 \leftarrow r_3-r_2g(x),
 $$
-
 $$
 r_1 \leftarrow r_1-r_3h(x).
 $$
-
 Požadovaný efekt je zachován. Délka programu je
 
 $$
