@@ -115,7 +115,10 @@ navíc platí
 $$
 y_{1},\dots,y_{n}\in \{ -1,1 \}^n \setminus W'_{C}: \prod_{i\in I} y_{i} = \prod_{i=1}^n y_{i} \cdot \prod_{i\not\in I} y_{i}
 $$
-takže $f$ lze reprezentovat polynomem stupně $\leq \frac{n}{2} + O(n^{1/3})$.
+takže $f$ lze reprezentovat polynomem stupně $\leq \frac{n}{2} + O(n^{1/3})$. Pro $I$, že $|I|\leq n / 2$ tak
+$$
+l_{2} = \sum_{|I|\leq n / 2} c_{I} \prod_{i\in I} y_{i}, \quad l_{1} = \sum_{|I|> n / 2} c_{I} \sum_{i\not\in I} y_{i}.
+$$
 
 Takových funkcí $f: \{ -1,1 \}^n \setminus W'_{C} \to GF[q]$ je 
 $$

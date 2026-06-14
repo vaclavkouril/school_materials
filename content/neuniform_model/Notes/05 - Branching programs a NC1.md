@@ -200,7 +200,7 @@ Booleovská formule se skládá z $\wedge,\vee,\neg$, ale lze ji přepsat jako a
 
 Pro danou funkci nad $GF[2]$ hloubky $d$ můžeme sestrojit registrový program se třemi registry, každý z nich pracuje s jedním bitem. Konfigurace registrů má $2^3=8$ možností.
 
-Z toho dostaneme branching program délky $\leq 4^d$ a šířky $8$, který počítá stejnou funkci.
+Z toho dostaneme branching program délky $\leq 4^{3d}$ a šířky $8$, který počítá stejnou funkci.
 
 ![barrington](barrington.png)
 
