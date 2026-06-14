@@ -13,7 +13,7 @@ Uvažujeme dvě míry
 - průměrná délka přes $r_{A},r_{B}$,
 - nejhorší délka protokolu
 $$
-R_{\varepsilon}(f)=\min_{\Pi \text{ protokol, pro }f\text{ s chybou }\varepsilon} \text{délka protokolu } \Pi
+R_{\varepsilon}(f)=\max{\Pi \text{ protokol, pro }f\text{ s chybou }\varepsilon} \text{délka protokolu } \Pi
 $$
 $R(f):=R_{1 /3}(f)$
 
@@ -21,7 +21,7 @@ $R(f):=R_{1 /3}(f)$
 - soukromé $EQ$, pro $i\in [1,\dots,O(n)]$, pak $i,C(x)_{i}\to[C(y)_{i}=C(x)_{i}]$, kde $O(\log n)$.
 
 ### Lemma: Soukromé $R(f)\geq \Omega(\log D(f))$, kde $D$ je deterministický protokol.
-*Důkaz:* Vezměme pravděpodobnostní protokol pro $f$ se soukromými bity maximální délky $D$ a vyrobíme z něj deterministický protokol délky $O(D \cdot 2^D)$, který je $\ge D(f)$ a tedy
+*Důkaz v1.:* Vezměme pravděpodobnostní protokol pro $f$ se soukromými bity maximální délky $D$ a vyrobíme z něj deterministický protokol délky $O(D \cdot 2^D)$, který je $\ge D(f)$ a tedy
 $$
 \begin{align*}
 D(f) &\le  c \cdot D \cdot 2^D \\

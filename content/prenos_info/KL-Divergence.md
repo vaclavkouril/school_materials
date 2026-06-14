@@ -17,6 +17,7 @@ Konvence:
 
 Tedy $D(X||Y)$ může být $\infty$. Navíc pokud $p=q \implies D(X||Y)=0$. Nesymetrická zjevně.
 
+---
 Definujme
 $$
 p(x,y)=\Pr[X=x \land Y=y], \quad q(x,y) = p(x)p(y)

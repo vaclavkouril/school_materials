@@ -1,7 +1,7 @@
 ## Hammingův kód
 $k= 2^\ell - \ell -1, n=2^\ell -1$ a pak $(2^\ell -1,2^\ell-\ell -1, 3)$ pro konstrukci mějme $k$ $\ell$-bitových vektorů s alespoň $2$ jedničkami a $p_{i} := \sum_{i\text{-tý}} x_{j}$ bit $j$-tého vektoru je $1$. (Odpovídá to výběru podmnožin a parit na nich s alespoň dvěma prvky, proto jsou zakázané $\ell$ pro jednobitové vektory a 0 vektor)
 
-$d$ Je $3$ protože umíme opravit jednu chybu: mějme $x_{1}\dots x_{k}p_i \dots p_{\ell}$ a chyby jsou na dvou možných místech
+Hodnota $d$ je $3$, protože umíme opravit jednu chybu: mějme $x_{1}\dots x_{k}p_i \dots p_{\ell}$ a chyby jsou na dvou možných místech
 - v části $x_{1},\dots,x_{k}\implies$ aspoň 2 paritní bity jsou špatně.
 - v části $p_{1}\dots p_{\ell}$ nesedí jeden paritní bit.
 

@@ -1,4 +1,4 @@
-### *Věta (Shannonova, 1):* Uvažujme binární symetrický kanál s pravděpodobností chyby $p \in [0,1 / 2)$. $\forall R< 1-H(p),\forall \varepsilon \in (0,1), \forall n$ dostatečně velké, tak platí $\exists C \subseteq \{ 0,1 \}^n, |C|= 2^{Rn}$ takový, že dekódování pro každé slovo $\leq \varepsilon$.
+### *Věta (Shannonova, 1):* Uvažujme binární symetrický kanál s pravděpodobností chyby $p \in [0,1 / 2)$. $\forall R< 1-H(p),\forall \varepsilon \in (0,1), \forall n$ dostatečně velké, tak platí $\exists C \subseteq \{ 0,1 \}^n, |C|= 2^{Rn}$ takový, že pravděpodobnost chyby dekódování je shora omezena hodnotou $\varepsilon$.
 ---
 ##### *Pomocná věta (Chernoff):* Nechť $0<p<1$ a $0<\alpha<1$. Pak $\exists c_{p,\alpha}>0$ t.ž. pro $\forall n\geq1$, a posloupnost $X_{1},\dots,X_{n}$ nezávislých náhodných proměnných $X_{i}=\begin{cases} 1 \text{ s pravděp. } p. \\ 0 \text{ s pravděp. } 1-p. \end{cases}$ $\Pr\left[ |\sum X_{i} - np| \geq \alpha n \right] \leq 2 \cdot e^{-c_{p,\alpha}\cdot n}$
 - $\sum X_{i}$ jsou "nasčítané chyby"
@@ -10,6 +10,7 @@ $$
 Ball_{n,r}(x) = \{ z \in \{ 0,1 \}^n, \Delta_{Ham}(x,z) \leq r \}
 $$
 *Důkaz Lemma:* 
+% TODO prý tu nesedí směr menšítek/většítek
 $$
 \text{Vol}_2(n,r) = \sum_{i=0}^{r} \binom{n}{i}
 $$
@@ -26,7 +27,8 @@ Navíc máme pro $i < r: \left(\frac{r}{n}\right)^i \left(1-\frac{r}{n}\right)^{
 Dostáváme dohromady tedy
 $$
 \begin{align*}
-1 &\geq \sum_{i=0}^{r} \binom{n}{i} \left(\frac{r}{n}\right)^i \left(1-\frac{r}{n}\right)^{n-i} \geq \sum_{i=0}^{r} \binom{n}{i} \left(\frac{r}{n}\right)^r \left(1-\frac{r}{n}\right)^{n-r} \\
+1 &\geq \sum_{i=0}^{r} \binom{n}{i} \left(\frac{r}{n}\right)^i \left(1-\frac{r}{n}\right)^{n-i} \\
+1 &\geq \sum_{i=0}^{r} \binom{n}{i} \left(\frac{r}{n}\right)^r \left(1-\frac{r}{n}\right)^{n-r} \\
 1 &\geq \text{Vol}_2(n,r) \left(\frac{r}{n}\right)^r \left(1-\frac{r}{n}\right)^{n-r} \\
 \frac{1}{\left(\frac{r}{n}\right)^r \left(1-\frac{r}{n}\right)^{n-r}} &\geq \text{Vol}_2(n,r) \\
 2^{-r \log(r/n) - (n-r)\log(1-(r/n))} &\geq  \text{Vol}_2(n,r) \\
@@ -66,7 +68,7 @@ Tedy důsledkem je $\exists C \subseteq \{ 0,1 \}^n: \Pr_{x,\mathcal e} [\text{c
 $$
 |\{ x\in C; \Pr_{\mathcal{e}}[\text{chybné dek. }x]> 2\varepsilon \}|\leq \frac{|C|}{2}
 $$
-a taková $x$ s vyšší pravděpodobností chyby dekódování vyhodíme a máme $C' \subseteq C \setminus \{ x\in C; \Pr_{\mathcal{e}}[\text{chybné dek. }x \}$ a $|C'|=2^{R(n-1)}$, kde potenciálně ta $-1$ tam nemusí být. 
+a taková $x$ s vyšší pravděpodobností chyby dekódování vyhodíme a máme $C' \subseteq C \setminus \{ x\in C; \Pr_{\mathcal{e}}[\text{chybné dek. }x \}$ a $|C'|=2^{R(n-1)}\}$, kde potenciálně ta $-1$ tam nemusí být. 
 
 ---
 ### *Věta (Shannonova, 2):* Nechť $0<p<1, \delta\in (0,1):$ $R>1-H(p)$. Pak $\forall n$ dostatečně velké $\forall C\subseteq \{ 0,1 \}^n, |C|=2^{Rn}$, průměrná chyba dekódování $\geq 1-\delta$.
