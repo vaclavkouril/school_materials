@@ -37,6 +37,7 @@ Zafixujme si č. r. f. $\mathcal{U}$, pak $C(x) = C_{\mathcal{U}}(x)$
 - $C(0^n) \leq \log n + O(1)$
 - $C(\pi_{[1:n]}) \leq \log n + O(1)$
 
+---
 #### *Tvrzení:* $\forall n \geq 1,\exists x\in \{ 0,1 \}^n: C(x)\geq n$
 *Důkaz:* Počet programů $p$ délky $\leq n-1$ je
 $$

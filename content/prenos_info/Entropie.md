@@ -59,9 +59,9 @@ $\forall X,Y: H(X),H(Y)\leq H(X,Y) \leq H(X) + H(Y)$
 *Důkaz:* 
 Použijeme Chain rule
 $$
-H(X,Y) = H(X) + H(X\mid Y)  
+H(X,Y) = H(X) + H(Y\mid X)  
 $$
-a entropie je dle důsledku [$I(X:Y)\geq{0}$](Vzájemná%20informace.md#$I(X:Y)\geq{0}$) máme $H(Y\mid X)\leq H(X)$ a tedy
+a entropie je dle důsledku [$I(X:Y)\geq{0}$](Vzájemná%20informace.md#$I(X:Y)\geq{0}$) máme $H(Y\mid X)\leq H(Y)$ a tedy
 $$
 H(X,Y) \leq H(X) + H(Y).
 $$
@@ -108,4 +108,3 @@ $$
 H(X_{1},\dots,X_{k}) = H(X_{1}) + H(X_{2},\dots,X_{k} \mid X_{1}) = \dots \\ = H(X_{1}) + H(X_{2} \mid X_{1}) +\dots + H(X_{k} \mid, X_{1},\dots,X_{k-1}). 
 \end{split}
 $$
-

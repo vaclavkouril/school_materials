@@ -30,6 +30,7 @@ protože součet čísel je menší než jedna tak dostaneme $\forall \ell$ inte
 ---
 # Minimalizace $L(C)$
 ### *Tvrzení:* Mějme bezprefixové kódování $C$, pak platí $H(X)\leq L(C)$
+Zde jde o kódování pouze jednotlivých znaků.
 *Důkaz:* 
 $$
 L(C) - H(X) = \sum_{x} p(x) \ell(x) - \sum_{x} p(x) \log \frac{1}{p(x)}
@@ -71,7 +72,7 @@ V průměru jsme zaplatili $\frac{1}{k}$ bitů navíc oproti optimu.
 
 ---
 # Fanův kód
-Mějme nesetřízenou posloupnost $p_{1},\dots,p_{i}|p_{i+1},\dots,p_{n}$ tak aby $min_{i}|(p_{1}+p_{2}+\dots+p_{i} )-(p_{i+1}+\dots+p_{n})|$  a první "polovině" dáme bit $0$ a ostatním $1$ a pak dále konstruujeme strom kódu dávající další bity pro jednotlivé prvky odpovídající jejich pravděpodobnostem.
+Mějme nesetřízenou posloupnost $p_{1},\dots,p_{i}|p_{i+1},\dots,p_{n}$ tak aby $\min_{i}|(p_{1}+p_{2}+\dots+p_{i} )-(p_{i+1}+\dots+p_{n})|$  a první "polovině" dáme bit $0$ a ostatním $1$ a pak dále konstruujeme strom kódu dávající další bity pro jednotlivé prvky odpovídající jejich pravděpodobnostem.
 
 Takže pokud $X$ je uspořádaná tak ho zachováme $\forall x<y\in X: C(x) <_{LEX} C(y)$.
 
@@ -110,6 +111,7 @@ protože jinak by existoval $k_{0}$ od kterého bychom měli spor.
 ---
 # Odhad na délku kódu
 ### *Věta:* $\forall C:H(X)-2\log H(X) \leq L(C)$
+Využítá na bloky délky $n$, alternativní normalizovaná podoba $H(X)-\frac{O(\log n)}{n}\leq L(C_n)$.
 *Idea důkazu:* Z $C$ uděláme bezprefixový jazyk, protože o bezprefixových umíme říct odhad $H(X)\leq L(C)$. Přidáme délku binárního zápisu jako prefix
 $$
 x \to 0^{|x|} 1 |x|x, \quad \ell(x) \to \ell'(x)\leq \ell(x)+ 2\log \ell(x) + 3

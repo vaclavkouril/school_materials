@@ -1,8 +1,8 @@
 # Náhodný lineární kód (Varshamov)
 - Zvolíme náhodně $G$ velikosti $k\times n$,
 - $C=\{ xG\mid x\in \{ 0,1 \}^k \}$ všechny vztahy $y\in C, y\ne 0^n,$ $\Delta_{\text{Ham}}(y)>d$,
-- pro pevné $x\in \{ 0,1 \}^k$ máme $\Pr_{G}[\underbrace{xG}_{y} \text{ má váhu } \leq d]\leq \frac{Vol_{2}(n,d)}{2^n}$. 
-- $p=\frac{d}{n}$ a tedy $Vol_{2}(n,d)\leq 2^{(1-H(d/n))n}\leq 2^{-H(d/n)n}$. 
+- pro pevné $x\in \{ 0,1 \}^k$ máme $\Pr_{G}[\underbrace{xG}_{y} \text{ má váhu } \leq d]\leq \frac{\text{Vol}_{2}(n,d)}{2^n}$. 
+- $p=\frac{d}{n}$ a tedy $\text{Vol}_{2}(n,d)\leq 2^{(1-H(d/n))n}\leq 2^{-H(d/n)n}$. 
 - A potřebujeme $2^k\cdot 2^{-H(d/n)n}<1$ a tedy $k\leq H\left( \frac{d}{n} \right)n$.
 - Pokud $k$ je takové, tak máme $[n,k,d]_{2}$ kód.
 
