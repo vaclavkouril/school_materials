@@ -10,9 +10,6 @@ Neuniformita je pro každou délku vstupu existuje individuální výpočetní z
 ---
 ## Příklady
 ![XOR-2-arity.excalidraw](XOR-2-arity.excalidraw.svg)
----
-$(x_{1} \lor x_{2} \lor x_3) \land (x_{1} \lor x_{2} \lor x_{4}) \land (x_{1} \lor x_{2} \lor x_{5})$ TODO: obrázek stromu i DAGu
-
 
 ---
 ## Pozorování
@@ -166,7 +163,7 @@ a tedy musí existovat $f_{n}$ na $n$ proměnných, kterou žádný obvod s $m =
 
 ---
 # Věta(Karp-Lipton): $\mathcal{NP} \subseteq \mathcal{P} / \text{poly} \implies \mathcal{PH} = \Sigma_{2}^\mathcal{P}$.
-*Důkaz:* $\Pi_{2} \subseteq\Sigma_{2} \implies \Pi_{2}=\Sigma_{2} \implies \Sigma_{2}=\mathcal{PH}$ už víme z TODO, takže stačí dokázat, že vhodný $\Pi_{2}$-úplný problém $X$, že $X\in \Sigma_{2}$ (což stačí k důkazu inkluze $\Pi_{2}\subseteq\Sigma_{2}$).
+*Důkaz:* $\Pi_{2} \subseteq\Sigma_{2} \implies \Pi_{2}=\Sigma_{2} \implies \Sigma_{2}=\mathcal{PH}$ už víme z [důsledku věty o vztazích v PH](Polynomiální%20hierarchie.md######Kolaps%20$\mathcal{PH}$%20na%20$k$-té%20hladině.), takže stačí dokázat, že vhodný $\Pi_{2}$-úplný problém $X$, že $X\in \Sigma_{2}$ (což stačí k důkazu inkluze $\Pi_{2}\subseteq\Sigma_{2}$).
 
 Vezměme $\Pi_{2}$-SAT, tedy jazyk $X=\{\varphi \mid \forall u\in \{ 0,1 \}^n,\exists v\in \{ 0,1 \}^m : \varphi(u,v)=1\}$ BÚNO vezměme $n=m$ (lze doplnit vycpávkovými proměnnými) a cílem je ukázat, že $\Pi_{2}-SAT\in \Sigma_{2}$.
 

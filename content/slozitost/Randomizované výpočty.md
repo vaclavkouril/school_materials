@@ -24,7 +24,7 @@ V čase $2^{\text{poly}(|x|)}$, lze vyčíslit všechna $M$ a tím pádem odsimu
 
 ---
 # Redukce chyby pro $\mathcal{BPP}$
-#### Černovova nerovnost: Nechť $X_{1},..,X_{n}$ jsou nezávislné náhodné proměnné, kde $X_{i}\in \{ 0,1 \}$ a nechť $\mu=\sum_{i=1}^n \mathbb{E}[X_{i}]$. Pak $\forall\delta>0: \Pr\left[ |\sum_{i=1}^n X_{i} - \mu| > \delta \mu\right]\leq 2\cdot e^{-\mu\min \{ \delta^2/4, \delta/2 \}}$.
+#### Chernoffova nerovnost: Nechť $X_{1},..,X_{n}$ jsou nezávislné náhodné proměnné, kde $X_{i}\in \{ 0,1 \}$ a nechť $\mu=\sum_{i=1}^n \mathbb{E}[X_{i}]$. Pak $\forall\delta>0: \Pr\left[ |\sum_{i=1}^n X_{i} - \mu| > \delta \mu\right]\leq 2\cdot e^{-\mu\min \{ \delta^2/4, \delta/2 \}}$.
 $\frac{\delta^2}{4}$ se vybere pokud $\frac{\delta}{2}<1$.
 
 ### *Věta:* Nechť $L\subseteq \{ 0,1 \}^*$ je jazyk, $c>0$ konstanta a předpokládejme, že existuje PTS $M$, pracující v polynomiálním čase takový, že $\forall x\in \{ 0,1 \}^*: \Pr[M(x)=L(x)]\geq \frac{1}{2}+|x|^{-c}$. Pak $\forall d>0: \exists$ PTS $\tilde{M}$, pracující v polynomiálním čase takový, že $\forall x\in \{ 0,1 \}^*: \Pr[M(x)=L(x)]\geq 1-2^{-|x|^d}$.
@@ -135,11 +135,13 @@ $$
 ## $\mathcal{RP}\subseteq \mathcal{NP}$ (triviálně $\mathcal{RP} \subseteq \mathcal{BPP}$)
 Stejný strom pro NTS i PTS a pro $x\in L$, pro NTS stačí jedna větev, ale pro PTS je potřeba mnohem více.
 
+---
 ## $\mathcal{BPP} = co-\mathcal{BPP}$
 Nechť $L\in \mathcal{BPP} \iff \overline{L} \in co-\mathcal{BPP}$ chceme, že $\bar{L}$ lze rozpoznat pomocí PTS $\bar{M}$, který pracuje stejně jako PTS $M$ rozpoznávající $L$ pouze vždy odpoví opačně.
 
 $\Pr[\bar{M}=\bar{L}(x)]=\Pr[1-M(x) = 1-L(x)] =\Pr[M(x)=L(x)]$.
 
+---
 ## $\mathcal{ZPP} = \mathcal{RP} \cap co-\mathcal{RP}$
 $\mathcal{ZPP} \subseteq \mathcal{RP} \cap co-\mathcal{RP}$ u $\mathcal{BPP}$ použijeme trik na očekávaný čas. S $\mathcal{RP}$ je podmnožina z definice a protože $\mathcal{ZPP} = co-\mathcal{ZPP}$ a tedy i $L \in\mathcal{ZPP}\implies \bar{L} \in \mathcal{ZPP} \implies \bar{L}\in \mathcal{RP} \implies L \in co-\mathcal{RP}$.
 
@@ -169,6 +171,8 @@ $$
 \Pr[M(x)=0 \land \bar{M}(x)=0] \leq \frac{1}{3}.
 $$
 Očekávaný počet kol než $\tilde{M}$ zastaví je $\leq \sum_{i} i \left( \frac{1}{3} \right)^{i-1} = const$ a každé spuštění $M,\bar{M}$ trvá $p'(|x|)$ a tedy očekávaná časová složitost $\tilde{M}$ je $const \cdot p'(|x|) = p(|x|)$. 
+
+---
 ## $\mathcal{BPP} \subseteq \mathcal{P}/\text{poly}$
 Nechť $L\in \mathcal{BPP}$ libovolný a ukážeme, že $L\in \mathcal{P}/\text{poly}$.
 
@@ -187,6 +191,8 @@ $$
 C_{n+m}(x,r) = C_{n+m}(x,r_{0})= M(x,r_{0}) = L(x) \text{ dobré } r_{0}:\forall x
 $$
 a tedy příslušná rodina obvodů rozpoznává $L$.
+
+---
 ## (Věta Sigson-Gáes) $\mathcal{BPP} \subseteq \Sigma_{2} \cap \Pi_{2}$
 Už víme $\mathcal{BPP} = co-\mathcal{BPP}$ a tedy stačí $\mathcal{BPP} \subseteq \Sigma_{2}$. V \* vezmeme $d=1$, takže chyba je $<\frac{1}{2^n}$. 
 

@@ -1,7 +1,7 @@
- ## *Translační lemma:* Pro funkce $S_{1}(n),S_{2}(n)\geq n, f(n)\geq n$, kde $f$ je prostorově konstruovatelná funkce, splňující $NSPACE(S_{1}(n)) \subseteq NSPACE(S_{2}(n))$ pak platí $NSPACE(S_{1}(f(n))) \subseteq NSPACE(S_{2}(f(n)))$.
+## *Translační lemma:* Pro funkce $S_{1}(n),S_{2}(n)\geq n, f(n)\geq n$, kde $f$ je prostorově konstruovatelná funkce, splňující $NSPACE(S_{1}(n)) \subseteq NSPACE(S_{2}(n))$, pak platí $NSPACE(S_{1}(f(n))) \subseteq NSPACE(S_{2}(f(n)))$.
 *Důkaz:* Mějme libovolný jazyk $L_{1} \in NSPACE(S_{1}(f(n)))$, pro který tedy existuje NTS $M_{1}$, který ho rozhoduje. Definujme si, pro $\$$, který nebyl v pracovní abecedě $M_{1}$
 $$
-L_{2} = \{ x\$^i \mid M_{1}(x)\text{ přijme v prostoru } S_{1}(|x|+i) \text{, pro }i \geq f(|x|) \}.
+L_{2} = \{ x\$^i \mid M_{1}(x)\text{ přijme v prostoru } S_{1}(|x|+i) \text{, pro }|x| + i \geq f(|x|) \}.
 $$
 Tedy vlastně
 $$
@@ -22,4 +22,12 @@ x\in L(M_{4}) \iff x\$^i \in L(M_{3})=L_{2} \iff x \in L_{1}.
 $$
 
 # *Věta o nedeterministické prostorové hierarchii pro polynomy:* Pro každá $k,l\in \mathbb{N},k<l$ platí $NSPACE(n^k)\subsetneqq NSPACE(n^l)$.
-*Důkaz:* 
+*Důkaz:* Pro spor předpokládejme, že $NSPACE(n^k) \subseteq NSPACE(n^l)$. Dle Translačního lemma platí pro $f(n)=n^{j}$, že $NSPACE(n^{jk})\subseteq NSPACE(n^{lj})$ a to plati pro libvolne $j$, tak zvolme $j= \left( \frac{l}{k} \right)^m$ pro nějaké $m$, aby $j>2$ a tedy dostáváme $a>2b$
+$$
+NSPACE(n^b) \subseteq NSPACE(n^a)
+$$
+ale máme spor, protože dle Deterministické prostorové hierarchie máme
+$$
+L\in DSPACE(n^{a}) \setminus DSPACE(n^{2b})
+$$
+a kdyby bylo $L\in NSPACE(n^b)$, tak dle Savičovy věty je i v $DSPACE(n^{2b})\subseteq DSPACE(n^{a})$ a spor, protože $NSPACE(n^b) \subsetneqq NSPACE(n^a)$.

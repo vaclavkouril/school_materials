@@ -1,8 +1,5 @@
-Pokud $\mathcal{P}\ne \mathcal{NP}$, tak existuje jazyk $A\in \mathcal{NP}$ a zároveň $A\not\in \mathcal{P}$ a $A$ není NPÚ.
-
-*Důkaz:* 
-
-## Příprava:
+# Pokud $\mathcal{P}\ne \mathcal{NP}$, tak existuje jazyk $A\in \mathcal{NP}$ a zároveň $A\not\in \mathcal{P}$ a $A$ není NPÚ.
+## Příprava Důkazu:
 - zakódujeme CNF formule do nějaké standardní abecedy $(a,\dots,z),(,),\lor,\land$ a tyto řetězce pak zakódujeme do $\{ 0,1 \}$.
 - řetězce nad abecedou $\{ 0,1 \}$ očíslujeme lexikograficky od nejkratších $y_{1}=\{ 0 \},y_{2}=\{ 1 \},y_{3}=\{ 0,0 \}\dots$
 - řetězce, které po zpětném překódování nedávají syntakticky správnou CNF sloučíme s nesplnitelnou CNF
