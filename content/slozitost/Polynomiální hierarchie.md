@@ -111,7 +111,30 @@ Protože $\mathcal{C}$ je uzavřené na zdrojování, tak $A\in \mathcal{C}\impl
 - (3. $\supseteq$) Platí dle *Věty 1.* a uzavřenosti na zdrojování.
 - (5. $\subseteq$) $\exists\Pi_{k}\subseteq \Sigma_{k+{1}} = NP(\Sigma_{k})= NP(\Pi_{k}):A \in \exists \Pi_{k}: \exists B\in \Pi_{k},\exists p: x\in A \iff \exists^{p(|x|)}y:\left\langle x,y \right\rangle\in B.$ Máme NTS $M$, který přečte $x$, uhodne $y$ a ověří pomocí orákula $B$, zda $\left\langle x,y \right\rangle$ patří do $B$, kde $B$ je z $\Pi_{k}$, takže $M$ přijímající $A$ je z $NP(\Pi_{k})=\Sigma_{k+1}$.
 - (5. $\supseteq$) Indukce dle $k$, pro $k=0:\Sigma_{1}\subseteq \exists\Pi_{0}\stackrel{\text{1.}}{=}\mathcal{NP}$. 
-#TODO
+
+Předpokládejme, že pro $k-1$ platí $\exists\Pi_{k-1} \supseteq \Sigma_{k}$. Pak mějme libovolný $a \in \Sigma_{k+1}= NP(\Sigma_{k})$ a tedy $\exists B \in \Sigma_{k}\exists M$ NTS, že $A = L(M,B)$.  
+$$
+x \in A \iff \exists y, \exists v=(v_{1},\dots,v_{n}), \exists z=(z_{1},\dots,z_{n}): v_{i} \in B, z_{i}\in co-B
+$$
+a $y$ je certifikát kódující výpočet NTS $M$, ostatní slova jsou taková na které se algoritmus zeptá orákula $B$. Jinými slovy
+$$
+x\in A \iff \exists y,\exists v\in B^*, \exists z \in (co-B)^*: \left\langle x,y \right\rangle \in L, \text{pro } L\in \mathcal{P}
+$$
+$L$($\in \mathcal{P} \subseteq \Pi_{k-1}$) neověřuje výstupy orákula, ale simuluje $M$ s $y$ jako certifikátem.  Dle lemma 1. máme $B \in \Sigma_{k} \implies co-B\in \Pi_{k} \implies (co-B)^* \in \Pi_{k}$ a 
+$$
+B\in \Sigma_{k} \implies B^*\in \Sigma_{k} \stackrel{\text{IP.}}{\implies} B^* \in \exists\Pi_{k-1} \implies \exists D\in \Pi_{k-1}\exists p: v\in B^* \iff (\exists^{p(|v|)} t)\left\langle v,t \right\rangle \in D
+$$
+Tedy máme $L,D,(co-B)^*\in \Pi_{k}$ a definujeme
+$$
+E=\{ (a,b,c) \mid (a\in L)(b\in D)(c\in (co-B)^*) \}
+$$
+dle Lemma 2 je $E\in \Pi_{k}$, takže můžeme přepsat
+$$
+x\in A \iff \exists E\in \Pi_{k}, \exists^{p'(|x|)} y, \exists^{p'(|x|)} \left\langle v,t \right\rangle, \exists^{p'(|x|)} z: (\left\langle x,y \right\rangle, \left\langle v,t \right\rangle,z) \in E
+$$
+dostáváme tedy $\implies A \in \exists\Pi_{k}\implies \Sigma_{k+1} \subseteq \exists\Pi_{k}$.
+
+---
 #### *Důsledky:*
 ###### Definice $\mathcal{PH}$ pomocí alternujících kvantifikátorů.
 $$

@@ -1,10 +1,11 @@
-- [Věta o nedeterministické prostorové hierarchii](Věta%20o%20nedeterministické%20prostorové%20hierarchii.md)
-- [Stroje s orákuly](Stroje%20s%20orákuly.md)
-- [Polynomiální hierarchie](Polynomiální%20hierarchie.md)
-- [Převoditelnost a PSPACE](Převoditelnost%20a%20PSPACE.md)
-- [[QBF]]
-- [[NL=coNL]]
-- [Neuniformní výpočetní modely](Neuniformní%20výpočetní%20modely.md)
-- [Randomizované výpočty](Randomizované%20výpočty.md)
-- [Landerova věta](Landerova%20věta.md)
-- [PCP](PCP.md)
+- [Věta o nedeterministické prostorové hierarchii](Věta%20o%20nedeterministické%20prostorové%20hierarchii.md) ✓
+- [Stroje s orákuly](Stroje%20s%20orákuly.md) ✓
+- [Polynomiální hierarchie](Polynomiální%20hierarchie.md) ✓
+- [Převoditelnost a PSPACE](Převoditelnost%20a%20PSPACE.md) ✓
+- [[QBF]] ✓
+- [[PH-úplnosti]] ✓
+- [[NL=coNL]] ✓
+- [Neuniformní výpočetní modely](Neuniformní%20výpočetní%20modely.md) ✓
+- [Randomizované výpočty](Randomizované%20výpočty.md) ✓
+- [Landerova věta](Landerova%20věta.md) ✓
+- [PCP](PCP.md) ✓
