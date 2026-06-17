@@ -24,22 +24,24 @@ V čase $2^{\text{poly}(|x|)}$, lze vyčíslit všechna $M$ a tím pádem odsimu
 
 ---
 # Redukce chyby pro $\mathcal{BPP}$
-#### Chernoffova nerovnost: Nechť $X_{1},..,X_{n}$ jsou nezávislné náhodné proměnné, kde $X_{i}\in \{ 0,1 \}$ a nechť $\mu=\sum_{i=1}^n \mathbb{E}[X_{i}]$. Pak $\forall\delta>0: \Pr\left[ |\sum_{i=1}^n X_{i} - \mu| > \delta \mu\right]\leq 2\cdot e^{-\mu\min \{ \delta^2/4, \delta/2 \}}$.
+#### Chernoffova nerovnost: Nechť $X_{1},..,X_{n}$ jsou nezávislé náhodné proměnné, kde $X_{i}\in \{ 0,1 \}$ a nechť $\mu=\sum_{i=1}^n \mathbb{E}[X_{i}]$. Pak $\forall\delta>0: \Pr\left[ |\sum_{i=1}^n X_{i} - \mu| > \delta \mu\right]\leq 2\cdot e^{-\mu\min \{ \delta^2/4, \delta/2 \}}$.
 $\frac{\delta^2}{4}$ se vybere pokud $\frac{\delta}{2}<1$.
 
 ### *Věta:* Nechť $L\subseteq \{ 0,1 \}^*$ je jazyk, $c>0$ konstanta a předpokládejme, že existuje PTS $M$, pracující v polynomiálním čase takový, že $\forall x\in \{ 0,1 \}^*: \Pr[M(x)=L(x)]\geq \frac{1}{2}+|x|^{-c}$. Pak $\forall d>0: \exists$ PTS $\tilde{M}$, pracující v polynomiálním čase takový, že $\forall x\in \{ 0,1 \}^*: \Pr[M(x)=L(x)]\geq 1-2^{-|x|^d}$.
-*Důkaz:* $\tilde{M}$ pracuje na $x$ tak, že pustí $M$ opakovaně $k=32|x|^{2c+d}$ krát čímž získá výsledky $y_{1},\dots,y_{k} \in \{ 0,1 \}$, $\tilde{M}$ vydá výsledek dle majority. $\tilde{M}$ je tedy jistě v polynomiálním čase.
+*Důkaz:* $\tilde{M}$ pracuje na $x$ tak, že pustí $M$ opakovaně $k=64|x|^{2c+d}$ krát čímž získá výsledky $y_{1},\dots,y_{k} \in \{ 0,1 \}$, $\tilde{M}$ vydá výsledek dle majority. $\tilde{M}$ je tedy jistě v polynomiálním čase.
 
-Označíme $X_{i}\in \{ 0,1 \}$ náhodnou proměnnou, kde $X_{i}=1\iff y_{i}=L(x)$ a $X_{i}=0\iff y_{i} \not\in L(x)$. Zjevně $X_{1},\dots,X_{k}$ jsou nezávislé náhodné veličiny, pro které $\mathbb{E}[X_{i}]\geq p = \frac{1}{2} +|x|^{-c}$.
+Označíme $X_{i}\in \{ 0,1 \}$ náhodnou proměnnou, kde $X_{i}=1\iff y_{i}=L(x)$ a $X_{i}=0\iff y_{i} \ne L(x)$ (tedy je $0$ při chybném výsledku).
+
+Zjevně $X_{1},\dots,X_{k}$ jsou nezávislé náhodné veličiny, pro které $\mathbb{E}[X_{i}]\geq p = \frac{1}{2} +|x|^{-c}$.
 
 Zvolme $\delta=\frac{1}{2}|x|^{-c}$ a uvažujme nerovnost 
 $$
 \begin{align*}
-\sum_{i=1}^k X_{i} &\geq pk - \delta pk = k\left( \frac{1}{2}-|x|^{-c} \right)\left( 1 - \frac{1}{2}|x|^{-c} \right) = \\
+\sum_{i=1}^k X_{i} &\geq pk - \delta pk = k\left( \frac{1}{2}+|x|^{-c} \right)\left( 1 - \frac{1}{2}|x|^{-c} \right) = \\
 &= \frac{1}{2} k + \left( \underbrace{\frac{3}{4}|x|^{-c} - \frac{1}{2} |x|^{-2c}}_{>0} \right)k > \frac{1}{2}k
 \end{align*}
 $$
-První nerovnost implikuje, že $\tilde{M}$ neudělá chybu, ostře více než půlka je správně.
+První nerovnost implikuje, že $\tilde{M}$ neudělá chybu, když ostře více než půlka je správně.
 
 $\implies$ aby $\tilde{M}$ mohl udělat chybu, tak musí platit $\sum X_{i} < pk-\delta pk$ a tedy
 $$
@@ -50,17 +52,17 @@ $$
 \begin{align*}
 \Pr\left[ pk - \sum X_{i} > \delta pk \right] &\leq \Pr\left[ pk - \sum X_{i} + \underbrace{(1-\delta)\epsilon}_{>0} > \delta pk \right] =\\
 &= \Pr\left[ pk+\epsilon - \sum X_{i} > \delta pk+\delta\epsilon \right] = \\
-&= \Pr\left[ \mu-\sum X_{i}> \delta n \right] = \\
-&= \frac{1}{2}\Pr\left[ |\sum X_{i} - \mu| > \delta n \right] \\
-&\leq \frac{1}{2}\cdot 2 e^{-\mu \delta^2/4} \leq e^{-\frac{\delta^2}{4}pk}
+&= \Pr\left[ \mu-\sum X_{i}> \delta \mu \right] \leq \\
+&\leq \Pr\left[ |\sum X_{i} - \mu| > \delta \mu \right] \\
+&\leq 2 e^{-\mu \delta^2/4}
 \end{align*}
 $$
 Tedy máme
 $$
 \begin{align*}
-\Pr[\tilde{M} \text{ chybuje}] &\leq e^{-\frac{1}{4} \delta^2 pk}=e^{- \frac{1}{4}\frac{1}{4} |x|^{-2c} (\frac{1}{2} + |x|^{-c}) 32|x|^{2c+d} }
-\\&=  e^{-(\frac{32|x|^{2c+d}}{32|x|^{2c}} + \underbrace{\frac{32|x|^{2c+d}}{16|x|^{3c}}}_{\text{zanedbáme}})} \\
-&\leq e^{-|x|^d} < 2^{-|x|^d}
+\Pr[\tilde{M} \text{ chybuje}] &\leq 2e^{-\frac{1}{4} \delta^2 pk}=2e^{- \frac{1}{4}\frac{1}{4} |x|^{-2c} (\frac{1}{2} + |x|^{-c}) 64|x|^{2c+d} }
+\\&=  2e^{-(\frac{64|x|^{2c+d}}{32|x|^{2c}} + \underbrace{\frac{64|x|^{2c+d}}{16|x|^{3c}}}_{\text{zanedbáme}})} \\
+&\leq 2e^{-2|x|^d} < 2^{-|x|^d}
 \end{align*}
 $$
 tedy máme $\Pr[\tilde{M} \text{ odpoví správně}] > 1-2^{-|x|^d}$.
@@ -133,7 +135,7 @@ $$
 \mathcal{ZPP} = \bigcup_{c} \text{ZTIME}(n^c).
 $$
 ## $\mathcal{RP}\subseteq \mathcal{NP}$ (triviálně $\mathcal{RP} \subseteq \mathcal{BPP}$)
-Stejný strom pro NTS i PTS a pro $x\in L$, pro NTS stačí jedna větev, ale pro PTS je potřeba mnohem více.
+Stejný strom pro NTS i PTS a pro $x\in L$, pro NTS stačí jedna větev, ale pro PTS je potřeba mnohem více. (jako certifikát je jedna volba náhodných bitů vedoucí k přijmutí)
 
 ---
 ## $\mathcal{BPP} = co-\mathcal{BPP}$
