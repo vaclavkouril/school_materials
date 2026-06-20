@@ -33,7 +33,11 @@ $\mathcal{P} \subseteq L$, mějme $X'\in \mathcal{P}$
 1. (úplnost) existuje tedy DTS transducer $M$ (log-space) převádějící $y \in X'$ na vstupy $X$. Zjevně pracuje v poly čase, protože má polynomiálně omezený počet konfigurací.
 2. ($X\in L$) existuje DTS akceptor $M'$ (log-space) rozpoznávající $X$.
 
-Vyrobíme si $M''$, který si pamatuje jen jeden znak z výstupu $M$ ($y$) pod pracovní hlavou $M'$. Potřebujeme na to dvě počítadla a sice kolikátý znak $y$ je pod hlavou $M'$ a kolikátý znak $y$ je právě ten co se vygeneroval a ten se buď zahodí a nebo, pokud se počítadla rovnají, tak máme nový znak $y$ pod hlavu $M'$. Vždy, když se $M'$ pohne, tak se vynuluje druhé počítadlo a znovu spustí $M$.
+Vyrobíme si $M''$, který si pamatuje jen jeden znak z výstupu $M$ ($y$) pod pracovní hlavou $M'$. Potřebujeme na to dvě počítadla
+1. kolikátý znak $y$ je pod hlavou $M'$ a 
+2. kolikátý znak $y$ je právě ten co se vygeneroval
+
+Vygenerovaný znak se buď zahodí a nebo, pokud se počítadla rovnají, tak máme nový znak $y$ pod hlavu $M'$. Vždy, když se $M'$ pohne, tak se vynuluje druhé počítadlo a znovu spustí $M$.
 
 Tedy máme akceptor $M''$ takový, že pracuje v log-prostoru pro $X'\in \mathcal{P}$.
 

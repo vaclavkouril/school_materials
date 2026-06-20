@@ -112,7 +112,7 @@ Protože $\mathcal{C}$ je uzavřené na zdrojování, tak $A\in \mathcal{C}\impl
 - (5. $\subseteq$) $\exists\Pi_{k}\subseteq \Sigma_{k+{1}} = NP(\Sigma_{k})= NP(\Pi_{k}):A \in \exists \Pi_{k}: \exists B\in \Pi_{k},\exists p: x\in A \iff \exists^{p(|x|)}y:\left\langle x,y \right\rangle\in B.$ Máme NTS $M$, který přečte $x$, uhodne $y$ a ověří pomocí orákula $B$, zda $\left\langle x,y \right\rangle$ patří do $B$, kde $B$ je z $\Pi_{k}$, takže $M$ přijímající $A$ je z $NP(\Pi_{k})=\Sigma_{k+1}$.
 - (5. $\supseteq$) Indukce dle $k$, pro $k=0:\Sigma_{1}\subseteq \exists\Pi_{0}\stackrel{\text{1.}}{=}\mathcal{NP}$. 
 
-Předpokládejme, že pro $k-1$ platí $\exists\Pi_{k-1} \supseteq \Sigma_{k}$. Pak mějme libovolný $a \in \Sigma_{k+1}= NP(\Sigma_{k})$ a tedy $\exists B \in \Sigma_{k}\exists M$ NTS, že $A = L(M,B)$.  
+Předpokládejme, že pro $k-1$ platí $\exists\Pi_{k-1} \supseteq \Sigma_{k}$. Pak mějme libovolný $A \in \Sigma_{k+1}= NP(\Sigma_{k})$ a tedy $\exists B \in \Sigma_{k}\exists M$ NTS, že $A = L(M,B)$.  
 $$
 x \in A \iff \exists y, \exists v=(v_{1},\dots,v_{n}), \exists z=(z_{1},\dots,z_{n}): v_{i} \in B, z_{i}\in co-B
 $$
@@ -136,7 +136,7 @@ dostáváme tedy $\implies A \in \exists\Pi_{k}\implies \Sigma_{k+1} \subseteq \
 
 ---
 #### *Důsledky:*
-###### Definice $\mathcal{PH}$ pomocí alternujících kvantifikátorů.
+##### Definice $\mathcal{PH}$ pomocí alternujících kvantifikátorů.
 $$
 \begin{split}
 
@@ -161,14 +161,14 @@ $$
 A\in \Sigma_{k+1} = \exists\Pi_{k}: x\in A \iff (\exists B\in \Pi_{k},\exists p) \exists^{p(|x|)}y: \left\langle x,y \right\rangle \in B 
 $$
 dle IP máme $x\in A\iff \exists^{p(|x|)}y_{1,}\forall^{p(|x|)}y_{2},\dots,Q^{p(|x|)}y_{n}:  (x,y_{1},\dots,y_{n})\in D$ pro $D\in P$.
-###### Kolaps $\mathcal{PH}$ na $k$-té hladině.
+##### Kolaps $\mathcal{PH}$ na $k$-té hladině.
 Pokud $\Pi_{k}=\Sigma_{k}\implies \forall j\geq 0: \Sigma_{k+j}=\Pi_{k+j}=\Sigma_{k}$ pro $k\geq 1$. 
 - pro $j=0$ to zjevně platí
 - pro $j>0$ předpokládejme platnost pro $j$, pak 
 $$
 \Sigma_{k+j+1} = \exists\Pi_{k+j} = \Pi_{k+j} = \Pi_{k}= \Sigma_{k}.
 $$
-##### Buď $\forall k\geq 0: \Sigma_{k} \subsetneqq \Sigma_{k+1}$, nebo se $\mathcal{PH}$ skládá z konečně mnoha tříd.
+#### Buď $\forall k\geq 0: \Sigma_{k} \subsetneqq \Sigma_{k+1}$, nebo se $\mathcal{PH}$ skládá z konečně mnoha tříd.
 Kdyby $\exists k: \Sigma_{k}= \Sigma_{k+1} \implies \Sigma_{k}=\Pi_{k}$ a máme kolaps, dle důsledku 2. a máme
 $$
 \Sigma_{k} \cup \Pi_{k} \subseteq \Delta_{k+1} \subseteq \Sigma_{k+1} = \Sigma_{k}

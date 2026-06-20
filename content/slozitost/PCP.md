@@ -42,7 +42,9 @@ $\varrho$-aproximační algoritmus pro MAX-3-SAT vždy vydá ohodnocení, pro kt
 - **Efficiency**: Pro vstup $x\in \{ 0,1 \}^*$ a RAND přístup k řetězci $\Pi\in \{ 0,1 \}^*$ (důkaz), $V$ použije $\leq r(n)$ náhodných bitů a provede $\leq q(n)$ dotazů na bity v $\Pi$. Pak vydá $V^\Pi(x)=1$ (accept $x$) nebo $V^\Pi(x)=0$ (reject $x$)
 - Neadaptivní (request nejsou podmíněné na sobě navzájem)
 - **Completeness** $x\in \mathcal{L}\implies \exists\Pi: \Pr[V^\Pi(x)=1] = 1$ a takové $\Pi$ se nazývá "správný důkaz".
-- **Soundness** $x\not\in L \implies \forall\Pi: \Pr[V^\Pi(x)=1]\leq \frac{1}{2}$. Řekneme, že $L\in PCP(r(n),q(n))$ pokud existují konstanty $c,d>0$ takové, že $L$ má $(c \cdot r(n),d \cdot q(n))$-PCP-verifier
+- **Soundness** $x\not\in L \implies \forall\Pi: \Pr[V^\Pi(x)=1]\leq \frac{1}{2}$. 
+
+Řekneme, že $L\in PCP(r(n),q(n))$ pokud existují konstanty $c,d>0$ takové, že $L$ má $(c \cdot r(n),d \cdot q(n))$-PCP-verifier
 
 ### Věta A: $\mathcal{NP}=PCP(\log n, 1)$.
 *Poznámky:* 

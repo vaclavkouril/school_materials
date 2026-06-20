@@ -11,7 +11,7 @@ specificky to platí pro $i=f(|x|)-|x|$.
 
 Máme $L_{2}\in NSPACE(S_{1}(n))$, protože \$ umíme v prostoru $O(n)$ oddělit, a z předpokladu $NSPACE(S_{1}(n)) \subseteq NSPACE(S_{2}(n))$ tak plyne $L_{2}\in NSPACE(S_{2}(n))$. Tedy máme i NTS $M_{2}$ s $L(M_{2}) = L_{2}$ rozhodující v prostoru $S_{2}(n)$.
 
-Dostáváme ale i NTS $M_{3}$ rozhodujícího jazyk $L_{1}$ v prostoru $S_{2}(n)$ a pořídíme si $M_{4}$ pomocí tohoto $M_{3}$, který budeme simulovat na vstupu $x\$^i$, pro $i = f(|x|)-|x|$. Pracovat bude na 2 páskách a jedné vstupní:
+Dostáváme ale i NTS $M_{3}$ rozhodujícího jazyk $L_{1}$ v prostoru $S_{2}(n)$ a pořídíme si $M_{4}$ pomocí tohoto $M_{3}$, který budeme simulovat na vstupu $x\text{\$}^i$, pro $i = f(|x|)-|x|$. Pracovat bude na 2 páskách a jedné vstupní:
 1. vstupní páska obsahuje $x$ (standardní vstup pro $M_{3}$),
 2. pracovní páska si spočte $f(|x|)-|x|$ a má tolik $\$$ vyplněných v buňkách,
 3. pracovní páska velikosti $S_{2}(f(|x|))$ simulující $M_{3}$.

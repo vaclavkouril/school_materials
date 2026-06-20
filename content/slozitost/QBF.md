@@ -4,7 +4,7 @@
 2. Mějme $E_{1},E_{2}$ QBF, tak $\neg(E_{1}),(E_{1}) \land (E_{2}), (E_{1})\lor (E_{2})$ jsou QBF a vázanost se nezměnila,
 3. $E$ je QBF, pak $\exists x(E)$ a $\forall x(E)$ jsou QBF a všechny kvatifikované proměnné v $E$ se mění na **vázané**.
 
-QBF bez volných proměnných nabývá $T/ F$ s pto kvantifikaci chápeme $\exists x(E)$ jako $E_{0} \lor E_{1}$ (kde dolní index určuje dosazení za $x$) a $\forall x (E)$ jako $E_{0} \land E_{1}$.
+QBF bez volných proměnných nabývá $T/ F$ a to kvantifikaci chápeme $\exists x(E)$ jako $E_{0} \lor E_{1}$ (kde dolní index určuje dosazení za $x$) a $\forall x (E)$ jako $E_{0} \land E_{1}$.
 
 $QBF \in PSPACE$, protože lze vyhodnotit rekurzivně, hloubka rekurze je $O(n)$, pak stačí na každém patře rekurze držet jen data o velikosti $O(n)$ a tedy průchod stojí $O(n^2)$ prostoru
 

@@ -67,6 +67,14 @@ $$
 $$
 tedy máme $\Pr[\tilde{M} \text{ odpoví správně}] > 1-2^{-|x|^d}$.
 
+Důsledek:
+$L\in \mathcal{BPP}\implies \forall d \exists$PTS $M$: 
+- $\Pr[L(x) = M(x)]\ge 1- 2^{-|x|^d}$
+- $\Pr[L(x)\ne M(x)]<2^{|x|^d}$
+
+\* $\iff \forall d\exists$ DTS $M \Pr[L(x)\ne M(x,r)] < 2^{|x|^d}$, kde $r$ je řetězec náhodných bitů délky $m=poly(n), |x|=n$. 
+
+
 ---
 # Očekávaná časová složitost
 *Definice:* Nechť $M$ je **PTS** a $x$ vstup, pak náhodná proměnná $T_{M,x}$ značí dobu běhu $M$ na $x$, tedy platí, že $\Pr[T_{M,x}=t]=p$ pokud $M$ zastaví na vstupu $x$ pro $t$ krocích s pravděpodobností $p$. $M$ běží v **očekávaném čase** $T(n)$ pokud $\forall x\in \{ 0,1 \}^*: \mathbb{E}[T_{M,x}] \leq T(|x|)$.
@@ -113,7 +121,7 @@ tedy vrací panna i orel s pravděpodobností $\frac{1}{2}$.
 Časová složitost: PTS zastaví v každém kole $c=2\rho(1-\rho)$, takže očekávaný počet kol do zastavení je $\sum_{i} i\cdot(1-c)^i c = c \sum_{i} (\frac{1}{d})^i$ pro $0 < \frac{1}{d}<1$ a stejný argument jako v předešlém lemma a tedy konverguje ke konstantě.
 
 ---
-# $\mathcal{RP}, co-\mathcal{RP}, \mathcal{ZRP}$
+# $\mathcal{RP}, co-\mathcal{RP}, \mathcal{ZPP}$
 *Definice:* $\text{RTIME}(T(n))$ je třída jazyků, pro které $\exists$ PTS $M$ (očekávaně) pracující v čase $T(n)$ takový, že
 - $x\in L \implies\Pr[M(x)=1]>2 /3$,
 - $x\not\in L \implies\Pr[M(x)=0]=1$.
@@ -210,9 +218,7 @@ Značení:
 
 Platí 
 - $x\in L \implies |S_{x}|\geq (1-\frac{1}{2^n}) 2^m$,
-- $x\in L \implies |S_{x}|< \frac{1}{2^n} 2^m$
-
-*Myšlenka důkazu:* TODO OBRÁZEK
+- $x\not\in L \implies |S_{x}|< \frac{1}{2^n} 2^m$
 
 #### Lemma 1: Nechť $S\subseteq \{ 0,1 \}^m$ taková, že $|S|<2^{m-n}$ a nechť $u_{1},\dots,u_{k}\in \{ 0,1 \}^m$. Pak $\bigcup_{i=1}^k (S+u_{i})\subsetneqq \{ 0,1 \}^m$.
 *Důkaz Lemma 1:* $\forall i: |S+u_{i}|=|S|\implies$ 
@@ -243,7 +249,7 @@ Pro pevné $r\in \{ 0,1 \}^m$ libovolně zvolené:
 $$
 \Pr[r+u_{i}\in S] \geq 1-\frac{1}{2^n} \implies \Pr[r \text{ špatné pro }i]< \frac{1}{2^n}
 $$
-- $\implies \Pr[r \text{je špatnépro všechna }i]< \left( \frac{1}{2^n} \right)^k=2^{-nk}$
+- $\implies \Pr[r \text{ je špatné pro všechna }i]< \left( \frac{1}{2^n} \right)^k=2^{-nk}$
 - $\implies$ $\Pr[\exists r: r \text{ je špatné } \forall i]< 2^m \cdot 2^{-nk}$
 
 Poslední bod je ekvivalentní s $\Pr[\exists r\in \{ 0,1 \}^m: r\not\in \bigcup_{i=1}^k (S+u_{i})]<1.$ a potřebujeme, aby $2^m \cdot 2^{-nk}\leq 1$ pro důkaz a to vychází pro naši volbu $k$, protože
@@ -264,11 +270,3 @@ $$
 "Vezmeme-li libovolné $r$, tak ho máme pokrytý." 
 
 a tedy poly velký predikát a tedy $L\in \Sigma_{2}$.
-
-
----
-$L\in \mathcal{BPP}\implies \forall d \exists$PTS $M$: 
-- $\Pr[L(x) = M(x)]\ge 1- 2^{-|x|^d}$
-- $\Pr[L(x)\ne M(x)]<2^{|x|^d}$
-
-\* $\iff \forall d\exists$ DTS $M \Pr[L(x)\ne M(x,r)] < 2^{|x|^d}$, kde $r$ je řetězec náhodných bitů délky $m=poly(n), |x|=n$. 

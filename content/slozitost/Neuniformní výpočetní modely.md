@@ -39,16 +39,16 @@ Oblivious je, že pozice hlav nezáleží na vstupu, ale pouze na počtu kroků 
 *Myšlenka konstrukce obvodu:* 
 - Nechť je na vstupu $\hat{M}$ řetězec $x$ délky $n$. 
 - Označme $z_{1},z_{2},\dots,z_{T(n)}$ pro displeje $\hat{M}$ během výpočtu stroje $\hat{M}$. 
-- $C_{v}$ je obvod odpovídající poslednímu kroku, kdy byla vstupní hlava na stejné pozici jako po kroku $i\hbox{.}$ 
-- Pokud $C_v$ není definováno dostane $C_{i}$ příslušný bit ze vstupu. 
+- $v(i) := \max\{ j<i \mid \text{hlava v čase } j \text{ na stejné pozici jako v } i \}$,
+- $C_{v(i)}$ je obvod odpovídající poslednímu kroku, kdy byla vstupní hlava na stejné pozici jako po kroku $i\hbox{.}$ Obvody umíme vyrobit díky **obliviousness**.
+- Pokud $C_{v(i)}$ není definováno dostane $C_{i}$ příslušný bit ze vstupu. 
 - Obvod přijme vstup $x$, pokud $z_{T(n)}$ kóduje přijímající stav.
 
 Každé $C_{i}$ má konstantní velikost a tím pádem máme $O(T(n))$ jako celkovou velikost.
 
-
 *Důsledek:* $\exists$ DTS $\tilde{M}$, který na $1^n$ vydá na výstupu popis obvodu $C_{n}$ a navíc:
 1. $\tilde{M}$ pracuje v polynomiálním čase,
-2. $\LARGE\tilde{M}$ pracuje v logaritmickém prostoru.
+2. $\tilde{M}$ pracuje v logaritmickém prostoru.
 - popis $C_{n}$ dává na výstupní pásku (mimo počítaný prostor)
 - vše co se týká popisu $\hat{M}$ je konstantní
 - je třeba si pamatovat kódy pozic vstupní a pracovní hlavy, ale na ty je třeba $\log n$ a $\log T(n) = O(\log n)$ bitů a ještě counter na který krok $\hat{M}$ právě řeší (konstruuje příslušné $C_{i}$)
@@ -85,7 +85,7 @@ Každé $C_{i}$ má konstantní velikost a tím pádem máme $O(T(n))$ jako celk
 
 ---
 ## Alternativní důkaz Cook-Levinovy věty
-*Definice:* $CKT-SAT$ sestává z řetězců kódujících Booleovské obvody takové, že pro ně existuje ohodnocení vstupů, po __ dá obvod výstup 1.
+*Definice:* $CKT-SAT$ sestává z řetězců kódujících Booleovské obvody takové, že pro ně existuje ohodnocení vstupů, po kterém vydá obvod výstup 1.
 
 *Formálně* Řetězec reprezentující obvod $C$ na $n$ vstupech $\in CKT-SAT\iff \exists u \in \{ 0,1 \}^n: C(u)=1$.
 
@@ -93,7 +93,7 @@ Každé $C_{i}$ má konstantní velikost a tím pádem máme $O(T(n))$ jako celk
 *Důkaz:* Certifikátem pro řetězec kódující obvod $C$ na $n$ vstupech je $u\in \{ 0,1 \}^n$ takové, že $C(u)=1$, což lze deterministicky ověřit v poly-čase vzhledem k délce vstupního řetězce kódujícího $C$.
 
 #### Lemma 2: $CKT-SAT$ je $\mathcal{NP}$-těžký
-*Důkaz:* Nechť $L\in \mathcal{NP}$ je libovolný $\implies \exists$ DTS $M$ rozpoznávající $L$ v čase $p(n)\implies \exists$ DTS $M'$ takový, že 
+*Důkaz:* Nechť $L\in \mathcal{NP}$ je libovolný $\implies \exists$ NTS $M$ rozpoznávající $L$ v čase $p(n)\implies \exists$ DTS $M'$ takový, že 
 $$
 x\in L \iff \exists u\in \{ 0,1 \}^{p(n)}: M'(x,u) = 1\, (|x|=n).
 $$
@@ -106,14 +106,14 @@ $$
 Pro pevné $x\in \{ 0,1 \}^n$ vyrobíme z $C_{m}$ obvod $C^x_{m}$ zafixováním vstupů odpovídajícím $x$ na příslušné konstanty. Nyní 
 $$
 \begin{split}
-x\in L \iff \exists u: M'(x,u)=1\iff \exists u: C_{m}(x,u)=1 \iff \\ \iff \exists C^x_{m}(u)=1 \iff \text{popis } C^x_{m} \in CKT-SAT
+x\in L \iff \exists u: M'(x,u)=1\iff \exists u: C_{m}(x,u)=1 \iff \\ \iff \exists u: C^x_{m}(u)=1 \iff \text{popis } C^x_{m} \in CKT-SAT
 \end{split}
 $$
 
-Poznámka Lemma 2 $\forall L\in \mathcal{NP}: L $ divno infty $CKT-SAT$
+Poznámka Lemma 2 $\forall L\in \mathcal{NP}: L \infty CKT-SAT$
 
 #### Lemma 3: $CKT-SAT$ je převoditelný na $3$-SAT.
-*Důkaz:* Nechť $C$ je popis obvodu se vstupními vrcholy $x_{1},\dots,x_{n}$ a vnitřními vrcholy $v_{1},\dots,p_{p}$. Vyrobíme $3$-CNF $\mathcal{F}_{C}$ na proměnných $x_{1},\dots,x_{n},z_{1},\dots,z_{p}$ takovou, že $C\in CKT-SAT \iff \mathcal{F}_{C}$ je splnitelná.
+*Důkaz:* Nechť $C$ je popis obvodu se vstupními vrcholy $x_{1},\dots,x_{n}$ a vnitřními vrcholy $v_{1},\dots,v_{p}$. Vyrobíme $3$-CNF $\mathcal{F}_{C}$ na proměnných $x_{1},\dots,x_{n},z_{1},\dots,z_{p}$ takovou, že $C\in CKT-SAT \iff \mathcal{F}_{C}$ je splnitelná.
 1. Pokud $v_{i}$ je hradlo $NOT$ se vstupem z $v_{j}$, tak do $\mathcal{F}_{C}$ přidáme $(z_{i} \lor z_{j}) \land (\bar{z}_{i} \lor \bar{z}_{j})$ (obdobně pro $x_{j}$ místo $v_{j}$).
 2. Pokud $v_{i}$ je hradlo $AND$ se vstupy z $v_{j},v_{k}$, tak do $\mathcal{F}_{C}$ přidáme $(\bar{z}_{i} \lor z_{j}) \land (\bar{z}_{i} \lor z_{k}) \land (\bar{z}_{j} \lor \bar{z}_{k} \lor z_{i})$.
 3. Pokud $v_{i}$ je hradlo $OR$ se vstupy $v_{j},v_{k}$, tak $\mathcal{F}_{C}$ rozšíříme o $(\bar{z}_{i} \lor z_{j} \lor z_{k}) \land (\bar{z}_{j} \lor z_{i}) \land (\bar{z}_{k} \lor z_{i})$.

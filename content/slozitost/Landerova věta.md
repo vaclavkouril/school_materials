@@ -14,7 +14,7 @@
 - $SAT \not\in \{ L(M_{1},A),L(M_{2},A),\dots \}$
 
 Zkonstruujeme univerzální NTS $N$ pracující na vstupu $x$ v čase $p(|x|)$ pro nějaký pevný polynom $x$ (stupně $\geq{1}$) rozpoznávající $A$ a $N$ na vstupu $x$ pracující takto:
-1. $i\leftarrow_{1},y\leftarrow \text'0\text'$ (řetězec délky $1$ obsahující $0$)
+1. $i\leftarrow{1},y\leftarrow \text'0\text'$ (řetězec délky $1$ obsahující $0$)
 2. Dokud $N$ neudělá $p(|x|)$ kroků tak opakuj:
 	1. dokud $AGREE(M_{i}(\emptyset),y)$ vrací $ANO$ tak $inc(y)$
 	2. dokud $AGREE(M_{i}(A),y)$ vrací $ANO$ tak $inc(y)$
@@ -35,7 +35,7 @@ Pozn. Všechna rekurzivní volání se pouští s limitem $p(|y|)$.
 
 Chceme dokázat:
 1. $A\in \mathcal{NP}$ (je rozpoznáván NTS v poly čase).
-2. $A\in NPÚ$ sporem, nechť $A\in NPÚ$
+2. $A\not\in NPÚ$ sporem, nechť $A\in NPÚ$
 
 $\implies \exists i: SAT=L(M_{i},A)$ a vezměme nejmenší takové $i$.
 
