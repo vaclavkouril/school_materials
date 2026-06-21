@@ -164,7 +164,7 @@ Tedy platí: pokud $M(x)=1\implies x\in L$ a $\bar{M}(x)=1\implies x\in \bar{L}\
 Tedy můžeme zkonstruovat PTS $\tilde{M}$ v každém kole spustí na vstup $x$ jak $M$ tak $\bar{M}$ 
 - pokud $M(x)=1 \implies \tilde{M}=1$,
 - pokud $\bar{M}(x)=1 \implies \tilde{M}(x)=0$,
-- $M(x)=0 \lor \bar{M}=0$ tak $\tilde{M}$ jde do dalšího kola.
+- $M(x)=0 \land \bar{M}=0$ tak $\tilde{M}$ jde do dalšího kola.
 
 Zjevně vždy odpoví správně $\Pr[\tilde{M}(x)=L(x)]=1$ a stačí ukázat, že $\tilde{M}$ tvoří v očekávaném čase $p(n)$ pro nějaký polynom.
 
